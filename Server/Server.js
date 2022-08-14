@@ -28,3 +28,6 @@ connected.once("open", () => {
 app.listen(Port, () => {
     console.log("Port No : " + Port);
 });
+
+const Hall = require('./routes/hall_management.route');
+app.use('/hall', Hall);
