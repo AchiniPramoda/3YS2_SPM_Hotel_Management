@@ -1,21 +1,21 @@
 const mongoose = require('mongoose');
 const schema = mongoose.Schema;
 
-const Hall = new schema({
+const Room = new schema({
 
-    name: {
+    RooId: {
         type: String,
         required: true
     },
-    hallType: {
+    roomType: {
         type: String,
         required: true
     },
-    Space: {
+    beads: {
         type: Number,
         required: true
     },
-    Guest: {
+    clients: {
         type: Number,
         required: true
     },
@@ -27,17 +27,11 @@ const Hall = new schema({
         type: String,
         required: true
     },
-    feacture: {
-        type: String,
-        required: true
-    },
-    event: {
+    facilities: {
         type: String,
         required: true
     },
     
-
-
    RoomImage: {
         type : String,
         required : true
@@ -56,5 +50,5 @@ const Hall = new schema({
    
 })
 
-const assignment = mongoose.model('hall', Hall);
+const assignment = mongoose.model('room',Room);
 module.exports = assignment;

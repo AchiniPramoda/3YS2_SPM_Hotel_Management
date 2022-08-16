@@ -32,6 +32,10 @@ app.listen(Port, () => {
 const Hall = require('./routes/hall_management.route');
 app.use('/hall', Hall);
 
+
+const Room = require('./routes/room_management.route');
+app.use('/room', Room);
+
 const staff = require('./route/Staff_route');
 app.use('/staff', staff);
 
@@ -40,5 +44,6 @@ app.use('/register',Register);
 
 const  login = require('./routes/login.route.management');
 app.use('/login', login);
+
 
 
