@@ -20,7 +20,7 @@ router.post('/addstaff', (req, res) => {
     .save()
     .then(() => res.json("Staff Added Successfully..."))
     .catch((err) => { console.log(err) });
-});
+} );
 
 router.get('/viewstaff', (req, res) => {
     Staff
@@ -42,6 +42,7 @@ router.delete('/delete/:id', (req, res) => {
     .then(() => res.json("Staff deleted successfully..."))
     .catch((err) => res.json(err.message));
 });
+
 
 
 module.exports = router;
