@@ -31,3 +31,10 @@ app.listen(Port, () => {
 
 const staff = require('./route/Staff_route');
 app.use('/staff', staff);
+
+const Register = require('./routes/user.route.management');
+app.use('/register',Register);
+
+const  login = require('./routes/login.route.management');
+app.use('/login', login);
+
