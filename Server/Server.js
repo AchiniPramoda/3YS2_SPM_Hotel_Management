@@ -36,7 +36,7 @@ app.use('/hall', Hall);
 const Room = require('./routes/room_management.route');
 app.use('/room', Room);
 
-const staff = require('./route/Staff_route');
+const staff = require('./routes/Staff_route');
 app.use('/staff', staff);
 
 const Register = require('./routes/user.route.management');
