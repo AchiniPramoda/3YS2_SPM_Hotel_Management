@@ -36,5 +36,12 @@ router.get('/viewstaff/:id', (req, res) => {
     .catch((err) => res.json(err.message));
 })
 
+router.delete('/delete/:id', (req, res) => {
+    Staff
+    .findByIdAndDelete(req.params.id)
+    .then(() => res.json("Staff deleted successfully..."))
+    .catch((err) => res.json(err.message));
+});
+
 
 module.exports = router;
