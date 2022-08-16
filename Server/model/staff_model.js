@@ -13,6 +13,14 @@ const StaffSchema = new Schema({
     wortype: {type: String, required: true},
     comment: {type:String, required:true},
     salary: {type: Number, required: true},
+    // staffid: {type: String, required: true, unique: true},
+    // dateofbirth: {type: Date, required: true},
+    // email: {type: String, required: true, unique: true},
+    // possition:{type: String, required: true},
+    // address: {type: String, required: true},
+    // wortype: {type: String, required: true},
+    // comment: {type:String, required:true},
+    // salary: {type: Number, required: true},
 
 })
 
