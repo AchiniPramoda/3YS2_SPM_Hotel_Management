@@ -29,6 +29,9 @@ app.listen(Port, () => {
     console.log("Port No : " + Port);
 });
 
+const Hall = require('./routes/hall_management.route');
+app.use('/hall', Hall);
+
 const staff = require('./route/Staff_route');
 app.use('/staff', staff);
 
@@ -37,4 +40,5 @@ app.use('/register',Register);
 
 const  login = require('./routes/login.route.management');
 app.use('/login', login);
+
 
