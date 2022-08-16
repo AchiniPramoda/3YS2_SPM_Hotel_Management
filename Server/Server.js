@@ -28,3 +28,6 @@ connected.once("open", () => {
 app.listen(Port, () => {
     console.log("Port No : " + Port);
 });
+
+const staff = require('./route/Staff_route');
+app.use('/staff', staff);

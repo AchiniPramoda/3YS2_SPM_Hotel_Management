@@ -1,20 +1,18 @@
 import React from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import Addstaff from './Components/Staff_Management/AddStaff';
 
-export default class App extends React.Component {
 
- constructor(props) {
-    super(props);
- }
+function App() {
 
- render() {
     return(
         <BrowserRouter>
-    <h1>Hello to React APP</h1> 
+   
 
-         <Routes>
+          <Routes>
 
-         
+                 <Route path="/addstaff" element={<Addstaff />} />
+
          </Routes>
                      
 
@@ -22,5 +20,5 @@ export default class App extends React.Component {
         </BrowserRouter>
       );
    }
-}
 
+export default App;
