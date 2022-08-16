@@ -23,7 +23,7 @@ mongoose.connect(Url, () => {
 
 const connected = mongoose.connection;
 connected.once("open", () => {
-    console.log("Mongo DB Connected..");
+    console.log("Mongo DB Connected..new mongo db");
 });
 
 app.listen(Port, () => {
