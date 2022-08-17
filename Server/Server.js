@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require("mongoose");
 const dotenv = require('dotenv');
 const cors = require('cors');
+
 dotenv.config();
 
 const app = express();
@@ -22,7 +23,7 @@ mongoose.connect(Url, () => {
 
 const connected = mongoose.connection;
 connected.once("open", () => {
-    console.log("Mongo DB Connected..");
+    console.log("MongoDB connection Connected...");
 });
 
 app.listen(Port, () => {

@@ -1,68 +1,79 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import './staff.css';
+import "./staff.css";
+import {  useParams } from "react-router-dom";
 
-function Addstaff(){
+function EditStaff() {
 
-  const [values, setValues] = useState({
-    firstname: "",
-    lastname: "",
-    staffid:"",
-    phone: "",
-    email: "",
-    possition: "",
-    address: "",
-    dateofbirth: "",
-    wortype: "",
-    comment: "",
-    salary: ""
+    const [firstname, setfirstname] = useState('');
+    const [lastname, setlastname] = useState('');
+    const [staffid, setstaffid] = useState('');
+    const [phone, setphone] = useState('');
+    const [email, setemail] = useState('');
+    const [possition, setpossition] = useState('');
+    const [address, setaddress] = useState('');
+    const [dateofbirth, setdateofbirth] = useState('');
+    const [wortype, setwortype] = useState('');
+    const [comment, setcomment] = useState('');
+    const [salary, setsalary] = useState('');
+  
+  
+    const params = useParams();
+  
+    const getSelectedStaff = () => {
+      axios.get(`http://localhost:8345/staff/viewstaff/${params.id}`)
+        .then((response) => {
+          console.log(response.data);
+        //  setValues(response.data.data);
+        setfirstname(response.data.firstname);
+        setlastname(response.data.lastname);
+        setstaffid(response.data.staffid);
+        setphone(response.data.phone);
+        setemail(response.data.email);
+        setpossition(response.data.possition); 
+        setaddress(response.data.address);
+        setdateofbirth(response.data.dateofbirth);
+        setwortype(response.data.wortype);
+        setcomment(response.data.comment);
+        setsalary(response.data.salary);
+        })
+    }
+  
+   
 
- });
+    useEffect(() => {
+        getSelectedStaff();
+    }, []);
+  
+    const updateGroupDetails = (e) => {
+      e.preventDefault();
+  
+      let updateData = {
+        firstname: firstname,
+        lastname: lastname,
+        staffid: staffid,
+        phone: phone,
+        email: email,
+        possition: possition,
+        address: address,
+        dateofbirth: dateofbirth,
+        wortype: wortype,
+        comment: comment,
+        salary: salary,
+      }
+  
+      axios.put(`http://localhost:8345/staff/edit/${params.id}`,updateData)
+    //   .then((res)=> {AlertMsg("success", "success", res.data); window.location = `/addstaff`})
+    //   .catch((err) => AlertMsg("error", "error", err.message))
+        .then((response) => { console.log(response.data); window.location = `/viewstaff`})
+        .catch((error) => { console.log(error); })
+    }
 
- const handleStaffData = (e) => {
-  const { name, value } = e.target
-  setValues({ ...values, [name]: value});
-}  
-
-const AddStaff = (e) => {
-  e.preventDefault();
-  let staffData = {
-    firstname: values.firstname,
-    lastname: values.lastname,
-    staffid: values.staffid,
-    phone: values.phone,
-    email: values.email,
-    possition: values.possition,
-    address: values.address,
-    wortype: values.wortype,
-    dateofbirth: values.dateofbirth,
-    comment: values.comment,
-    salary: values.salary,
  
-  }
-
-  console.log(staffData);
-         
-axios.post("http://localhost:8345/staff/addstaff", staffData )
-    .then((response) => {
-      console.log(response.data);
-    
-    })
-    
-    .catch((error) => {
-      console.log(error);
-    })
-
-  }
-
-
-
-
-
     return(
-        <div>
-
-<div >
+    <div>
+        
+        <div >
     <section class="Staff-form dark">
         
       <div class="container">
@@ -71,7 +82,7 @@ axios.post("http://localhost:8345/staff/addstaff", staffData )
           {/* use for title */}
             <div class="products">
 
-               <div class="title">Add Staff</div>
+               <div class="title">Edit Staff</div>
           
            </div>
            
@@ -95,8 +106,8 @@ axios.post("http://localhost:8345/staff/addstaff", staffData )
                      aria-label="First Name" 
                      aria-describedby="basic-addon1" 
                      name="firstname"
-                     onChange={handleStaffData}
-                     value={values.firstname}
+                     onChange={(e) => setfirstname(e.target.value)}
+                     value={firstname}
                      />
               </div>
 
@@ -110,8 +121,8 @@ axios.post("http://localhost:8345/staff/addstaff", staffData )
                       aria-label="Last Name" 
                       aria-describedby="basic-addon1"
                       name="lastname"
-                      onChange={handleStaffData}
-                      value={values.lastname}
+                        onChange={(e) => setlastname(e.target.value)}
+                        value={lastname}
                       />
 
                       {/* IF someone need a / betwen input fields */}
@@ -130,8 +141,8 @@ axios.post("http://localhost:8345/staff/addstaff", staffData )
                      aria-label="Staff ID" 
                      aria-describedby="basic-addon1"
                      name="staffid"
-                     onChange={handleStaffData}
-                     value={values.staffid}
+                        onChange={(e) => setstaffid(e.target.value)}
+                        value={staffid}
                      />
               </div>
 
@@ -146,8 +157,8 @@ axios.post("http://localhost:8345/staff/addstaff", staffData )
                       aria-label="Phone No" 
                       aria-describedby="basic-addon1" 
                       name="phone"
-                      onChange={handleStaffData}
-                      value={values.phone}
+                        onChange={(e) => setphone(e.target.value)}
+                        value={phone}
                       />
 
                 </div>
@@ -163,8 +174,8 @@ axios.post("http://localhost:8345/staff/addstaff", staffData )
                     aria-label="E-mail" 
                     aria-describedby="basic-addon1" 
                     name="email"
-                    onChange={handleStaffData}
-                    value={values.email}
+                        onChange={(e) => setemail(e.target.value)}
+                        value={email}
                     />
 
                </div>
@@ -179,8 +190,8 @@ axios.post("http://localhost:8345/staff/addstaff", staffData )
                      aria-label="Staff ID" 
                      aria-describedby="basic-addon1"
                      name="dateofbirth"
-                     onChange={handleStaffData}
-                     value={values.dateofbirth}
+                        onChange={(e) => setdateofbirth(e.target.value)}
+                        value={dateofbirth}
                      />
               </div>
 
@@ -195,8 +206,8 @@ axios.post("http://localhost:8345/staff/addstaff", staffData )
                       aria-label="Salary" 
                       aria-describedby="basic-addon1" 
                       name="salary"
-                      onChange={handleStaffData}
-                      value={values.salary}
+                        onChange={(e) => setsalary(e.target.value)}
+                        value={salary}
                       />
 
                 </div>
@@ -213,8 +224,8 @@ axios.post("http://localhost:8345/staff/addstaff", staffData )
                     aria-label="Address" 
                     aria-describedby="basic-addon1"
                     name="address"
-                    onChange={handleStaffData}
-                    value={values.address}
+                        onChange={(e) => setaddress(e.target.value)}
+                        value={address}
                     />
 
                </div>
@@ -231,8 +242,8 @@ axios.post("http://localhost:8345/staff/addstaff", staffData )
                     aria-label="Apply Position" 
                     aria-describedby="basic-addon1"
                     name="possition"
-                    onChange={handleStaffData}
-                    value={values.possition}
+                        onChange={(e) => setpossition(e.target.value)}
+                        value={possition}
                     />
 
                </div>
@@ -249,8 +260,8 @@ axios.post("http://localhost:8345/staff/addstaff", staffData )
                     aria-label="Work Type" 
                     aria-describedby="basic-addon1"
                     name="wortype"
-                    onChange={handleStaffData}
-                    value={values.wortype}
+                        onChange={(e) => setwortype(e.target.value)}
+                        value={wortype}
                     />
 
                </div>
@@ -266,8 +277,8 @@ axios.post("http://localhost:8345/staff/addstaff", staffData )
                     aria-label="Comment" 
                     aria-describedby="basic-addon1"
                     name="comment"
-                    onChange={handleStaffData}
-                    value={values.comment}
+                        onChange={(e) => setcomment(e.target.value)}
+                        value={comment}
                     />
 
                </div>
@@ -278,7 +289,7 @@ axios.post("http://localhost:8345/staff/addstaff", staffData )
 
              
               <div class="btngroup col-sm-3">
-                <button type="button" class="submit" onClick={AddStaff}>Submit</button>
+                <button type="button" class="submit" onClick={updateGroupDetails}>Edit</button>
               </div>
 
             </div>
@@ -287,10 +298,9 @@ axios.post("http://localhost:8345/staff/addstaff", staffData )
       </div>
     </section>
   </div>
-
-
-        </div>
-    )
+        
+    </div>
+)
 }
 
-export default Addstaff;
+export default EditStaff;
