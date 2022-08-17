@@ -16,8 +16,8 @@ Port = process.env.PORT;
 Url = process.env.URL;
 
 mongoose.connect(Url, () => {
-    useNewUrlParser = true,
-    useUnifiedTopology = true
+    useNewUrlParser = true
+  
 });
 
 const connected = mongoose.connection;

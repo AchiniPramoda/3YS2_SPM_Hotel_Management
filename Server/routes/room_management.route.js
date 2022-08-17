@@ -25,13 +25,13 @@ router.post('/addroom', upload.single('RoomImage'), async (req, res, next) => {
             facilities: req.body.facilities,
             RoomImage: result.secure_url,
             cloudinary_id: result.public_id,
-            fileName: req.file.filename
+            fileName : req.body.fileName
         })
 
         await room
         .save()
+        .then(() =>{ console.log('Room Added Successfully'); res.status(200).json({ message: 'Room Added Successfully' })})
         
-        .then(() =>{ res.json("Room Added Successfully...")})
         .catch(err => res.status(400).send("Error : " + err));
 
 });
