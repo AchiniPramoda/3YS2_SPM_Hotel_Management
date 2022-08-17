@@ -43,6 +43,29 @@ router.delete('/delete/:id', (req, res) => {
     .catch((err) => res.json(err.message));
 });
 
+router.put('/edit/:id', (req, res) => {
+    Staff
+    .findByIdAndUpdate(req.params.id)
+    .then(response => {
+        response.firstname = req.body.firstname,
+        response.lastname = req.body.lastname,
+        response.staffid = req.body.staffid,
+        response.phone = req.body.phone,
+        response.dateofbirth = req.body.dateofbirth,
+        response.email = req.body.email,
+        response.possition = req.body.possition,
+        response.address = req.body.address,
+        response.wortype = req.body.wortype,
+        response.comment = req.body.comment,
+        response.salary = req.body.salary
+      
+        response
+        .save()
+        .then(() => res.json("Staff Updated Successfully..."))
+        .catch((err) => res.json(err.message));
+    })
+    .catch((err) => res.json(err.message));
+});
 
 
 module.exports = router;
