@@ -5,7 +5,7 @@ const Room = new schema({
 
     RooId: {
         type: String,
-        required: true
+        
     },
     roomType: {
         type: String,
