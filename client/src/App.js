@@ -4,7 +4,7 @@ import Addstaff from './Components/Staff_Management/AddStaff';
 
 import AddRoom from './Components/Hall_Rooms_Management/Room/RoomAdd';
 import UpdateRoom from './Components/Hall_Rooms_Management/Room/UpdateRoom';
-
+import ViewRoom from './Components/Hall_Rooms_Management/Room/RoomView';
 import ViewStaff from './Components/Staff_Management/ViewStaff';
 import EditStaff from './Components/Staff_Management/EditStaff';
 import Login from './Components/User_Employee_Management/login';
@@ -24,11 +24,10 @@ function App() {
                  <Route path="/addstaff" element={<Addstaff />} />
 
                  <Route path="/addroom" element={<AddRoom />} />
-                 <Route  path="/updateroom/:id" 
-                  component={(props) => (
-                        <UpdateRoom {...props} key={window.location.pathname} />
-                    )}
-                  />
+                 <Route  path="/updateroom" element={<UpdateRoom />} />
+               
+               
+                  <Route path="/viewRoom" element={<ViewRoom />} />
                  <Route path='/viewstaff' element={ <ViewStaff /> } />
                  <Route path='/editstaff/:id' element={ <EditStaff /> } />
                  <Route path='/login' element={ <Login /> } />

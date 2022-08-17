@@ -10,7 +10,7 @@ export default class AddRoom extends React.Component{
         super(props);
         
         this.state = {            
-            RoomId : "",
+            RooId : "",
             roomType : "",
             beads : "",
             clients : "",
@@ -58,7 +58,7 @@ export default class AddRoom extends React.Component{
         e.preventDefault();
 
         const result = RoomValidation({
-            RoomId: this.state.RoomId,
+            RoomId: this.state.RooId,
             roomType: this.state.roomType,
             beads: this.state.beads,
             clients: this.state.clients,
@@ -70,7 +70,7 @@ export default class AddRoom extends React.Component{
        
      if(result.status){
         const formData = new FormData();
-        formData.append('RoomId', this.state.RoomId);
+        formData.append('RoomId', this.state.RooId);
         formData.append('roomType', this.state.roomType);
         formData.append('beads', this.state.beads);
         formData.append('clients', this.state.clients);
@@ -136,7 +136,7 @@ export default class AddRoom extends React.Component{
                                  placeholder="Room ID" 
                                  aria-label="Room ID" 
                                  aria-describedby="basic-addon1" 
-                                 id="RoomId"
+                                 id="RooId"
                                  
                                  onChange={(e) => this.onChange(e)}
                                  />
