@@ -43,6 +43,13 @@ router.delete('/delete/:id', (req, res) => {
     .catch((err) => res.json(err.message));
 });
 
+router.put('/edit/:id', (req, res) => {
+    Staff
+    .findByIdAndUpdate(req.params.id, req.body)
+    .then(() => res.json("Staff updated successfully..."))
+    .catch((err) => res.json(err.message));
+} );
+
 
 
 module.exports = router;

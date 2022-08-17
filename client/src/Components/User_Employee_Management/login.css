@@ -1,0 +1,145 @@
+.login-form{
+	padding-bottom: 50px;
+	padding-top: 90px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.login-form.dark{
+	background-color: #f6f6f6;
+}
+
+.login-form .content{
+	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
+	background-color: white;
+}
+
+
+
+.login-form .block-heading p{
+	text-align: center;
+	max-width: 420px;
+	margin: auto;
+	opacity:0.7;
+}
+
+.login-form.dark .block-heading p{
+	opacity:0.8;
+}
+
+
+.login-form input{
+	
+	background-color: #F5D7BD;
+	
+}
+
+input{
+	background-color: #F5D7BD;
+}
+
+
+.login-form form{
+	border-top: 10px solid #F57936;
+	border-bottom:  10px solid #F57936;
+	border-radius: 6px;
+	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
+	background-color: #ffffff;
+	padding: 0;
+	max-width: 600px;
+	margin: auto;
+}
+
+.logintitle{
+    font-size: 40px;
+    font-weight: bold;
+
+	justify-content: center;
+	text-align: center;
+}
+
+.login-form .products{
+	background-color: #f7fbff;
+    padding: 25px;	
+}
+
+
+
+.login-form .card-details{
+	padding: 25px 25px 15px;
+    justify-content: center;
+    margin-left: 40px;
+}
+
+.login-form .card-details label{
+	font-size: 12px;
+	font-weight: 600;
+	margin-bottom: 15px;
+	color: #79818a;
+	text-transform: uppercase;
+}
+
+.login-form .card-details button{
+	margin-top: 0.6em;
+	padding:12px 0;
+	font-weight: 600;
+}
+
+.login-form .date-separator{
+ 	margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+.submit{
+	background-color: #E8861E;
+	color: white;
+	border: none;
+	border-radius: 6px;
+	padding: 12px 0;
+	font-weight: 600;
+	font-size: 14px;
+	width: 100%;
+	
+}
+
+.btngroup{
+     margin-left: 130px;
+
+}
+
+.cancel{
+	background-color: #F14668;
+	color: white;
+	border: none;
+	border-radius: 6px;
+	padding: 12px 0;
+	font-weight: 600;
+	font-size: 14px;
+	width: 100%;
+}
+
+@media (min-width: 576px) {
+	.login-form .title {
+		font-size: 1.2em; 
+	}
+
+	.login-form .products {
+		padding: 40px; 
+  	}
+
+	.login-form .products .item-name {
+		font-size: 1em; 
+	}
+
+	.login-form .products .price {
+    	font-size: 1em; 
+	}
+
+  	.login-form .card-details {
+    	padding: 40px 40px 30px; 
+    }
+
+  	.login-form .card-details button {
+    	margin-top: 2em; 
+    } 
+}

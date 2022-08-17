@@ -46,6 +46,7 @@ const AddStaff = (e) => {
 axios.post("http://localhost:8345/staff/addstaff", staffData )
     .then((response) => {
       console.log(response.data);
+    
     })
     
     .catch((error) => {
