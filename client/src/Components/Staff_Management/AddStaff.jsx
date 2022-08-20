@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import './staff.css';
+import Navbar from "../Navbar/Navbar";
 
 function Addstaff(){
 
@@ -61,6 +62,8 @@ axios.post("http://localhost:8345/staff/addstaff", staffData )
 
     return(
         <div>
+
+   <Navbar />
 
 <div >
     <section class="Staff-form dark">
