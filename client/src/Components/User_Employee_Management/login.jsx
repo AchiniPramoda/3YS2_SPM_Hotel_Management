@@ -1,10 +1,13 @@
 import React from "react";
 import './login.css';
+import Navbar from "../Navbar/Navbar" 
 
 function Login() {
   return (
     <div>
       
+      <Navbar/>
+
       <section class="login-form dark">
         
         <div class="container">
