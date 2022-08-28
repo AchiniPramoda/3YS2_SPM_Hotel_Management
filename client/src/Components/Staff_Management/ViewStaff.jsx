@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
-import "./StaffView.css"
+import "./StaffView.css";
+import Navbar from "../Navbar/Navbar";
 
 function ViewStaff() {
 
@@ -39,6 +40,11 @@ function ViewStaff() {
 
 
     return(
+
+        <div>
+
+            <Navbar />
+
         <div className="staff-view">
             <div className="title">Staff View</div>
 
@@ -49,7 +55,7 @@ function ViewStaff() {
                 <tr className="table-header">
                     <th class="cell">First Name</th>
                     <th class="cell">Last Name</th>
-                    <th>Staff ID</th>
+                    <th class="cell">Staff ID</th>
                     <th class="cell">Phone</th>
                     <th class="cell">E-Mail</th>
                     <th class="cell">Possition</th>
@@ -93,6 +99,7 @@ function ViewStaff() {
   
 </div>
 
+        </div>
         </div>
     )
 }

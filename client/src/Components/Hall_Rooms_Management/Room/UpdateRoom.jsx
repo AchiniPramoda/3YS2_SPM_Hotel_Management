@@ -1,16 +1,16 @@
 import React from "react";
 import axios from "axios";
 import './staff.css';
+import { useParams } from "react-router-dom";
 import  {Alert} from '../alert/message.jsx';
 import RoomValidation from '../validation/RoomValidation.jsx';
-import dummy_image from "../../../assets/images/dummy_image.jpg";
-export default class AddRoom extends React.Component{
+export default class UpdateRoom extends React.Component{
 
     constructor(props) {
         super(props);
-        
+
         this.state = {            
-            RooId : "",
+            RoomId : "",
             roomType : "",
             beads : "",
             clients : "",
@@ -24,20 +24,52 @@ export default class AddRoom extends React.Component{
             open:true
         }
     }
-       // Function for Check Status code
-       handleError = (err) => {
-        if (err) {
-            if (err.response) {
-                if (err.response.status === 404) {
-                    Alert("error", "Something went wrong!", err.response.data)
+    
+    componentDidMount() {
+        // request to get all the rooms
 
-                }
-            } else {
-                Alert("error", "Something went wrong.", err)
+       
+        axios.get(`http://localhost:8345/room/getroom/${this.props.match.params.id}`).then(res => {
+            let room = res.data;
+
+                this.setState({
+                    RoomId : room.RoomId,
+                    roomType : room.roomType,
+                    beads : room.beads,
+                    clients : room.clients,
+                    price : room.price,
+                    description : room.description,
+                    facilities : room.facilities,
+                    RoomImage :room.RoomImage,
+                    fileName:room.RoomImage,
+                    message:"",
+                    type:"",
+                    open:true
+
+                
+                });
+            }).catch(err => {
+                console.log(err);
+            });
+
+       
+    }
+   // Function for Check Status code
+   handleError = (err) => {
+    if (err) {
+        if (err.response) {
+            if (err.response.status === 404) {
+                Alert("error", "Something went wrong!", err.response.data)
 
             }
+        } else {
+            Alert("error", "Something went wrong.", err)
+
         }
     }
+}
+
+
     onChange = (e) => {        
         this.setState({[e.target.id]: e.target.value});
         console.log(e.target.value);
@@ -58,7 +90,7 @@ export default class AddRoom extends React.Component{
         e.preventDefault();
 
         const result = RoomValidation({
-            RoomId: this.state.RooId,
+            RoomId: this.state.RoomId,
             roomType: this.state.roomType,
             beads: this.state.beads,
             clients: this.state.clients,
@@ -70,7 +102,7 @@ export default class AddRoom extends React.Component{
        
      if(result.status){
         const formData = new FormData();
-        formData.append('RoomId', this.state.RooId);
+        formData.append('RoomId', this.state.RoomId);
         formData.append('roomType', this.state.roomType);
         formData.append('beads', this.state.beads);
         formData.append('clients', this.state.clients);
@@ -80,7 +112,7 @@ export default class AddRoom extends React.Component{
         formData.append('RoomImage', this.state.RoomImage);
         formData.append("fileName", this.state.fileName);
 
-      axios.post("http://localhost:8345/room/addroom", formData)
+      axios.put(`http://localhost:8345/room/editroom/${this.state.id}`, formData)
      
         
          
@@ -136,7 +168,7 @@ export default class AddRoom extends React.Component{
                                  placeholder="Room ID" 
                                  aria-label="Room ID" 
                                  aria-describedby="basic-addon1" 
-                                 id="RooId"
+                                 id="RoomId"
                                  
                                  onChange={(e) => this.onChange(e)}
                                  />
