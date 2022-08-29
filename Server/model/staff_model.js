@@ -2,28 +2,21 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const StaffSchema = new Schema({
-    firstname: {type: String, required: true},
-    lastname: {type: String, required: true},
-    staffid: {type: String, required: true, unique: true},
-    phone: {type: String, required: true},
-    dateofbirth: {type: Date, required: true},
-    email: {type: String, required: true, unique: true},
-    possition:{type: String, required: true},
-    address: {type: String, required: true},
-    wortype: {type: String, required: true},
-    comment: {type:String, required:true},
-    salary: {type: Number, required: true},
-    // staffid: {type: String, required: true, unique: true},
-    // dateofbirth: {type: Date, required: true},
-    // email: {type: String, required: true, unique: true},
-    // possition:{type: String, required: true},
-    // address: {type: String, required: true},
-    // wortype: {type: String, required: true},
-    // comment: {type:String, required:true},
-    // salary: {type: Number, required: true},
+    lastname: {type: String, required: false},
+    staffid: {type: String, required: false, unique: false},
+    phone: {type: String, required: false},
+    dateofbirth: {type: Date, required: false},
+    email: {type: String, required: false, unique: false},
+    firstname: {type: String, required: false},
+    possition:{type: String, required: false},
+    address: {type: String, required: false},
+    wortype: {type: String, required: false},
+    comment: {type:String, required:false},
+    salary: {type: Number, required: false},
+   
 
 })
 
-const Staff = mongoose.model('Staff', StaffSchema);
+const Staff = mongoose.model('staff', StaffSchema);
 
 module.exports = Staff;

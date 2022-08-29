@@ -5,13 +5,13 @@ import Addstaff from './Components/Staff_Management/AddStaff';
 import AddRoom from './Components/Hall_Rooms_Management/Room/RoomAdd';
 import UpdateRoom from './Components/Hall_Rooms_Management/Room/UpdateRoom';
 import ViewRoom from './Components/Hall_Rooms_Management/Room/RoomView';
-import ViewStaff from './Components/Staff_Management/ViewStaff';
+import ViewStaff from './Components/Staff_Management/StaffView/ViewStaff';
 import EditStaff from './Components/Staff_Management/EditStaff';
 import Login from './Components/User_Employee_Management/login';
 import Registration from './Components/User_Employee_Management/Registration';
 import AdminDashBoard from './Components/Dashboard/AdminDashboard';
 import Navbar from './Components/Navbar/Navbar';
-
+import AddHall from './Components/Hall_Rooms_Management/Hall/AddHalls';
 
 function App() {
 
@@ -34,7 +34,7 @@ function App() {
                  <Route path="/registration" element={<Registration />} />
                  <Route path="/admindashboard" element={<AdminDashBoard />} />
                  <Route path="/navbar" element={<Navbar />} />
-
+                  <Route path="/addhall" element={<AddHall />} />
 
          </Routes>
                      

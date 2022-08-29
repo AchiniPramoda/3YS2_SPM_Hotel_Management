@@ -5,52 +5,52 @@ const Hall = new schema({
 
     name: {
         type: String,
-        required: true
+        required:false
     },
     hallType: {
         type: String,
-        required: true
+        required:false
     },
     Space: {
         type: Number,
-        required: true
+        required:false
     },
     Guest: {
         type: Number,
-        required: true
+        required:false
     },
     price: {
         type: Number,
-        required: true
+        required:false
     },
     description: {
         type: String,
-        required: true
+        required:false
     },
     feacture: {
         type: String,
-        required: true
+        required:false
     },
     event: {
         type: String,
-        required: true
+        required:false
     },
     
-
+ 
 
     hallImage: {
         type : String,
-        required : true
+        required :false
       
     },
     cloudinary_id: {
         type : String,
-        required : true
+        required :false
       
     },
     fileName: {
         type : String,
-        required : true
+        required :false
     }
 
    

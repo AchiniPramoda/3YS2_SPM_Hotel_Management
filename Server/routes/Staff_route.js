@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Staff = require('../model/staff_model');
 
-router.post('/addstaff', (req, res) => {
+router.post('/addstaff', async (req, res) => {
     const staff = new Staff({
         firstname: req.body.firstname,
         lastname: req.body.lastname,
@@ -16,7 +16,7 @@ router.post('/addstaff', (req, res) => {
         comment: req.body.comment,
         salary: req.body.salary
     });
-    staff
+    await staff
     .save()
     .then(() => res.json("Staff Added Successfully..."))
     .catch((err) => { console.log(err) });
@@ -36,5 +36,35 @@ router.get('/viewstaff/:id', (req, res) => {
     .catch((err) => res.json(err.message));
 })
 
+router.delete('/delete/:id', (req, res) => {
+    Staff
+    .findByIdAndDelete(req.params.id)
+    .then(() => res.json("Staff deleted successfully..."))
+    .catch((err) => res.json(err.message));
+});
+
+router.put('/updatestaff/:id', (req, res) => {
+    Staff
+    .findByIdAndUpdate(req.params.id)
+    .then(response => {
+        response.firstname = req.body.firstname,
+        response.lastname = req.body.lastname,
+        response.staffid = req.body.staffid,
+        response.phone = req.body.phone,
+        response.dateofbirth = req.body.dateofbirth,
+        response.email = req.body.email,
+        response.possition = req.body.possition,
+        response.address = req.body.address,
+        response.wortype = req.body.wortype,
+        response.comment = req.body.comment,
+        response.salary = req.body.salary
+      
+        response
+        .save()
+        .then(() => res.json("Staff Updated Successfully..."))
+        .catch((err) => res.json(err.message));
+    })
+    .catch((err) => res.json(err.message));
+});
 
 module.exports = router;

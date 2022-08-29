@@ -103,7 +103,7 @@ export default class AddRoom extends React.Component{
             <div>
 
             <div >
-                <section class="Staff-form dark">
+                <section class="Room-form dark">
                     
                   <div class="container">
                     <form >
