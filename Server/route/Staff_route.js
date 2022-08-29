@@ -43,7 +43,7 @@ router.delete('/delete/:id', (req, res) => {
     .catch((err) => res.json(err.message));
 });
 
-router.put('/edit/:id', (req, res) => {
+router.put('/updatestaff/:id', (req, res) => {
     Staff
     .findByIdAndUpdate(req.params.id)
     .then(response => {

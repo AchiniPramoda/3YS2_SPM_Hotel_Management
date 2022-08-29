@@ -33,7 +33,7 @@ function Navbar() {
                 </li>
 
                 <li class="nav-item col-sm-2 active">
-                      <a class="nav-link" href="/admindashboard">Hall<span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="/addhall">Hall<span class="sr-only">(current)</span></a>
                 </li>
 
                 <li class="nav-item col-sm-2 active">
