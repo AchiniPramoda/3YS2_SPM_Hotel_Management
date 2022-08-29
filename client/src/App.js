@@ -11,7 +11,12 @@ import Login from './Components/User_Employee_Management/login';
 import Registration from './Components/User_Employee_Management/Registration';
 import AdminDashBoard from './Components/Dashboard/AdminDashboard';
 import Navbar from './Components/Navbar/Navbar';
+
 import AddHall from './Components/Hall_Rooms_Management/Hall/AddHalls';
+
+import AllRoomForUser from './Components/Hall_Rooms_Management/Room/AllRoomView';
+
+
 
 function App() {
 
@@ -34,7 +39,14 @@ function App() {
                  <Route path="/registration" element={<Registration />} />
                  <Route path="/admindashboard" element={<AdminDashBoard />} />
                  <Route path="/navbar" element={<Navbar />} />
+
                   <Route path="/addhall" element={<AddHall />} />
+
+                 <Route exact path="/rooms" element={ <AllRoomForUser />}>
+                          
+           
+                </Route>
+
 
          </Routes>
                      

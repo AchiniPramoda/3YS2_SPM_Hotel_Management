@@ -43,6 +43,9 @@ export default class AddRoom extends React.Component{
         console.log(e.target.value);
     }
 
+    onSelectValueChange = (e) => {
+      this.setState({[e.target.id]:e.target.value});
+  }
     onFileChange = (e) => {
         
         this.setState({
@@ -145,17 +148,21 @@ export default class AddRoom extends React.Component{
                           
                             <div class="form-group col-sm-6">
                             <label for="card-holder">Room Type</label>
-
-                                <input
-                                    type="text"
+                                         <select
+                                            value={this.state.roomType}
+                                            onChange={(e) => this.onSelectValueChange(e)}
+                                            type="text"
+                                            id="roomType"
                                     class="form-control "
                                     placeholder="Room Type"
                                     aria-label="Room Type"
-                                    aria-describedby="basic-addon1"
-                                  id="roomType"
-                                    
-                                    onChange={(e) => this.onChange(e)}
-                                    />
+                                    aria-describedby="basic-addon1">
+                                            <option  value={"--Select Type--"}>--Select Category--</option>
+                                            <option value="Queen">Queen</option>
+                                           <option value="Dubble">Dubble </option>
+                                            <option value="Another">Another</option>
+                                        </select>
+                               
                             </div>
 
                             <div class="form-group col-sm-6">
@@ -224,7 +231,7 @@ export default class AddRoom extends React.Component{
                                     onChange={(e) => this.onChange(e)}
                                     />
                             </div>
-                            <div class="form-group col-sm-6">
+                            <div class="form-group col-sm-12">
                             <label for="card-holder">Room Image</label>
                              <input type="file" class="form-control" name="RoomImage" onChange={(e) => this.onFileChange(e)}      />
                             </div>
