@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from "axios"
-
+import Navbar from "../../Navbar/Navbar"
 import RoomSmallView from './RoomSmallerView'
 
 class AllRoomForUser extends Component {
@@ -23,22 +23,26 @@ class AllRoomForUser extends Component {
     render() {
         return (
 
+         <div>
+                <Navbar/>
             <div className="container mt-5">
-                <div className="row">
-                    <h3 className={"text-secondary text-center mb-12"}>All Room Details</h3><br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <React.Fragment>
-                        {
-                            this.state.rooms.map(room=> {
-                                return <RoomSmallView room={room} count={4} />
-                            })
-                        }
-                    </React.Fragment>
-                </div>
+                      <div>
+                            <h3 className={"text-warning text-center mb-12"}>All Room Details</h3><br/>
+                     </div>
+                   
+                     <div className='row'>
+                           
+                           <React.Fragment>
+                              {
+                                  this.state.rooms.map(room=> {
+                                       return <RoomSmallView room={room} count={4} />
+                                 })
+                             }
+                          </React.Fragment>
+                    </div>
             </div>
-
+        </div>
+            
         );
     }
 }

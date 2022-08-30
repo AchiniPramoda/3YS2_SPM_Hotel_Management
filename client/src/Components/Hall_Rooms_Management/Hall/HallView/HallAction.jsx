@@ -4,11 +4,11 @@ import { useNavigate  } from "react-router-dom";
 import Swal from "sweetalert2";
 import axios from 'axios';
 
-const RoomActions = (props) => {
+const HallActions = (props) => {
 
 
     const history = useNavigate();
-    const room = props.room;
+    const hall = props.hall;
 
     // Function for redirect
     const handleClick = (path) => {
@@ -16,9 +16,9 @@ const RoomActions = (props) => {
     }
 
     // Function for delete vehicle
-    const deleteRoom = () => {
+    const deleteHall = () => {
         Swal.fire({
-            title: 'Are you want to delete Room',
+            title: 'Are you want to delete The Hall',
             text: "Note that ths process can not be revert.",
             icon: 'warning',
             showCancelButton: true,
@@ -28,11 +28,11 @@ const RoomActions = (props) => {
         }).then((result) => {
 
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:8345/room/deleteroom/${room._id}`)
+                axios.delete(`http://localhost:8345/room/deletehall/${hall._id}`)
                     .then(res => {
                         Swal.fire(
                             'Done!',
-                            'Room deleted successfully!',
+                            'Hall deleted successfully!',
                             'success'
                         )
                         props.updateContent();
@@ -46,17 +46,20 @@ const RoomActions = (props) => {
 
     return (<React.Fragment>
         <tr>
-            <th scope="row">{room.RooId}</th>
-            <td>{room.roomType}</td>
-            <td>{room.beads}</td>
-            <td>{room.clients}</td>
-            <td>{room.price}</td>
-            <td>{room.description}</td>
+            <th scope="row">{hall.name}</th>
+            <td>{hall.hallType}</td>
+            <td>{hall.Space}</td>
+            <td>{hall.Guest}</td>
+            <td>{hall.price}</td>
+            <td>{hall.description}</td>
+            <td>{hall.feacture}</td>
+            <td>{hall.event}</td>
+       
             {
                 !props.isGen ? <td>
                     <div class="d-flex">
-                    <button onClick={() => handleClick(`http://localhost:8345/room/updateroom/${room._id}`)} type="button" class="btn btn-outline-success m-1">Update</button>
-                    <button onClick={deleteRoom} type="button" class="btn btn-outline-danger m-1">Delete</button>
+                    <button onClick={() => handleClick(`http://localhost:8345/hall/updateroom/${hall._id}`)} type="button" class="btn btn-outline-success m-1">Update</button>
+                    <button onClick={deleteHall} type="button" class="btn btn-outline-danger m-1">Delete</button>
                     </div>
                 </td> : <React.Fragment />
             }
@@ -64,4 +67,4 @@ const RoomActions = (props) => {
     </React.Fragment>);
 }
 
-export default RoomActions;
+export default HallActions;

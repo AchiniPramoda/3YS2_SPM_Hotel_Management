@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
 import axios from "axios"
 import ReactToPrint from 'react-to-print';
-import './StaffView.css';
-import Navbar from '../../Navbar/Navbar';
-import RoomActions from './RoomAction';
+import './HallView.css'
+import Navbar from '../../../Navbar/Navbar';
+import HallAction from './HallAction';
 
-class AllRoomContainer extends Component {
+class AllHallContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            rooms: [],
-            filterdRooms: [],
+            hall: [],
+            filterdHalls: [],
             isGen: false
         }
     }
 
     updateContent = () => {
-        axios.get("http://localhost:8345/room/getroom").then(res => {
+        axios.get("http://localhost:8345/hall/get").then(res => {
             this.setState({
-                rooms: res.data,
-                filterdRooms: res.data,
+                hall: res.data,
+                filterdHalls: res.data,
             });
         }).catch(err => {
             console.log(err);
@@ -34,23 +34,23 @@ class AllRoomContainer extends Component {
     // Function for search vehicles
     search = (e) => {
         let searchTag = e.target.value.toLowerCase();
-        let filterdRooms= [];
+        let filterdHalls= [];
 
-        this.state.rooms.forEach(room => {
-            if (room.RooId.toLowerCase().includes(searchTag) || room.roomType.toLowerCase().includes(searchTag)) {
-                filterdRooms.push(room)
+        this.state.rooms.forEach(hall => {
+            if (hall.name.toLowerCase().includes(searchTag) || hall.hallType.toLowerCase().includes(searchTag)) {
+                filterdHalls.push(hall)
             }
         })
 
         this.setState({
-            filterdRooms,
+            filterdHalls,
             searchTag
         });
 
     }
 
     getRedirectButton = () => {
-        return <button type="button" onClick={() => { window.location='/addroom' }} class="btn btn-outline-primary m-2">Create Room</button>
+        return <button type="button" onClick={() => { window.location='/addhall' }} class="btn btn-outline-primary m-2">Create Room</button>
     }
 
 
@@ -79,7 +79,7 @@ class AllRoomContainer extends Component {
                                 {this.getRedirectButton()}
                                 <ReactToPrint
 
-                                    documentTitle={"All Room"}
+                                    documentTitle={"All Hall"}
                                     onAfterPrint={() => { this.setState({ isGen: false }); }}
                                     trigger={() => {
                                         return <button type="button" class="btn btn-primary">Generate PDF Now</button>
@@ -97,17 +97,19 @@ class AllRoomContainer extends Component {
                     }
 
                     <div ref={el => (this.componentRef = el)}>
-                        <h3 className={"text-secondary text-center mb-5"}>All Room details</h3>
+                        <h3 className={"text-secondary text-center mb-5"}>All Hall details</h3>
                         <div class="table1">
                             <table class="table">
                                 <thead className={"table-dark"}>
                                     <tr>
-                                        <th scope="col">Room Id</th>
-                                        <th scope="col">Room Type</th>
-                                        <th scope="col">Beds</th>
-                                        <th scope="col">Clients</th>
+                                    <th scope="col">Hall Name</th>
+                                        <th scope="col">Hall Type</th>
+                                        <th scope="col">Space</th>
+                                        <th scope="col">Guests</th>
                                         <th scope="col">Price</th>
                                         <th scope="col">Description</th>
+                                        <th scope="col">Features</th>
+                                        <th scope="col">Events</th>
                                         {
                                             !this.state.isGen ? <th scope="col">Actions</th> : <React.Fragment />
                                         }
@@ -116,8 +118,8 @@ class AllRoomContainer extends Component {
                                 <tbody>
                                     <React.Fragment>
                                         {
-                                            this.state.filterdRooms.map(room => {
-                                                return <RoomActions key={room._id} room={room} isGen={this.state.isGen} updateContent={this.updateContent} />
+                                            this.state.filterdHalls.map(hall => {
+                                                return <HallAction key={hall._id} hall={hall} isGen={this.state.isGen} updateContent={this.updateContent} />
                                             })
                                         }
                                     </React.Fragment>
@@ -134,4 +136,4 @@ class AllRoomContainer extends Component {
     }
 }
 
-export default  (AllRoomContainer);
+export default  (AllHallContainer);

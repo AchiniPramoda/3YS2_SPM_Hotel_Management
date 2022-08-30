@@ -111,5 +111,20 @@ router.put('/edit/:id', upload.single('hallImage'), async (req, res) => {
     
 });
 
+router.delete('/deletehall/:id', async (req, res) => {
+    try{
+        const hall = await Hall.findById(req.params.id);
+        if(!hall){
+            return res.status(404).send("Hall not found");
+        }
+        await cloudinary.uploader.destroy(hall.cloudinary_id, {resource_type: "raw"});
+        await hall.remove();
+        res.json("Hall Deleted Successfully...");
+    }
+    catch(err){
+        res.status(400).send("Error : " + err);
+    }
+} );
+
 
 module.exports = router;
