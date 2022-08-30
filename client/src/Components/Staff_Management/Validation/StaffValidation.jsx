@@ -14,7 +14,7 @@ const StaffValidations = (validation) => {
             "string.empty": "Last name is required"
         }),
 
-        staffid: joi.string().min(3).max(4).required().messages({
+        staffId: joi.string().min(3).max(4).required().messages({
             
             "string.base": "RoomId must be a string",
             "string.empty": "RoomId is required",
@@ -27,7 +27,7 @@ const StaffValidations = (validation) => {
             "number.empty": "Phone is required"
         }),
 
-        email : joi.string().required().messages({
+        staffemail : joi.string().required().messages({
             "string.base": "email must be a string",
             "string.empty": "email is required",
             

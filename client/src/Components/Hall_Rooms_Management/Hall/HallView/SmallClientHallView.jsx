@@ -1,9 +1,9 @@
 import React from 'react'
 import { useNavigate } from "react-router-dom";
 
-const RoomSmallView = (props) => {
+const HallSmallView = (props) => {
 
-    const room = props.room;
+    const hall = props.hall;
     const count = props.count;
 
     const history = useNavigate();

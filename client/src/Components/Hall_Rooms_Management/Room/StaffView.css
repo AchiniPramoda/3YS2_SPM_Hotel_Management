@@ -12,8 +12,10 @@
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    border: 2px solid #000;
     justify-content: center;
-    background-color:#F5D7BD;
+    border-radius: 6px;
+   
 
 
 }

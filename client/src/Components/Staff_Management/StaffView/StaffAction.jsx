@@ -48,9 +48,9 @@ const StaffActions = (props) => {
         <tr>
             <th scope="row">{staff.firstname}</th>
             <td>{staff.lastname}</td>
-            <td>{staff.staffid}</td>
+            <td>{staff.staffId}</td>
             <td>{staff.phone}</td>
-            <td>{staff.email}</td>
+            <td>{staff.staffemail}</td>
             <td>{staff.possition}</td>
             <td>{staff.address}</td>
             <td>{staff.dateofbirth}</td>

@@ -38,7 +38,7 @@ class AllRoomContainer extends Component {
         let filterdStaffs= [];
 
         this.state.staff.forEach(staff => {
-            if (staff.staffid.toLowerCase().includes(searchTag) || staff.firstname.toLowerCase().includes(searchTag)) {
+            if (staff.staffId.toLowerCase().includes(searchTag) || staff.firstname.toLowerCase().includes(searchTag)) {
                 filterdStaffs.push(staff)
             }
         })
