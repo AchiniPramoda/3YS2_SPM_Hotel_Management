@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import React from "react";
-import  "./style.css";
+
 import success from './suc.png';
 import RobotAnimated from "./robot-animated"
 

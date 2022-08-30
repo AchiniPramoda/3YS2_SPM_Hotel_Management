@@ -42,7 +42,7 @@ function App() {
                  <Route path="/navbar" element={<Navbar />} />
 
                  <Route exact path="/rooms" element={ <AllRoomForUser />}/>
-                 <Route exact path="/register/:id/verify/:token/" element={ <EmailVerify />}>
+                 <Route exact path="/register/:id/verify/:token/" element={ <EmailVerify />}/>
 
 
 
