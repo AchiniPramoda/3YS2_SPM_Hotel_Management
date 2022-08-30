@@ -12,6 +12,7 @@ import Registration from './Components/User_Employee_Management/Registration';
 import AdminDashBoard from './Components/Dashboard/AdminDashboard';
 import Navbar from './Components/Navbar/Navbar';
 import AllRoomForUser from './Components/Hall_Rooms_Management/Room/AllRoomView';
+import EmailVerify from './Components/Emailverify/EmailVerify';
 
 
 function App() {
@@ -35,8 +36,9 @@ function App() {
                  <Route path="/registration" element={<Registration />} />
                  <Route path="/admindashboard" element={<AdminDashBoard />} />
                  <Route path="/navbar" element={<Navbar />} />
-                 <Route exact path="/rooms" element={ <AllRoomForUser />}>
-                          
+                 <Route exact path="/rooms" element={ <AllRoomForUser />}/>
+                 <Route exact path="/register/:id/verify/:token/" element={ <EmailVerify />}>
+
            
                 </Route>
 
