@@ -1,5 +1,6 @@
 import React from "react";
 import './login.css';
+
 import { useState } from "react";
 import axios from "axios";
 
@@ -44,9 +45,12 @@ const Login = () => {
 	};
 
 
+
   return (
     <div>
       
+      <Navbar/>
+
       <section class="login-form dark">
         
         <div class="container">

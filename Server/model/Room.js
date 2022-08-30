@@ -9,19 +9,19 @@ const Room = new schema({
     },
     roomType: {
         type: String,
-        required: true
+     
     },
     beads: {
         type: Number,
-        required: true
+   
     },
     clients: {
         type: Number,
-        required: true
+        
     },
     price: {
         type: Number,
-        required: true
+      
     },
     description: {
         type: String,
