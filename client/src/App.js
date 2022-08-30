@@ -15,6 +15,7 @@ import Navbar from './Components/Navbar/Navbar';
 import AddHall from './Components/Hall_Rooms_Management/Hall/AddHalls';
 import ViewHall from './Components/Hall_Rooms_Management/Hall/HallView/Hallview';
 import AllRoomForUser from './Components/Hall_Rooms_Management/Room/AllRoomView';
+import EmailVerify from './Components/Emailverify/EmailVerify';
 
 
 
@@ -39,11 +40,20 @@ function App() {
                  <Route path="/registration" element={<Registration />} />
                  <Route path="/admindashboard" element={<AdminDashBoard />} />
                  <Route path="/navbar" element={<Navbar />} />
+
                    <Route path="/viewhall" element={<ViewHall />} />
+
+
+                 <Route exact path="/rooms" element={ <AllRoomForUser />}/>
+                 <Route exact path="/register/:id/verify/:token/" element={ <EmailVerify />}/>
+
+
+
                   <Route path="/addhall" element={<AddHall />} />
 
                  <Route exact path="/rooms" element={ <AllRoomForUser />}>
                           
+
            
                 </Route>
 
