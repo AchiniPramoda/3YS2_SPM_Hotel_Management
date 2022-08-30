@@ -20,18 +20,18 @@ const userSchema = new mongoose.Schema({
         type: String, 
         required: true 
     },
-   gender:{
-        type: String, 
-        required: true 
-    },
+//    gender:{
+//         type: String, 
+//         required: true 
+//     },
     city:{
         type: String,
         required: true
     },
-    type:{
-        type: String, 
-        required: true 
-    },
+    // type:{
+    //     type: String, 
+    //     required: true 
+    // },
         
         verfied:{type:Boolean,default:false}
 });
@@ -51,9 +51,9 @@ const validate = (data) => {
         lastName: Joi.string().min(3).max(50).required(),
         email: Joi.string().min(3).max(255).required().email(),
         password: Joi.string().min(3).max(255).required(),
-        gender: Joi.string().min(3).max(50).required(),
+        // gender: Joi.string().min(3).max(50).required(),
         city: Joi.string().min(3).max(50).required(),
-        type: Joi.string().min(3).max(50).required(),
+        // type: Joi.string().min(3).max(50).required(),
 
 	});
 	return schema.validate(data);
