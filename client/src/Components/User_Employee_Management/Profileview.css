@@ -1,0 +1,142 @@
+.pronames{
+    font-size: 15px;
+    padding: 10px;
+    color: #000000;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+.profile-form{
+	padding-bottom: 50px;
+	padding-top: 50px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.profile-form.dark{
+	background-color: #f6f6f6;
+}
+
+
+
+.profile-form .content{
+	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
+	background-color: white;
+}
+
+
+
+.profile-form .block-heading p{
+	text-align: center;
+	max-width: 420px;
+	margin: auto;
+	opacity:0.7;
+}
+
+.profile-form.dark .block-heading p{
+	opacity:0.8;
+}
+
+
+.profile-form input{
+	
+	background-color: #F5D7BD;
+	
+}
+
+input{
+	background-color: #F5D7BD;
+    max-width: 200px;
+}
+
+
+.profile-form form{
+	border-top: 10px solid #F57936;
+	border-bottom:  10px solid #F57936;
+	border-radius: 6px;
+	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
+	background-color: #ffffff;
+	padding: 0;
+	max-width: 600px;
+	margin: auto;
+}
+
+.profile-form .title{
+	font-size: 36px;
+	/* border-bottom: 1px solid rgba(0,0,0,0.1); */
+	margin-bottom: 2px;
+	font-weight: 600;
+	padding-bottom: 4px;
+	justify-content: center;
+	text-align: center;
+}
+
+.profile-form .products{
+	background-color: #f7fbff;
+    padding: 25px;	
+}
+
+
+
+.profile-form .card-details{
+	padding: 25px 25px 15px;
+}
+
+.profile-form .card-details label{
+	font-size: 12px;
+	font-weight: 600;
+	margin-bottom: 15px;
+	color: #79818a;
+	text-transform: uppercase;
+}
+
+
+
+
+
+.editbtn{
+    background-color: #E8861E;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 0;
+    font-weight: 600;
+    font-size: 14px;
+    width: 100%;
+    
+}
+ 
+.editbtn:hover{
+    background-color: white;
+   color: #000000;
+    border: 1px solid #E8861E;
+   
+}
+
+
+@media (min-width: 576px) {
+	.profile-form .title {
+		font-size: 1.2em; 
+	}
+
+	.profile-form .products {
+		padding: 40px; 
+  	}
+
+	.profile-form .products .item-name {
+		font-size: 1em; 
+	}
+
+	.profile-form .products .price {
+    	font-size: 1em; 
+	}
+
+  	.profile-form .card-details {
+    	padding: 40px 40px 30px; 
+    }
+
+  	.profile-form .card-details button {
+    	margin-top: 2em; 
+    } 
+}

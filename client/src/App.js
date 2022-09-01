@@ -16,7 +16,7 @@ import AddHall from './Components/Hall_Rooms_Management/Hall/AddHalls';
 import ViewHall from './Components/Hall_Rooms_Management/Hall/HallView/Hallview';
 import AllRoomForUser from './Components/Hall_Rooms_Management/Room/AllRoomView';
 import EmailVerify from './Components/Emailverify/EmailVerify';
-
+import ProfileView from './Components/User_Employee_Management/ProfileView';
 
 
 function App() {
@@ -44,18 +44,19 @@ function App() {
                    <Route path="/viewhall" element={<ViewHall />} />
 
 
-                 <Route exact path="/rooms" element={ <AllRoomForUser />}/>
+                 <Route path="/rooms" element={ <AllRoomForUser />}/>
                  <Route exact path="/register/:id/verify/:token/" element={ <EmailVerify />}/>
 
 
 
                   <Route path="/addhall" element={<AddHall />} />
 
-                 <Route exact path="/rooms" element={ <AllRoomForUser />}>
+                 
                           
+                  <Route path="/profileview" element={<ProfileView />} />        
 
            
-                </Route>
+              
 
 
          </Routes>
