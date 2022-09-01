@@ -58,3 +58,12 @@ router.post('/AddRestaurant', async (req, res) => {
     }
 
 });
+
+/*Router for delete restaurant*/
+router.delete("/DeleteRestaurant/:id", async (req, res) => {
+
+    await Restaurant.findByIdAndDelete(req.params.id)
+        .then(() => res.send("Restaurant Deleted Successfully!"))
+        .catch(err => res.status(400).send("Error : " + err));
+
+});
