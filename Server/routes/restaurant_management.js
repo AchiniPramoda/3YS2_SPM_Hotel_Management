@@ -67,3 +67,40 @@ router.delete("/DeleteRestaurant/:id", async (req, res) => {
         .catch(err => res.status(400).send("Error : " + err));
 
 });
+
+/*Router for update restaurant*/
+router.put("/UpdateRestaurant/:id", async (req, res) => {
+
+    let imageURL;
+    if (req.body.isImageUpdated === "true") {
+
+        let image = req.files.photo;
+
+        let urlPrefix = "http://localhost:8080/static/images";
+        let imageName = Date.now() + "-" + image.name;
+
+        image.mv("./public/images/Restaurants/" + imageName, (err, result) => {
+            if (err) return res.status(400).send("Error : " + err);
+        });
+
+        imageURL = urlPrefix + "/Restaurants/" + imageName;
+    }
+
+    await Restaurant.findById(req.params.id)
+        .then(restaurant => {
+            restaurant.restaurantName = req.body.restaurantName;
+            restaurant.other = req.body.other;
+            restaurant.description = req.body.description;
+            if (req.body.isImageUpdated === "true") {
+                restaurant.imageURL = imageURL;
+            }
+
+            restaurant.save()
+                .then(() => res.send("Restaurant Updated Successfully!"))
+                .catch(err => res.status(400).send('Error: ' + err));
+        })
+        .catch(err => res.status(400).send("Error : " + err));
+
+});
+
+module.exports = router;
