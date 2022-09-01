@@ -9,3 +9,12 @@ router.get("/", async (req, res) => {
         .catch(err => res.status(400).send('Error: ' + err))
 
 });
+
+/*Router for get Restaurant by Id*/
+router.get("/:id", async (req, res) => {
+
+    await Restaurant.findById(req.params.id)
+        .then((restaurant) => res.send(restaurant))
+        .catch(err => res.status(400).send("Error : " + err))
+
+});
