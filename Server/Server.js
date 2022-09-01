@@ -17,20 +17,27 @@ Port = process.env.PORT;
 Url = process.env.URL;
 
 mongoose.connect(Url, () => {
-    useNewUrlParser = true,
-    useUnifiedTopology = true
+    useNewUrlParser = true
+  
 });
 
 const connected = mongoose.connection;
 connected.once("open", () => {
-    console.log("Mongo DB Connected..");
+    console.log("MongoDB connection Connected...");
 });
 
 app.listen(Port, () => {
     console.log("Port No : " + Port);
 });
 
-const staff = require('./route/Staff_route');
+const Hall = require('./routes/hall_management.route');
+app.use('/hall', Hall);
+
+
+const Room = require('./routes/room_management.route');
+app.use('/room', Room);
+
+const staff = require('./routes/Staff_route');
 app.use('/staff', staff);
 
 const Register = require('./routes/user.route.management');
