@@ -46,5 +46,7 @@ app.use('/register',Register);
 const  login = require('./routes/login.route.management');
 app.use('/login', login);
 
+app.use("/api/restaurants", RestaurantManagement);
+
 
 
