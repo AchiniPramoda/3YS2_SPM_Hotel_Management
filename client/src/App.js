@@ -11,6 +11,8 @@ import Login from './Components/User_Employee_Management/login';
 import Registration from './Components/User_Employee_Management/Registration';
 import AdminDashBoard from './Components/Dashboard/AdminDashboard';
 import Navbar from './Components/Navbar/Navbar';
+import AllRestaurantsForUser from './Components/restaurants/all_restaurants/restaurant_views/user/AllRestaurantsForUser';
+import ViewMoreRestaurant from './Components/restaurants/all_restaurants/ViewMoreRestaurant';
 
 
 function App() {
@@ -32,6 +34,13 @@ function App() {
                  <Route path="/registration" element={<Registration />} />
                  <Route path="/admindashboard" element={<AdminDashBoard />} />
                  <Route path="/navbar" element={<Navbar />} />
+                 <Route path="/createrest" element={<AddRoom />} />
+                 <Route
+            path="/restaurants/:id"
+            component={(props) => (
+              <ViewMoreRestaurant {...props} key={window.location.pathname} />
+            )}
+          />
 
 
          </Routes>
