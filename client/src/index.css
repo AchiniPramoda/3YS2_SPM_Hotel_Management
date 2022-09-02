@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  .container1{
+  margin-top: 50px;
+  margin-bottom: 50px;
+    border: 1px solid  #E8861E;
+    border-radius: 2px;
+    width: 500px;
+    height: 600px;
+      display: inline-block;
+      margin-left: 30%;
+      margin-right: auto;
+      text-align: left;
+      background-image: url("./assets/images/6.png");
+    
+    background-size: 100% 100%;
+    
+  }
+  
+  
+  .resturantImage{
+    width: 70px;
+    height: 40px;
+  }
+  .resturantImageadd{
+    width: 100px;
+    height: 60px;
+    margin-left:12%;
+  }
+  .card-title{
+    margin-left: 38%;
+    color: black;
+    font-size: medium;
+  }
+  .form-label{
+    margin-left:10%;
+    font-size: small;
+    font-weight:600;
+  }
+  .form-control{
+    width: 350px;
+    margin-left:10%;
+  }
+  .submitResturant{
+    margin-top: 5%;
+    background-color: #E8861E;
+    border: 1px solid  #E8861E;
+    font-size: small;
+    font-weight: 700;
+    width: 150px;
+    height: 35px;
+    margin-left:35%;
+    border-radius: 6px;
+  
+  
+  }
+  .custom-file{
+    width: 350px;
+    margin-left:10%;
+    font-size: small;
+  }
+  .example1 {
+   height: 300px;
+   width: 1000px;
+    background-image: url("./assets/images/cv.png");
+    background-repeat: no-repeat;
+    background-size:cover;
+    margin-top: 0%;
+    margin-left: 0%;
+  }
+  
