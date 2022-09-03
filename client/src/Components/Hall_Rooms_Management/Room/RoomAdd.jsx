@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import './staff.css';
+import './room.css';
 import  {Alert} from '../alert/message.jsx';
 import RoomValidation from '../validation/RoomValidation.jsx';
 import dummy_image from "../../../assets/images/dummy_image.jpg";

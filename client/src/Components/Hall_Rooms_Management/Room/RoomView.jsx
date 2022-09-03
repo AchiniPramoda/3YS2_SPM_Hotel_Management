@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from "axios"
 import ReactToPrint from 'react-to-print';
-import './StaffView.css';
+import './RoomView.css';
 import Navbar from '../../Navbar/Navbar';
 import RoomActions from './RoomAction';
 

@@ -63,7 +63,7 @@ axios.post("http://localhost:8345/staff/addstaff", staffData )
         <div>
 
 <div >
-    <section class="Staff-form dark">
+    <section class="Staff-form">
         
       <div class="container">
         <form>
@@ -90,7 +90,7 @@ axios.post("http://localhost:8345/staff/addstaff", staffData )
                   <input 
                      
                      type="text"
-                     class="form-control " 
+                     class="form-control" 
                      placeholder="First Name" 
                      aria-label="First Name" 
                      aria-describedby="basic-addon1" 

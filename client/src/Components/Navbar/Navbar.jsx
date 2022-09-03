@@ -1,5 +1,5 @@
 import React from "react";
-import hotel from "../images/hotel.png"
+import hotel from "../../assets/images/hotel.png"
 import "./navbar.css";
 
 function Navbar() {

@@ -5,6 +5,17 @@ import Swal from "sweetalert2";
 import axios from 'axios';
 
 const RoomActions = (props) => {
+
+
+
+   
+    const room = props.room;
+
+    // Function for redirect
+    const updatestaffNavigate = (id) => {
+        window.location = `/updateroom/${id}`;  
+     }
+
     const navigate = useNavigate();
     const room = props.room;
 
@@ -12,6 +23,7 @@ const RoomActions = (props) => {
     const handleClick = (path) => {
         window.location.href = path;
     }
+
 
     // Function for delete vehicle
     const deleteRoom = () => {
@@ -53,7 +65,11 @@ const RoomActions = (props) => {
             {
                 !props.isGen ? <td>
                     <div class="d-flex">
+
+                    <button onClick={() => updatestaffNavigate(room._id)} type="button" class="btn btn-outline-success m-1">Update</button>
+
                     <button onClick={() => handleClick(`updateroom/${room._id}`)} type="button" class="btn btn-outline-success m-1">Update</button>
+
                     <button onClick={deleteRoom} type="button" class="btn btn-outline-danger m-1">Delete</button>
                     </div>
                 </td> : <React.Fragment />
