@@ -1,12 +1,14 @@
 const express = require('express');
 const cloudinary = require('./../utils/cloud');
-const upload = require('./../utils/ImageMulter');
+const upload = require('./../utils/ImageMulter1');
 const router = express.Router();
 
 const Hall= require('./../model/Hall');
 
 router.post('/add', upload.single('hallImage'), async (req, res, next) => {
     
+        console.log(req.file);
+       
         console.log(req.file);
         const result = await cloudinary.uploader.upload(req.file.path, {
              resource_type: "raw", 

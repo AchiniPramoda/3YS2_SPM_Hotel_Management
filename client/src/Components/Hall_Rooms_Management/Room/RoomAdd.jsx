@@ -73,7 +73,7 @@ export default class AddRoom extends React.Component{
        
      if(result.status){
         const formData = new FormData();
-        formData.append('RoomId', this.state.RooId);
+        formData.append('RooId', this.state.RooId);
         formData.append('roomType', this.state.roomType);
         formData.append('beads', this.state.beads);
         formData.append('clients', this.state.clients);
