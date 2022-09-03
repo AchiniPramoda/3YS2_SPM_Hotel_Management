@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate  } from "react-router-dom";
+
 
 import Swal from "sweetalert2";
 import axios from 'axios';
@@ -7,14 +7,13 @@ import axios from 'axios';
 const StaffActions = (props) => {
 
 
-    const history = useNavigate();
+   
     const staff = props.staff;
 
     // Function for redirect
-    const handleClick = (path) => {
-        history.push(path);
-    }
-
+    const updategroupNavigate = (id) => {
+        window.location = `/editstaff/${id}`;  
+     }
     // Function for delete vehicle
     const deleteStaff = () => {
         Swal.fire({
@@ -60,7 +59,7 @@ const StaffActions = (props) => {
             {
                 !props.isGen ? <td>
                     <div class="d-flex">
-                    <button onClick={() => handleClick(`http://localhost:8345/staff/updatestaff/${staff._id}`)} type="button" class="btn btn-outline-success m-1">Update</button>
+                    <button onClick ={ () => updategroupNavigate(staff._id)} type="button" class="btn btn-outline-success m-1">Update</button>
                     <button onClick={deleteStaff} type="button" class="btn btn-outline-danger m-1">Delete</button>
                     </div>
                 </td> : <React.Fragment />
