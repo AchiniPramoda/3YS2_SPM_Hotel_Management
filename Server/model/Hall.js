@@ -2,7 +2,9 @@ const mongoose = require('mongoose');
 const schema = mongoose.Schema;
 
 const Hall = new schema({
-
+    hallID:{
+        type:String,
+    },
     name: {
         type: String,
        
@@ -21,7 +23,7 @@ const Hall = new schema({
     },
     price: {
         type: Number,
-        required:false
+    
     },
     description: {
         type: String,

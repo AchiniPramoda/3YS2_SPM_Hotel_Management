@@ -10,7 +10,7 @@ const RoomActions = (props) => {
 
     // Function for redirect
     const handleClick = (path) => {
-        navigate.push(path);
+        window.location.href = path;
     }
 
     // Function for delete vehicle

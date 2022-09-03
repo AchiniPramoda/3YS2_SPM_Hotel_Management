@@ -4,13 +4,13 @@ const path = require('path');
 module.exports = multer({
     storage : multer.diskStorage({ }),
 
-    fileFilter : (req, file, cb) => {
+    fileFilter : (req, file, ab) => {
         let ext = path.extname(file.originalname);
 
         if(ext !==".png" && ext !==".jpg" && ext !==".jpeg"){
-            cb(new Error("File type is not supported"));
+            ab(new Error("File type is not supported"));
             return;
         }
-       cb(null, file);
+       ab(null, file);
     }    
 })
