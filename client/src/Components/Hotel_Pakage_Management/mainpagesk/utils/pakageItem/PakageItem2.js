@@ -1,12 +1,12 @@
 import React from 'react'
 import BtnRender from './BtnRender2'
 
-function PakageItem2({pakage, isAdmin, deletePakage, handleCheck}) {
+function PakageItem2({pakage, deletePakage, handleCheck}) {
 
     return (
         <div className="pakage_card">
             {
-                isAdmin && <input type="checkbox" checked={pakage.checked}
+             <input type="checkbox" checked={pakage.checked}
                 onChange={() => handleCheck(pakage._id)} />
             }
             <img src={pakage.images.url} alt="" />

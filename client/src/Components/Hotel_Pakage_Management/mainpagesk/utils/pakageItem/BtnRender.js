@@ -1,11 +1,11 @@
 import React, {useContext} from 'react'
 import {Link} from 'react-router-dom'
-import {GlobalState} from '../../../../GlobalState'
+import {GlobalState} from '../../../../../GlobalState'
 
-function BtnRender({pakage, deletePakage}) {
+function BtnRender({pakage}) {
     const state = useContext(GlobalState)
  
-    const addCart = state.userAPI.addCart
+    const addCart = state.sellpackAPI.addCart
 
     
     return (

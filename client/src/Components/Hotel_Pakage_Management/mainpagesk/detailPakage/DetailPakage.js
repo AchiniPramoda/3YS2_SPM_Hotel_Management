@@ -1,13 +1,13 @@
 import React, {useContext, useState, useEffect} from 'react'
 import {useParams, Link} from 'react-router-dom'
-import {GlobalState} from '../../../GlobalState'
+import {GlobalState} from '../../../../GlobalState'
 import PakageItem from '../utils/pakageItem/PakageItem'
 
 function DetailPakage() {
     const params = useParams()
     const state = useContext(GlobalState)
     const [pakages] = state.pakagesAPI.pakages
-    const addCart = state.userAPI.addCart
+    const addCart = state.sellpackAPI.addCart
     const [detailPakage, setDetailPakage] = useState([])
 
     useEffect(() =>{

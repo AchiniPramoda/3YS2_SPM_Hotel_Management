@@ -1,5 +1,5 @@
 import React, {useContext, useState} from 'react'
-import {GlobalState} from '../../../GlobalState'
+import {GlobalState} from '../../../../GlobalState'
 import PakageItem2 from '../utils/pakageItem/PakageItem2'
 import Loading from '../utils/loading/Loading'
 import axios from 'axios'
@@ -9,11 +9,11 @@ import LoadMore from './LoadMore'
 function Pakages2() {
     const state = useContext(GlobalState)
     const [pakages, setPakages] = state.pakagesAPI.pakages
-    //const [isAdmin] = state.userAPI.isAdmin
-   // const [token] = state.token
+  
+ 
     const [callback, setCallback] = state.pakagesAPI.callback
     const [loading, setLoading] = useState(false)
-    const [isCheck, setIsCheck] = useState(false)
+    
 
     const handleCheck = (id) =>{
         pakages.forEach(pakage => {
@@ -26,10 +26,10 @@ function Pakages2() {
         try {
             setLoading(true)
             const destroyImg = axios.post('/api/destroy', {public_id},{
-               // headers: {Authorization: token}
+          
             })
             const deletePakage = axios.delete(`/api/pakages/${id}`, {
-             //   headers: {Authorization: token}
+           
             })
 
             await destroyImg
@@ -41,19 +41,9 @@ function Pakages2() {
         }
     }
 
-    const checkAll = () =>{
-        pakages.forEach(pakage => {
-            pakage.checked = !isCheck
-        })
-        setPakages([...pakages])
-        setIsCheck(!isCheck)
-    }
+   
 
-    const deleteAll = () =>{
-        pakages.forEach(pakage => {
-            if(pakage.checked) deletePakage(pakage._id, pakage.images.public_id)
-        })
-    }
+ 
 
     if(loading) return <div><Loading /></div>
     return (

@@ -1,6 +1,6 @@
 import React, {useState, useContext, useEffect} from 'react'
 import axios from 'axios'
-import {GlobalState} from '../../../GlobalState'
+import {GlobalState} from '../../../../GlobalState'
 import Loading from '../utils/loading/Loading'
 import {useNavigate, useParams} from 'react-router-dom'
 
@@ -21,7 +21,7 @@ function CreatePakage() {
     const [images, setImages] = useState(false)
     const [loading, setLoading] = useState(false)
 
-    const [token] = state.token
+
 
     const history = useNavigate()
     const param = useParams()
@@ -65,7 +65,7 @@ function CreatePakage() {
 
             setLoading(true)
             const res = await axios.post('/api/upload', formData, {
-               // headers: {'content-type': 'multipart/form-data', Authorization: token}
+           
             })
             setLoading(false)
             setImages(res.data)

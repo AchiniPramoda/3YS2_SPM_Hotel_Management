@@ -35,27 +35,26 @@ button{
 }
 
 /* ---------------- Header ------------ */
-@import url("./components/headers/header.css");
+@import url("./Components/Hotel_Pakage_Management/headersk/header.css");
 
 /* ------------- Pakages -------------- */
 
-@import url("./components/mainpages/pakages/pakages.css");
+@import url("./Components/Hotel_Pakage_Management/mainpagesk/pakages/pakages.css");
 
 /* ---------------- Detail Pakage --------------- */
-@import url("./components/mainpages/detailPakage/detailPakage.css");
+@import url("./Components/Hotel_Pakage_Management//mainpagesk/detailPakage/detailPakage.css");
 
 
 /* ------------ Cart ------------------- */
-@import url("./components/mainpages/cart/cart.css");
+@import url("./Components/Hotel_Pakage_Management//mainpagesk/cart/cart.css");
 
-/* --------------- History ------------------- */
-@import url("./components/mainpages/history/history.css");
+
 
 /* ------------------ Categories ------------------ */
-@import url("./components/mainpages/categories/categories.css");
+@import url("./Components/Hotel_Pakage_Management//mainpagesk/categories/categories.css");
 
 /* ------------------- Create Pakage -------------- */
-@import url("./components/mainpages/createPakage/createPakage.css");
+@import url("./Components/Hotel_Pakage_Management/mainpagesk/createPakage/createPakage.css");
 
 /* ----------------- Responsive ------------------ */
 @media (max-width: 820px){
