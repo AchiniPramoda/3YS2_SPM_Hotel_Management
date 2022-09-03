@@ -43,9 +43,8 @@ router.get('/getroom', async (req, res, next) => {
 } );
 
 //get room by id
-router.get('/getroom/:id', async (req, res, next) => {
-    await Room.findById(req.params.
-    id)
+router.get('/getroom/:id', async (req, res) => {
+    await Room.findById(req.params.id)
     .then(room => res.json(room))
     .catch(err => err.json(err.message));
 } );
@@ -54,7 +53,6 @@ router.get('/getroom/:id', async (req, res, next) => {
 router.put('/editroom/:id', upload.single('RoomImage'), async (req, res) => {
 
     try{
-
         const room = await Room.findById(req.params.id);
         if(!room){
             return res.status(404).send("Room not found");
