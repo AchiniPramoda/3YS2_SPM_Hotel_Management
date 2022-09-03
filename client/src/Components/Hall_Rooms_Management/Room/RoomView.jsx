@@ -10,7 +10,7 @@ class AllRoomContainer extends Component {
         super(props);
         this.state = {
             rooms: [],
-            filterdRooms: [],
+            FilterdRoom: [],
             isGen: false
         }
     }
@@ -19,7 +19,7 @@ class AllRoomContainer extends Component {
         axios.get("http://localhost:8345/room/getroom").then(res => {
             this.setState({
                 rooms: res.data,
-                filterdRooms: res.data,
+                FilterdRoom: res.data,
             });
         }).catch(err => {
             console.log(err);
@@ -31,19 +31,18 @@ class AllRoomContainer extends Component {
         this.updateContent();
     }
 
-    // Function for search vehicles
     search = (e) => {
         let searchTag = e.target.value.toLowerCase();
-        let filterdRooms= [];
+        let FilterdRoom= [];
 
         this.state.rooms.forEach(room => {
             if (room.RooId.toLowerCase().includes(searchTag) || room.roomType.toLowerCase().includes(searchTag)) {
-                filterdRooms.push(room)
+                FilterdRoom.push(room)
             }
         })
 
         this.setState({
-            filterdRooms,
+            FilterdRoom,
             searchTag
         });
 
@@ -116,7 +115,7 @@ class AllRoomContainer extends Component {
                                 <tbody>
                                     <React.Fragment>
                                         {
-                                            this.state.filterdRooms.map(room => {
+                                            this.state.FilterdRoom.map(room => {
                                                 return <RoomActions key={room._id} room={room} isGen={this.state.isGen} updateContent={this.updateContent} />
                                             })
                                         }

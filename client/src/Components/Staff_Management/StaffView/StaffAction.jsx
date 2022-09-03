@@ -7,12 +7,12 @@ import axios from 'axios';
 const StaffActions = (props) => {
 
 
-    const history = useNavigate();
+    const  navigate  = useNavigate();
     const staff = props.staff;
 
     // Function for redirect
     const handleClick = (path) => {
-        history.push(path);
+        navigate.push(path);
     }
 
     // Function for delete vehicle
