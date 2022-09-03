@@ -27,7 +27,22 @@ body {
     background-size: 100% 100%;
     
   }
-  
+  .container2{
+    margin-top: 100px;
+    margin-bottom: 50px;
+      border: 1px solid  #E8861E;
+      border-radius: 2px;
+      width: 1400px;
+      height: 900px;
+        display: inline-block;
+        margin-right: auto;
+        margin-left: 60px;
+        text-align: left;
+        background-image: url("./assets/images/6.png");
+      
+      background-size: 100% 100%;
+      
+    }
   
   .resturantImage{
     width: 70px;
@@ -78,5 +93,35 @@ body {
     background-size:cover;
     margin-top: 0%;
     margin-left: 0%;
+  }
+
+  .head{  
+  background-color: white;
+  border: 20px solid #F6DCC5 ;
+  }
+  td{
+  background-color:red;
+  }
+  table {
+    width:50%;
+    background-color:#F6DCC5;
+    border: #E8861E;
+    margin-left: 10px;
+    margin-right: 10px;
+  
+  }
+  
+  .gap{
+    background-color: #E8861E;
+    height: 30px;
+  }
+  .gp{
+    background-color: #F6DCC5;
+    width: 10px;
+  }
+  
+  tbody{
+  background-color:#F6DCC5;
+  border:20px solid #F6DCC5;
   }
   

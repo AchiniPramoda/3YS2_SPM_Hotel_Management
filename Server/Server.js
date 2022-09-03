@@ -2,6 +2,8 @@ const express = require('express');
 const mongoose = require("mongoose");
 const dotenv = require('dotenv');
 const cors = require('cors');
+const path = require("path");
+const fileupload = require("express-fileupload");
 
 dotenv.config();
 
@@ -12,6 +14,7 @@ app.use(express.urlencoded({
     extended : true  
 }));
 app.use(cors());
+app.use(fileupload());
 
 Port = process.env.PORT;
 Url = process.env.URL;
@@ -48,6 +51,8 @@ app.use('/login', login);
 
 const RestaurantManagement = require("./routes/restaurant_management");
 app.use("/api/restaurants", RestaurantManagement);
+
+app.use('/static', express.static(path.join(__dirname, 'public')))
 
 
 

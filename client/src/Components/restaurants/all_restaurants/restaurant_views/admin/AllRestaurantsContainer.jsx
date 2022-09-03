@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
-import { withRouter } from "react-router-dom";
+//import { withRouter } from "react-router-dom";
 import axios from "axios"
 import ReactToPrint from 'react-to-print';
 
 import RestaurantActions from './RestaurantActions';
+
+import "../../../../../../src/index.css";
+import Navbar from "../../../../Navbar/Navbar";
 
 
 class AllRestaurantsContainer extends Component {
@@ -18,7 +21,7 @@ class AllRestaurantsContainer extends Component {
     }
 
     updateContent = () => {
-        axios.get("http://localhost:8080/api/restaurants/").then(res => {
+        axios.get("http://localhost:8345/api/restaurants/").then(res => {
             this.setState({
                 restaurants: res.data,
                 filterdRestaurants: res.data
@@ -57,17 +60,17 @@ class AllRestaurantsContainer extends Component {
 
     render() {
         return (
-
-            <div className="container-fluid mt-5">
+<div> <Navbar />
+            <div className="container2">
                 <div className="row">
-                    <nav class="navbar navbar-light bg-light">
+                    {/* <nav class="navbar navbar-light bg-light">
                         <div class="container-fluid">
                             <div class="d-flex">
                                 <input onChange={(e) => this.search(e)} class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                                 <button class="btn btn-outline-success" type="submit">Search</button>
                             </div>
                         </div>
-                    </nav>
+                    </nav> */}
 
                     {
                         this.state.isGen ? <div className="row text-end">
@@ -93,21 +96,21 @@ class AllRestaurantsContainer extends Component {
                     }
 
                     <div ref={el => (this.componentRef = el)}>
-                        <h3 className={"text-secondary text-center mb-5"}>All Restaurants</h3>
+                        <h3 className={"text-secondary text-center"}>All Restaurants</h3>
                         <div class="table-responsive">
                             <table class="table table-hover text-center">
-                                <thead className={"table-dark"}>
-                                    <tr>
+                                <thead className="head">
+                                    
                                         <th scope="col">Restaurant Name</th>
                                         <th scope="col">Description</th>
                                         <th scope="col">Other</th>
                                         <th scope="col">Image</th>
-
                                         {
                                             !this.state.isGen ? <th scope="col">Actions</th> : <React.Fragment />
                                         }
-                                    </tr>
+                                    
                                 </thead>
+                                <tr className='gap'></tr>
                                 <tbody>
                                     <React.Fragment>
                                         {
@@ -122,10 +125,10 @@ class AllRestaurantsContainer extends Component {
                     </div>
 
                 </div>
-            </div>
+            </div></div>
 
         );
     }
 }
 
-export default withRouter(AllRestaurantsContainer);
+export default AllRestaurantsContainer;

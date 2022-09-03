@@ -25,7 +25,7 @@ class UpdateRestaurant extends Component {
     // Get all Restaurant by id
     componentDidMount() {
 
-        axios.get(`http://localhost:8080/api/restaurants/${this.props.match.params.id}`).then(res => {
+        axios.get(`http://localhost:8345/api/restaurants/${this.props.match.params.id}`).then(res => {
             let p = res.data
             this.setState({
                 docId: p._id,
@@ -90,7 +90,7 @@ class UpdateRestaurant extends Component {
 
                 console.log("formData", this.state);
 
-                axios.put(`http://localhost:8080/api/restaurants/UpdateRestaurant/${this.state.docId}`, formData).then(res => {
+                axios.put(`http://localhost:8345/api/restaurants/UpdateRestaurant/${this.state.docId}`, formData).then(res => {
                     Alert("success", "Done!", "Restaurant Updated Successfully.");
                     this.props.history.push("/admin/restaurants")
 

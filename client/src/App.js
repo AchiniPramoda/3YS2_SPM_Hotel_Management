@@ -12,7 +12,9 @@ import Registration from './Components/User_Employee_Management/Registration';
 import AdminDashBoard from './Components/Dashboard/AdminDashboard';
 import Navbar from './Components/Navbar/Navbar';
 import AllRestaurantsForUser from './Components/restaurants/all_restaurants/restaurant_views/user/AllRestaurantsForUser';
-import ViewMoreRestaurant from './Components/restaurants/all_restaurants/ViewMoreRestaurant';
+//import ViewMoreRestaurant from './Components/restaurants/all_restaurants/ViewMoreRestaurant';
+import CreateRestaurant from './Components/restaurants/create_restaurant/CreateRestaurant';
+import AllRestaurantsContainer from './Components/restaurants/all_restaurants/restaurant_views/admin/AllRestaurantsContainer';
 
 
 function App() {
@@ -34,14 +36,10 @@ function App() {
                  <Route path="/registration" element={<Registration />} />
                  <Route path="/admindashboard" element={<AdminDashBoard />} />
                  <Route path="/navbar" element={<Navbar />} />
-                 <Route path="/createrest" element={<AddRoom />} />
-                 <Route
-            path="/restaurants/:id"
-            component={(props) => (
-              <ViewMoreRestaurant {...props} key={window.location.pathname} />
-            )}
-          />
-
+                 <Route path="/admin/restaurants" element={<CreateRestaurant />} />
+                 <Route path="/admin/ALL" element={<AllRestaurantsContainer />} />
+                 <Route path="/user/ALL" element={<AllRestaurantsForUser />} />
+                 
 
          </Routes>
                      

@@ -12,7 +12,7 @@ class ViewMoreRestaurant extends Component {
 
     // Get all Restaurant by id
     componentDidMount() {
-        axios.get(`http://localhost:8080/api/restaurants/${this.props.match.params.id}`).then(res => {
+        axios.get(`http://localhost:8345/api/restaurants/${this.props.match.params.id}`).then(res => {
             this.setState({ restaurant: res.data });
             console.log(res.data);
         }).catch(err => {

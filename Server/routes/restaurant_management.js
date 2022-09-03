@@ -33,7 +33,7 @@ router.post('/AddRestaurant', async (req, res) => {
 
     let image = req.files.photo;
 
-    let urlPrefix = "http://localhost:8080/static/images";
+    let urlPrefix = "http://localhost:8345/static/images";
     let imageName = Date.now() + "-" + image.name;
 
     image.mv("./public/images/Restaurants/" + imageName, (err, result) => {
@@ -76,7 +76,7 @@ router.put("/UpdateRestaurant/:id", async (req, res) => {
 
         let image = req.files.photo;
 
-        let urlPrefix = "http://localhost:8080/static/images";
+        let urlPrefix = "http://localhost:8345/static/images";
         let imageName = Date.now() + "-" + image.name;
 
         image.mv("./public/images/Restaurants/" + imageName, (err, result) => {

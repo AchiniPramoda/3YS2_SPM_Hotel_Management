@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { withRouter } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+//import { withRouter } from "react-router-dom";
 import axios from "axios";
 import { Alert } from '../../../services/Alert';
 import restaurantValidations from '../../../validations/RestaurantValidations';
@@ -69,7 +70,7 @@ class CreateRestaurant extends Component {
 
                 console.log("formData", this.state);
 
-                axios.post("http://localhost:8080/api/restaurants/AddRestaurant", formData).then(res => {
+                axios.post("http://localhost:8345/api/restaurants/AddRestaurant", formData).then(res => {
                     Alert("success", "Done!", "Restaurant Created Successfully.");
                     this.setState({
                         image: null,
@@ -79,7 +80,7 @@ class CreateRestaurant extends Component {
                         other: "",
                         
                     });
-                    this.props.history.push("/admin/restaurants")
+                    this.props.navigate.push("/admin/restaurants")
                 }).catch(err => {
                     this.handleError(err)
                 })
@@ -163,4 +164,4 @@ class CreateRestaurant extends Component {
     }
 }
 
-export default withRouter(CreateRestaurant);
+export default CreateRestaurant;

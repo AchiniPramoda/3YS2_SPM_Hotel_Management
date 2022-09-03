@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import Swal from "sweetalert2";
 import axios from 'axios';
@@ -8,12 +8,12 @@ import '../../../../../../src/index.css';
 const RestaurantActions = (props) => {
 
 
-    const history = useHistory();
+    const navigate = useNavigate();
     const data = props.restaurant;
 
     // Function for redirect
     const handleClick = (path) => {
-        history.push(path);
+        navigate.push(path);
     }
 
     // Function for delete restaurant
@@ -29,7 +29,7 @@ const RestaurantActions = (props) => {
         }).then((result) => {
 
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:8080/api/restaurants/DeleteRestaurant/${data._id}`)
+                axios.delete(`http://localhost:8345/api/restaurants/DeleteRestaurant/${data._id}`)
                     .then(res => {
                         Swal.fire(
                             'Done!',

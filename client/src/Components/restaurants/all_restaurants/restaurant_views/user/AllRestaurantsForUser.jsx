@@ -13,7 +13,7 @@ class AllRestaurantsForUser extends Component {
 
     // Get all restaurants from datasbase
     componentDidMount() {
-        axios.get("http://localhost:8080/api/restaurants/").then(res => {
+        axios.get("http://localhost:8345/api/restaurants/").then(res => {
             this.setState({ restaurants: res.data });
         }).catch(err => {
             console.log(err);

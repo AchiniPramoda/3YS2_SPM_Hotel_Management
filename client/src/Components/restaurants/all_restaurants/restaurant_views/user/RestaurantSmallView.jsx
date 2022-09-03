@@ -1,12 +1,13 @@
 import React from 'react'
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 const RestaurantSmallView = (props) => {
 
     const single_restaurant = props.restaurant;
     const count = props.count;
 
-    const history = useHistory();
+    const history = useNavigate();
     const handleClick = (path) => {
         history.push(path);
     }
