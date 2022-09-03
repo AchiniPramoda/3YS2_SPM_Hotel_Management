@@ -1,9 +1,10 @@
 import React from "react";
 import axios from "axios";
-import './staff.css';
-import { useParams } from "react-router-dom";
+import './room.css';
 import  {Alert} from '../alert/message.jsx';
 import RoomValidation from '../validation/RoomValidation.jsx';
+
+
 export default class UpdateRoom extends React.Component{
 
     constructor(props) {
@@ -24,11 +25,15 @@ export default class UpdateRoom extends React.Component{
             open:true
         }
     }
-    
-    componentDidMount() {
-        // request to get all the rooms
 
+    
+
+    componentDidMount() {
+        
+        
+        
        
+
         axios.get(`http://localhost:8345/room/getroom/${this.props.match.params.id}`).then(res => {
             let room = res.data;
 
