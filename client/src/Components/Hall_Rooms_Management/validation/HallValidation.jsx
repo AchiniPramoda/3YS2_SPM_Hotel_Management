@@ -2,6 +2,8 @@ import joi from "joi"
 
 const HallValidations = (validation) => {
     const schema = joi.object({
+        hallID : joi.string().required(),
+        
         name: joi.string().required().messages({
             
             "string.base": "Hall Name must be a string",
