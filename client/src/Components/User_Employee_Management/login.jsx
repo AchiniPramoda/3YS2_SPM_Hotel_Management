@@ -1,6 +1,6 @@
 import React from "react";
 import './login.css';
- User_Staff_Management
+
 import Navbar from '../Navbar/Navbar';
 
 
