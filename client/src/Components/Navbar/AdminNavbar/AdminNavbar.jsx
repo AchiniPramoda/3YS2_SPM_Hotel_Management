@@ -7,24 +7,34 @@ function AdminNavbar() {
 
     const [state, setState] = useState({
         menu: false,
-        isOpen: false,
+        isOpen1: false,
+        isOpen2: false,
+        isClosed1: true,
+        isClosed2: true,
+        
         homeLinkClass: "nav-item nav-link",
         aboutLinkClass: "nav-item nav-link",
         menuClass: ""
       });
     
       const toggleMenu = () => {
+        console.log("toggleMenu");
         setState({
           ...state,
           menu: !state.menu
         });
       };
     
-      const toggleOpenstaff = () => setState({ ...state, isOpen: !state.isOpen });
-      const toggleOpenroom = () => setState({ ...state, isOpen: !state.isOpen });
+      const toggleOpenstaff = () => setState({ ...state, isOpen1: !state.isOpen1 });
+      const toggleOpenroom = () => {
+        
+        setState({ ...state, isOpen2: !state.isOpen2 });
+      }
     
-      const show = state.menu ? "show" : "";
-      const menuClass = `dropdown-menu${state.isOpen ? " show" : ""}`;
+      const show1 = state.menu ? "show" : "";
+      const show2 = state.menu ? "show" : "";
+      const menuClass1 = `dropdown-menu${state.isOpen1 ? " show" : ""}`;
+      const menuClass2 = `dropdown-menu${state.isOpen2 ? " show" : ""}`;
     
     return (
 
@@ -50,12 +60,14 @@ function AdminNavbar() {
                   <span class="navbar-toggler-icon"></span>
               </button>
         
-              <div className={"collapse navbar-collapse " + show}>
+       
                     
       
           <ul class="navbar-nav mr-auto px-5 mt-lg-0">
-               
-            <li class="nav-item dropdown">       
+            <div>
+            <li class="nav-item dropdown"> 
+
+            <div className={"collapse navbar-collapse " + show1}>
               <div className="dropdown" onClick={toggleOpenstaff}>
                    <div
                        className="nav-link"
@@ -65,8 +77,8 @@ function AdminNavbar() {
                      >
                          Staff
                      </div>
-                    
-                     <div className={menuClass} aria-labelledby="dropdownMenuButton">
+                <ul>    
+                     <div className={menuClass1} aria-labelledby="dropdownMenuButton">
                        <Link className="dropdown-item" to="/addstaff">
                           Add Staff
                        </Link>
@@ -74,21 +86,26 @@ function AdminNavbar() {
                          View Staff
                        </Link>
                      </div>
+                </ul>
                    </div>
+              </div>
               </li>
-             
-              <li class="nav-item dropdown">       
-                <div className="dropdown" onClick={toggleOpenroom}>
+              </div>
+              <div>
+              <li class="nav-item dropdown">  
+              <div className={"collapse navbar-collapse " + show2}>     
+                <div className="dropdown" >
                    <div
                        className="nav-link"
                        id="dropdownMenuButton"
                        data-toggle="dropdown"
                        aria-haspopup="true"
+                       onClick={toggleOpenroom}
                      >
                          Room
                      </div>
                     
-                     <div className={menuClass} aria-labelledby="dropdownMenuButton">
+                     <div  className={menuClass2}aria-labelledby="dropdownMenuButton">
                        <Link className="dropdown-item" to="/addroom">
                           Add Room
                        </Link>
@@ -97,7 +114,11 @@ function AdminNavbar() {
                        </Link>
                      </div>
                    </div>
+
+              </div>
               </li>
+              </div>
+              
 
                 <li class="nav-item col-sm-2 active">
                       <a class="nav-link" href="/admindashboard">Room<span class="sr-only">(current)</span></a>
@@ -123,7 +144,7 @@ function AdminNavbar() {
              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
              <button type="button" class="btn btn-outline-warning waves-effect">Search</button>
         </form>
-      </div>
+     
     </nav>
         
   </div>

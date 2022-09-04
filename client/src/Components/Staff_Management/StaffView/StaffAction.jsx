@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { useNavigate } from 'react-router-dom';
 
 import Swal from "sweetalert2";
 import axios from 'axios';
@@ -9,7 +9,6 @@ const StaffActions = (props) => {
 
 
    
-    const staff = props.staff;
 
     // Function for redirect
     const updatestaffNavigate = (id) => {

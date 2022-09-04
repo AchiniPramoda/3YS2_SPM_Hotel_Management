@@ -9,7 +9,7 @@ const RoomActions = (props) => {
 
 
    
-    const room = props.room;
+
 
     // Function for redirect
     const updatestaffNavigate = (id) => {
