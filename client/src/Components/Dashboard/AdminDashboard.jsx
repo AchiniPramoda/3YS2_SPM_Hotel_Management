@@ -7,9 +7,6 @@ function AdminDashBoard() {
         <div>
             
             <Navbar />
-
-            
-            
               <div class="card border-success mb-" className="card">
                   <div class="card-header">Header</div>
                     <div class="card-body">
