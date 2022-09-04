@@ -10,10 +10,10 @@
     justify-content: center;
     height: 100%;
     width:100%;
-    box-shadow: 11px 12px 13px 12px #b7b4b4;
+    box-shadow: 11px 12px 13px 12px rgb(207, 207, 207);
     padding-top: 30px;
-    border-radius: 6px; 
-    background-color: hwb(0 98% 2%);
+    border-radius: 65px; 
+    background-color: #f2d6d6;
   }
 /* ----------- Pakage Item ----------------- */
 @import url("../utils/pakageItem/pakageItem.css");
@@ -45,7 +45,6 @@
     width: 90%;
     min-height: -190px;
     overflow: hidden;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -56,12 +55,10 @@
     border: 1px solid hwb(0 4% 95%);
     outline: none;
     height: 40px;
-    background-color:rgb(248, 181, 110);
     padding: 0 5px;
 }
 .filter_menu input{
     flex: 1;
-    background-color:#E8861E;
     margin: 0 10px;
 }
 

@@ -10,7 +10,7 @@ function Pakages2() {
     const state = useContext(GlobalState)
     const [pakages, setPakages] = state.pakagesAPI.pakages
   
- 
+    const [isAdmin] = state.sellpackAPI.isAdmin
     const [callback, setCallback] = state.pakagesAPI.callback
     const [loading, setLoading] = useState(false)
     

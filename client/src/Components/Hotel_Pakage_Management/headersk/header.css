@@ -1,12 +1,13 @@
 header{
-    min-height: 170px;
+    min-height: 120px;
     width: 100%;
     overflow: hidden;
     display: flex;
+    background-color: #130d0d;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    border-bottom: 1px solid rgb(199, 92, 92);
+    border-bottom: 14px solid #130d0d;
 }
 header .logo{
     flex: 1;
@@ -28,7 +29,7 @@ header ul li{
   }
   .photo img {
     width: 100%;
-    height: 150px;
+    height: 180px;
   }
 header ul li:hover{
     opacity: 1;

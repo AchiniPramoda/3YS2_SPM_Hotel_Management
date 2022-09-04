@@ -5,6 +5,8 @@ import Close from './icon/close.svg'
 import Cart from './icon/cart.svg'
 import {Link} from 'react-router-dom'
 import profile from"./icon/kl.png";
+
+import Filters from '../mainpagesk/pakages/Filters'
 function Header() {
     const state = useContext(GlobalState)
     const [cart] = state.sellpackAPI.cart
@@ -27,7 +29,7 @@ function Header() {
           <img src={profile} alt="profile" className="profile"/>
 
 </div>
-</div>
+</div><Filters />
             <ul style={styleMenu}>
               
 
@@ -35,9 +37,10 @@ function Header() {
                     <img src={Close} alt="" width="30" className="menu" />
                 </li>
 
-            </ul>
+            </ul> 
         
             {
+                
               <div className="cart-icon">
                     <span>{cart.length}</span>
                     <Link to="/cart">
@@ -50,8 +53,11 @@ function Header() {
                     
                 </div>
             }
-         
+            
+        
         </header>
+        
+       
     )
 }
 

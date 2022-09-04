@@ -32,7 +32,7 @@
     -webkit-line-clamp: 3;
     height: 70px;
     overflow: hidden;
-    color: #323232;
+    color: hwb(0 9% 91%);
 }
 .row_btn{
     width: 100%;
@@ -41,20 +41,20 @@
     justify-content: space-between;
 }
 .row_btn a{
-    width: 50%;
+    width: 150%;
     text-align: center;
     text-transform: uppercase;
     color: white;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 2px;
-    padding: 6px;
+    padding: 5px;
 }
 #btn_buy{
-    background: #555;
+    background: #E8861E;
     margin-right: 5px;
 }
 #btn_view{
-    background: teal;
+    background: hsl(0, 0%, 5%);
     margin-left: 5px;
 }
 .pakage_card input{

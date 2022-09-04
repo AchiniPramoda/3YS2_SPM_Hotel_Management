@@ -6,6 +6,7 @@ import axios from 'axios'
 import Filters from './Filters'
 import LoadMore from './LoadMore'
 import Header from '../../headersk/Header'
+import Footer from '../../headersk/Footer'
 function Pakages() {
     const state = useContext(GlobalState)
     const [pakages, setPakages] = state.pakagesAPI.pakages
@@ -47,10 +48,10 @@ function Pakages() {
     if(loading) return <div><Loading /></div>
     return (
         <>
+
            <Header />
-        <Filters />
-     
-        
+      
+            <div className="sub-main1">
        
        
 
@@ -61,11 +62,12 @@ function Pakages() {
                      deletePakage={deletePakage} handleCheck={handleCheck} />
                 })
             } 
-        </div>
-
+        </div>  
+</div>     <Footer />
         <LoadMore />
         {pakages.length === 0 && <Loading />}
         </>
+    
     )
 }
 

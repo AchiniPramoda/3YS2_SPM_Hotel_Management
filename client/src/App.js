@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Addstaff from './Components/Staff_Management/AddStaff';
 import ViewStaff from './Components/Staff_Management/ViewStaff';
@@ -12,22 +12,23 @@ import { DataProvider } from '../src/GlobalState'
 import Pakages2 from './Components/Hotel_Pakage_Management/mainpagesk/pakages/Pakages2'
 import NotFound from './Components/Hotel_Pakage_Management/mainpagesk/utils/not_found/NotFound'
 import DetailPakage from './Components/Hotel_Pakage_Management/mainpagesk/detailPakage/DetailPakage';
+import {GlobalState} from '../src/GlobalState'
 
-
-
+import Footer from './Components/Hotel_Pakage_Management/headersk/Footer';
 
 
 
 
 function App() {
-
+  const state = useContext(GlobalState)
     return(
         <BrowserRouter>
     <DataProvider>
 
           <Routes>
               <Route path="/hek" element={<Header />} />
-             
+              <Route path="/k" element={<Footer />} />
+    
                  <Route path="/" exact element={<Pakages/>} />
                  <Route path="/detail/:id"  element={<DetailPakage/>} />
                  <Route path="/category"  element={ <Categories/> } />

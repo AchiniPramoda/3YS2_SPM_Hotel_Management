@@ -2,7 +2,7 @@ import React, {useState, useContext, useEffect} from 'react'
 import axios from 'axios'
 import {GlobalState} from '../../../../GlobalState'
 import Loading from '../utils/loading/Loading'
-import {useNavigate, useParams} from 'react-router-dom'
+import {Link, useNavigate,useHistory,useParams} from 'react-router-dom'
 
 const initialState = {
     pakage_id: '',
@@ -110,9 +110,13 @@ function CreatePakage() {
                 })
             }
             setCallback(!callback)
-            history.push("/")
+            history("/")
         } catch (err) {
             alert(err.response.data.msg)
+        
+        
+        
+        
         }
     }
 
@@ -179,8 +183,9 @@ function CreatePakage() {
                         }
                     </select>
                 </div>
-
+         
                 <button type="submit">{onEdit? "Update" : "Create"}</button>
+
             </form>
         </div>
     )
