@@ -10,12 +10,11 @@ const HallActions = (props) => {
     const history = useNavigate();
     const hall = props.hall;
 
-    // Function for redirect
     const handleClick = (path) => {
         history.push(path);
     }
 
-    // Function for delete vehicle
+    
     const deleteHall = () => {
         Swal.fire({
             title: 'Are you want to delete The Hall',
@@ -28,7 +27,7 @@ const HallActions = (props) => {
         }).then((result) => {
 
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:8345/room/deletehall/${hall._id}`)
+                axios.delete(`http://localhost:8345/hall/deletehall/${hall._id}`)
                     .then(res => {
                         Swal.fire(
                             'Done!',

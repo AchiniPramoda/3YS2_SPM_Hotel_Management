@@ -7,6 +7,7 @@ import axios from 'axios';
 const StaffActions = (props) => {
 
 
+
    
     const staff = props.staff;
 
@@ -14,6 +15,15 @@ const StaffActions = (props) => {
     const updatestaffNavigate = (id) => {
         window.location = `/editstaff/${id}`;  
      }
+    const  navigate  = useNavigate();
+    const staff = props.staff;
+
+    // Function for redirect
+    const handleClick = (path) => {
+        navigate.push(path);
+    }
+
+
     // Function for delete vehicle
     const deleteStaff = () => {
         Swal.fire({

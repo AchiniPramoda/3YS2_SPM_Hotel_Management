@@ -49,7 +49,7 @@ export default class AddHall extends React.Component{
     onFileChange = (e) => {
         
         this.setState({
-            RoomImage:e.target.files[0],
+            hallImage:e.target.files[0],
             fileName:e.target.files[0].name,
            
         })
@@ -61,6 +61,7 @@ export default class AddHall extends React.Component{
         e.preventDefault();
 
         const result = HallValidation({
+            hallID : this.state.hallID,
             name: this.state.name,
             Space: this.state.Space,
             Guest: this.state.Guest,
@@ -75,6 +76,7 @@ export default class AddHall extends React.Component{
        
      if(result.status){
         const formData = new FormData();
+        formData.append('hallID', this.state.hallID);
         formData.append('name', this.state.name);
         formData.append('Space', this.state.Space);
         formData.append('Guest', this.state.Guest);
@@ -125,6 +127,21 @@ export default class AddHall extends React.Component{
                       <div class="card-details">
                        
                         <div class="row">    
+
+                        
+                        <div class="form-group col-sm-6">
+                               <label for="card-holder">Hall  ID</label>
+                 
+                                     <input 
+                                         type="text"
+                                         class="form-control " 
+                                         placeholder="Hall ID" 
+                                         aria-label="Hall ID" 
+                                         aria-describedby="basic-addon1" 
+                                         id="hallID"
+                                         onChange={(e) => this.onChange(e)}
+                                     />
+                          </div>
   
                           <div class="form-group col-sm-6">
                                <label for="card-holder">Hall Name</label>

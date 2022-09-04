@@ -44,9 +44,8 @@ router.get('/getroom', async (req, res, next) => {
 } );
 
 //get room by id
-router.get('/getroom/:id', async (req, res, next) => {
-    await Room.findById(req.params.
-    id)
+router.get('/getroom/:id', async (req, res) => {
+    await Room.findById(req.params.id)
     .then(room => res.json(room))
     .catch(err => err.json(err.message));
 } );
