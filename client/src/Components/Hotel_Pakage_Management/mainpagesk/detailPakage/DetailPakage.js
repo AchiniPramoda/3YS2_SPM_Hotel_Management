@@ -36,7 +36,7 @@ function DetailPakage() {
                     <p>Sold: {detailPakage.sold}</p>
                     <Link to="/cart" className="cart"
                     onClick={() => addCart(detailPakage)}>
-                        Buy Now
+                        BOOK
                     </Link>
                 </div>
             </div>
