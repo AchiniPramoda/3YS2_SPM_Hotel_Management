@@ -12,7 +12,7 @@ const RoomActions = (props) => {
 
     // Function for redirect
     const updatestaffNavigate = (id) => {
-        window.location = `/updateroom/${id}`;  
+        window.location = `/updaterooms/${id}`;  
      }
 
     // Function for delete vehicle

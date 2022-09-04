@@ -74,15 +74,15 @@ router.get("/:id/verify/:token/", async (req, res) => {
 //     }
 // } );
 //get user by id
-// router.get("/:id", async (req, res) => {
-//     try {
-//         const user = await User.findById(req.params.id);
-//         if (!user) return res.status(400).send({ message: "Invalid user id" });
-//         res.status(200).send(user);
-//     } catch (error) {
-//         res.status(500).send({ message: "Internal Server Error" });
-//     }
-// } );
+router.get("/:id", async (req, res) => {
+    try {
+        const user = await User.findById(req.params.id);
+        if (!user) return res.status(400).send({ message: "Invalid user id" });
+        res.status(200).send(user);
+    } catch (error) {
+        res.status(500).send({ message: "Internal Server Error" });
+    }
+} );
 // //update user delete
 // router.put("/:id/delete", async (req, res) => {
 //     try {

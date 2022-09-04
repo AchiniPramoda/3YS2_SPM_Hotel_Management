@@ -17,7 +17,7 @@ import ViewHall from './Components/Hall_Rooms_Management/Hall/HallView/Hallview'
 import AllRoomForUser from './Components/Hall_Rooms_Management/Room/AllRoomView';
 import EmailVerify from './Components/Emailverify/EmailVerify';
 import ProfileView from './Components/User_Employee_Management/ProfileView';
-
+import UpdateRooms from './Components/Hall_Rooms_Management/Room/EditRoom';
 
 function App() {
 
@@ -50,10 +50,10 @@ function App() {
 
 
                   <Route path="/addhall" element={<AddHall />} />
-
+                  <Route path="/updaterooms/:id" element={<UpdateRooms />} />
                  
                           
-                  <Route path="/profileview" element={<ProfileView />} />        
+                  <Route path="/profileview/:id" element={<ProfileView />} />        
 
            
               
