@@ -17,7 +17,7 @@ function BtnRender({pakage}) {
                  
                 </><>
                         <Link id="btn_buy" to="#!" onClick={() => addCart(pakage)}>
-                            Buy
+                            BOOK
                         </Link>
                         <Link id="btn_view" to={`/detail/${pakage._id}`}>
                             View
