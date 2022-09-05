@@ -7,6 +7,7 @@ import Filters from './Filters'
 import LoadMore from './LoadMore'
 import Header from '../../headersk/Header'
 import Footer from '../../headersk/Footer'
+
 function Pakages() {
     const state = useContext(GlobalState)
     const [pakages, setPakages] = state.pakagesAPI.pakages
@@ -51,19 +52,17 @@ function Pakages() {
 
            <Header />
       
-            <div className="sub-main1">
-       
+      
        
 
-        <div className="pakages">
-            {
+         {
                 pakages.map(pakage => {
                     return <PakageItem key={pakage._id} pakage={pakage}
                      deletePakage={deletePakage} handleCheck={handleCheck} />
                 })
             } 
-        </div>  
-</div>     <Footer />
+       
+    <Footer />
         <LoadMore />
         {pakages.length === 0 && <Loading />}
         </>

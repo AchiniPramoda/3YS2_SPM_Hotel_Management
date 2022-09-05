@@ -1,5 +1,5 @@
 .pakages{
-    width: 90%;
+    width: 97.6%;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     justify-items: center;
@@ -34,7 +34,7 @@
     letter-spacing: 1.3px;
 }
 .delete-all button{
-    border: 1px solid crimson;
+    border: 1px solid #040303;
     padding: 10px 25px;
     color: crimson;
     text-transform: uppercase;

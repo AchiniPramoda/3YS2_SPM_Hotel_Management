@@ -6,6 +6,7 @@ import axios from 'axios'
 import Filters from './Filters'
 import LoadMore from './LoadMore'
 import Header from '../../headersk/Header'
+import './pakages1.css';
 function Pakages2() {
     const state = useContext(GlobalState)
     const [pakages, setPakages] = state.pakagesAPI.pakages
@@ -13,7 +14,8 @@ function Pakages2() {
     const [isAdmin] = state.sellpackAPI.isAdmin
     const [callback, setCallback] = state.pakagesAPI.callback
     const [loading, setLoading] = useState(false)
-    
+    const [isCheck, setIsCheck] = useState(false)
+
 
     const handleCheck = (id) =>{
         pakages.forEach(pakage => {
@@ -42,25 +44,44 @@ function Pakages2() {
     }
 
    
+    const checkAll = () =>{
+        pakages.forEach(pakage => {
+            pakage.checked = !isCheck
+        })
+        setPakages([...pakages])
+        setIsCheck(!isCheck)
+    }
 
+    const deleteAll = () =>{
+        pakages.forEach(pakage => {
+            if(pakage.checked) deletePakage(pakage._id, pakage.images.public_id)
+        })
+    }
  
 
     if(loading) return <div><Loading /></div>
     return (
         <>
          <Header></Header>
-        
-       
+      
+         <div className="delete-all">
+                <span>Select all</span>
+                <input type="checkbox" checked={isCheck} onChange={checkAll} />
+                <button onClick={deleteAll}>Delete ALL</button>
+            </div>
 
-        <div className="pakages">
+       <div className="pakages">
+      
+
+        
             {
                 pakages.map(pakage => {
                     return <PakageItem2 key={pakage._id} pakage={pakage}
                    deletePakage={deletePakage} handleCheck={handleCheck} />
                 })
             } 
-        </div>
-
+    
+       </div>
         <LoadMore />
         {pakages.length === 0 && <Loading />}
         </>
@@ -68,5 +89,4 @@ function Pakages2() {
 }
 
 export default Pakages2
-
 
