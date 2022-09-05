@@ -3,17 +3,42 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    border-radius: 60px; 
+    width: 90%;
+    background-color: #e9e9e9;
+    margin: 10px 70px;
     justify-content: space-around;
 }
 .upload{
-    max-width: 450px;
-    height: 500px;
+    max-width: 550px;
+    height: 700px;
     width: 100%;
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin: 20px;
+    border: 2px solid rgb(16, 8, 8);
+    padding: 35px;
+    margin: 10px;
+    top: 10%;
     position: relative;
 }
+.upload1{
+
+    width: 200px;
+    height: 40px;
+    
+
+    color: rgb(7, 7, 7);
+    margin: 30px 600px;
+    text-transform: uppercase;
+    letter-spacing: 20px;
+    font-weight: 800;
+
+    width: 100%;
+    color: rgb(16, 16, 16);
+  min-height: 40px;
+  padding: 0 5px;
+
+
+}
+
 #file_up{
     position: relative;
     width: 100%;
@@ -28,7 +53,7 @@
     top:0;
     left: 0;
     background: white;
-    color: rgb(250, 200, 107);
+    color: rgb(8, 8, 7);
     font-size: 17rem;
     text-align: center;
     cursor: pointer;
@@ -40,7 +65,7 @@
     position: absolute;
     top:0;
     left: 0;
-    background: white;
+    background: rgb(255, 34, 34);
 }
 #file_img img{
     width: 100%;
@@ -62,17 +87,24 @@
 }
 
 .create_pakage form{
-    max-width: 500px;
-    min-width: 290px;
-    width: 100%;
-    margin: 15px 30px;
+    box-shadow: 11px 12px 13px 12px rgb(207, 207, 207);
+    max-width: 600px;
+    min-width: 200px;
+    border-radius: 60px; 
+    width: 90%;
+    background-color: hsl(0, 4%, 75%);
+    margin: 20px 30px;
 }
 .create_pakage form .row{
-    width: 100%;
-    margin: 15px 0;
+    width: 80%;
+    margin: 1px 80px ;
+    
+   box-sizing: border-box;
+    align-items: center;
 }
 .create_pakage form input, textarea{
     width: 100%;
+      color: rgb(16, 16, 16);
     min-height: 40px;
     padding: 0 5px;
 }
@@ -80,7 +112,9 @@
     width: 200px;
     height: 40px;
     background: #555;
+text-align: center;
     color: white;
+    margin: 30px 200px;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 700;

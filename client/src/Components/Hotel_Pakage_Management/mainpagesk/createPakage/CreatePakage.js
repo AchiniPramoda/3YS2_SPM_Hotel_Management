@@ -3,7 +3,8 @@ import axios from 'axios'
 import {GlobalState} from '../../../../GlobalState'
 import Loading from '../utils/loading/Loading'
 import {Link, useNavigate,useHistory,useParams} from 'react-router-dom'
-
+import Header3 from '../../headersk/Header3'
+import Footer from '../../headersk/Footer'
 const initialState = {
     pakage_id: '',
     title: '',
@@ -124,8 +125,23 @@ function CreatePakage() {
         display: images ? "block" : "none"
     }
     return (
+      <div className='kavi'><Header3></Header3>
+       <div className="upload1">
+       <h3>{onEdit? "Update Package" : "Create package"}</h3>
+                
+            </div> 
         <div className="create_pakage">
-            
+    
+
+
+
+
+
+
+
+
+
+
             <div className="upload">
                 <input type="file" name="file" id="file_up" onChange={handleUpload}/>
                 {
@@ -137,11 +153,13 @@ function CreatePakage() {
                     </div>
                 }
                 
-            </div>
+            </div>               
+
 
             <form onSubmit={handleSubmit}>
+               
                 <div className="row">
-                    <label htmlFor="pakage_id">Pakage ID</label>
+                    <label htmlFor="pakage_id">Package ID</label>
                     <input type="text" name="pakage_id" id="pakage_id" required
                     value={pakage.pakage_id} onChange={handleChangeInput} disabled={onEdit} />
                 </div>
@@ -187,6 +205,9 @@ function CreatePakage() {
                 <button type="submit">{onEdit? "Update" : "Create"}</button>
 
             </form>
+   
+            </div>
+            <Footer></Footer>
         </div>
     )
 }
