@@ -62,7 +62,10 @@ class AllRestaurantsContainer extends Component {
         return (
 <div> <Navbar />
             <div className="container2">
+            
                 <div className="row">
+
+                
                     {/* <nav class="navbar navbar-light bg-light">
                         <div class="container-fluid">
                             <div class="d-flex">
@@ -75,9 +78,10 @@ class AllRestaurantsContainer extends Component {
                     {
                         this.state.isGen ? <div className="row text-end">
                             <div className="col">
+                            
                                 {this.getRedirectButton()}
                                 <ReactToPrint
-
+                                    
                                     documentTitle={"All Restaurants"}
                                     onAfterPrint={() => { this.setState({ isGen: false }); }}
                                     trigger={() => {
@@ -96,9 +100,9 @@ class AllRestaurantsContainer extends Component {
                     }
 
                     <div ref={el => (this.componentRef = el)}>
-                        <h3 className={"text-secondary text-center"}>All Restaurants</h3>
-                        <div class="table-responsive">
-                            <table class="table table-hover text-center">
+                    <h3 className={"text-dark text-center"}>All Restaurants</h3>
+                        <div class="table">
+                            <table class="table table-hover text-center ">
                                 <thead className="head">
                                     
                                         <th scope="col">Restaurant Name</th>
@@ -115,11 +119,13 @@ class AllRestaurantsContainer extends Component {
                                     <React.Fragment>
                                         {
                                             this.state.filterdRestaurants.map(res => {
-                                                return <RestaurantActions key={res._id} restaurant={res} isGen={this.state.isGen} updateContent={this.updateContent} />
+                                                return <RestaurantActions key={res._id} restaurant={res} isGen={this.state.isGen} updateContent={this.updateContent}  />
+                                                
                                             })
                                         }
                                     </React.Fragment>
                                 </tbody>
+                                
                             </table>
                         </div>
                     </div>

@@ -23,13 +23,14 @@ class AllRestaurantsForUser extends Component {
     render() {
         return (
 
-            <div className="container mt-5">
+            <div className="container ">
                 <div className="row">
-                    <h3 className={"text-secondary text-center mb-5"}>All Restaurants</h3>
+                    <h3 className={"text-secondary text-center "}>All Restaurants</h3>
                     <React.Fragment>
+                        
                         {
                             this.state.restaurants.map(res => {
-                                return <RestaurantSmallView restaurant={res} count={4} />
+                                return <RestaurantSmallView restaurant={res} count={5} />
                             })
                         }
                     </React.Fragment>
