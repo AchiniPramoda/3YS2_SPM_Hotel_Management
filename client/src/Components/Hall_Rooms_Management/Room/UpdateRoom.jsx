@@ -87,13 +87,13 @@ export default class UpdateRoom extends React.Component{
     }
 
     onFileChange = (e) => {
-        
         this.setState({
             RoomImage:e.target.files[0],
             fileName:e.target.files[0].name,
            
         })
-    }
+    }    
+    
 
 
 
