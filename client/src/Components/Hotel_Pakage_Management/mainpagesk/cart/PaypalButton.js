@@ -1,4 +1,4 @@
-/*import React from 'react';
+import React from 'react';
 import PaypalExpressBtn from 'react-paypal-express-checkout';
  
 export default class PaypalButton extends React.Component {
@@ -10,13 +10,13 @@ export default class PaypalButton extends React.Component {
                     this.props.tranSuccess(payment)
         }
  
-       /* const onCancel = (data) => {
+        const onCancel = (data) => {
             // User pressed "cancel" or close Paypal's popup!
             console.log('The payment was cancelled!', data);
             // You can bind the "data" object's value to your state or props or whatever here, please see below for sample returned data
         }
- */
-       /* const onError = (err) => {
+ 
+        const onError = (err) => {
             // The main Paypal's script cannot be loaded or somethings block the loading of that script!
             console.log("Error!", err);
             // Because the Paypal's main script is loaded asynchronously from "https://www.paypalobjects.com/api/checkout.js"
@@ -56,4 +56,4 @@ export default class PaypalButton extends React.Component {
             style={style} />
         );
     }
-}*/
+}

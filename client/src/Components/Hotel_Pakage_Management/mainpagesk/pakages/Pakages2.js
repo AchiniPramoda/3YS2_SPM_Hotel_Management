@@ -72,7 +72,7 @@ function Pakages2() {
                 <span>Select all</span>
                 <input type="checkbox" checked={isCheck} onChange={checkAll} />
                 <button onClick={deleteAll}>Delete ALL</button>
-                <button><Link to={"/"}>NEW</Link></button>
+           
             </div>
           
             <div className="delete-all2">

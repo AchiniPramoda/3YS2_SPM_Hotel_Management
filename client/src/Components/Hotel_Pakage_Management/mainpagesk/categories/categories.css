@@ -1,35 +1,103 @@
 .categories{
-    max-width: 700px;
+    max-width: 800px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     margin: 30px auto;
+    box-shadow: 11px 12px 13px 12px rgb(207, 207, 207);
+    border-radius: 1px; 
+
 }
 .categories form{
     width: 290px;
     margin-bottom: 20px;
+
+
+
 }
 .categories label{
     display: block;
-
-    letter-spacing: 2px;
+   letter-spacing: 6px;
     text-transform: uppercase;
-    margin-bottom: 10px;
+    margin-left: 50px;
 }
 .categories input, button{
     height: 35px;
     border: none;
     outline: none;
+    margin-left: 50px;
+    margin-right: 200px;
     border-bottom: 1px solid #555;
 }
 .categories input{
     width: 210px;
 }
 .categories button{
-    width: 70px;
-    background: #555;
+    width: 90px;
+    background: #EEA20D;
     color: white;
     margin-left: 10px;
+    height: 50px;
+      margin-bottom: 10px;
+  text-align: center;
+      color: white;
+      margin: 2px 100px;
+      margin-top: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+
+
+
+
+
+
+
+    
+}
+.categories button1{
+    width: 70px;
+
+    background: #126910;
+    color: white;
+
+    height: 50px;
+    
+      text-transform: uppercase;
+
+}
+.kavi h3{
+    width: 700px;
+    margin: 29px 700px;
+
+    color: rgb(12, 11, 11);
+
+    height: 50px;
+    
+      text-transform: uppercase;
+
+}
+
+.categories button2{
+    width: 100px;
+    background: #F14668;
+    color: white;
+    margin-left: 10px;
+      margin-bottom: 10px;
+  text-align: center;
+      color: white;
+
+      text-transform: uppercase;
+      letter-spacing: 2px;
+
+
+
+
+
+
+
+
+    
 }
 .categories .row{
     min-width: 290px;
