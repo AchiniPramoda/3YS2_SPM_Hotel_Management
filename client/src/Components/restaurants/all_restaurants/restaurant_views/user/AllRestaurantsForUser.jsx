@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from "axios"
 
 import RestaurantSmallView from './RestaurantSmallView';
+import Navbar from '../../../../Navbar/Navbar';
 
 class AllRestaurantsForUser extends Component {
     constructor(props) {
@@ -22,7 +23,8 @@ class AllRestaurantsForUser extends Component {
 
     render() {
         return (
-
+<div>
+<Navbar />
             <div className="container ">
                 <div className="row">
                     <h3 className={"text-secondary text-center "}>All Restaurants</h3>
@@ -36,6 +38,7 @@ class AllRestaurantsForUser extends Component {
                     </React.Fragment>
                 </div>
             </div>
+           </div> 
 
         );
     }
