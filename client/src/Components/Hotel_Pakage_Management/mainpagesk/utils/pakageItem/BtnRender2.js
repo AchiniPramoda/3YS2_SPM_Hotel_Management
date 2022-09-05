@@ -9,11 +9,11 @@ function BtnRender2({pakage, deletePakage}) {
             {
              
                 <><>
-                    <Link id="btn_buy" to="#!"
+                    <Link id="btn_buy1" to="#!"
                         onClick={() => deletePakage(pakage._id, pakage.images.public_id)}>
                         Delete
                     </Link>
-                    <Link id="btn_view" to={`/edit_pakage/${pakage._id}`}>
+                    <Link id="btn_view1" to={`/edit_pakage/${pakage._id}`}>
                         Edit
                     </Link>
                 </><>

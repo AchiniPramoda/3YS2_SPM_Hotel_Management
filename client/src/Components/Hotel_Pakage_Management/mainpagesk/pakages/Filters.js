@@ -1,7 +1,7 @@
 
 import React, {useContext} from 'react'
 import {GlobalState} from '../../../../GlobalState'
-
+import {Link} from 'react-router-dom'
 function Filters() {
     const state = useContext(GlobalState)
     const [categories] = state.categoriesAPI.categories
@@ -18,9 +18,11 @@ function Filters() {
     return (
         <div className="filter_menu">
             <div className="kavi">
-       
+           
+
                 <select name="category" value={category} onChange={handleCategory} >
          <option value=''>All Pakages</option>
+      
                     {
                         categories.map(category => (
                             <option value={"category=" + category._id} key={category._id}>
@@ -33,7 +35,6 @@ function Filters() {
 
             <input type="text" value={search} placeholder="Enter your search!"
             onChange={e => setSearch(e.target.value.toLowerCase())} />
-
             <div className="kavi">
                 <span></span>
 

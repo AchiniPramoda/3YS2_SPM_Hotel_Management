@@ -55,14 +55,15 @@ function Pakages() {
       
        
 
-         {
+        <div className="pakages">
+            {
                 pakages.map(pakage => {
                     return <PakageItem key={pakage._id} pakage={pakage}
                      deletePakage={deletePakage} handleCheck={handleCheck} />
                 })
             } 
        
-    <Footer />
+</div>     <Footer />
         <LoadMore />
         {pakages.length === 0 && <Loading />}
         </>

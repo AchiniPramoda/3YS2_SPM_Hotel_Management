@@ -34,12 +34,30 @@
     letter-spacing: 1.3px;
 }
 .delete-all button{
-    border: 1px solid #040303;
+    border: 1px solid #de1818;
     padding: 10px 25px;
-    color: crimson;
+    color: #100e0f;
+    background-color: #F2DCC5;
     text-transform: uppercase;
 }
-
+.delete-all1 button{
+   
+    
+    padding: 10px 25px;
+    color: #100e0f;
+    background-color: #F2DCC5;
+    text-transform: uppercase;
+}.delete-all2 button{
+    width: 300px;
+    height: 40px;
+    background: #555;
+text-align: center;
+    color: white;
+    margin: -55px 600px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
 /* ------------ Filters Menu ----------------- */
 .filter_menu{
     width: 90%;

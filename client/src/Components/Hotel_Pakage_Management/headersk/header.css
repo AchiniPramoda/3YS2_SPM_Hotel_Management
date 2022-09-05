@@ -37,6 +37,16 @@ header ul li:hover{
 .menu{
     display: none;
 }
+.menu1{
+    color: #f8f2ec;
+    font-size: 30px;
+    margin-left: -810px;
+}
+.menu2{
+    color: #f8f2ec;
+    font-size: 20px;
+    margin-right: -255px;
+}
 .cart-icon{
     position: relative;
     margin-right: -451px;
@@ -51,3 +61,16 @@ header ul li:hover{
     padding: 5px 7px;
     font-size: 10px;
 }
+.de button{
+
+
+    flex: 1;
+    background-color:#E8861E;
+  
+}
+.h1{
+  color: aliceblue;
+}
+.h1{
+    color: aliceblue;
+  }

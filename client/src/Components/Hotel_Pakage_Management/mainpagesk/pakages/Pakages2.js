@@ -5,8 +5,9 @@ import Loading from '../utils/loading/Loading'
 import axios from 'axios'
 import Filters from './Filters'
 import LoadMore from './LoadMore'
-import Header from '../../headersk/Header'
+import Header4 from '../../headersk/Header4'
 import './pakages1.css';
+import { Link } from 'react-router-dom'
 function Pakages2() {
     const state = useContext(GlobalState)
     const [pakages, setPakages] = state.pakagesAPI.pakages
@@ -62,12 +63,20 @@ function Pakages2() {
     if(loading) return <div><Loading /></div>
     return (
         <>
-         <Header></Header>
-      
+         <Header4></Header4>
+         <div className="delete-all1">
+                
+
+            </div>
          <div className="delete-all">
                 <span>Select all</span>
                 <input type="checkbox" checked={isCheck} onChange={checkAll} />
                 <button onClick={deleteAll}>Delete ALL</button>
+                <button><Link to={"/"}>NEW</Link></button>
+            </div>
+          
+            <div className="delete-all2">
+                
             </div>
 
        <div className="pakages">
