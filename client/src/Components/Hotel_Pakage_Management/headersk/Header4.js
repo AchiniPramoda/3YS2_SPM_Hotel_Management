@@ -45,9 +45,9 @@ function Header() {
                 
                 <div className="menu2">
               
-                <button className=' '><Link to={"/create_pakage"}>Create pakage</Link></button>
-                <button><Link to={"/category"}>create new catagory</Link></button>
-                <button><Link to={"/"}>Packages</Link></button>
+                <><Link to={"/create_pakage"}>Create_pakage ✥ </Link></>
+                <><Link to={"/category"}>create_catagory✥ </Link></>
+                <><Link to={"/"}>Packages</Link></>
 
             </div>
             }
