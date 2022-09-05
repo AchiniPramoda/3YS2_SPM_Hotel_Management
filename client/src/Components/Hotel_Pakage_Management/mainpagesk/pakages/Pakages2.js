@@ -5,7 +5,7 @@ import Loading from '../utils/loading/Loading'
 import axios from 'axios'
 import Filters from './Filters'
 import LoadMore from './LoadMore'
-
+import Header from '../../headersk/Header'
 function Pakages2() {
     const state = useContext(GlobalState)
     const [pakages, setPakages] = state.pakagesAPI.pakages
@@ -48,7 +48,7 @@ function Pakages2() {
     if(loading) return <div><Loading /></div>
     return (
         <>
-        <Filters />
+         <Header></Header>
         
        
 
