@@ -5,7 +5,7 @@ function SellpackAPI(){
 
     const [cart, setCart] = useState([])
     const [history, setHistory] = useState([])
-    const [isAdmin, setIsAdmin] = useState(false)
+   
    const addCart = async (pakage) => {
       
 
@@ -26,7 +26,7 @@ function SellpackAPI(){
     }
 
     return {
-        isAdmin: [isAdmin, setIsAdmin],
+   
         cart: [cart, setCart],
         addCart: addCart,
         history: [history, setHistory]
