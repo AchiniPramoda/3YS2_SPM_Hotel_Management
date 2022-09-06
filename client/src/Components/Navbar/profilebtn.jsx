@@ -1,37 +1,33 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import {  useParams } from "react-router-dom";
+import {  useParams ,Link} from "react-router-dom";
 import axios from "axios";
 
 
 
 const ProfileNavigate = () => {
 
-
-
-	const param = useParams();
-
-	useEffect(() => {
-		const verifyEmailUrl = async () => {
-			try {
-				const url =`http://localhost:8345/register/${param.id}/verify/${param.token}`;
+	const useEffect = () => {
+		axios.get("http://localhost:8345/register/6316f003d3327daec2608759")
+		.then((res) => {
+			console.log(res.data);
+			window.location.href = "/profileview/"+res.data._id;	
+		})
+		.catch((err) => {
+			console.log(err);
+		})
+	}
 				
-				const { data } = await axios.get(url);
-				console.log(data);
+				
 			
-			} catch (error) {
-				console.log(error);
 			
-			}
-		};
-		verifyEmailUrl();
-	}, [param]);
 
 	return (
 		<React.Fragment>
-			
-            <button onClick={ProfileNavigate}>Profile</button>
-			
+		<button onClick={useEffect}>
+			hghgh
+		</button>
+		   
 			</React.Fragment>
 	);
 };
