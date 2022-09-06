@@ -40,20 +40,19 @@ router.post('/addroom', upload.single('RoomImage'), async (req, res, next) => {
 router.get('/getroom', async (req, res, next) => {
     await Room.find()
     .then(room => res.json(room))
-    .catch(err => err.json(err.message));
+    .catch(err => res.status(400).send("Error : " + err));
 } );
 
 //get room by id
 router.get('/getroom/:id', async (req, res) => {
     await Room.findById(req.params.id)
     .then(room => res.json(room))
-    .catch(err => err.json(err.message));
+    .catch(err => res.status(400).send("Error : " + err));
+    
 } );
 
 //update room by id
 router.put('/editroom/:id', upload.single('RoomImage'), (req, res) => {
-
-  
         Room
         .findByIdAndUpdate(req.params.id) 
         .then(response =>{
@@ -78,18 +77,9 @@ router.put('/editroom/:id', upload.single('RoomImage'), (req, res) => {
     });
 //delete room by id
 router.delete('/deleteroom/:id', async (req, res) => {
-    try{
-        const room = await Room.findById(req.params.id);
-        if(!room){
-            return res.status(404).send("Room not found");
-        }
-        await cloudinary.uploader.destroy(room.cloudinary_id, {resource_type: "raw"});
-        await room.remove();
-        res.json("Room Deleted Successfully...");
-    }
-    catch(err){
-        res.status(400).send("Error : " + err);
-    }
+    await Room.findByIdAndDelete(req.params.id)
+    .then(() => res.json("Room Deleted Successfully..."))
+    .catch(err => err.json(err.message));
 } );
 
 module.exports = router;

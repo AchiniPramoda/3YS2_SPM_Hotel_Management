@@ -25,26 +25,26 @@ const Room = new schema({
     },
     description: {
         type: String,
-        required: true
+       
     },
     facilities: {
         type: String,
-        required: true
+        
     },
     
    RoomImage: {
         type : String,
-        required : true
+       
       
     },
     cloudinary_id: {
         type : String,
-        required : true
+        
       
     },
     fileName: {
         type : String,
-        required : true
+       
     }
 
    

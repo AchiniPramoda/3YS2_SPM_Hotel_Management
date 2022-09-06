@@ -3,6 +3,7 @@ import axios from "axios";
 import "./room.css";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
+import Navbar from "../../Navbar/Navbar";
 
 
 function UpdateRooms () {
@@ -79,6 +80,7 @@ function UpdateRooms () {
 
 
 <div >
+<Navbar />
     <section class="Staff-form dark">
         
       <div class="container">
@@ -194,7 +196,7 @@ function UpdateRooms () {
                 </div>
                 <div class="form-group col-sm-6">
                 <label for="card-holder">Room Image</label>
-                 <input type="file" class="form-control" name="RoomImage" onChange={(e) => this.onFileChange(e)}  />
+                 <input type="file" class="form-control" name="RoomImage" onChange={onFileChange}  />
                 </div>
             
 
