@@ -3,17 +3,17 @@ import {GlobalState} from '../../../../GlobalState'
 import PakageItem2 from '../utils/pakageItem/PakageItem2'
 import Loading from '../utils/loading/Loading'
 import axios from 'axios'
-import Filters from './Filters'
+
 import LoadMore from './LoadMore'
 import Header4 from '../../headersk/Header4'
 import './pakages1.css';
 import Footer from '../../headersk/Footer'
-import { Link } from 'react-router-dom'
+
 function Pakages2() {
     const state = useContext(GlobalState)
     const [pakages, setPakages] = state.pakagesAPI.pakages
   
-    const [isAdmin] = state.sellpackAPI.isAdmin
+  
     const [callback, setCallback] = state.pakagesAPI.callback
     const [loading, setLoading] = useState(false)
     const [isCheck, setIsCheck] = useState(false)

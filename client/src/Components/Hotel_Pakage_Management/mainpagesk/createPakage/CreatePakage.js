@@ -2,7 +2,7 @@ import React, {useState, useContext, useEffect} from 'react'
 import axios from 'axios'
 import {GlobalState} from '../../../../GlobalState'
 import Loading from '../utils/loading/Loading'
-import {Link, useNavigate,useHistory,useParams} from 'react-router-dom'
+import { useNavigate,useParams} from 'react-router-dom'
 import Header3 from '../../headersk/Header3'
 import Footer from '../../headersk/Footer'
 const initialState = {

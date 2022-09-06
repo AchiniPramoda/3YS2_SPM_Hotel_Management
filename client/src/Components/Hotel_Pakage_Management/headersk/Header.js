@@ -17,34 +17,31 @@ function Header() {
 
     return (
        
-       <header>
+           <header>
           
             <div className="menu" onClick={() => setMenu(!menu)}>
-                <img src={Menu} alt="" width="30" />
+            <img src={Menu} alt="" width="30" />
             </div>
          
            
-            <div className="photo">
-           <div className="container-image1">
-          <img src={profile} alt="profile" className="profile"/>
+             <div className="photo">
+             <div className="container-image1">
+             <img src={profile} alt="profile" className="profile"/>
 
 </div>
 </div><Filters />
+          
             <ul style={styleMenu}>
-              
-
-                <li onClick={() => setMenu(!menu)}>
-                    <img src={Close} alt="" width="30" className="menu" />
-                </li>
-
-            </ul> 
+            <li onClick={() => setMenu(!menu)}>
+            <img src={Close} alt="" width="30" className="menu" />
+            </li></ul> 
         
             {
                 
               <div className="cart-icon">
                     <span>{cart.length}</span>
-                    <Link to="/cart">
-                        <img src={Cart} alt="" width="30" />
+                     <Link to="/cart">
+                    <img src={Cart} alt="" width="30" />
 
                         {
                
