@@ -3,7 +3,7 @@ import {  withRouter  } from "react-router-dom";
 import axios from "axios"
 import ReactToPrint from 'react-to-print';
 import './StaffView.css';
-import Navbar from '../../Navbar/Navbar';
+import Navbar from '../../Navbar/AdminNavbar/AdminNavbar';
 import StaffAction from "./StaffAction";
 
 class AllRoomContainer extends Component {

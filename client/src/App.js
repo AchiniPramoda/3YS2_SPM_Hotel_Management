@@ -11,7 +11,7 @@ import Login from './Components/User_Employee_Management/login';
 import Registration from './Components/User_Employee_Management/Registration';
 import AdminDashBoard from './Components/Dashboard/AdminDashboard';
 import Navbar from './Components/Navbar/Navbar';
-
+import ClientDashboard from './Components/Dashboard/ClientDashboard';
 import AddHall from './Components/Hall_Rooms_Management/Hall/AddHalls';
 import ViewHall from './Components/Hall_Rooms_Management/Hall/HallView/Hallview';
 import AllRoomForUser from './Components/Hall_Rooms_Management/Room/AllRoomView';
@@ -53,7 +53,7 @@ function App() {
 
                   <Route path="/addhall" element={<AddHall />} />
                   <Route path="/updaterooms/:id" element={<UpdateRooms />} />
-                 
+                 <Route path="/dashboard" element={<ClientDashboard />} />
                           
                   <Route path="/profileview/:id" element={<ProfileView />} />        
 

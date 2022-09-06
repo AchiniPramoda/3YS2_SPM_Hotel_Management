@@ -9,6 +9,9 @@ const RoomActions = (props) => {
 
     const room = props.room;
    
+
+
+
     // Function for redirect
     const updateRoomNavigate = (id) => {
         window.location = `/updaterooms/${id}`;  

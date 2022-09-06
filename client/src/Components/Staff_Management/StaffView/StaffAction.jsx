@@ -7,9 +7,10 @@ import axios from 'axios';
 const StaffActions = (props) => {
 
 
+
     const history = useNavigate();
     const staff = props.staff;
-   
+
 
     // Function for redirect
     const updatestaffNavigate = (id) => {

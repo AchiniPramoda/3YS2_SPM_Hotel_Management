@@ -43,7 +43,7 @@ router.post("/add", async (req, res) => {
 // 
 router.get("/:id/verify/:token/", async (req, res) => {
 	try {
-		const users = await User.findById({ _id: req.params.id });
+		const users = await User.findOne({ _id: req.params.id });
 		if (!users) return res.status(400).send({ message: "Invalid user link" });
 
 		const token = await Token.findOne({

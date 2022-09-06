@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./staff.css";
 import {  useParams } from "react-router-dom";
+import Navbar from "../Navbar/AdminNavbar/AdminNavbar";
 
 function EditStaff() {
 
@@ -73,6 +74,8 @@ function EditStaff() {
     return(
     <div>
         
+        <Navbar/>
+
         <div >
     <section class="Staff-form dark">
         
