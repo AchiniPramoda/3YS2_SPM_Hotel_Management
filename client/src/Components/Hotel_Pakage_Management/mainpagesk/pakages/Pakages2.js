@@ -7,6 +7,7 @@ import Filters from './Filters'
 import LoadMore from './LoadMore'
 import Header4 from '../../headersk/Header4'
 import './pakages1.css';
+import Footer from '../../headersk/Footer'
 import { Link } from 'react-router-dom'
 function Pakages2() {
     const state = useContext(GlobalState)
@@ -93,8 +94,10 @@ function Pakages2() {
        </div>
         <LoadMore />
         {pakages.length === 0 && <Loading />}
-        </>
+        <Footer></Footer></>
+        
     )
+  
 }
 
 export default Pakages2

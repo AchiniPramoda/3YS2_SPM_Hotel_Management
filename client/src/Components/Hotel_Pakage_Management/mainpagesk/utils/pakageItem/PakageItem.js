@@ -10,7 +10,7 @@ function PakageItem({pakage, deletePakage}) {
 
             <div className="pakage_box">
                 <h2 title={pakage.title}>{pakage.title}</h2>
-                <span>${pakage.price}</span>
+                <span>LKR{pakage.price}</span>
                 <p>{pakage.description}</p>
             </div>
 

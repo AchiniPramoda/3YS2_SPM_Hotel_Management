@@ -65,9 +65,13 @@
 
 #btn_buy1{
     background: #F14668;
-    margin-right: 5px;
+   
+    margin: -15px 20px;
+
 }
 #btn_view1{
     background:#126910;
     margin-left: 5px;
+    margin: -15px 20px;
+
 }

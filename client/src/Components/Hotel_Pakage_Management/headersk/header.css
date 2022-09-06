@@ -45,10 +45,9 @@ header ul li:hover{
 .menu2{
     background-color:burlywood;
     color: #f8f2ec;
-    font-size: 18px;
+    font-size: 15px;
     margin-right: -255px;
-    text-transform: none;
-    text-shadow: #f8f2ec;
+   
     padding: 5px 7px;
 
 }

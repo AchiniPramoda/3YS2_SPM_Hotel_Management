@@ -67,7 +67,7 @@ function Categories() {
                 <button type="submit">{onEdit? "Update" : "Create "}</button>
             </form>
 </div>
-            <div className="col">
+            <div className="col1">
                 {
                     categories.map(category => (
                         <div className="row" key={category._id}>
