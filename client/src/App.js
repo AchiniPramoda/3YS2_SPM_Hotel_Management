@@ -17,6 +17,7 @@ import ViewHall from './Components/Hall_Rooms_Management/Hall/HallView/Hallview'
 import AllRoomForUser from './Components/Hall_Rooms_Management/Room/AllRoomView';
 import EmailVerify from './Components/Emailverify/EmailVerify';
 import ProfileView from './Components/User_Employee_Management/ProfileView';
+import RoomViewMore from './Components/Hall_Rooms_Management/Room/MoreDetailsView';
 import UpdateRooms from './Components/Hall_Rooms_Management/Room/EditRoom';
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
 
 
                  <Route path="/rooms" element={ <AllRoomForUser />}/>
+                  <Route path="/viewmore/:id" element={ <RoomViewMore />}/>
                  <Route exact path="/register/:id/verify/:token/" element={ <EmailVerify />}/>
 
 
