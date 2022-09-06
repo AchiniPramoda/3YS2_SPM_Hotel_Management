@@ -1,14 +1,23 @@
 import React from "react";
 import hotel from "../../assets/images/hotel.png"
 import "./navbar.css";
+import ProfileNavigate from "./profilebtn";
 
 function Navbar() {
+
+     
+     
+
+ 
+     
     return (
 
         <div className="header">
     
        
             <img className="imageheader" src = { hotel } alt="Hotel" />
+
+           <ProfileNavigate/>
         
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -23,11 +32,7 @@ function Navbar() {
                 <li class="nav-item col-sm-2 active">
                       <a class="nav-link" href="/admindashboard">Home <span class="sr-only">(current)</span></a>
                 </li>
-             
-                <li class="nav-item col-sm-2 active">
-                      <a class="nav-link" href="/viewstaff">Staff  <span class="sr-only">(current)</span></a>
-                </li>
-
+                
                 <li class="nav-item col-sm-2 active">
                       <a class="nav-link" href="/admindashboard">Room<span class="sr-only">(current)</span></a>
                 </li>

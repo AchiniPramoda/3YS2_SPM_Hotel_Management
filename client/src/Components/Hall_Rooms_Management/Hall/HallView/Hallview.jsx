@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from "axios"
 import ReactToPrint from 'react-to-print';
 import './HallView.css'
-import Navbar from '../../../Navbar/Navbar';
+import Navbar from '../../../Navbar/AdminNavbar/AdminNavbar';
 import HallAction from './HallAction';
 
 class AllHallContainer extends Component {

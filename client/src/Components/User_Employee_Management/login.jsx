@@ -29,11 +29,11 @@ const Login = () => {
 			}
 			else {			
 					
-			const url = "http://localhost:8345/login/login";
+			const url = "http://localhost:8345/login/login/:id";
 			const { data: res } = await axios.post(url, data);
       console.log(data);
 			localStorage.setItem("token", res.data);
-      window.location = "/admindashboard";
+      window.location = "/dashboard";
 	
 			}
 		} catch (error) {

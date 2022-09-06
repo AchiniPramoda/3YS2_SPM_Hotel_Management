@@ -8,7 +8,7 @@ const StaffActions = (props) => {
 
 
 
-   
+    const staff = props.staff;
 
     // Function for redirect
     const updatestaffNavigate = (id) => {

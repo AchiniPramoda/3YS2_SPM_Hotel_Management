@@ -9,9 +9,11 @@ function AdminNavbar() {
         menu: false,
         isOpen1: false,
         isOpen2: false,
+        isOpen3: false,
         isClosed1: true,
         isClosed2: true,
-        
+        isClosed3: true,
+
         homeLinkClass: "nav-item nav-link",
         aboutLinkClass: "nav-item nav-link",
         menuClass: ""
@@ -26,15 +28,15 @@ function AdminNavbar() {
       };
     
       const toggleOpenstaff = () => setState({ ...state, isOpen1: !state.isOpen1 });
-      const toggleOpenroom = () => {
-        
-        setState({ ...state, isOpen2: !state.isOpen2 });
-      }
+      const toggleOpenroom = () =>  setState({ ...state, isOpen2: !state.isOpen2 });
+      const toggleOpenhall = () =>  setState({ ...state, isOpen3: !state.isOpen3 });
     
       const show1 = state.menu ? "show" : "";
       const show2 = state.menu ? "show" : "";
+      const show3 = state.menu ? "show" : "";
       const menuClass1 = `dropdown-menu${state.isOpen1 ? " show" : ""}`;
       const menuClass2 = `dropdown-menu${state.isOpen2 ? " show" : ""}`;
+      const menuClass3 = `dropdown-menu${state.isOpen3 ? " show" : ""}`;
     
     return (
 
@@ -91,6 +93,7 @@ function AdminNavbar() {
               </div>
               </li>
               </div>
+
               <div>
               <li class="nav-item dropdown">  
               <div className={"collapse navbar-collapse " + show2}>     
@@ -120,13 +123,35 @@ function AdminNavbar() {
               </div>
               
 
-                <li class="nav-item col-sm-2 active">
-                      <a class="nav-link" href="/admindashboard">Room<span class="sr-only">(current)</span></a>
-                </li>
+                
 
-                <li class="nav-item col-sm-2 active">
-                      <a class="nav-link" href="/addhall">Hall<span class="sr-only">(current)</span></a>
-                </li>
+              <div>
+              <li class="nav-item dropdown">  
+              <div className={"collapse navbar-collapse " + show3}>     
+                <div className="dropdown" >
+                   <div
+                       className="nav-link"
+                       id="dropdownMenuButton"
+                       data-toggle="dropdown"
+                       aria-haspopup="true"
+                       onClick={toggleOpenhall}
+                     >
+                         Hall
+                     </div>
+                    
+                     <div  className={menuClass3}aria-labelledby="dropdownMenuButton">
+                       <Link className="dropdown-item" to="/addhall">
+                          Add Hall
+                       </Link>
+                       <Link className="dropdown-item" to="/viewhall">
+                         View Hall
+                       </Link>
+                     </div>
+                   </div>
+
+              </div>
+              </li>
+              </div>
 
                 <li class="nav-item col-sm-2 active">
                       <a class="nav-link" href="/admindashboard">Food <span class="sr-only">(current)</span></a>

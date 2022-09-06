@@ -15,13 +15,15 @@ router.post("/login", async (req, res) => {
 
 		const validPassword = await bcrypt.compare(
 			req.body.password,
-			user.password
+			user.password,
+			req.body.id
 		);
 		if (!validPassword)
 			return res.status(401).send({ message: "Invalid Email or Password" });
 
 		const token = user.generateAuthToken();
-		res.status(200).send({ data: {token:token, type:user.type}, message: "logged in successfully" });
+		console.log(token);
+		res.status(200).send({ data: {token:token, type:user.type, id:user.id}, message: "logged in successfully" });
 	} catch (error) {
 		res.status(500).send({ message: "Internal Server Error" });
         console.log(error);

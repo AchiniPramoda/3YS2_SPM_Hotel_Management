@@ -3,7 +3,7 @@ import axios from "axios";
 import './Hall.css';
 import  {Alert} from '../alert/message.jsx';
 import HallValidation from '../validation/HallValidation.jsx';
-import Navbar from "../../Navbar/Navbar"
+import Navbar from "../../Navbar/AdminNavbar/AdminNavbar";
 
 
 export default class AddHall extends React.Component{
