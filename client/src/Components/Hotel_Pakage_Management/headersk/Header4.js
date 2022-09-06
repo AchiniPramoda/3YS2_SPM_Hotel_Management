@@ -4,7 +4,8 @@ import Menu from './icon/menu.svg'
 import Close from './icon/close.svg'
 import Cart from './icon/cart.svg'
 import {Link} from 'react-router-dom'
-import profile from"./icon/kl.png";
+import profile from"./icon/ad.png";
+import profile1 from"./icon/kli.png";
 import '../headersk/header.css'
 import Filters from '../mainpagesk/pakages/Filters'
 function Header() {
@@ -18,7 +19,7 @@ function Header() {
     return (
        
        <header>
-          
+
             <div className="menu" onClick={() => setMenu(!menu)}>
                 <img src={Menu} alt="" width="30" />
             </div>
@@ -39,7 +40,6 @@ function Header() {
 
             </ul> 
             
-              <div class="menu1">ADMIN</div>
         
             {
                 
@@ -51,7 +51,16 @@ function Header() {
 
             </div>
             }
+
+
             
+              <div className="photo1">
+           <div className="container-image">
+          <img src={profile1} alt="profile" className="profile"/>
+
+</div>
+</div>
+
         
         </header>
         

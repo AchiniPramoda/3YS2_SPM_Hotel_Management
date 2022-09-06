@@ -101,7 +101,7 @@ padding: 10px;
     
 }
 .categories .row{
-    min-width: 290px;
+    min-width: 350px;
     display: flex;
     justify-content: space-between;
     align-items: center;

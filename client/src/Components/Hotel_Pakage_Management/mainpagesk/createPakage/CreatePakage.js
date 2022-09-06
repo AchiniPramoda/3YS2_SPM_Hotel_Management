@@ -111,7 +111,7 @@ function CreatePakage() {
                 })
             }
             setCallback(!callback)
-            history("/")
+            history("/adminpro")
         } catch (err) {
             alert(err.response.data.msg)
         
