@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from "axios"
 
 import RestaurantSmallView from './RestaurantSmallView';
-import Navbar from '../../../../Navbar/Navbar';
+import Navbar from '../../../../Navbar/NavbarResUser';
 
 class AllRestaurantsForUser extends Component {
     constructor(props) {
@@ -26,8 +26,14 @@ class AllRestaurantsForUser extends Component {
 <div>
 <Navbar />
             <div className="container ">
+            <div className='gapTitle'></div>
+            <h6>Elite Hotel offers grandeur extravagance & and unparalleled dining <br></br> experiences. 
+                Serving exotic dishes from around the world, you will be spoilt <br></br> for choice. 
+                Always delighted to cater to your individual needs, we will be glad <br></br> to customize 
+                our menus to your unique preferences.</h6>
+            <div className='gapTitle'></div>
                 <div className="row">
-                    <h3 className={"text-secondary text-center "}>All Restaurants</h3>
+                    
                     <React.Fragment>
                         
                         {

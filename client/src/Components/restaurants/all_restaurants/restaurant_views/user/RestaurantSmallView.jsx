@@ -7,9 +7,9 @@ const RestaurantSmallView = (props) => {
     const single_restaurant = props.restaurant;
     const count = props.count;
 
-    const history = useNavigate();
+    const navigate = useNavigate();
     const handleClick = (path) => {
-        history.push(path);
+        navigate.push(path);
     }
 
     return (
@@ -32,7 +32,7 @@ const RestaurantSmallView = (props) => {
             <div className="row"> <p class="card-text">{single_restaurant.description}</p></div>
                    </div>
         </div>
-        <tr className='gap'></tr>
+        <tr className='gapTitle'></tr>
         </div>
     );
 }

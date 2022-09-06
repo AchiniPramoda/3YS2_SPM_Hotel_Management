@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import axios from 'axios';
 import '../../../../../../src/index.css';
+import { MdEdit ,MdDelete} from "react-icons/md";
 
 const RestaurantActions = (props) => {
 
@@ -53,8 +54,8 @@ const RestaurantActions = (props) => {
             <td><img className="resturantImage" src={data.imageURL}></img></td>
             {
                 !props.isGen ? <td>
-                    <button onClick={() => handleClick(`/admin/restaurants/EditRestaurant/${data._id}`)} type="button" class="btn btn-success m-">Update</button>
-                    <button onClick={deleteRestaurant} type="button" class="btn btn-danger m-1">Delete</button>
+                    <button onClick={() => handleClick(`/admin/restaurants/EditRestaurant/${data._id}`)} className="actions"  ><MdEdit style={{color: '#126910', fontSize: '20px'}}/></button>
+                    <button onClick={deleteRestaurant} type="button" className="actions" ><MdDelete style={{color: '#F07D7D', fontSize: '20px'}}/></button>
                 </td> : <React.Fragment />
             }
         </tr>

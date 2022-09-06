@@ -6,7 +6,8 @@ import ReactToPrint from 'react-to-print';
 import RestaurantActions from './RestaurantActions';
 
 import "../../../../../../src/index.css";
-import Navbar from "../../../../Navbar/Navbar";
+import Navbar from "../../../../Navbar/NavbarResAdmin";
+import { FaRegListAlt, FaPlusCircle } from 'react-icons/fa';
 
 
 class AllRestaurantsContainer extends Component {
@@ -37,7 +38,7 @@ class AllRestaurantsContainer extends Component {
     }
 
     getRedirectButton = () => {
-        return <button type="button" onClick={() => { this.props.history.push("/admin/restaurants/CreateRestaurant") }} class="btn btn-outline-primary m-2">Create Restaurant</button>
+        // return <button type="button" onClick={() => { this.props.history.push("/admin/restaurants/CreateRestaurant") }} className="view1">Create Restaurant</button>
     }
 
     // Function for search Restaurants
@@ -75,8 +76,16 @@ class AllRestaurantsContainer extends Component {
                         </div>
                     </nav> */}
 
+                    
+
+                    <div ref={el => (this.componentRef = el)}>
+                    <tr className='gap'></tr>
+                    <h3 className={"text-dark text-center"}>All Restaurants</h3>
+                    <div className='gapTitle'></div>
+                    <button type="button" onClick={() => { this.props.history.push("/admin/restaurants/CreateRestaurant") }} className="createRes">Create Restaurant <FaPlusCircle style={{color: '#E8861E', fontSize: '20px'}}/></button>
+                    <button type="button" onClick={() => { this.setState({ isGen: true }); }} className="generateRes">Genrate Report <FaRegListAlt style={{color: '#E8861E', fontSize: '20px'}}/></button>
                     {
-                        this.state.isGen ? <div className="row text-end">
+                        this.state.isGen ? <div className="row">
                             <div className="col">
                             
                                 {this.getRedirectButton()}
@@ -85,22 +94,19 @@ class AllRestaurantsContainer extends Component {
                                     documentTitle={"All Restaurants"}
                                     onAfterPrint={() => { this.setState({ isGen: false }); }}
                                     trigger={() => {
-                                        return <button type="button" class="btn btn-primary">Generate PDF Now</button>
+                                        return <button type="button" className="generatePdf">Generate PDF Now</button>
                                     }}
                                     content={() => this.componentRef}
                                 />
-                                <button onClick={() => { this.setState({ isGen: false }); }} type="button" class="btn btn-danger m-2">Cancel</button>
+                                {/* <button onClick={() => { this.setState({ isGen: false }); }} type="button" class="btn btn-danger m-2">Cancel</button> */}
                             </div>
                         </div> : <div className="row text-end">
                             <div className="col">
                                 {this.getRedirectButton()}
-                                <button type="button" onClick={() => { this.setState({ isGen: true }); }} class="btn btn-outline-secondary">Genrate Report</button>
+                                {/* <button type="button" onClick={() => { this.setState({ isGen: true }); }} class="btn btn-outline-secondary">Genrate Report</button> */}
                             </div>
                         </div>
                     }
-
-                    <div ref={el => (this.componentRef = el)}>
-                    <h3 className={"text-dark text-center"}>All Restaurants</h3>
                         <div class="table">
                             <table class="table table-hover text-center ">
                                 <thead className="head">

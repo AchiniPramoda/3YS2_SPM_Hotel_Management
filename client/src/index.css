@@ -33,7 +33,6 @@ body {
     border: 1px solid  #E8861E;
     border-radius: 2px;
     width: 1100px;
-    height: 900px;
     display: inline-block;
     margin-right: auto;
     margin-left: 200px;
@@ -102,7 +101,7 @@ body {
   table {
     width: 50%;
     background-color:#F6DCC5;
-   margin-top: 10%;
+   margin-top: 1%;
 
   
   }
@@ -110,6 +109,10 @@ body {
   .gap{
     background-color: #E8861E;
     height: 30px;
+  }
+
+  .gapTitle{
+    height: 100px;
   }
   .gp{
     background-color: #F6DCC5;
@@ -123,7 +126,7 @@ body {
   
   .card1{
 
-    width:500px;
+    width:450px;
     height: 450px;
     margin-left: 20%;
     background-color: #F6DCC5;
@@ -153,3 +156,56 @@ body {
   .card-img-top{
     height: 300px;
   }
+
+  h6 {
+    text-indent: 50px;
+    text-align: justify;
+    letter-spacing: 2px;
+    margin-left: 20%;
+  }
+  .imageheaderres{
+    width: 1520px;
+    height:450px;
+  }
+
+  .imageheaderresadmin{
+    width: 1520px;
+    height:500px;
+  }
+
+  .createRes{
+    margin-left: 10%;
+    background-color: white;
+    color: rgb(19, 18, 18);
+    border: #E8861E solid 2px;
+    border-radius: 10px;
+    width: 200px;
+    height: 40px;
+}
+.generateRes{
+
+  margin-left: 40%;
+  background-color: white;
+  color: rgb(19, 18, 18);
+  border: #E8861E solid 2px;
+  border-radius: 10px;
+  width: 200px;
+  height: 40px;
+}
+
+.generatePdf{
+
+  margin-left: 68.5%;
+  margin-top: 2%;
+  background-color:#E8861E;
+  color: rgb(19, 18, 18);
+  border: #E8861E solid 2px;
+  border-radius: 10px;
+  width: 200px;
+  height: 40px;
+}
+
+.actions{
+  background-color: transparent;
+  border: transparent;
+}
