@@ -17,7 +17,7 @@ function Navbar() {
        
             <img className="imageheader" src = { hotel } alt="Hotel" />
 
-           <ProfileNavigate/>
+           {/* <ProfileNavigate/> */}
         
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
