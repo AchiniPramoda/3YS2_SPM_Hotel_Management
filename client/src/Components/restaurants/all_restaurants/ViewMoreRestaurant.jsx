@@ -1,56 +1,90 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
+import Navbar from '../../Navbar/NavbarResUser';
+import '../../../../src/index.css';
+function ViewMoreRestaurant () {
 
-class ViewMoreRestaurant extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            restaurant: null
-        }
-    }
+    const [restaurantName, setRestaurantName]= useState('');
+    const [description, setDescription]= useState('');
+    const [other, setOther]= useState('');
+    const [imageURL, setimageURL]= useState();
+    const [FileName, setFileName]= useState('Choose File');
+  
 
 
-    // Get all Restaurant by id
-    componentDidMount() {
-        axios.get(`http://localhost:8345/api/restaurants/${this.props.match.params.id}`).then(res => {
-            this.setState({ restaurant: res.data });
+    const params = useParams();
+
+     const getRestaurantData = () => {
+        axios.get(`http://localhost:8345/api/restaurants/${params.id}`)
+         .then((res) => {
             console.log(res.data);
-        }).catch(err => {
-            console.log(err);
-        });
-    }
+            setRestaurantName(res.data.restaurantName);
+            setDescription(res.data.description);
+            setOther(res.data.other);
+            setimageURL(res.data.imageURL);
+            setFileName(res.data.fileName);
 
+         })
+        }
+        useEffect(() => {
+            getRestaurantData();
+       }, []);
+   
 
-    render() {
+      const onFileChange = (e) => {
+          this.setState({
+              imageURL:e.target.files[0],
+              fileName:e.target.files[0].name,
+             
+          })
+      }  
+
+       
+
+         
+     
+   
         return (
-            <div className="container2">
+            <>
+
+
+            <div >
+            <Navbar />
+            <div className="containerUser">
                 {
-                    this.state.restaurant ? <div class="card mb-3">
-                        <div class="row g-0">
-                            <div class="col-md-5">
-                                <img src={this.state.restaurant.imageURL} class="img-fluid rounded-start" alt="..." />
+                    
+                        <div class="row">
+                            <div class="ccolumn-66">
+                                <img src={imageURL} class="img-fluid rounded-start" alt="..." />
                             </div>
-                            <div class="col-md-7">
-                                <div class="card-body px-5">
-                                    <h3 class="card-title">{this.state.restaurant.restaurantName}</h3>
-                                    <hr />
-                                    <p class="card-text">{this.state.restaurant.description}</p>
-                                    <h4 class="text-primary text-end">description: {this.state.restaurant.description}%</h4>
-                                    <h3 class="text-danger text-end"> {this.state.restaurant.other} /-</h3>
-                                    <div className="row mt-5">
-                                        <div className="text-center">
-                                            <button type="button" class="btn btn-primary">Buy Now</button>
-                                        </div>
-                                    </div>
+                            <div class="row">
+                                
+                                    <h4 className="titleView">{restaurantName}</h4>
+                        
+                                    <p class="titleView">{description}</p>
+                    
+                                    <p class="titleView"> {other} </p>
+                                    
+                                        
+                                            <button type="button" className="viewRes">View Menu</button>
+                                        <br></br>
+                                   
 
                                 </div>
                             </div>
-                        </div>
-                    </div> : <React.Fragment />
+                       
+                   
                 }
             </div>
+            </div>
+   
+  
+        
+        </>
         );
     }
-}
+
 
 export default ViewMoreRestaurant;

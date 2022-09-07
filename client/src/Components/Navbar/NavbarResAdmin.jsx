@@ -1,6 +1,7 @@
 import React from "react";
 import coverresadmin from "../images/coverresadmin.png"
 import "./navbar.css";
+import "../../../src/index.css";
 
 function Navbar() {
     return (
@@ -11,7 +12,7 @@ function Navbar() {
             <img className="imageheaderresadmin" src = { coverresadmin } alt="Hotel" />
         
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        {/* <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
               </button>
@@ -47,11 +48,10 @@ function Navbar() {
             </ul>
     
         <form class="form-inline my-2 my-lg-0">
-             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-             <button type="button" class="btn btn-outline-warning waves-effect">Search</button>
+        <button type="button" className="search">Search Here</button>
         </form>
       </div>
-    </nav>
+    </nav> */}
         
   </div>
     );

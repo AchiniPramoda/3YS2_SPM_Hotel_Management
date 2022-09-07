@@ -20,7 +20,7 @@ const RestaurantSmallView = (props) => {
             <div class="card1">
                 <img src={single_restaurant.imageURL} class="card-img-top" alt={single_restaurant.restaurantName} />
                 
-                                <button className='view' onClick={() => handleClick(`/restaurants/${single_restaurant._id}`)} type="button" >More</button>
+                                <button className='view' ><Link className="link" to={`/restaurants/${single_restaurant._id}`}>More</Link></button>
                            
                                 </div>
                         </div>

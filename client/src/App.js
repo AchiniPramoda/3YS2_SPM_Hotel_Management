@@ -17,7 +17,7 @@ import ViewMoreRestaurant from './Components/restaurants/all_restaurants/ViewMor
 import CreateRestaurant from './Components/restaurants/create_restaurant/CreateRestaurant';
 import AllRestaurantsContainer from './Components/restaurants/all_restaurants/restaurant_views/admin/AllRestaurantsContainer';
 import UpdateRestaurant from './Components/restaurants/update_restaurant/UpdateRestaurant';
-
+import Adminfirst from './Components/restaurants/all_restaurants/restaurant_views/admin/Adminfirst';
 function App() {
 
     return(
@@ -26,8 +26,8 @@ function App() {
 
           <Routes>
 
+                 
                  <Route path="/addstaff" element={<Addstaff />} />
-
                  <Route path="/addroom" element={<AddRoom />} />
                  <Route  path="/updateroom" element={<UpdateRoom />} />
                   <Route path="/viewRoom" element={<ViewRoom />} />
@@ -42,7 +42,7 @@ function App() {
                  <Route path="/user/ALL" element={<AllRestaurantsForUser />} />
                  <Route path="/restaurants/:id" element={<ViewMoreRestaurant />} />
                  <Route path="/admin/restaurants/EditRestaurant/:id" element={<UpdateRestaurant />} />
-                 
+                  <Route path="/admin" element={<Adminfirst />} /> 
                  
                 
          </Routes>

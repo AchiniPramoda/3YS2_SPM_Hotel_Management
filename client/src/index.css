@@ -27,6 +27,27 @@ body {
     background-size: 100% 100%;
     
   }
+  .containerUser{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border: 3px solid  #E8861E;
+    border-radius: 5px;
+    width: 500px;
+    display: inline-block;
+    margin-left: 30%;
+    align-content: center;
+    
+  }
+  .containerAdmin{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 500px;
+    height: 600px;
+    display: inline-block;
+    margin-left: 30%;
+    margin-right: auto;
+    text-align: left;
+  }
   .container2{
     margin-top: 100px;
     margin-bottom: 50px;
@@ -76,7 +97,44 @@ body {
     margin-left:35%;
     border-radius: 6px;
   
-  
+  }
+  .viewRes{
+    margin-top: 5%;
+    background-color: #E8861E;
+    border: 1px solid  #E8861E;
+    font-size: medium;
+    font-weight: 700;
+    width: 150px;
+    height: 50px;
+    margin-left:6%;
+    border-radius: 6px;
+    color: white;
+  }
+  .adminMain{
+    margin-top: 5%;
+    background-color: #E8861E;
+    border: 1px solid  #E8861E;
+    font-size: medium;
+    font-weight: 700;
+    width: 400px;
+    height: 50px;
+    margin-left:25%;
+    border-radius: 6px;
+    color: white;
+    
+  }
+  .search{
+    margin-top: 5%;
+    background-color: #E8861E;
+    border: 1px solid  #E8861E;
+    font-size: medium;
+    font-weight: 700;
+    width: 200px;
+    height: 50px;
+    margin-left:2%;
+    border-radius: 6px;
+    color: white;
+    
   }
   .custom-file{
     width: 350px;
@@ -145,18 +203,32 @@ body {
     padding: 20px;
   }
   .view{
-    margin-left: 35%;
+    margin-left: 32%;
     margin-top: 10%;
     background-color: black;
     color: white;
-    border-radius: 10%;
+    border-radius: 5px;
     width: 150px;
     height: 50px;
   }
   .card-img-top{
     height: 300px;
   }
+  .link {
+    color: #FFF;
+    text-decoration: none;
+  }
+  .link-o {
+    color: #E8861E;
+    text-decoration: none;
+    font-weight: bold;
+  }
 
+  .link-main {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    margin-left: 2%;
+  }
   h6 {
     text-indent: 50px;
     text-align: justify;
@@ -165,12 +237,12 @@ body {
   }
   .imageheaderres{
     width: 1520px;
-    height:450px;
+    height:550px;
   }
 
   .imageheaderresadmin{
     width: 1520px;
-    height:500px;
+    height:550px;
   }
 
   .createRes{
@@ -178,19 +250,45 @@ body {
     background-color: white;
     color: rgb(19, 18, 18);
     border: #E8861E solid 2px;
-    border-radius: 10px;
+    border-radius: 6px;
     width: 200px;
     height: 40px;
+}
+.back{
+  margin-left: 30%;
+  background-color: #F5D7BD;
+  border: #E8861E solid 2px;
+  border-radius: 5px;
+  width: 150px;
+  height: 40px;
+}
+
+.back-center{
+  margin-left: 45%;
+  background-color: #F5D7BD;
+  border: #E8861E solid 2px;
+  border-radius: 5px;
+  width: 150px;
+  height: 40px;
+}
+.viewList{
+  margin-left: 13%;
+  background-color: white;
+  border: #E8861E solid 2px;
+  border-radius: 5px;
+  width: 150px;
+  height: 40px;
 }
 .generateRes{
 
   margin-left: 40%;
   background-color: white;
-  color: rgb(19, 18, 18);
+  color: #E8861E;
   border: #E8861E solid 2px;
   border-radius: 10px;
   width: 200px;
   height: 40px;
+  font-weight: bold;
 }
 
 .generatePdf{
@@ -208,4 +306,10 @@ body {
 .actions{
   background-color: transparent;
   border: transparent;
+}
+
+.titleView{
+  margin-top: 5%;
+margin-left: 6%;
+
 }

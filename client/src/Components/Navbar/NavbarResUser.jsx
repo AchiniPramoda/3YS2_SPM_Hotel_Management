@@ -47,8 +47,7 @@ function Navbar() {
             </ul>
     
         <form class="form-inline my-2 my-lg-0">
-             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-             <button type="button" class="btn btn-outline-warning waves-effect">Search</button>
+        <button type="button" className="search">Search Here</button>
         </form>
       </div>
     </nav>

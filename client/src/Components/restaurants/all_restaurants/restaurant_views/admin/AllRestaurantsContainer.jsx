@@ -8,6 +8,7 @@ import RestaurantActions from './RestaurantActions';
 import "../../../../../../src/index.css";
 import Navbar from "../../../../Navbar/NavbarResAdmin";
 import { FaRegListAlt, FaPlusCircle } from 'react-icons/fa';
+import {MdArrowBackIosNew} from 'react-icons/md';
 
 
 class AllRestaurantsContainer extends Component {
@@ -82,7 +83,7 @@ class AllRestaurantsContainer extends Component {
                     <tr className='gap'></tr>
                     <h3 className={"text-dark text-center"}>All Restaurants</h3>
                     <div className='gapTitle'></div>
-                    <button type="button"  className="createRes"><Link to="/admin/restaurants/CreateRestaurant">Create Restaurant <FaPlusCircle style={{color: '#E8861E', fontSize: '20px'}}/></Link></button>
+                    <button type="button"  className="createRes"><Link className='link-o' to="/admin/restaurants/CreateRestaurant">Create Restaurant <FaPlusCircle style={{color: '#E8861E', fontSize: '20px'}}/></Link></button>
                     <button type="button" onClick={() => { this.setState({ isGen: true }); }} className="generateRes">Genrate Report <FaRegListAlt style={{color: '#E8861E', fontSize: '20px'}}/></button>
                     {
                         this.state.isGen ? <div className="row">
@@ -137,7 +138,13 @@ class AllRestaurantsContainer extends Component {
                     </div>
 
                 </div>
-            </div></div>
+            </div>
+            <div className='row'>
+                <button type="button"  className="back-center"><Link className='link-o'to="/admin"><MdArrowBackIosNew style={{color: '#E8861E', fontSize: '20px'}}/>  Back</Link></button>
+                
+                </div>
+                <tr className='gap'></tr>
+            </div>
 
         );
     }

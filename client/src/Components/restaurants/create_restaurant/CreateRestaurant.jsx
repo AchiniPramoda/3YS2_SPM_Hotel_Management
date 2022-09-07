@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 //import { withRouter } from "react-router-dom";
 import axios from "axios";
 import { Alert } from '../../../services/Alert';
 import restaurantValidations from '../../../validations/RestaurantValidations';
 import dummy_image from "../../../assets/images/dummy_image.jpg";
 import '../../../../src/index.css';
-
+import Navbar from '../../Navbar/NavbarResAdmin';
+import { MdArrowBackIosNew } from "react-icons/md"
+import {BsCardList} from "react-icons/bs"
 class CreateRestaurant extends Component {
     constructor(props) {
         super(props);
@@ -98,10 +100,10 @@ class CreateRestaurant extends Component {
         return (
             
             
-            <div className="container"> 
-            <div className="example1">
-  
-</div>
+             
+            <div >
+   <Navbar />
+
 <div className="container1">
                 
                     <div className="row g-0">
@@ -144,6 +146,7 @@ class CreateRestaurant extends Component {
                                         />
                                     </div>
                                     <label for="other" className="form-label">Image</label>
+                                    <tr className='gap'></tr>
                                     <div class="custom-file mb-3">
                                         <input type="file" class="custom-file-input" id="customFile" name="filename" accept="image/*" onChange={(e) => this.handleChangeFile(e)}></input>
                                         <label class="custom-file-label" for="customFile">Add Image here</label>
@@ -158,7 +161,13 @@ class CreateRestaurant extends Component {
                             </div>
                         </div>
                     </div>
-                </div></div>
+                </div>
+                <div className='row'>
+                <button type="button"  className="back"><Link className='link-o'to="/admin"><MdArrowBackIosNew style={{color: '#E8861E', fontSize: '20px'}}/>  Back</Link></button>
+                <button type="button"  className="viewList"><Link className='link-o'to="/admin/ALL">View List  <BsCardList style={{color: '#E8861E', fontSize: '20px'}}/></Link></button>
+                </div>
+                <tr className='gap'></tr>
+                </div>
             
         );
     }

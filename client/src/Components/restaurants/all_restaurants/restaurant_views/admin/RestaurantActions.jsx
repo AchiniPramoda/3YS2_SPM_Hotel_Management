@@ -20,13 +20,15 @@ const RestaurantActions = (props) => {
     // Function for delete restaurant
     const deleteRestaurant = () => {
         Swal.fire({
-            title: 'Are you want to delete restaurant',
-            text: "Note that ths process can not be revert.",
-            icon: 'warning',
+            title: 'Attention !',
+            text: "Are you sure ,You want to delete this record",
+            
             showCancelButton: true,
-            confirmButtonColor: '#d33',
-            cancelButtonColor: '#3085d6',
-            confirmButtonText: 'Delete'
+            confirmButtonColor: '#126910',
+            cancelButtonColor: '#F14668',
+            confirmButtonText: 'Yes',
+            cancelButtonText: 'No'
+
         }).then((result) => {
 
             if (result.isConfirmed) {
