@@ -38,6 +38,9 @@ function Roomnavbar() {
                 <li class="nav-item col-sm-2 active">
                       <a class="nav-link" href="/admindashboard">Room<span class="sr-only">(current)</span></a>
                 </li>
+                <li class="nav-item col-sm-2 active">
+                      <a class="nav-link" href="/rooms">View<span class="sr-only">(current)</span></a>
+                </li>
 
                 <li class="nav-item col-sm-2 active">
                       <a class="nav-link" href="/addhall">Hall<span class="sr-only">(current)</span></a>

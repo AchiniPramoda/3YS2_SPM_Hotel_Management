@@ -5,6 +5,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import card from './card.css';
 
+import Navbar from "../../Navbar/RoomNavbar"
+
 function Rooms () {
 
     const [room, setRoom]= useState('');
@@ -31,6 +33,9 @@ function Rooms () {
      
 
         return (
+            <div>
+            <Navbar/>
+            <br/>
             <div className="cont">
             <div className="container mt-12">
                 
@@ -69,6 +74,7 @@ function Rooms () {
                         </div>
                     </div> 
               
+            </div>
             </div>
         );
     }
