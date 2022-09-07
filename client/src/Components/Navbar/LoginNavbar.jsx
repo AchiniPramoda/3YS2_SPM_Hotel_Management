@@ -1,10 +1,11 @@
 import React from "react";
+
 import "./navbar.css";
-import ProfileNavigate from "./profilebtn";
+
 import SignIn from "./SignInbtn";
 import SignUp from "./signupbtn";
 
-function Navbar() {
+function LoginNavbar() {
 
      
      
@@ -17,7 +18,7 @@ function Navbar() {
     
         <div className="imageheader" >
              <div className="btngroup1">
-                    <ProfileNavigate/>
+                  
                     <SignIn/>
                      <SignUp/>
               </div>
@@ -34,23 +35,23 @@ function Navbar() {
       
           <ul class="navbar-nav mr-auto px-5 mt-lg-0">
                 <li class="nav-item col-sm-2 active">
-                      <a class="nav-link" href="/admindashboard">Home <span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="/dashboard">Home <span class="sr-only">(current)</span></a>
                 </li>
                 
                 <li class="nav-item col-sm-2 active">
-                      <a class="nav-link" href="/admindashboard">Room<span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="/dashboard">Room<span class="sr-only">(current)</span></a>
                 </li>
 
                 <li class="nav-item col-sm-2 active">
-                      <a class="nav-link" href="/addhall">Hall<span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="/dashboard">Hall<span class="sr-only">(current)</span></a>
                 </li>
 
                 <li class="nav-item col-sm-2 active">
-                      <a class="nav-link" href="/admindashboard">Food <span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="/dashboard">Food <span class="sr-only">(current)</span></a>
                 </li>
 
                 <li class="nav-item col-sm-2 active">
-                      <a class="nav-link" href="/admindashboard">Package <span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="/dashboard">Package <span class="sr-only">(current)</span></a>
                 </li>
 
             </ul>
@@ -66,4 +67,4 @@ function Navbar() {
     );
 }
 
-export default Navbar;
+export default LoginNavbar;

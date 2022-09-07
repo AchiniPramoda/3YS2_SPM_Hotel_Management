@@ -7,26 +7,16 @@ import axios from 'axios';
 const StaffActions = (props) => {
 
 
-
-    const history = useNavigate();
     const staff = props.staff;
 
-
-    // Function for redirect
     const updatestaffNavigate = (id) => {
         window.location = `/editstaff/${id}`;  
      }
    
-   
-
-    
-
-
-    // Function for delete vehicle
     const deleteStaff = () => {
         Swal.fire({
-            title: 'Are you want to delete The Staff member',
-            text: "Note that ths process can not be revert.",
+            title: 'Are you sure, you want to delete the Staff member',
+            text: "Note that this process can not be revert once you press the button.",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#d33',

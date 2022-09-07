@@ -19,6 +19,7 @@ import EmailVerify from './Components/Emailverify/EmailVerify';
 import ProfileView from './Components/User_Employee_Management/ProfileView';
 import RoomViewMore from './Components/Hall_Rooms_Management/Room/MoreDetailsView';
 import UpdateRooms from './Components/Hall_Rooms_Management/Room/EditRoom';
+import UserAdminView from './Components/User_Employee_Management/UserAdminView';
 
 function App() {
 
@@ -56,7 +57,7 @@ function App() {
                  <Route path="/dashboard" element={<ClientDashboard />} />
                           
                   <Route path="/profileview/:id" element={<ProfileView />} />        
-
+                  <Route path="/useradminview" element={<UserAdminView />} />
            
               
 
