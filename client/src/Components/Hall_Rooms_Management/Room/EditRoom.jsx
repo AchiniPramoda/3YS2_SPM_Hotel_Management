@@ -3,7 +3,11 @@ import axios from "axios";
 import "./room.css";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
+
+import  {Alert} from '../alert/message.jsx';
+
 import Navbar from "../../Navbar/AdminNavbar/AdminNavbar";
+
 
 
 function UpdateRooms () {
@@ -17,8 +21,7 @@ function UpdateRooms () {
     const [Facilities, setFacilities]= useState('');
     const [RoomImage, setRoomImage]= useState();
     const [FileName, setFileName]= useState('Choose File');
-    const [Massage, setMassage]= useState('');
-    const [Type, setType]= useState('');
+  
 
 
     const params = useParams();
@@ -27,7 +30,7 @@ function UpdateRooms () {
         axios.get(`http://localhost:8345/room/getroom/${params.id}`)
          .then((res) => {
             console.log(res.data);
-            setRoomID(res.data.RoomId);
+            setRoomID(res.data.RooId);
             setRoomType(res.data.roomType);
             setBeds(res.data.beads);
             setClients(res.data.clients);
@@ -56,10 +59,11 @@ function UpdateRooms () {
          const updateRoom = (e) => {
             e.preventDefault();
 
+            
             let updateRoom = {
-                RoomId: RoomId,
+                RooId: RoomId,
                 roomType: RoomType,
-                beds: Beds,
+                beads: Beds,
                 clients: Clients,
                 price: Price,
                 description: Description,
@@ -70,7 +74,10 @@ function UpdateRooms () {
 
          axios.put(`http://localhost:8345/room/editroom/${params.id}`, updateRoom)
              
-         .then((res) => {console.log(res.data); window.location = '/viewRoom';})
+         .then((res) => {
+          Alert( "success", "Room Added Successfully");
+          console.log(res.data);
+           window.location = '/viewRoom';})
 
             .catch((err) => {console.log(err);})
             }
@@ -80,7 +87,6 @@ function UpdateRooms () {
 
 
 <div >
-<Navbar />
     <section class="Staff-form dark">
         
       <div class="container">
@@ -194,9 +200,9 @@ function UpdateRooms () {
                         onChange={(e) => setFacilities(e.target.value)}
                         />
                 </div>
-                <div class="form-group col-sm-6">
+                <div class="form-group col-sm-12">
                 <label for="card-holder">Room Image</label>
-                 <input type="file" class="form-control" name="RoomImage" onChange={onFileChange}  />
+                 <input type="file" class="form-control" name="RoomImage" onChange={(e) => this.onFileChange(e)}  />
                 </div>
             
 

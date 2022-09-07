@@ -262,7 +262,7 @@ export default class AddHall extends React.Component{
                                           />
                             </div>
 
-                            <div class="form-group col-sm-9">
+                            <div class="form-group col-sm-12">
 
                                     <label for="card-holder">Hall Image</label>
                                        <input 
