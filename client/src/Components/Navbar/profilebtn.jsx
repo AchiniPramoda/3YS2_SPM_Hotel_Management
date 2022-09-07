@@ -1,6 +1,5 @@
 import React from "react";
-import { useEffect, useState } from "react";
-import {  useParams ,Link} from "react-router-dom";
+
 import axios from "axios";
 
 
@@ -24,8 +23,8 @@ const ProfileNavigate = () => {
 
 	return (
 		<React.Fragment>
-		<button onClick={useEffect}>
-			hghgh
+		<button onClick={useEffect} type="button" className="btn btn-outline-warning m-1">
+			Profile
 		</button>
 		   
 		</React.Fragment>

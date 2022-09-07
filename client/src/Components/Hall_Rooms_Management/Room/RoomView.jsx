@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from "axios"
 import ReactToPrint from 'react-to-print';
 import './RoomView.css';
-import Navbar from '../../Navbar/Navbar';
+import Navbar from '../../Navbar/AdminNavbar/AdminNavbar';
 import RoomActions from './RoomAction';
 
 class AllRoomContainer extends Component {

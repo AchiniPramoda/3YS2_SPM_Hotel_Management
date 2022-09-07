@@ -1,6 +1,4 @@
 import React from 'react';
-import { useNavigate  } from "react-router-dom";
-
 import Swal from "sweetalert2";
 import axios from 'axios';
 
@@ -20,8 +18,8 @@ const RoomActions = (props) => {
     // Function for delete vehicle
     const deleteRoom = () => {
         Swal.fire({
-            title: 'Are you want to delete Room',
-            text: "Note that ths process can not be revert.",
+            title: 'Are you sure, you want to delete this Room',
+            text: "Note that this process can not be revert.",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#d33',

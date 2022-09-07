@@ -4,7 +4,7 @@ import './room.css';
 import  {Alert} from '../alert/message.jsx';
 import RoomValidation from '../validation/RoomValidation.jsx';
 import dummy_image from "../../../assets/images/dummy_image.jpg";
-import Navbar from "../../Navbar/Navbar";
+import Navbar from "../../Navbar/AdminNavbar/AdminNavbar";
 export default class AddRoom extends React.Component{
 
     constructor(props) {
@@ -91,7 +91,8 @@ export default class AddRoom extends React.Component{
         .then((res) => {
           console.log("room added");
             Alert( "success", "Room Added Successfully");
-            console.log(res.data);                                                                
+            console.log(res.data);  
+            window.location = "/rooms";                                                              
         }).catch(err => {
             this.handleError(err);
             console.log(err);
