@@ -131,18 +131,7 @@ function CreatePakage() {
                 
             </div> 
         <div className="create_pakage">
-    
-
-
-
-
-
-
-
-
-
-
-            <div className="upload">
+        <div className="upload">
                 <input type="file" name="file" id="file_up" onChange={handleUpload}/>
                 {
                     loading ? <div id="file_img"><Loading /></div>

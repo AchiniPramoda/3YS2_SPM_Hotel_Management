@@ -56,12 +56,13 @@
     
 }
 .categories button1{
-    width: 70px;
+    width: 90px;
 
     background: #126910;
     color: white;
-
-    height: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+ 
     
 padding: 10px;
       text-transform: uppercase;
