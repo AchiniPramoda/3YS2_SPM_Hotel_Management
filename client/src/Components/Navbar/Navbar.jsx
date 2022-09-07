@@ -4,6 +4,7 @@ import ProfileNavigate from "./profilebtn";
 import SignIn from "./SignInbtn";
 import SignUp from "./signupbtn";
 
+
 function Navbar() {
 
      
@@ -15,15 +16,10 @@ function Navbar() {
 
         <div className="header">
     
-<<<<<<< HEAD
-       
-            <img className="imageheader" src = { hotel } alt="Hotel" />
+{/*        
+            <img className="imageheader" src = { hotel } alt="Hotel" /> */}
 
-           {/* <ProfileNavigate/> */}
-        
-
-=======
-        <div className="imageheader" >
+<div className="imageheader" >
              <div className="btngroup1">
                     <ProfileNavigate/>
                     <SignIn/>
@@ -31,8 +27,7 @@ function Navbar() {
               </div>
             {/* <img className="imageheader" src = { hotel } alt="Hotel" /> */}
             </div>
-            
->>>>>>> e9b0278fa448231a35169f92c0be9ed2f12feaf8
+
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>

@@ -4,33 +4,45 @@ import Navbar from "../Navbar/Navbar";
 import axios from "axios";
 import { useParams } from 'react-router-dom';
 
+
+
+
+
+
+
 function ProfileView() {
 
   
-
   const [firstName, setfirstName] = useState("");
   const [lastName, setlastName] = useState("");
   const [email, setemail] = useState("");
   const [city, setcity] = useState("");
+ 
    
 
   const params = useParams();
 
 
-  useEffect(() => {
-      async function fetchData(){
-          const users = (await axios.get(`http://localhost:8345/register/${params.id}`)).data;
-          setfirstName(users.firstName);
-          setlastName(users.lastName); 
-          setemail(users.email); 
-          setcity(users.city);  
-          // setphone("0"+customer.pNo);    
+const userEdit = () => {
+      
+          axios.get(`http://localhost:8345/register/${params.id}`)
+          .then((users) => {
+          console.log(users.data);
+          setfirstName(users.data.firstName);
+          setlastName(users.data.lastName);
+          setemail(users.data.email);
+          setcity(users.data.city);
       }
+      )
+  }
+          // setphone("0"+customer.pNo);    
+
  
-      fetchData();
-  })
 
 
+  useEffect(() => {
+      userEdit();
+  }, []);
   
 
 
@@ -69,13 +81,13 @@ function ProfileView() {
          
                  <div class="card-details">
                    
-                    <div class="pronames">First Name  : <input className="form-control" type="text" onChange={(e) => setfirstName(e.target.value)} value={firstName}/>  </div>
+                    <div class="pronames">First Name  : <input className="form-control" id ="firstName "type="text" onChange={(e) => setfirstName(e.target.value)} value={firstName}/>  </div>
                    
-                    <div class="pronames">Last Name   : <input className="form-control" type="text" onChange={(e) => setlastName(e.target.value)} value={lastName}/></div>
+                    <div class="pronames">Last Name   : <input className="form-control" id ="lastName"type="text" onChange={(e) => setlastName(e.target.value)} value={lastName}/></div>
 
-                    <div class="pronames">E-mail      : <input className="form-control" type="text" onChange={(e) => setemail(e.target.value)} value={email}/></div>
+                    <div class="pronames">E-mail      : <input className="form-control" id= "email"type="text" onChange={(e) => setemail(e.target.value)} value={email}/></div>
 
-                    <div class="pronames">City        : <input className="form-control" type="text" onChange={(e) => setcity(e.target.value)} value={city} /></div>
+                    <div class="pronames">City        : <input className="form-control" id ="city"type="text" onChange={(e) => setcity(e.target.value)} value={city} /></div>
                    
                     {/* <div class="pronames">Password    : <input className="form-control" type="text" onChange={(e) => setfirstName(e.target.value)} value={firstName} disabled/></div> */}
                     

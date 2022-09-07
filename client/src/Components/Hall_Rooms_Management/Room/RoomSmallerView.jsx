@@ -8,7 +8,7 @@ const RoomSmallView = (props) => {
 
     const history = useNavigate();
     const handleClick = (path) => {
-        history.push(path);
+        window.location.href = path;
     }
 
     return (
@@ -32,7 +32,7 @@ const RoomSmallView = (props) => {
                     <div class="card-footer">
                         <div class="row text-center">
                             <div className="col-6">
-                                <button onClick={() => handleClick(`/vehicles/${room._id}`)} type="button" class="btn btn-outline-warning">View</button>
+                                <button onClick={() => handleClick(`/viewmore/${room._id}`)} type="button" class="btn btn-outline-warning">View</button>
                             </div>
                             <div className="col-6">
                                 <button onClick={() => handleClick(`/vehicles/${room._id}`)} type="button" class="btn btn-outline-dark">Rent</button>

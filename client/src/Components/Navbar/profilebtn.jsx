@@ -7,14 +7,11 @@ import axios from "axios";
 const ProfileNavigate = () => {
 
 	const useEffect = () => {
-		axios.get("http://localhost:8345/register/6316f003d3327daec2608759")
-		.then((res) => {
-			console.log(res.data);
-			window.location.href = "/profileview/"+res.data._id;	
-		})
-		.catch((err) => {
-			console.log(err);
-		})
+		
+		
+			window.location.href = "/profileview/6316f003d3327daec2608759";	
+		
+		
 	}
 				
 				
