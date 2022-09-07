@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-
-import { withRouter } from "react-router-dom";
-
+import Container  from "react-bootstrap/Container";
 import axios from "axios"
+import { useParams } from "react-router-dom";
 import { Alert } from '../../../services/Alert'
 import restaurantValidations from "../../../validations/RestaurantValidations"
 import dummy_image from "../../../assets/images/dummy_image.jpg"
@@ -14,7 +13,6 @@ class UpdateRestaurant extends Component {
             image: null,
             docId: "",
             name: "",
-            //id: "",
             other: "",
             description: "",
             //description: "",
@@ -23,9 +21,10 @@ class UpdateRestaurant extends Component {
     }
 
     // Get all Restaurant by id
-    componentDidMount() {
-
-        axios.get(`http://localhost:8345/api/restaurants/${this.props.match.params.id}`).then(res => {
+    Component1 = () => {
+        const params = useParams();
+    
+        axios.get(`http://localhost:8345/api/restaurants/${params.id}`).then(res => {
             let p = res.data
             this.setState({
                 docId: p._id,
@@ -34,7 +33,6 @@ class UpdateRestaurant extends Component {
                     raw: null,
                 },
                 name: p.restaurantName,
-                id: p.restaurantId,
                 other: p.other,
                 description: p.description,
                 //description: p.description,
@@ -82,7 +80,6 @@ class UpdateRestaurant extends Component {
                 const formData = new FormData();
                 formData.append("photo", this.state.image.raw);
                 formData.set("restaurantName", this.state.name);
-                //formData.set("restaurantId", this.state.id);
                 formData.set("description", this.state.description);
                 formData.set("other", this.state.other);
                 //formData.set("description", this.state.description);
@@ -109,6 +106,7 @@ class UpdateRestaurant extends Component {
 
     render() {
         return (
+            <Container>
             <div className="container">
                 <div className="card mb-3 mt-5">
                     <div className="row g-0">
@@ -170,9 +168,9 @@ class UpdateRestaurant extends Component {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div></Container>
         );
     }
 }
 
-export default withRouter(UpdateRestaurant);
+export default UpdateRestaurant;

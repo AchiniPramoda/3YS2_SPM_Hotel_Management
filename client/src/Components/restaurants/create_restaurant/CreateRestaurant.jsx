@@ -80,7 +80,7 @@ class CreateRestaurant extends Component {
                         other: "",
                         
                     });
-                    this.props.navigate.push("/admin/restaurants")
+                    //this.props.navigate.push("/admin/restaurants")
                 }).catch(err => {
                     this.handleError(err)
                 })

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from "react-router-dom";
+import { useNavigate ,Link} from "react-router-dom";
 
 import Swal from "sweetalert2";
 import axios from 'axios';
@@ -9,12 +9,12 @@ import { MdEdit ,MdDelete} from "react-icons/md";
 const RestaurantActions = (props) => {
 
 
-    const navigate = useNavigate();
+    const history = useNavigate();
     const data = props.restaurant;
 
     // Function for redirect
     const handleClick = (path) => {
-        navigate.push(path);
+        history.push(path);
     }
 
     // Function for delete restaurant
@@ -54,7 +54,7 @@ const RestaurantActions = (props) => {
             <td><img className="resturantImage" src={data.imageURL}></img></td>
             {
                 !props.isGen ? <td>
-                    <button onClick={() => handleClick(`/admin/restaurants/EditRestaurant/${data._id}`)} className="actions"  ><MdEdit style={{color: '#126910', fontSize: '20px'}}/></button>
+                    <button  className="actions" type="button"  ><Link to={`/admin/restaurants/EditRestaurant/${data._id}`}><MdEdit style={{color: '#126910', fontSize: '20px'}}/></Link></button>
                     <button onClick={deleteRestaurant} type="button" className="actions" ><MdDelete style={{color: '#F07D7D', fontSize: '20px'}}/></button>
                 </td> : <React.Fragment />
             }

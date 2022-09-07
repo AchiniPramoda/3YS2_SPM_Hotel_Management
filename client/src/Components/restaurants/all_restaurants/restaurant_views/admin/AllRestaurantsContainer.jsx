@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-//import { withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios"
 import ReactToPrint from 'react-to-print';
 
@@ -82,7 +82,7 @@ class AllRestaurantsContainer extends Component {
                     <tr className='gap'></tr>
                     <h3 className={"text-dark text-center"}>All Restaurants</h3>
                     <div className='gapTitle'></div>
-                    <button type="button" onClick={() => { this.props.history.push("/admin/restaurants/CreateRestaurant") }} className="createRes">Create Restaurant <FaPlusCircle style={{color: '#E8861E', fontSize: '20px'}}/></button>
+                    <button type="button"  className="createRes"><Link to="/admin/restaurants/CreateRestaurant">Create Restaurant <FaPlusCircle style={{color: '#E8861E', fontSize: '20px'}}/></Link></button>
                     <button type="button" onClick={() => { this.setState({ isGen: true }); }} className="generateRes">Genrate Report <FaRegListAlt style={{color: '#E8861E', fontSize: '20px'}}/></button>
                     {
                         this.state.isGen ? <div className="row">

@@ -23,7 +23,7 @@ class ViewMoreRestaurant extends Component {
 
     render() {
         return (
-            <div className="container mt-5">
+            <div className="container2">
                 {
                     this.state.restaurant ? <div class="card mb-3">
                         <div class="row g-0">

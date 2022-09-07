@@ -1,15 +1,15 @@
 import React from 'react'
-import { useNavigate } from "react-router-dom";
+import { useNavigate ,Link } from "react-router-dom";
 
 
 const RestaurantSmallView = (props) => {
 
     const single_restaurant = props.restaurant;
-    const count = props.count;
+    //const count = props.count;
 
-    const navigate = useNavigate();
+    const history = useNavigate();
     const handleClick = (path) => {
-        navigate.push(path);
+        history.push(path);
     }
 
     return (

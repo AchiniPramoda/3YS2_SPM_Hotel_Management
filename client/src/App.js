@@ -1,6 +1,7 @@
 import React from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Addstaff from './Components/Staff_Management/AddStaff';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import AddRoom from './Components/Hall_Rooms_Management/Room/RoomAdd';
 import UpdateRoom from './Components/Hall_Rooms_Management/Room/UpdateRoom';
@@ -15,7 +16,7 @@ import AllRestaurantsForUser from './Components/restaurants/all_restaurants/rest
 import ViewMoreRestaurant from './Components/restaurants/all_restaurants/ViewMoreRestaurant';
 import CreateRestaurant from './Components/restaurants/create_restaurant/CreateRestaurant';
 import AllRestaurantsContainer from './Components/restaurants/all_restaurants/restaurant_views/admin/AllRestaurantsContainer';
-
+import UpdateRestaurant from './Components/restaurants/update_restaurant/UpdateRestaurant';
 
 function App() {
 
@@ -36,12 +37,14 @@ function App() {
                  <Route path="/registration" element={<Registration />} />
                  <Route path="/admindashboard" element={<AdminDashBoard />} />
                  <Route path="/navbar" element={<Navbar />} />
-                 <Route path="/admin/restaurants" element={<CreateRestaurant />} />
+                 <Route path="/admin/restaurants/CreateRestaurant" element={<CreateRestaurant />} />
                  <Route path="/admin/ALL" element={<AllRestaurantsContainer />} />
                  <Route path="/user/ALL" element={<AllRestaurantsForUser />} />
-                 <Route path="/restaurants/${single_restaurant._id}" element={<ViewMoreRestaurant />} />
+                 <Route path="/restaurants/:id" element={<ViewMoreRestaurant />} />
+                 <Route path="/admin/restaurants/EditRestaurant/:id" element={<UpdateRestaurant />} />
                  
-
+                 
+                
          </Routes>
                      
 

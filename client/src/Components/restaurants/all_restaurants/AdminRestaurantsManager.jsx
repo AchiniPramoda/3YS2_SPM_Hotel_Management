@@ -7,7 +7,7 @@ import {
 
 import CreateRestaurant from "../create_restaurant/CreateRestaurant";
 import UpdateRestaurant from '../update_restaurant/UpdateRestaurant';
-import AllRestaurantsContainer from './restaurant_views/admin/AllRestaurantsContainer';
+//import AllRestaurantsContainer from './restaurant_views/admin/AllRestaurantsContainer';
 
 const AdminRestaurantsManager = () => {
     return (<React.Fragment>
@@ -24,7 +24,7 @@ const AdminRestaurantsManager = () => {
                 </Route>
                 <Route path="/">
                     <AllRestaurantsContainer />
-                </Route>
+                </Route> 
             </Switch>
         </Router>
     </React.Fragment>);
