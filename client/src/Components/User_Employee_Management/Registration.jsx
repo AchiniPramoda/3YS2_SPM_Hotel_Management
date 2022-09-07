@@ -2,6 +2,7 @@ import React from "react";
 import './login.css';
 import axios from "axios";
 import { useState } from "react";
+import LoginNavbar from "../Navbar/LoginNavbar";
 
 const Signup = () => {
 	const [data, setData] = useState({
@@ -45,6 +46,8 @@ const Signup = () => {
 
     return (
         <div>
+
+            <LoginNavbar/>
 
 <section class="login-form dark">
         

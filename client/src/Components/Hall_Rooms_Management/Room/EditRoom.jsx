@@ -3,7 +3,11 @@ import axios from "axios";
 import "./room.css";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
+
 import  {Alert} from '../alert/message.jsx';
+
+import Navbar from "../../Navbar/AdminNavbar/AdminNavbar";
+
 
 
 function UpdateRooms () {

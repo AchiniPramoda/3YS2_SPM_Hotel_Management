@@ -1,9 +1,7 @@
 import React from "react";
 import './login.css';
 
-import Navbar from '../Navbar/Navbar';
-
-
+import Navbar from '../Navbar/LoginNavbar';
 import { useState } from "react";
 import axios from "axios";
 
@@ -22,10 +20,10 @@ const Login = () => {
 		  
 			  console.log(data);
 		  
-			  if (data.email == "achinichandrasena38@gmail.com" && data.password == "#99Admin#") {
+			  if (data.email === "achinichandrasena38@gmail.com" && data.password === "#99Admin#") {
 				localStorage.setItem("UsID", "ADMIN");
 				alert("Login As Admin..");
-				window.location = "/";	
+				window.location = "/admindashboard";	
 			}
 			else {			
 					
@@ -76,14 +74,14 @@ const Login = () => {
                 {/* For Input fields that wants column  */}
             
               <div class="form-group col-sm-10">
-                <label for="card-holder">Email</label>
+                <label for="card-holder">E-mail</label>
      
                   <input 
                      
                      type="text"
                      class="form-control " 
-                     placeholder="Email" 
-                     aria-label="Email" 
+                     placeholder="E-mail" 
+                     aria-label="E-mail" 
                      aria-describedby="basic-addon1" 
                      name="email"
                      id="email"

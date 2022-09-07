@@ -1,6 +1,17 @@
 .imageheader{
     width: 100%;
-    height: 200px;
+    height: 250px;
     background-repeat: no-repeat;
     background-size: cover;
+    background-image: url('../../assets/images/hotel.png');
+}
+
+.container01{
+    width: 100%;
+    height: 200px;
+}
+
+.btngroup1{
+    margin-right: 10px;
+    text-align: right;
 }

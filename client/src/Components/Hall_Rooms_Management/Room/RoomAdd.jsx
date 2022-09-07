@@ -4,7 +4,7 @@ import './room.css';
 import  {Alert} from '../alert/message.jsx';
 import RoomValidation from '../validation/RoomValidation.jsx';
 import dummy_image from "../../../assets/images/dummy_image.jpg";
-import Navbar from "../../Navbar/Navbar";
+import Navbar from "../../Navbar/AdminNavbar/AdminNavbar";
 export default class AddRoom extends React.Component{
 
     constructor(props) {
