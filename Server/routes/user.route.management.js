@@ -65,14 +65,14 @@ router.get("/:id/verify/:token/", async (req, res) => {
 });
 
 // //get all users
-// router.get("/", async (req, res) => {
-//     try {
-//         const users = await User.find({});
-//         res.status(200).send(users);
-//     } catch (error) {
-//         res.status(500).send({ message: "Internal Server Error" });
-//     }
-// } );
+router.get("/viewuser", async (req, res) => {
+    try {
+        const users = await User.find({});
+        res.status(200).send(users);
+    } catch (error) {
+        res.status(500).send({ message: "Internal Server Error" });
+    }
+} );
 //get user by id
 router.get("/:id", async (req, res) => {
     try {
@@ -93,6 +93,37 @@ router.get("/:id", async (req, res) => {
 //         res.status(500).send({ message: "Internal Server Error" });
 //     }
 // } );
+
+router.delete("/deleteuser/:id", async (req, res) => {
+	try {
+		const user = await User.findByIdAndDelete(req.params.id);
+		if (!user) return res.status(400).send({ message: "Invalid user id" });
+		res.status(200).send(user);
+	} catch (error) {
+		res.status(500).send({ message: "Internal Server Error" });
+	}
+});
+router.put('/edituser/:id', (req, res) => {
+	User
+	.findByIdAndUpdate(req.params.id) 
+	.then(response =>{
+		response.firstName = req.body.firstName;
+		response.lastName = req.body.lastName;
+		response.email = req.body.email;
+		response.city = req.body.city;
+		
+	
+		response
+	.save()
+	.then(() => res.json("Room Updated Successfully..."))
+	.catch((err) => { console.log(err) });
+   
+	})
+
+});
+
+
+
 // //update user
 // router.put("/:id", async (req, res) => {
 //     try {

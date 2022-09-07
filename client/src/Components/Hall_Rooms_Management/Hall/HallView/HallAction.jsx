@@ -17,8 +17,8 @@ const HallActions = (props) => {
     
     const deleteHall = () => {
         Swal.fire({
-            title: 'Are you want to delete The Hall',
-            text: "Note that ths process can not be revert.",
+            title: 'Are you sure, you want to delete the Hall',
+            text: "Note that this process can not be revert.",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#d33',

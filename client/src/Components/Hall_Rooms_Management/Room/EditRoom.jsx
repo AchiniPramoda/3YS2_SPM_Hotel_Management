@@ -3,7 +3,7 @@ import axios from "axios";
 import "./room.css";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
-import Navbar from "../../Navbar/Navbar";
+import Navbar from "../../Navbar/AdminNavbar/AdminNavbar";
 
 
 function UpdateRooms () {

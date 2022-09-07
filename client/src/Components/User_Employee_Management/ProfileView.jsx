@@ -30,6 +30,28 @@ function ProfileView() {
       fetchData();
   })
 
+
+  
+
+
+  const updateUserDetails = (e) => {
+    e.preventDefault();
+
+    let updateData = {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      city: city,
+    }
+
+    axios.put(`http://localhost:8345/register/edituser/${params.id}`,updateData)
+  //   .then((res)=> {AlertMsg("success", "success", res.data); window.location = `/addstaff`})
+  //   .catch((err) => AlertMsg("error", "error", err.message))
+      .then((response) => { console.log(response.data); window.location = `/dashboard`})
+      .catch((error) => { console.log(error); })
+  }
+
+
  
 
   return (
@@ -47,15 +69,15 @@ function ProfileView() {
          
                  <div class="card-details">
                    
-                    <div class="pronames">First Name  : <input className="form-control" type="text" onChange={(e) => setfirstName(e.target.value)} value={firstName} disabled/>  </div>
+                    <div class="pronames">First Name  : <input className="form-control" type="text" onChange={(e) => setfirstName(e.target.value)} value={firstName}/>  </div>
                    
-                    <div class="pronames">Last Name   : <input className="form-control" type="text" onChange={(e) => setlastName(e.target.value)} value={lastName} disabled/></div>
+                    <div class="pronames">Last Name   : <input className="form-control" type="text" onChange={(e) => setlastName(e.target.value)} value={lastName}/></div>
 
-                    <div class="pronames">E-mail      : <input className="form-control" type="text" onChange={(e) => setemail(e.target.value)} value={email} disabled/></div>
+                    <div class="pronames">E-mail      : <input className="form-control" type="text" onChange={(e) => setemail(e.target.value)} value={email}/></div>
 
-                    <div class="pronames">City        : <input className="form-control" type="text" onChange={(e) => setcity(e.target.value)} value={city} disabled/></div>
+                    <div class="pronames">City        : <input className="form-control" type="text" onChange={(e) => setcity(e.target.value)} value={city} /></div>
                    
-                    <div class="pronames">Password    : <input className="form-control" type="text" onChange={(e) => setfirstName(e.target.value)} value={firstName} disabled/></div>
+                    {/* <div class="pronames">Password    : <input className="form-control" type="text" onChange={(e) => setfirstName(e.target.value)} value={firstName} disabled/></div> */}
                     
                   
                   
@@ -63,7 +85,7 @@ function ProfileView() {
                    <div class="card-footer">
                       
                          
-                      <button  type="button" className="editbtn">Edit</button>
+                      <button  type="button" onClick={updateUserDetails} className="editbtn">Edit</button>
                           
 
                     
