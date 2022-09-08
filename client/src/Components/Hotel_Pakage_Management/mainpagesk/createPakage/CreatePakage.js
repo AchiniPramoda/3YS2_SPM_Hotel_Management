@@ -8,9 +8,9 @@ import Footer from '../../headersk/Footer'
 const initialState = {
     pakage_id: '',
     title: '',
-    price: 0,
-    description: 'THIS IS A SMALL DESCRIPTION ABOUT PACJAGE',
-    content: ' HERE INCLUDING PACKAGE CONTENT',
+    price: '',
+    description: '',
+    content: '',
     category: '',
     _id: ''
 }
@@ -131,14 +131,6 @@ function CreatePakage() {
                 
             </div> 
         <div className="create_pakage">
-    
-
-
-
-
-
-
-
 
 
 
@@ -160,37 +152,37 @@ function CreatePakage() {
                
                 <div className="row">
                     <label htmlFor="pakage_id">Package ID</label>
-                    <input type="text" name="pakage_id" id="pakage_id" required
+                    <input placeholder="Package ID"  className='form-control' type="text" name="pakage_id" id="pakage_id" required
                     value={pakage.pakage_id} onChange={handleChangeInput} disabled={onEdit} />
                 </div>
 
                 <div className="row">
                     <label htmlFor="title">Title</label>
-                    <input type="text" name="title" id="title" required
+                    <input placeholder="Title"  className='form-control' type="text" name="title" id="title" required
                     value={pakage.title} onChange={handleChangeInput} />
                 </div>
 
                 <div className="row">
                     <label htmlFor="price">Price</label>
-                    <input type="number" name="price" id="price" required
+                    <input placeholder="Price"  className='form-control' type="number" name="price" id="price" required
                     value={pakage.price} onChange={handleChangeInput} />
                 </div>
 
                 <div className="row">
                     <label htmlFor="description">Description</label>
-                    <textarea type="text" name="description" id="description" required
+                    <textarea placeholder="Description"  className='form-control' type="text" name="description" id="description" required
                     value={pakage.description} rows="5" onChange={handleChangeInput} />
                 </div>
 
                 <div className="row">
                     <label htmlFor="content">Content</label>
-                    <textarea type="text" name="content" id="content" required
+                    <textarea placeholder="Content"  className='form-control' type="text" name="content" id="content" required
                     value={pakage.content} rows="7" onChange={handleChangeInput} />
                 </div>
 
                 <div className="row">
                     <label htmlFor="categories">Categories: </label>
-                    <select name="category" value={pakage.category} onChange={handleChangeInput} >
+                    <select class="form-control " name="category" value={pakage.category} onChange={handleChangeInput} >
                         <option value="">Please select a category</option>
                         {
                             categories.map(category => (

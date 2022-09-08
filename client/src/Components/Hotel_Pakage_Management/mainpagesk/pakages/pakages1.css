@@ -21,38 +21,48 @@
 .delete-all{
     text-align: right;
     margin: 20px;
+    font-size: 20px;
+    align-items: baseline;
+
 }
+
 .delete-all input{
     height: 25px;
     width: 25px;
     transform: translateY(5px);
     margin: 0 15px;
+    cursor: pointer;
 }
+
 .delete-all span{
     text-transform: uppercase;
     color: rgb(10, 11, 11);
-    letter-spacing: 1.3px;
+    font-weight: 600;
+    font-size: 15px;
 }
+
 .delete-all button{
-    border: 1px solid #050505;
-    padding: 10px 25px;
-    margin-right: 65px;
-    color: #100e0f;
-    background-color: #F2DCC5;
-    text-transform: uppercase;
+    background-color: #E8861E;
+	color: white;
+	border: none;
+	border-radius: 6px;
+	padding: 12px;
+	font-weight: 600;
+	font-size: 14px;
+	cursor: pointer;
 }
-.delete-all1 button{
-   
-    
+/* .delete-all1 button{
     padding: 10px 25px;
     color: #100e0f;
     background-color: #F2DCC5;
     text-transform: uppercase;
-}.delete-all2 button{
+} */
+
+.delete-all2 button{
     width: 300px;
     height: 40px;
     background: #c61b1b;
-text-align: center;
+     text-align: center;
     color: white;
     margin: -55px 600px;
     text-transform: uppercase;

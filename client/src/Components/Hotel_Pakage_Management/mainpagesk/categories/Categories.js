@@ -3,6 +3,8 @@ import {GlobalState} from '../../../../GlobalState'
 import axios from 'axios'
 import Header3 from '../../headersk/Header3'
 import Footer from '../../headersk/Footer'
+import "./categories.css"
+
 function Categories() {
     const state = useContext(GlobalState)
     const [categories] = state.categoriesAPI.categories
@@ -61,7 +63,7 @@ function Categories() {
           <div className='kavi'>
             <form onSubmit={createCategory}>
                 <label htmlFor="category">...Category...</label>
-                <input type="text" name="category" value={category} required
+                <input  class="form-control"  placeholder='Enter New Catagory' type="text" name="category" value={category} required
                 onChange={e => setCategory(e.target.value)} />
 
                 <button type="submit">{onEdit? "Update" : "Create "}</button>

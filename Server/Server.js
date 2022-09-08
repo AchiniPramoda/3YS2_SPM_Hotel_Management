@@ -25,7 +25,7 @@ app.use(cors());
 app.use('/api', require('./routes/categoryRouter'))
 app.use('/api', require('./routes/upload'))
 app.use('/api', require('./routes/pakageRouter'))
-app.use('/api', require('./routes/paymentRouter'))
+// app.use('/api', require('./routes/paymentRouter'))
 
 
 Port = process.env.PORT;
