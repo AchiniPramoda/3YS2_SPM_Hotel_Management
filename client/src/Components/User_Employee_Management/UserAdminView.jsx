@@ -96,7 +96,7 @@ class AllUserContainer extends Component {
                     }
 
                     <div ref={el => (this.componentRef = el)}>
-                        <h3 className={"text-secondary text-center mb-5"}>All Staff details</h3>
+                        <h3 className={"text-secondary text-center mb-5"}>All User details</h3>
                         <div class="tableUser">
                             <table class="table ">
                                 <thead className={"table-dark mt-3"}>
@@ -104,6 +104,7 @@ class AllUserContainer extends Component {
                                         <th scope="col">First Name</th>
                                         <th scope="col">Last Name</th>
                                         <th scope="col">E-mail</th>
+                                        <th scope="col">Country</th>
                                         <th scope="col">City</th>
                                  
                                         {
