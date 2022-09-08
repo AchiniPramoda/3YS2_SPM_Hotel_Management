@@ -51,8 +51,9 @@ const RestaurantActions = (props) => {
     return (<React.Fragment>
         <tr>
             <td>{data.restaurantName}</td>
-            <td>{data.other}</td>
             <td>{data.description}</td>
+            <td>{data.other}</td>
+           
             <td><img className="resturantImage" src={data.imageURL}></img></td>
             {
                 !props.isGen ? <td>
