@@ -36,8 +36,8 @@ class AllHallContainer extends Component {
         let searchTag = e.target.value.toLowerCase();
         let filterdHalls= [];
 
-        this.state.rooms.forEach(hall => {
-            if (hall.name.toLowerCase().includes(searchTag) || hall.hallType.toLowerCase().includes(searchTag)) {
+        this.state.hall.forEach(hall => {
+            if (hall.name?.toLowerCase().includes(searchTag) || hall.hallType?.toLowerCase().includes(searchTag)) {
                 filterdHalls.push(hall)
             }
         })

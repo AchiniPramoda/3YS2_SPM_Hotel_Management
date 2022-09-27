@@ -6,12 +6,13 @@ import './StaffView.css';
 import Navbar from '../../Navbar/AdminNavbar/AdminNavbar';
 import StaffAction from "./StaffAction";
 
-class AllRoomContainer extends Component {
+
+class AllContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            staff: [],
-            filterdStaffs: [],
+            staffs: [],
+            FilterdStaff: [],
             isGen: false
         }
     }
@@ -19,8 +20,9 @@ class AllRoomContainer extends Component {
     updateContent = () => {
         axios.get("http://localhost:8345/staff/viewstaff").then(res => {
             this.setState({
-                staff: res.data,
-                filterdStaffs: res.data,
+                staffs: res.data,
+                FilterdStaff: res.data,
+                
             });
         }).catch(err => {
             console.log(err);
@@ -32,21 +34,30 @@ class AllRoomContainer extends Component {
         this.updateContent();
     }
 
-    // Function for search vehicles
+
+    //function for search button
+    
     search = (e) => {
         let searchTag = e.target.value.toLowerCase();
-        let filterdStaffs= [];
+        let   FilterdStaff= [];
 
-        this.state.staff.forEach(staff => {
-            if (staff.staffId.toLowerCase().includes(searchTag) || staff.firstname.toLowerCase().includes(searchTag)) {
-                filterdStaffs.push(staff)
+       
+        this.state.staffs.forEach(staff => {
+           
+            if (staff.staffId?.toLowerCase().includes(searchTag) || staff.firstname?.toLowerCase().includes(searchTag)) {
+                  FilterdStaff.push(staff)
+                
+                 
             }
         })
+      
 
         this.setState({
-            filterdStaffs,
+            FilterdStaff,
             searchTag
         });
+       
+        
 
     }
 
@@ -124,7 +135,7 @@ class AllRoomContainer extends Component {
                                 <tbody>
                                     <React.Fragment>
                                         {
-                                            this.state.filterdStaffs.map(staff => {
+                                            this.state.FilterdStaff.map(staff => {
                                                 return <StaffAction key={staff._id} staff={staff} isGen={this.state.isGen} updateContent={this.updateContent} />
                                             })
                                         }
@@ -142,4 +153,4 @@ class AllRoomContainer extends Component {
     }
 }
 
-export default  (AllRoomContainer);
+export default  (AllContainer);

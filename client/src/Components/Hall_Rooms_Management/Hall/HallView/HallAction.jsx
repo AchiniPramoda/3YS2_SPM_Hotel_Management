@@ -10,8 +10,8 @@ const HallActions = (props) => {
     const history = useNavigate();
     const hall = props.hall;
 
-    const handleClick = (path) => {
-        history.push(path);
+    const handleClick = (id) => {
+        window.location = `/updatehall/${id}`;  
     }
 
     
@@ -57,7 +57,7 @@ const HallActions = (props) => {
             {
                 !props.isGen ? <td>
                     <div class="d-flex">
-                    <button onClick={() => handleClick(`http://localhost:8345/hall/updateroom/${hall._id}`)} type="button" class="btn btn-outline-success m-1">Update</button>
+                    <button onClick={() => handleClick(hall._id)} type="button" class="btn btn-outline-success m-1">Update</button>
                     <button onClick={deleteHall} type="button" class="btn btn-outline-danger m-1">Delete</button>
                     </div>
                 </td> : <React.Fragment />
