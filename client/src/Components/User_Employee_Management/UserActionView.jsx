@@ -40,6 +40,7 @@ const UserActions = (props) => {
             <th scope="row">{user.firstName}</th>
             <td>{user.lastName}</td>
             <td>{user.email}</td>
+            <td>{user.country}</td>
             <td>{user.city}</td>
             
             {

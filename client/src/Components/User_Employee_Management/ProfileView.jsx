@@ -17,7 +17,7 @@ function ProfileView() {
   const [lastName, setlastName] = useState("");
   const [email, setemail] = useState("");
   const [city, setcity] = useState("");
- 
+  const [country, setcountry] = useState("");
    
 
   const params = useParams();
@@ -32,6 +32,7 @@ const userEdit = () => {
           setlastName(users.data.lastName);
           setemail(users.data.email);
           setcity(users.data.city);
+          setcountry(users.data.country);
       }
       )
   }
@@ -54,6 +55,7 @@ const userEdit = () => {
       lastName: lastName,
       email: email,
       city: city,
+      country: country,
     }
 
     axios.put(`http://localhost:8345/register/edituser/${params.id}`,updateData)
@@ -86,6 +88,8 @@ const userEdit = () => {
                     <div class="pronames">Last Name   : <input className="form-control" id ="lastName"type="text" onChange={(e) => setlastName(e.target.value)} value={lastName}/></div>
 
                     <div class="pronames">E-mail      : <input className="form-control" id= "email"type="text" onChange={(e) => setemail(e.target.value)} value={email}/></div>
+
+                    <div class="pronames">Country     : <input className="form-control" id ="country"type="text" onChange={(e) => setcountry(e.target.value)} value={country}/></div>
 
                     <div class="pronames">City        : <input className="form-control" id ="city"type="text" onChange={(e) => setcity(e.target.value)} value={city} /></div>
                    
