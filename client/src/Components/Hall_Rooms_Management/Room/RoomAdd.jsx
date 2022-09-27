@@ -92,7 +92,7 @@ export default class AddRoom extends React.Component{
           console.log("room added");
             Alert( "success", "Room Added Successfully");
             console.log(res.data);  
-            window.location = "/rooms";                                                              
+            window.location = "/viewRoom";                                                              
         }).catch(err => {
             this.handleError(err);
             console.log(err);

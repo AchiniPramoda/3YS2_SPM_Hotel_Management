@@ -21,6 +21,8 @@ import RoomViewMore from './Components/Hall_Rooms_Management/Room/MoreDetailsVie
 import UpdateRooms from './Components/Hall_Rooms_Management/Room/EditRoom';
 import UserAdminView from './Components/User_Employee_Management/UserAdminView';
 // import Payment  from './Components/Hall_Rooms_Management/Room/payment';
+import HallViewMore from './Components/Hall_Rooms_Management/Hall/HallView/MoreDetailsView';
+import AllHallForUser from './Components/Hall_Rooms_Management/Hall/HallView/Allhall';
 function App() {
 
     return(
@@ -41,12 +43,15 @@ function App() {
                  <Route path='/login' element={ <Login /> } />
                  <Route path="/registration" element={<Registration />} />
                  <Route path="/admindashboard" element={<AdminDashBoard />} />
+                  <Route path="/clientdashboard" element={<ClientDashboard />} />
                  <Route path="/navbar" element={<Navbar />} />
 
                    <Route path="/viewhall" element={<ViewHall />} />
+                   <Route path="/viewmorehall/:id" element={ <HallViewMore />}/>
 
 
                  <Route path="/rooms" element={ <AllRoomForUser />}/>
+                 <Route path="/halls" element={ <AllHallForUser />}/>
                   <Route path="/viewmore/:id" element={ <RoomViewMore />}/>
                  <Route exact path="/register/:id/verify/:token/" element={ <EmailVerify />}/>
 

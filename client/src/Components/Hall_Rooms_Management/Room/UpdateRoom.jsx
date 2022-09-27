@@ -154,7 +154,7 @@ export default class UpdateRoom extends React.Component{
                       {/* use for title */}
                         <div class="products">
             
-                           <div class="title">ADD ROOM DETAILS</div>
+                           <div class="title">UPADATE ROOM DETAILS</div>
                       
                        </div>
                        {/* <div className="col-md-7">

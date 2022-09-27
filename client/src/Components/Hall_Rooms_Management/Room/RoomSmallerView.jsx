@@ -35,7 +35,7 @@ const RoomSmallView = (props) => {
                                 <button onClick={() => handleClick(`/viewmore/${room._id}`)} type="button" class="btn btn-outline-warning">View</button>
                             </div>
                             <div className="col-6">
-                                <button onClick={() => handleClick(`/vehicles/${room._id}`)} type="button" class="btn btn-outline-dark">Rent</button>
+                                <button onClick={() => handleClick(`/viewmore/${room._id}`)} type="button" class="btn btn-outline-dark">Rent</button>
                             </div>
                         </div>
                     </div>

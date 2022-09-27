@@ -8,8 +8,9 @@ const HallSmallView = (props) => {
 
     const history = useNavigate();
     const handleClick = (path) => {
-        history.push(path);
+        window.location.href = path;
     }
+
 
     return (
 
@@ -17,25 +18,25 @@ const HallSmallView = (props) => {
             
              <div class="card p-0">
                
-                <img src={room.RoomImage} class="card-img-top" alt={room.roomType} />
+                <img src={hall.hallImage} class="card-img-top" alt={hall.hallType} />
                   <div class="card-body">
                     
-                     <h5 class="card-title">Beds: {room.beads}</h5>
+                     <h5 class="card-title">Hall Name: {hall.name}</h5>
                     
-                     <h6 class="card-title">Total Guests: {room.clients}</h6>
+                     <h6 class="card-title">Total Guests: {hall.Guest}</h6>
                     
-                     <p class="card-text">{room.description}</p>
+                     <p class="card-text">{hall.description}</p>
                    
-                     <h4 class="card-text text-end text-danger mt-3 mb-3">RS: {room.price}/-</h4>
+                     <h4 class="card-text text-end text-danger mt-3 mb-3">RS: {hall.price}/-</h4>
                    
                    
                     <div class="card-footer">
                         <div class="row text-center">
                             <div className="col-6">
-                                <button onClick={() => handleClick(`/vehicles/${room._id}`)} type="button" class="btn btn-outline-warning">View</button>
+                                <button onClick={() => handleClick(`/viewmorehall/${hall._id}`)} type="button" class="btn btn-outline-warning">View</button>
                             </div>
                             <div className="col-6">
-                                <button onClick={() => handleClick(`/vehicles/${room._id}`)} type="button" class="btn btn-outline-dark">Rent</button>
+                                <button onClick={() => handleClick(`/viewmorehall/${hall._id}`)} type="button" class="btn btn-outline-dark">Rent</button>
                             </div>
                         </div>
                     </div>
@@ -47,4 +48,4 @@ const HallSmallView = (props) => {
     );
 }
 
-export default RoomSmallView;
+export default HallSmallView;

@@ -1,20 +1,20 @@
 import React, { Component } from 'react'
 import axios from "axios"
-import Navbar from "../../Navbar/hallNavbar"
-import HallSmallView from './SmallClientHallView'
+import Navbar from "../../Navbar/RoomNavbar"
+import RoomSmallView from './RoomSmallerView'
 
-class AllhallForUser extends Component {
+class AllRoomForUser extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            halls: []
+            rooms: []
         }
     }
 
     // Get all packages from datasbase
     componentDidMount() {
-        axios.get("http://localhost:8345/hall/get").then(res => {
-            this.setState({ halls: res.data });
+        axios.get("http://localhost:8345/room/getroom").then(res => {
+            this.setState({ rooms: res.data });
         }).catch(err => {
             console.log(err);
         });
@@ -27,15 +27,15 @@ class AllhallForUser extends Component {
                 <Navbar/>
             <div className="container mt-5">
                       <div>
-                            <h3 className={"text-warning text-center mb-12"}>All Hall Details</h3><br/>
+                            <h3 className={"text-warning text-center mb-12"}>All Room Details</h3><br/>
                      </div>
                    
                      <div className='row'>
                            
                            <React.Fragment>
                               {
-                                  this.state.halls.map(hall=> {
-                                       return <HallSmallView hall={hall} count={4} />
+                                  this.state.rooms.map(room=> {
+                                       return <RoomSmallView room={room} count={4} />
                                  })
                              }
                           </React.Fragment>
@@ -47,4 +47,4 @@ class AllhallForUser extends Component {
     }
 }
 
-export default AllhallForUser;
+export default AllRoomForUser;

@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import axios from "axios"
-import Navbar from "../../Navbar/hallNavbar"
+import Navbar from '../../../Navbar/AdminNavbar/AdminNavbar';
 import HallSmallView from './SmallClientHallView'
 
-class AllhallForUser extends Component {
+class AllRoomForUser extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -47,4 +47,4 @@ class AllhallForUser extends Component {
     }
 }
 
-export default AllhallForUser;
+export default AllRoomForUser;
