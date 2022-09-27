@@ -10,6 +10,7 @@ const Signup = () => {
 		lastName: "",
 		email: "",
 		password: "",
+    country:"",
 	});
 	const [error, setError] = useState("");
 	
@@ -138,6 +139,24 @@ const Signup = () => {
                         />
   
                   </div>
+
+                  <div class="form-group col-sm-12">
+                   <label for="">Country</label>
+                 
+                 
+                   <input 
+                      type="text" 
+                      class="form-control" 
+                      placeholder="Country" 
+                      aria-label="Country" 
+                      id="country"
+                      aria-describedby="basic-addon1" 
+                      name="country"
+                      onChange={handleChange}
+                      value={data.country}
+                      />
+  
+                 </div>
               
                 <div class="form-group col-sm-12">
                    <label for="">City</label>

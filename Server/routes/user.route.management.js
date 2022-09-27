@@ -110,6 +110,7 @@ router.put('/edituser/:id', (req, res) => {
 		response.firstName = req.body.firstName;
 		response.lastName = req.body.lastName;
 		response.email = req.body.email;
+		response.country = req.body.country;
 		response.city = req.body.city;
 		
 	
