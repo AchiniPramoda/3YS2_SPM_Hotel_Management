@@ -1,24 +1,26 @@
 import React from "react";
 import axios from "axios";
-import './room.css';
+import './Hall.css';
 import  {Alert} from '../alert/message.jsx';
-import RoomValidation from '../validation/RoomValidation.jsx';
+import HallValidations from '../validation/HallValidation.jsx';
 
 
-export default class UpdateRoom extends React.Component{
+export default class UpdateHall extends React.Component{
 
     constructor(props) {
         super(props);
 
-        this.state = {            
-            RoomId : "",
-            roomType : "",
-            beads : "",
-            clients : "",
+        this.state = {     
+            hallID:"",       
+            name : "",
+            hallType : "",
+            Space : "",
+            Guest : "",
             price : "",
             description : "",
-            facilities : "",
-            RoomImage :null,
+            feacture : "",
+            event : "",
+            hallImage :null,
             fileName:"Insert File",
             message:"",
             type:"",
@@ -30,25 +32,29 @@ export default class UpdateRoom extends React.Component{
 
     componentDidMount() {
         
+ 
 
-        axios.get(`http://localhost:8345/room/getroom/${this.props.match.params.id}`).then(res => {
+        axios.get(`http://localhost:8345/hall/gethall/${this.props.match.params.id}`).then(res => {
 
 
-            let room = res.data;
+            let hall = res.data;
 
                 this.setState({
-                    RoomId : room.RoomId,
-                    roomType : room.roomType,
-                    beads : room.beads,
-                    clients : room.clients,
-                    price : room.price,
-                    description : room.description,
-                    facilities : room.facilities,
-                    RoomImage :room.RoomImage,
-                    fileName:room.RoomImage,
+                    hallID : hall.hallID,
+                    name : hall.name,
+                    hallType : hall.hallType,
+                    Space : hall.Space,
+                    Guest : hall.Guest,
+                    price : hall.price,
+                    description : hall.description,
+                    feacture : hall.feacture,
+                    event :hall.event,
+                    hallImage : hall.hallImage,
+                    fileName:hall.hallImage,
                     message:"",
                     type:"",
                     open:true
+                    
 
                 
                 });
@@ -64,7 +70,6 @@ export default class UpdateRoom extends React.Component{
         if (err.response) {
             if (err.response.status === 404) {
                 Alert("error", "Something went wrong!", err.response.data)
-
             }
         } else {
             Alert("error", "Something went wrong.", err)
@@ -81,7 +86,7 @@ export default class UpdateRoom extends React.Component{
 
     onFileChange = (e) => {
         this.setState({
-            RoomImage:e.target.files[0],
+            hallImage :e.target.files[0],
             fileName:e.target.files[0].name,
            
         })
@@ -93,36 +98,39 @@ export default class UpdateRoom extends React.Component{
     onSubmit =  (e) => {
         e.preventDefault();
 
-        const result = RoomValidation({
-            RoomId: this.state.RoomId,
-            roomType: this.state.roomType,
-            beads: this.state.beads,
-            clients: this.state.clients,
+        const result = HallValidations({
+            hallID: this.state.hallID,
+            name: this.state.name,
+            hallType: this.state.hallType,
+            Space: this.state.Space,
+            Guest: this.state.Guest,
             price: this.state.price,
             description: this.state.description,
-            facilities: this.state.facilities,
-            
+            feacture: this.state.feacture,
+            event: this.state.event,
         });
        
      if(result.status){
         const formData = new FormData();
-        formData.append('RooId', this.state.RooId);
-        formData.append('roomType', this.state.roomType);
-        formData.append('beads', this.state.beads);
-        formData.append('clients', this.state.clients);
+        formData.append('hallID', this.state.hallID);
+        formData.append('name', this.state.name);
+        formData.append('hallType', this.state.hallType);
+        formData.append('Space', this.state.Space);
+        formData.append('Guest', this.state.Guest);
         formData.append('price', this.state.price);
         formData.append('description', this.state.description);
-        formData.append('facilities', this.state.facilities);
-        formData.append('RoomImage', this.state.RoomImage);
+        formData.append('feacture', this.state.feacture);
+        formData.append('event', this.state.event);
+        formData.append('hallImage', this.state.hallImage);
         formData.append("fileName", this.state.fileName);
 
-      axios.put(`http://localhost:8345/room/editroom/${this.state.id}`, formData)
+      axios.put(`http://localhost:8345/hall/edit/${this.state.id}`, formData)
      
         
          
         .then((res) => {
-          console.log("room added");
-            Alert( "success", "Room Added Successfully");
+          console.log("hall added");
+            Alert( "success", "Hall Added Successfully");
             console.log(res.data);                                                                
         }).catch(err => {
             this.handleError(err);
@@ -147,13 +155,10 @@ export default class UpdateRoom extends React.Component{
                       {/* use for title */}
                         <div class="products">
             
-                           <div class="title">UPADATE ROOM DETAILS</div>
+                           <div class="title">UPADATE Hall DETAILS</div>
                       
                        </div>
-                       {/* <div className="col-md-7">
-                            <img src={this.state.RoomImage? this.state.RoomImage.preview : dummy_image} className="img-fluid rounded-start" alt="..." />
-                        </div> */}
-            
+                     
             
                       <div class="card-details">
             
@@ -163,62 +168,77 @@ export default class UpdateRoom extends React.Component{
                             {/* For Input fields that wants column  */}
                         
                           <div class="form-group col-sm-6">
-                            <label for="card-holder">Room ID</label>
+                            <label for="card-holder">Hall ID</label>
                  
                               <input 
                                  
                                  type="text"
                                  class="form-control " 
-                                 placeholder="Room ID" 
-                                 aria-label="Room ID" 
+                                 placeholder="Hall ID" 
+                                 aria-label="Hall ID" 
                                  aria-describedby="basic-addon1" 
-                                 id="RooId"
-                                 value={this.state.RooId}
+                                 id="hallID"
+                                 value={this.state.hallID}
                                  onChange={(e) => this.onChange(e)}
                                  />
                           </div>
             
                           
                             <div class="form-group col-sm-6">
-                            <label for="card-holder">Room Type</label>
+                            <label for="card-holder">Hall Type</label>
 
                                 <input
                                     type="text"
                                     class="form-control "
-                                    placeholder="Room Type"
-                                    aria-label="Room Type"
+                                    placeholder="Hall Type"
+                                    aria-label="Hall Type"
                                     aria-describedby="basic-addon1"
-                                    id="roomType"
-                                    value={this.state.roomType}
+                                    id="hallType"
+                                    value={this.state.hallType}
                                     onChange={(e) => this.onChange(e)}
                                     />
                             </div>
 
                             <div class="form-group col-sm-6">
-                            <label for="card-holder">Beads</label>
+                            <label for="card-holder">Hall Name</label>
+
+                                <input
+                                    type="text"
+                                    class="form-control "
+                                    placeholder="Hall Type"
+                                    aria-label="Hall Type"
+                                    aria-describedby="basic-addon1"
+                                    id="name"
+                                    value={this.state.name}
+                                    onChange={(e) => this.onChange(e)}
+                                    />
+                            </div>
+
+                            <div class="form-group col-sm-6">
+                            <label for="card-holder">Space</label>
 
                                 <input
                                     type="number"
                                     class="form-control "
-                                    placeholder="Beads"
-                                    aria-label="Beads"
+                                    placeholder="Space"
+                                    aria-label="Space"
                                     aria-describedby="basic-addon1"
-                                     id="beads"
-                                     value={this.state.beads}
+                                     id="Space"
+                                     value={this.state.Space}
                                     onChange={(e) => this.onChange(e)}
                                     />
                             </div>
                             <div class="form-group col-sm-6">
-                            <label for="card-holder">Clients</label>
+                            <label for="card-holder">Guest</label>
 
                                 <input
                                     type="number"
                                     class="form-control "
-                                    placeholder="Clients"
-                                    aria-label="Clients"
+                                    placeholder="Guest"
+                                    aria-label="Guest"
                                     aria-describedby="basic-addon1"
-                                    id="clients"
-                                    value={this.state.clients}
+                                    id="Guest"
+                                    value={this.state.Guest}
                                     onChange={(e) => this.onChange(e)}
                                     />
                             </div>
@@ -247,7 +267,22 @@ export default class UpdateRoom extends React.Component{
                                     />
                             </div>
                             <div class="form-group col-sm-12">
-                            <label for="card-holder">Facilities</label>
+                            <label for="card-holder">feacture</label>
+
+                                <input
+                                    type="textarea"
+                                    class="form-control "
+                                    placeholder="feacture"
+                                    aria-label="feacture"
+                                    aria-describedby="basic-addon1"
+                                    id="feacture"
+                                    value={this.state.feacture}
+                                    onChange={(e) => this.onChange(e)}
+                                    />
+                            </div>
+
+                            <div class="form-group col-sm-12">
+                            <label for="card-holder">Event</label>
 
                                 <input
                                     type="textarea"
@@ -255,14 +290,16 @@ export default class UpdateRoom extends React.Component{
                                     placeholder="Facilities"
                                     aria-label="Facilities"
                                     aria-describedby="basic-addon1"
-                                    id="facilities"
-                                    value={this.state.facilities}
+                                    id="event"
+                                    value={this.state.event}
                                     onChange={(e) => this.onChange(e)}
                                     />
                             </div>
+
+
                             <div class="form-group col-sm-6">
-                            <label for="card-holder">Room Image</label>
-                             <input type="file" class="form-control" name="RoomImage"value={this.state.RoomImage} onChange={(e) => this.onFileChange(e)}      />
+                            <label for="card-holder">Hall Image</label>
+                             <input type="file" class="form-control" name="hallImage" value={this.state.hallImage} onChange={(e) => this.onFileChange(e)}      />
                             </div>
                            <div class="btngroup col-sm-3">
                             <button type="button" class="cancel">Clear</button>

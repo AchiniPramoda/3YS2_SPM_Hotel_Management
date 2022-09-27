@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import card from './card.css';
 
-import Navbar from '../../../Navbar/AdminNavbar/AdminNavbar';
+import Navbar from '../../../Navbar/RoomNavbar';
 
 function Halls () {
 

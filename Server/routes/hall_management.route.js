@@ -46,48 +46,82 @@ router.get('/get', async (req, res, next) => {
     .catch(err => err.json(err.message));
 } );
 
-
 //get hall by id
-router.get('/get/:id', async (req, res, next) => {
-    await Hall.findById(req.params.
-    id)
+router.get('/gethall/:id', async (req, res) => {
+    await Hall.findById(req.params.id)
     .then(hall => res.json(hall))
-    .catch(err => err.json(err.message));
+    .catch(err => res.status(400).send("Error : " + err));
+    
 } );
 
+
 //update hall by id
-router.put('/edit/:id', upload.single('hallImage'), async (req, res) => {
+// router.put('/edit/:id', upload.single('hallImage'), async (req, res) => {
 
-    try{
+//     try{
 
-        const research = await Hall.findById(req.params.id);
+//         const research = await Hall.findById(req.params.id);
 
-        var result = null;
+//         var result = null;
 
-        if(!req.file) {
+//         if(!req.file) {
 
-            console.log("File None");
-            result = await cloudinary.api.resource(research.cloudinary_id,  {resource_type: "raw",});
-            //console.log(result);
+//             console.log("File None");
+//             result = await cloudinary.api.resource(research.cloudinary_id,  {resource_type: "raw",});
+//             //console.log(result);
 
-        }else {
+//         }else {
 
-            await cloudinary.uploader.destroy(research.cloudinary_id,  {resource_type: "raw"} );
+//             await cloudinary.uploader.destroy(research.cloudinary_id,  {resource_type: "raw"} );
 
-            result = await cloudinary.uploader.upload(req.file.path, {
-                resource_type: "raw", 
-                folder : "Template",
-                public_id: req.file.originalname
-            });
-            console.log(result);
-            // res.json(result);
-        }
+//             result = await cloudinary.uploader.upload(req.file.path, {
+//                 resource_type: "raw", 
+//                 folder : "Template",
+//                 public_id: req.file.originalname
+//             });
+//             console.log(result);
+//             // res.json(result);
+//         }
 
-        console.log(result);
+//         console.log(result);
        
-       await Hall.findById(req.params.id)
-        .then((response) => {
-                response.hallID=req.body.hallID;
+//        await Hall.findById(req.params.id)
+//         .then((response) => {
+//                 response.hallID=req.body.hallID;
+//                 response.name = req.body.name;
+//                 response.hallType = req.body.hallType;
+//                 response.Space = req.body.Space;
+//                 response.Guest = req.body.Guest;
+//                 response.price = req.body.price;
+//                 response.description = req.body.description;
+//                 response.feacture = req.body.feacture;
+//                 response.event = req.body.event;
+//                 response.hallImage = result.secure_url;
+//                 response.cloudinary_id = result.public_id;
+//                 response.fileName = req.body.fileName;
+               
+
+//             response
+//             .save()
+//             .then(() => res.json("hall Updated Successfully..."))
+//             .catch((err) => console.log(err.message));
+//         })
+//         .catch((err) => res.json(err.message));
+
+//     }catch(err){
+//         console.log(err.message);
+//     }
+    
+// });
+
+
+
+//update room by id
+router.put('/edit/:id', upload.single('hallImage'), (req, res) => {
+    Hall
+    .findByIdAndUpdate(req.params.id) 
+    .then(response =>{
+                 response.hallID=req.body.hallID;
                 response.name = req.body.name;
                 response.hallType = req.body.hallType;
                 response.Space = req.body.Space;
@@ -95,24 +129,20 @@ router.put('/edit/:id', upload.single('hallImage'), async (req, res) => {
                 response.price = req.body.price;
                 response.description = req.body.description;
                 response.feacture = req.body.feacture;
-                response.event = req.body.event;
-                response.hallImage = result.secure_url;
+                 response.event = req.body.event;
+               response.hallImage = result.secure_url;
                 response.cloudinary_id = result.public_id;
-                response.fileName = req.body.fileName;
-               
-
-            response
-            .save()
-            .then(() => res.json("hall Updated Successfully..."))
-            .catch((err) => console.log(err.message));
-        })
-        .catch((err) => res.json(err.message));
-
-    }catch(err){
-        console.log(err.message);
-    }
+             response.fileName = req.body.fileName;
     
+    response
+    .save()
+    .then(() => res.json("Hall Updated Successfully..."))
+    .catch((err) => { console.log(err) });
+   
+    })
+
 });
+
 
 router.delete('/deletehall/:id', async (req, res) => {
     try{

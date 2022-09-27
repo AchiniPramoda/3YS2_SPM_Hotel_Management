@@ -23,7 +23,10 @@ import UserAdminView from './Components/User_Employee_Management/UserAdminView';
 // import Payment  from './Components/Hall_Rooms_Management/Room/payment';
 import HallViewMore from './Components/Hall_Rooms_Management/Hall/HallView/MoreDetailsView';
 import AllHallForUser from './Components/Hall_Rooms_Management/Hall/HallView/Allhall';
-import UpdateHall from './Components/Hall_Rooms_Management/Hall/HallView/UpdateHall';
+
+import UpdateHall from './Components/Hall_Rooms_Management/Hall/UpdateHall';
+
+
 function App() {
 
     return(
@@ -65,6 +68,7 @@ function App() {
                           
                   <Route path="/profileview/:id" element={<ProfileView />} />        
                   <Route path="/useradminview" element={<UserAdminView />} />
+                  <Route path="/updatehall/:id" element={<UpdateHall />} />
                   {/* <Route path="/" element={<Payment />} /> */}
            
               

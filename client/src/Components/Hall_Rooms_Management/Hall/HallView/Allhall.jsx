@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from "axios"
-import Navbar from '../../../Navbar/AdminNavbar/AdminNavbar';
+import Navbar from '../../../Navbar/RoomNavbar';
 import HallSmallView from './SmallClientHallView'
 
 class AllRoomForUser extends Component {
