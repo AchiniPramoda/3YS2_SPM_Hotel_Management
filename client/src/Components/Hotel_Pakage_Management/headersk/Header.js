@@ -23,7 +23,7 @@ function Header() {
             <img src={Menu} alt="" width="30" />
             </div>
          
-           
+
              <div className="photo">
              <div className="container-image1">
              <img src={profile} alt="profile" className="profile"/>
@@ -33,15 +33,15 @@ function Header() {
           
             <ul style={styleMenu}>
             <li onClick={() => setMenu(!menu)}>
-            <img src={Close} alt="" width="30" className="menu" />
+            <img src={Close} alt="" width="30" className="menu"  />
             </li></ul> 
         
             {
                 
-              <div className="cart-icon">
+              <div className="cart-icon" style={{marginTop:"-109px"}}>
                     <span>{cart.length}</span>
                      <Link to="/cart">
-                    <img src={Cart} alt="" width="30" />
+                    <img src={Cart} alt="" width="50"  />
 
                         {
                

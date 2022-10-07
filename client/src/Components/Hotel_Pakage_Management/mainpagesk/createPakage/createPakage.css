@@ -125,14 +125,14 @@ for image upload
     font-weight: 700;
 }
 
-.upload1 h3{
-    width: 700px;
-    margin: 29px 70px;
+.upload1 h1{
+    width: 0px;
+text-align: center;
 
-    color: rgb(12, 11, 11);
-
-    height: 50px;
-    
+    color: hsl(0, 0%, 4%);
+	width: 100%;
+    height: 0px;
+    margin-left: -350px;
       text-transform: uppercase;
 
 }

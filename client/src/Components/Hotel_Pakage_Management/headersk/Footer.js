@@ -4,8 +4,8 @@ function Footer() {
  
     return(
         <div className="photo">
-        <div className="container-image1">
-       <img src={profile1} alt="profile" className="profile"/>
+        <div className="container-image">
+       <img1 src={profile1} alt="profile" className="profile"/>
 
 </div>
 </div>

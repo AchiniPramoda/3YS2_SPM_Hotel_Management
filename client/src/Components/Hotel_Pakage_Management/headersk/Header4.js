@@ -19,18 +19,23 @@ function Header() {
     return (
        
        <header>
+   
+   <div className="photo">
+         
+         <img src={profile} alt="profile" className="profile"/>
 
+</div>
             <div className="menu" onClick={() => setMenu(!menu)}>
                 <img src={Menu} alt="" width="30" />
             </div>
          
-           
-            <div className="photo">
-           <div className="container-image1">
-          <img src={profile} alt="profile" className="profile"/>
+        
 
-</div>
-</div><Filters />
+
+
+
+
+<Filters />
             <ul style={styleMenu}>
               
 
@@ -40,28 +45,34 @@ function Header() {
 
             </ul> 
             
-        
             {
                 
-                <div className="menu2">
+                
+            }
+
+            {
+                
+                <div className="menu82">
               
-                <><Link to={"/create_pakage"}>Create_pakage ✥ </Link></>
-                <><Link to={"/category"}>create_catagory✥ </Link></>
-                <><Link to={"/"}>Packages</Link></>
+          
 
             </div>
+
+
+
             }
 
 
-            
-              <div className="photo1">
-           <div className="container-image">
-          <img src={profile1} alt="profile" className="profile"/>
-
-</div>
-</div>
-
-        
+           
+<div class="topnav">
+<><Link to={"/create_pakage"}>Create package ✥ </Link></>
+                <><Link to={"/category"}>create category✥ </Link></>
+                <><Link to={"/"}>Packages✥</Link></>
+                <><Link to={"/a"} >Package Report✥ </Link></>
+              
+</div> 
+   
+     
         </header>
         
        

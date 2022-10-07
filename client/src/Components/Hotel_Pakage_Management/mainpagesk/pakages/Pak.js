@@ -1,6 +1,6 @@
 import React, {useState,useEffect, useContext,useRef} from 'react'
-import {GlobalState} from '../../../../GlobalState'
-import PakageItem2 from '../utils/pakageItem/PakageItem2'
+import { GlobalState } from '../../../../GlobalState'
+import PakageItem2 from '../utils/pakageItem/P'
 import Loading from '../utils/loading/Loading'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
@@ -10,7 +10,7 @@ import Header4 from '../../headersk/Header4'
 import './pakages1.css';
 import Footer from '../../headersk/Footer'
 import { useReactToPrint } from "react-to-print";
-function Pakages2() {
+function Pakages21() {
     const state = useContext(GlobalState)
     const [pakages, setPakages] = state.pakagesAPI.pakages
   
@@ -80,25 +80,17 @@ function Pakages2() {
     if(loading) return <div><Loading /></div>
     return (
         <>
-         <Header4></Header4>
-         <div className="delete-all1">
-                
-
-            </div>
+  
+        
          <div className="delete-all">
-                <span>Select all</span>
-                <input type="checkbox" checked={isCheck} onChange={checkAll} />
-                <button onClick={deleteAll}>Delete ALL</button>
-            
+     
+                <button onClick={handlePrint} className="print__button1">  Print </button> 
             </div>
           
           
 
           
-            <div className="delete-all2">
-                
-            </div>
-
+     
 
 
 
@@ -179,5 +171,5 @@ function Pakages2() {
   
 }
 
-export default Pakages2
+export default Pakages21
 

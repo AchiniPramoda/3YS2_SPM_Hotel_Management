@@ -1,6 +1,7 @@
 import React, {useContext, useState, useEffect} from 'react'
 import {GlobalState} from '../../../../GlobalState'
 import axios from 'axios'
+import {Link} from 'react-router-dom'
 import PaypalButton from './PaypalButton'
 
 function Cart() {
@@ -88,10 +89,10 @@ function Cart() {
                         <div className="box-detail">
                             <h2>{pakage.title}</h2>
 
-                            <h3>$ {pakage.price * pakage.quantity}</h3>
+                            <h3>LKR {pakage.price * pakage.quantity}</h3>
                             <p>{pakage.description}</p>
                             <p>{pakage.content}</p>
-
+<h3 style={{color:"blue",  fontWeight:"bold"}}>How many people are you buying this package for?</h3>
                             <div className="amount">
                                 <button onClick={() => decrement(pakage._id)}> - </button>
                                 <span>{pakage.quantity}</span>
@@ -102,17 +103,23 @@ function Cart() {
                             onClick={() => removePakage(pakage._id)}>
                                 X
                             </div>
+<br></br><br></br>
+                            <div className="total">
+                <h3>Total: LKR {total}</h3>
+                <div className="menu2">
+              
+              <><Link to={"/kj"} style={{color:"black",   fontWeight:"bold"}}>Pay ✥ Now </Link></>
+      
+            
+
+          </div>
+            </div>
                         </div>
                     </div>
                 ))
             }
 
-            <div className="total">
-                <h3>Total: $ {total}</h3>
-                <PaypalButton
-                total={total}
-                tranSuccess={tranSuccess} />
-            </div>
+          
         </div>
     )
 }

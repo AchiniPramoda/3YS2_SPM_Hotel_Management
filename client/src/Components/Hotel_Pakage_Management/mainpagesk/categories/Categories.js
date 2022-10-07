@@ -1,9 +1,12 @@
-import React, {useState, useContext} from 'react'
+import React, {useState,useEffect, useContext,useRef} from 'react'
 import {GlobalState} from '../../../../GlobalState'
 import axios from 'axios'
 import Header3 from '../../headersk/Header3'
 import Footer from '../../headersk/Footer'
 import "./categories.css"
+import GeneratePdf from '../../ReportGenerator'
+import "../../ReportGenerator"
+import { useReactToPrint } from "react-to-print";
 
 function Categories() {
     const state = useContext(GlobalState)
@@ -13,12 +16,30 @@ function Categories() {
     const [callback, setCallback] = state.categoriesAPI.callback
     const [onEdit, setOnEdit] = useState(false)
     const [id, setID] = useState('')
+    const componentRef = useRef();
+    const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+    });
+    
+    const [users,setUsers] = useState([]);
 
-    const createCategory = async e =>{
+    useEffect(() => {
+
+        axios.get("http://localhost:5000/api/category").then((res) => {
+            console.log(res.data);
+            setUsers(res.data);
+        }).catch((err) => {
+            console.log(err);
+        })
+
+    }, [])
+
+
+ const createCategory = async e =>{
         e.preventDefault()
         try {
             if(onEdit){
-                const res = await axios.put(`/api/category/${id}`, {name: category}, {
+                const res = await axios.put(`/api/category/${id}`, {name: category,title:category}, {
                
                 })
                 alert(res.data.msg)
@@ -56,33 +77,83 @@ function Categories() {
     }
 
     return (
-        <div className='kavi'><Header3></Header3>
-       <h3>{onEdit? "Update Category" : "Create Category"}</h3>
+        <div className='kavi'>
+            
+            
+            
+   
 
-        <div className="categories">
-          <div className='kavi'>
-            <form onSubmit={createCategory}>
-                <label htmlFor="category">...Category...</label>
-                <input  class="form-control"  placeholder='Enter New Catagory' type="text" name="category" value={category} required
-                onChange={e => setCategory(e.target.value)} />
 
-                <button type="submit">{onEdit? "Update" : "Create "}</button>
-            </form>
+
+          <h3>{onEdit? "Update Category" : "Create Category"}</h3>
+
+<div className="categories">
+  <div className='kavi'>
+    <form onSubmit={createCategory}>
+        <label htmlFor="category">...Category...</label>
+        <input  class="form-control"  placeholder='Enter New Catagory' type="text" name="category" value={category} required
+        onChange={e => setCategory(e.target.value)} />
+
+        <button type="submit" style={{color:""}}>{onEdit? "Update" : "Create "}</button>
+    </form>
 </div>
-            <div className="col1">
-                {
-                    categories.map(category => (
-                        <div className="row" key={category._id}>
-                            <p>{category.name}</p>
-                            <div>
-                                <button1 type="submit"onClick={() => editCategory(category._id, category.name)}>UPDATE </button1>
-                                <button2 onClick={() => deleteCategory(category._id)}>Delete</button2>
-                            </div>
-                        </div>
-                    ))
-                }
-            </div>
+    <div className="col1">
+        {
+            categories.map(category => (
+                <div className="row" key={category._id}>
+                    <p>{category.name}</p>
+                    <div>
+                        <button1 type="submit" style={{color:"#fff"}}onClick={() => editCategory(category._id, category.name)}>UPDATE </button1>
+                        <button2 style={{color:"#fff"}} onClick={() => deleteCategory(category._id)}>Delete</button2>
+                        
+                    </div>
+                </div>
+                
+            ))
+        }
+        
+    </div>
+    <div className="">
+        <div className="row1">
+            {
+                <div className="row1">
+                   
+                       <button style={{background: "#fff", width: "50%" , marginLeft:"346px"} } onClick={()=>GeneratePdf(users)}>Genarate Report</button>  
+                </div>
+            }
         </div>
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+            
+            
+          
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+    
+        
+      
+         
         <Footer></Footer>
         </div>
 

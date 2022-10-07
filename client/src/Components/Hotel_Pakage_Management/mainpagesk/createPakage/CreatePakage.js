@@ -5,6 +5,12 @@ import Loading from '../utils/loading/Loading'
 import { useNavigate,useParams} from 'react-router-dom'
 import Header3 from '../../headersk/Header3'
 import Footer from '../../headersk/Footer'
+import '../createPakage/createPakage.css'
+import ReactToPrint from 'react-to-print';
+
+import { FaRegListAlt, FaPlusCircle } from 'react-icons/fa';
+import {MdArrowBackIosNew} from 'react-icons/md';
+
 const initialState = {
     pakage_id: '',
     title: '',
@@ -12,7 +18,8 @@ const initialState = {
     description: '',
     content: '',
     category: '',
-    _id: ''
+    _id: '',
+    isGen: false
 }
 
 function CreatePakage() {
@@ -127,12 +134,12 @@ function CreatePakage() {
     return (
       <div className='kavi'><Header3></Header3>
        <div className="upload1">
-       <h3>{onEdit? "Update Package" : "Create package"}</h3>
-                
+       <h3 style={{marginLeft:"100px"}}>{onEdit? "Update Package" : "Create package"}</h3>
+
             </div> 
         <div className="create_pakage">
 
-
+     
 
             <div className="upload">
                 <input type="file" name="file" id="file_up" onChange={handleUpload}/>
@@ -193,7 +200,7 @@ function CreatePakage() {
                         }
                     </select>
                 </div>
-         
+                
                 <button type="submit">{onEdit? "Update" : "Create"}</button>
 
             </form>
