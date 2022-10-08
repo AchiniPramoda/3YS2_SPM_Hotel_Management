@@ -88,48 +88,15 @@ router.put('/edit/:id', upload.single('hallImage'), (req, res) => {
 
 
 
-// //update room by id
-// router.put('/edit/:id', upload.single('hallImage'), (req, res) => {
-//     Hall
-//     .findByIdAndUpdate(req.params.id) 
-//     .then(response =>{
-//                  response.hallID=req.body.hallID;
-//                 response.name = req.body.name;
-//                 response.hallType = req.body.hallType;
-//                 response.Space = req.body.Space;
-//                 response.Guest = req.body.Guest;
-//                 response.price = req.body.price;
-//                 response.description = req.body.description;
-//                 response.feacture = req.body.feacture;
-//                  response.event = req.body.event;
-//                response.hallImage = result.secure_url;
-//                 response.cloudinary_id = result.public_id;
-//                 response.fileName = req.body.fileName;
-    
-//     response
-//     .save()
-//     .then(() => res.json("Hall Updated Successfully..."))
-//     .catch((err) => { console.log(err) });
-   
-//     })
-
-// });
 
 
 router.delete('/deletehall/:id', async (req, res) => {
-    try{
-        const hall = await Hall.findById(req.params.id);
-        if(!hall){
-            return res.status(404).send("Hall not found");
-        }
-        await cloudinary.uploader.destroy(hall.cloudinary_id, {resource_type: "raw"});
-        await hall.remove();
-        res.json("Hall Deleted Successfully...");
-    }
-    catch(err){
-        res.status(400).send("Error : " + err);
-    }
+    await Hall.findByIdAndDelete(req.params.id)
+    .then(() => res.json("Hall Deleted Successfully..."))
+    .catch(err => err.json(err.message));
 } );
+
+module.exports = router;
 
 
 module.exports = router;

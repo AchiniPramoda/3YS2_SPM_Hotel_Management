@@ -91,7 +91,7 @@ function UpdateHall () {
             .then((res) => {
                 Alert( "success", "Hall Added Successfully");
           console.log(res.data);
-           window.location = '/viewRoom';})
+           window.location = '/viewhall';})
 
        
             .catch((err) => {
@@ -153,8 +153,10 @@ function UpdateHall () {
                     </div>
 
                     <div class="form-group col-sm-6">
+
                         <label for="description">Description</label>
-                        <input type="text" class="form-control" id="description" placeholder="Enter Description" value={description} onChange={(e) => setDescription(e.target.value)} />
+                        <textarea class="form-control "
+                        id="description" placeholder="Enter Description" value={description} onChange={(e) => setDescription(e.target.value)} />
                     </div>
 
                     <div class="form-group col-sm-6">

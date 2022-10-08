@@ -50,7 +50,7 @@ class AllHallContainer extends Component {
     }
 
     getRedirectButton = () => {
-        return <button type="button" onClick={() => { window.location='/addhall' }} class="btn btn-outline-primary m-2">Create Room</button>
+        return <button type="button" onClick={() => { window.location='/addhall' }} class="btn btn-outline-primary m-2">Create Hall</button>
     }
 
 
@@ -97,11 +97,13 @@ class AllHallContainer extends Component {
                     }
 
                     <div ref={el => (this.componentRef = el)}>
+                   
                         <h3 className={"text-secondary text-center mb-5"}>All Hall details</h3>
                         <div class="table1">
                             <table class="table">
-                                <thead className={"table-dark"}>
+                                <thead className="table-dark1">
                                     <tr>
+
                                     <th scope="col">Hall Name</th>
                                         <th scope="col">Hall Type</th>
                                         <th scope="col">Space</th>
