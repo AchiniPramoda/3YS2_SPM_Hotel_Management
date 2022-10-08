@@ -1,15 +1,59 @@
 import React from "react";
 import './login.css';
+import axios from "axios";
+import { useState } from "react";
+import LoginNavbar from "../Navbar/LoginNavbar";
 
-function Registration() {
+const Signup = () => {
+	const [data, setData] = useState({
+		firstName: "",
+		lastName: "",
+		email: "",
+		password: "",
+    country:"",
+	});
+	const [error, setError] = useState("");
+	
+	const [msg,setMsg]=useState("");
+
+	const handleChange = ({ currentTarget: input }) => {
+		setData({ ...data, [input.name]: input.value });
+	};
+
+
+
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		try {
+			const url = "http://localhost:8345/register/add";
+      console.log(data);
+			const { data: res } = await axios.post(url, data);
+			//navigate("/login");
+			setMsg(res.message);
+		} catch (error) {
+			if (
+				error.response &&
+				error.response.status >= 400 &&
+				error.response.status <= 500
+				
+			) {
+				setError(error.response.data.message);
+			
+			}
+		}
+	};
+
+
 
     return (
         <div>
 
+            <LoginNavbar/>
+
 <section class="login-form dark">
         
         <div class="container">
-          <form>
+          <form >
            
             {/* use for title */}
               <div class="products">
@@ -35,9 +79,10 @@ function Registration() {
                        placeholder="First Name" 
                        aria-label="First Name" 
                        aria-describedby="basic-addon1" 
-                    //    name="firstname"
-                    //    onChange={handleStaffData}
-                    //    value={values.firstname}
+                       name="firstName"
+                       id="firstName"
+                       onChange={handleChange}
+                       value={data.firstName}
                        />
                 </div>
   
@@ -50,9 +95,10 @@ function Registration() {
                         placeholder="Last Name" 
                         aria-label="Last Name" 
                         aria-describedby="basic-addon1"
-                        // name="lastname"
-                        // onChange={handleStaffData}
-                        // value={values.lastname}
+                        name="lastName"
+                        id="lastName"
+                        onChange={handleChange}
+                        value={data.lastName}
                         />
   
                    
@@ -67,11 +113,12 @@ function Registration() {
                        type="text" 
                        class="form-control" 
                        placeholder="E-mail" 
-                       aria-label="E-mail" 
+                       aria-label="E-mail"
+                       id="email" 
                        aria-describedby="basic-addon1"
-                    //    name="staffid"
-                    //    onChange={handleStaffData}
-                    //    value={values.staffid}
+                       name="email"
+                       onChange={handleChange}
+                       value={data.email}
                        />
                 </div>
   
@@ -80,17 +127,36 @@ function Registration() {
                  
                    
                      <input 
-                        type="text" 
+                        type="password" 
                         class="form-control" 
                         placeholder="Password" 
                         aria-label="Password" 
                         aria-describedby="basic-addon1" 
-                        // name="phone"
-                        // onChange={handleStaffData}
-                        // value={values.phone}
+                        name="password"
+                        id="password"
+                        onChange={handleChange}
+                        value={data.password}
                         />
   
                   </div>
+
+                  <div class="form-group col-sm-12">
+                   <label for="">Country</label>
+                 
+                 
+                   <input 
+                      type="text" 
+                      class="form-control" 
+                      placeholder="Country" 
+                      aria-label="Country" 
+                      id="country"
+                      aria-describedby="basic-addon1" 
+                      name="country"
+                      onChange={handleChange}
+                      value={data.country}
+                      />
+  
+                 </div>
               
                 <div class="form-group col-sm-12">
                    <label for="">City</label>
@@ -101,18 +167,19 @@ function Registration() {
                       class="form-control" 
                       placeholder="City" 
                       aria-label="City" 
+                      id="city"
                       aria-describedby="basic-addon1" 
-                    //   name="email"
-                    //   onChange={handleStaffData}
-                    //   value={values.email}
+                      name="city"
+                      onChange={handleChange}
+                      value={data.city}
                       />
   
                  </div>
-          
-  
                
+						{error && <div className="error_msg">{error}</div>}
+						{msg && <div className="sucess_msg">{msg}</div>}
                 <div class="btngroup col-sm-4">
-                  <button type="button" class="submit">Register</button>
+                  <button type="button" class="submit" onClick={handleSubmit}>Register</button>
                 </div>
   
               </div>
@@ -128,4 +195,4 @@ function Registration() {
 }
 
 
-export default Registration;
+export default Signup;

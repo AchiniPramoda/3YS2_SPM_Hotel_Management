@@ -1,9 +1,10 @@
 import React from "react";
 import axios from "axios";
-import './staff.css';
+import './room.css';
 import  {Alert} from '../alert/message.jsx';
 import RoomValidation from '../validation/RoomValidation.jsx';
 import dummy_image from "../../../assets/images/dummy_image.jpg";
+import Navbar from "../../Navbar/AdminNavbar/AdminNavbar";
 export default class AddRoom extends React.Component{
 
     constructor(props) {
@@ -43,6 +44,9 @@ export default class AddRoom extends React.Component{
         console.log(e.target.value);
     }
 
+    onSelectValueChange = (e) => {
+      this.setState({[e.target.id]:e.target.value});
+  }
     onFileChange = (e) => {
         
         this.setState({
@@ -70,7 +74,7 @@ export default class AddRoom extends React.Component{
        
      if(result.status){
         const formData = new FormData();
-        formData.append('RoomId', this.state.RooId);
+        formData.append('RooId', this.state.RooId);
         formData.append('roomType', this.state.roomType);
         formData.append('beads', this.state.beads);
         formData.append('clients', this.state.clients);
@@ -87,7 +91,8 @@ export default class AddRoom extends React.Component{
         .then((res) => {
           console.log("room added");
             Alert( "success", "Room Added Successfully");
-            console.log(res.data);                                                                
+            console.log(res.data);  
+            window.location = "/viewRoom";                                                              
         }).catch(err => {
             this.handleError(err);
             console.log(err);
@@ -101,9 +106,9 @@ export default class AddRoom extends React.Component{
 
         return (
             <div>
-
+ <Navbar />
             <div >
-                <section class="Staff-form dark">
+                <section class="Room-form dark">
                     
                   <div class="container">
                     <form >
@@ -145,17 +150,21 @@ export default class AddRoom extends React.Component{
                           
                             <div class="form-group col-sm-6">
                             <label for="card-holder">Room Type</label>
-
-                                <input
-                                    type="text"
+                                         <select
+                                            value={this.state.roomType}
+                                            onChange={(e) => this.onSelectValueChange(e)}
+                                            type="text"
+                                            id="roomType"
                                     class="form-control "
                                     placeholder="Room Type"
                                     aria-label="Room Type"
-                                    aria-describedby="basic-addon1"
-                                  id="roomType"
-                                    
-                                    onChange={(e) => this.onChange(e)}
-                                    />
+                                    aria-describedby="basic-addon1">
+                                            <option  value={"--Select Type--"}>--Select Category--</option>
+                                            <option value="Queen">Queen</option>
+                                           <option value="Dubble">Dubble </option>
+                                            <option value="Another">Another</option>
+                                        </select>
+                               
                             </div>
 
                             <div class="form-group col-sm-6">
@@ -224,7 +233,7 @@ export default class AddRoom extends React.Component{
                                     onChange={(e) => this.onChange(e)}
                                     />
                             </div>
-                            <div class="form-group col-sm-6">
+                            <div class="form-group col-sm-12">
                             <label for="card-holder">Room Image</label>
                              <input type="file" class="form-control" name="RoomImage" onChange={(e) => this.onFileChange(e)}      />
                             </div>

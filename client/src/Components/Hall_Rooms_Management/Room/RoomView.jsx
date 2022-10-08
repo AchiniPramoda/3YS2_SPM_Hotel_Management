@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import {  withRouter  } from "react-router-dom";
 import axios from "axios"
 import ReactToPrint from 'react-to-print';
-import './StaffView.css';
-
+import './RoomView.css';
+import Navbar from '../../Navbar/AdminNavbar/AdminNavbar';
 import RoomActions from './RoomAction';
 
 class AllRoomContainer extends Component {
@@ -11,7 +10,7 @@ class AllRoomContainer extends Component {
         super(props);
         this.state = {
             rooms: [],
-            filterdRooms: [],
+            FilterdRoom: [],
             isGen: false
         }
     }
@@ -20,7 +19,7 @@ class AllRoomContainer extends Component {
         axios.get("http://localhost:8345/room/getroom").then(res => {
             this.setState({
                 rooms: res.data,
-                filterdRooms: res.data,
+                FilterdRoom: res.data,
             });
         }).catch(err => {
             console.log(err);
@@ -32,31 +31,34 @@ class AllRoomContainer extends Component {
         this.updateContent();
     }
 
-    // Function for search vehicles
     search = (e) => {
         let searchTag = e.target.value.toLowerCase();
-        let filterdRooms= [];
+        let FilterdRoom= [];
 
         this.state.rooms.forEach(room => {
             if (room.RooId.toLowerCase().includes(searchTag) || room.roomType.toLowerCase().includes(searchTag)) {
-                filterdRooms.push(room)
+                FilterdRoom.push(room)
             }
         })
 
         this.setState({
-            filterdRooms,
+            FilterdRoom,
             searchTag
         });
 
     }
 
     getRedirectButton = () => {
-        return <button type="button" onClick={() => { this.props.history.push("/addroom") }} class="btn btn-outline-primary m-2">Create Room</button>
+        return <button type="button" onClick={() => { window.location='/addroom' }} class="btn btn-outline-primary m-2">Create Room</button>
     }
 
 
     render() {
         return (
+<div>
+
+    <Navbar />
+
 
 <div className="myyy">
             <div className="container-fluid mt-5">
@@ -64,8 +66,8 @@ class AllRoomContainer extends Component {
                     <nav class="navbar navbar-light bg-light">
                         <div class="container-fluid">
                             <div class="d-flex">
-                                <input onChange={(e) => this.search(e)} class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                                <button class="btn btn-outline-success" type="submit">Search</button>
+                                <input onChange={(e) => this.search(e)} class="form-control me-2 form-group" type="search" placeholder="Search" aria-label="Search" />
+                                <button class="btn btn-outline-warning form-group" type="submit">Search</button>
                             </div>
                         </div>
                     </nav>
@@ -113,7 +115,7 @@ class AllRoomContainer extends Component {
                                 <tbody>
                                     <React.Fragment>
                                         {
-                                            this.state.filterdRooms.map(room => {
+                                            this.state.FilterdRoom.map(room => {
                                                 return <RoomActions key={room._id} room={room} isGen={this.state.isGen} updateContent={this.updateContent} />
                                             })
                                         }
@@ -126,7 +128,7 @@ class AllRoomContainer extends Component {
                 </div>
            
             </div>
-
+            </div>
         );
     }
 }

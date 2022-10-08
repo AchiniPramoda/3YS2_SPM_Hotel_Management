@@ -1,9 +1,10 @@
 import React from "react";
 import axios from "axios";
-import './staff.css';
-import { useParams } from "react-router-dom";
+import './room.css';
 import  {Alert} from '../alert/message.jsx';
 import RoomValidation from '../validation/RoomValidation.jsx';
+
+
 export default class UpdateRoom extends React.Component{
 
     constructor(props) {
@@ -24,12 +25,15 @@ export default class UpdateRoom extends React.Component{
             open:true
         }
     }
-    
-    componentDidMount() {
-        // request to get all the rooms
 
-       
+    
+
+    componentDidMount() {
+        
+
         axios.get(`http://localhost:8345/room/getroom/${this.props.match.params.id}`).then(res => {
+
+
             let room = res.data;
 
                 this.setState({
@@ -76,13 +80,13 @@ export default class UpdateRoom extends React.Component{
     }
 
     onFileChange = (e) => {
-        
         this.setState({
             RoomImage:e.target.files[0],
             fileName:e.target.files[0].name,
            
         })
-    }
+    }    
+    
 
 
 
@@ -102,7 +106,7 @@ export default class UpdateRoom extends React.Component{
        
      if(result.status){
         const formData = new FormData();
-        formData.append('RoomId', this.state.RoomId);
+        formData.append('RooId', this.state.RooId);
         formData.append('roomType', this.state.roomType);
         formData.append('beads', this.state.beads);
         formData.append('clients', this.state.clients);
@@ -143,7 +147,7 @@ export default class UpdateRoom extends React.Component{
                       {/* use for title */}
                         <div class="products">
             
-                           <div class="title">ADD ROOM DETAILS</div>
+                           <div class="title">UPADATE ROOM DETAILS</div>
                       
                        </div>
                        {/* <div className="col-md-7">
@@ -168,8 +172,8 @@ export default class UpdateRoom extends React.Component{
                                  placeholder="Room ID" 
                                  aria-label="Room ID" 
                                  aria-describedby="basic-addon1" 
-                                 id="RoomId"
-                                 
+                                 id="RooId"
+                                 value={this.state.RooId}
                                  onChange={(e) => this.onChange(e)}
                                  />
                           </div>
@@ -184,8 +188,8 @@ export default class UpdateRoom extends React.Component{
                                     placeholder="Room Type"
                                     aria-label="Room Type"
                                     aria-describedby="basic-addon1"
-                                  id="roomType"
-                                    
+                                    id="roomType"
+                                    value={this.state.roomType}
                                     onChange={(e) => this.onChange(e)}
                                     />
                             </div>
@@ -200,7 +204,7 @@ export default class UpdateRoom extends React.Component{
                                     aria-label="Beads"
                                     aria-describedby="basic-addon1"
                                      id="beads"
-                                  
+                                     value={this.state.beads}
                                     onChange={(e) => this.onChange(e)}
                                     />
                             </div>
@@ -213,8 +217,8 @@ export default class UpdateRoom extends React.Component{
                                     placeholder="Clients"
                                     aria-label="Clients"
                                     aria-describedby="basic-addon1"
-                                  id="clients"
-                                  
+                                    id="clients"
+                                    value={this.state.clients}
                                     onChange={(e) => this.onChange(e)}
                                     />
                             </div>
@@ -227,8 +231,8 @@ export default class UpdateRoom extends React.Component{
                                     placeholder="Price"
                                     aria-label="Price"
                                     aria-describedby="basic-addon1"
-                                  id="price"
-                                   
+                                    id="price"
+                                    value={this.state.price}
                                     onChange={(e) => this.onChange(e)}
                                     />
                             </div>
@@ -237,7 +241,7 @@ export default class UpdateRoom extends React.Component{
                             <textarea class="form-control "
                                     placeholder="Description"
                                     aria-label="Description"
-                          
+                                    value={this.state.description}
                                     id="description"
                                     onChange={(e) => this.onChange(e)}  
                                     />
@@ -251,19 +255,15 @@ export default class UpdateRoom extends React.Component{
                                     placeholder="Facilities"
                                     aria-label="Facilities"
                                     aria-describedby="basic-addon1"
-                                  id="facilities"
-                                   
+                                    id="facilities"
+                                    value={this.state.facilities}
                                     onChange={(e) => this.onChange(e)}
                                     />
                             </div>
                             <div class="form-group col-sm-6">
                             <label for="card-holder">Room Image</label>
-                             <input type="file" class="form-control" name="RoomImage" onChange={(e) => this.onFileChange(e)}      />
+                             <input type="file" class="form-control" name="RoomImage"value={this.state.RoomImage} onChange={(e) => this.onFileChange(e)}      />
                             </div>
-                        
-
-
-                          
                            <div class="btngroup col-sm-3">
                             <button type="button" class="cancel">Clear</button>
                           </div>
