@@ -24,7 +24,7 @@ import UserAdminView from './Components/User_Employee_Management/UserAdminView';
 import HallViewMore from './Components/Hall_Rooms_Management/Hall/HallView/MoreDetailsView';
 import AllHallForUser from './Components/Hall_Rooms_Management/Hall/HallView/Allhall';
 
-import UpdateHall from './Components/Hall_Rooms_Management/Hall/UpdateHall';
+import UpdateHall from './Components/Hall_Rooms_Management/Hall/HallView/UpdateHall';
 
 
 function App() {
@@ -39,7 +39,7 @@ function App() {
 
                  <Route path="/addroom" element={<AddRoom />} />
                  <Route  path="/updateroom/:id" element={<UpdateRoom />} />
-                 <Route  path="/updatehall/:id" element={<UpdateHall />} />
+                 {/* <Route  path="/updatehall/:id" element={<UpdateHall />} /> */}
                
                
                   <Route path="/viewRoom" element={<ViewRoom />} />

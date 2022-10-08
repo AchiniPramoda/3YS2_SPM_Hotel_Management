@@ -108,6 +108,7 @@ export default class UpdateHall extends React.Component{
             description: this.state.description,
             feacture: this.state.feacture,
             event: this.state.event,
+            
         });
        
      if(result.status){

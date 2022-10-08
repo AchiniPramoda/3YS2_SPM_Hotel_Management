@@ -55,39 +55,45 @@ router.get('/gethall/:id', async (req, res) => {
 } );
 
 
-//update hall by id
-// router.put('/edit/:id', upload.single('hallImage'), async (req, res) => {
 
-//     try{
 
-//         const research = await Hall.findById(req.params.id);
-
-//         var result = null;
-
-//         if(!req.file) {
-
-//             console.log("File None");
-//             result = await cloudinary.api.resource(research.cloudinary_id,  {resource_type: "raw",});
-//             //console.log(result);
-
-//         }else {
-
-//             await cloudinary.uploader.destroy(research.cloudinary_id,  {resource_type: "raw"} );
-
-//             result = await cloudinary.uploader.upload(req.file.path, {
-//                 resource_type: "raw", 
-//                 folder : "Template",
-//                 public_id: req.file.originalname
-//             });
-//             console.log(result);
-//             // res.json(result);
-//         }
-
-//         console.log(result);
+//
+//update room by id
+router.put('/edit/:id', upload.single('hallImage'), (req, res) => {
+        Hall
+    .findByIdAndUpdate(req.params.id) 
+    .then(response =>{
+        response.hallID = req.body.hallID;
+        response.name = req.body.name;
+        response.hallType = req.body.hallType;
+        response.Space = req.body.Space;
+        response.Guest = req.body.Guest;
+        response.price = req.body.price;
+        response.description = req.body.description;
+        response.feacture = req.body.feacture;
+        response.event = req.body.event;
+        response.hallImage = req.body.hallImage;
+        response.cloudinary_id = req.body.cloudinary_id;
+        response.fileName = req.body.fileName;
        
-//        await Hall.findById(req.params.id)
-//         .then((response) => {
-//                 response.hallID=req.body.hallID;
+    
+    response
+    .save()
+    .then(() => res.json("Room Updated Successfully..."))
+    .catch((err) => { console.log(err) });
+   
+    })
+
+});
+
+
+
+// //update room by id
+// router.put('/edit/:id', upload.single('hallImage'), (req, res) => {
+//     Hall
+//     .findByIdAndUpdate(req.params.id) 
+//     .then(response =>{
+//                  response.hallID=req.body.hallID;
 //                 response.name = req.body.name;
 //                 response.hallType = req.body.hallType;
 //                 response.Space = req.body.Space;
@@ -95,53 +101,19 @@ router.get('/gethall/:id', async (req, res) => {
 //                 response.price = req.body.price;
 //                 response.description = req.body.description;
 //                 response.feacture = req.body.feacture;
-//                 response.event = req.body.event;
-//                 response.hallImage = result.secure_url;
+//                  response.event = req.body.event;
+//                response.hallImage = result.secure_url;
 //                 response.cloudinary_id = result.public_id;
 //                 response.fileName = req.body.fileName;
-               
-
-//             response
-//             .save()
-//             .then(() => res.json("hall Updated Successfully..."))
-//             .catch((err) => console.log(err.message));
-//         })
-//         .catch((err) => res.json(err.message));
-
-//     }catch(err){
-//         console.log(err.message);
-//     }
     
-// });
-
-
-
-//update room by id
-router.put('/edit/:id', upload.single('hallImage'), (req, res) => {
-    Hall
-    .findByIdAndUpdate(req.params.id) 
-    .then(response =>{
-                 response.hallID=req.body.hallID;
-                response.name = req.body.name;
-                response.hallType = req.body.hallType;
-                response.Space = req.body.Space;
-                response.Guest = req.body.Guest;
-                response.price = req.body.price;
-                response.description = req.body.description;
-                response.feacture = req.body.feacture;
-                 response.event = req.body.event;
-               response.hallImage = result.secure_url;
-                response.cloudinary_id = result.public_id;
-             response.fileName = req.body.fileName;
-    
-    response
-    .save()
-    .then(() => res.json("Hall Updated Successfully..."))
-    .catch((err) => { console.log(err) });
+//     response
+//     .save()
+//     .then(() => res.json("Hall Updated Successfully..."))
+//     .catch((err) => { console.log(err) });
    
-    })
+//     })
 
-});
+// });
 
 
 router.delete('/deletehall/:id', async (req, res) => {

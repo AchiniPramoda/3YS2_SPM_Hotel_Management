@@ -40,17 +40,17 @@ const Hall = new schema({
     
     hallImage: {
         type : String,
-        required :true
+       
       
     },
     cloudinary_id: {
         type : String,
-        required :true
+     
       
     },
     fileName: {
         type : String,
-        required :true
+      
     }
 
    
