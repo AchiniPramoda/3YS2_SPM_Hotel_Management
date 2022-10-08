@@ -9,7 +9,7 @@ class Adminfirst extends Component {
     <div>
         <Navbar/>
         <div className="containerAdmin">
-        <button  className="adminMain" type="button"  ><Link className='link-main'to='admin/restaurants/EditRestaurant'> Add Foods  <GiHotMeal style={{color: '#000', fontSize: '30px'}}/></Link></button>
+        <button  className="adminMain" type="button"  ><Link className='link-main'to='/create_food'> Add Foods  <GiHotMeal style={{color: '#000', fontSize: '30px'}}/></Link></button>
         <tr className='gap'></tr>
         <button  className="adminMain" type="button"  ><Link className='link-main' to='/admin/restaurants/CreateRestaurant'>  Add resturants  <FaHotel style={{color: '#000', fontSize: '25px'}}/></Link></button>
             </div>

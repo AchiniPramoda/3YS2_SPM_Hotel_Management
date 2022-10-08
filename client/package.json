@@ -17,6 +17,7 @@
     "react-scripts": "5.0.1",
     "react-to-print": "^2.14.7",
     "sweetalert2": "^11.4.29",
+    "reactstrap": "^9.1.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
