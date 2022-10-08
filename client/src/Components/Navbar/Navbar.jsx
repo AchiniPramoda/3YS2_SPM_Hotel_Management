@@ -54,7 +54,7 @@ function Navbar() {
                 </li>
 
                 <li class="nav-item col-sm-2 active">
-                      <a class="nav-link" href="/admindashboard">Food <span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="/admin/restaurants">Food <span class="sr-only">(current)</span></a>
                 </li>
 
                 <li class="nav-item col-sm-2 active">
@@ -64,8 +64,8 @@ function Navbar() {
             </ul>
     
         <form class="form-inline my-2 my-lg-0">
-             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-             <button type="button" class="btn btn-outline-warning waves-effect">Search</button>
+             
+             <button type="button" className="adminMain">Search</button>
         </form>
       </div>
     </nav>
