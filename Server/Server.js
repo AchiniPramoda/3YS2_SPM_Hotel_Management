@@ -21,12 +21,12 @@ app.use(fileUpload({
 
 app.use(cookieParser())
 app.use(cors());
-//app.use('/user', require('./routes/userRouter'))
+
 app.use('/api', require('./routes/categoryRouter'))
 app.use('/api', require('./routes/upload'))
 app.use('/api', require('./routes/pakageRouter'))
 app.use('/payment',payment);
-app.use('/api', require('./routes/paymentRouter'))
+
 
 
 Port = process.env.PORT;

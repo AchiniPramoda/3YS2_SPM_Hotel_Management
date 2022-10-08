@@ -2,7 +2,7 @@ import React, {useContext, useState, useEffect} from 'react'
 import {GlobalState} from '../../../../GlobalState'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
-import PaypalButton from './PaypalButton'
+
 
 function Cart() {
     const state = useContext(GlobalState)
@@ -64,17 +64,6 @@ function Cart() {
         }
     }
 
-    const tranSuccess = async(payment) => {
-        const {paymentID, address} = payment;
-
-        await axios.post('/api/payment', {cart, paymentID, address}, {
-
-        })
-
-        setCart([])
-        addToCart([])
-        alert("You have successfully placed an order.")
-    }
 
     if(cart.length === 0) 
         return <h2 style={{textAlign: "center", fontSize: "5rem"}}>Cart Empty</h2> 

@@ -1,16 +1,16 @@
-import React, {useContext, useState} from 'react'
-import {GlobalState} from '../../../GlobalState'
+import React, { useState} from 'react'
+
 import Menu from './icon/menu.svg'
 import Close from './icon/close.svg'
-import Cart from './icon/cart.svg'
+
 import {Link} from 'react-router-dom'
 import profile from"./icon/ad.png";
-import profile1 from"./icon/kli.png";
+
 import '../headersk/header.css'
 import Filters from '../mainpagesk/pakages/Filters'
 function Header() {
-    const state = useContext(GlobalState)
-    const [cart] = state.sellpackAPI.cart
+  
+   
     const [menu, setMenu] = useState(false)
     const styleMenu = {
         left: menu ? 0 : "-100%"
@@ -68,7 +68,7 @@ function Header() {
 <><Link to={"/create_pakage"}>Create package ✥ </Link></>
                 <><Link to={"/category"}>create category✥ </Link></>
                 <><Link to={"/"}>Packages✥</Link></>
-                <><Link to={"/a"} >Package Report✥ </Link></>
+                <><Link to={"/packagereport"} >Package Report✥ </Link></>
               
 </div> 
    
