@@ -1,5 +1,5 @@
 import React from "react";
-import coverresadmin from "../images/coverresadmin.png"
+import coverresadmin from "../../assets/images/coverresadmin.png";
 import "./navbar.css";
 import "../../../src/index.css";
 
