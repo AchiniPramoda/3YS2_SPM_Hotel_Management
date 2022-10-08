@@ -2,14 +2,15 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./staff.css";
 import {  useParams } from "react-router-dom";
+import Navbar from "../Navbar/AdminNavbar/AdminNavbar";
 
 function EditStaff() {
 
     const [firstname, setfirstname] = useState('');
     const [lastname, setlastname] = useState('');
-    const [staffid, setstaffid] = useState('');
+    const [staffId, setstaffid] = useState('');
     const [phone, setphone] = useState('');
-    const [email, setemail] = useState('');
+    const [staffemail, setemail] = useState('');
     const [possition, setpossition] = useState('');
     const [address, setaddress] = useState('');
     const [dateofbirth, setdateofbirth] = useState('');
@@ -27,9 +28,9 @@ function EditStaff() {
         //  setValues(response.data.data);
         setfirstname(response.data.firstname);
         setlastname(response.data.lastname);
-        setstaffid(response.data.staffid);
+        setstaffid(response.data.staffId);
         setphone(response.data.phone);
-        setemail(response.data.email);
+        setemail(response.data.staffemail);
         setpossition(response.data.possition); 
         setaddress(response.data.address);
         setdateofbirth(response.data.dateofbirth);
@@ -51,9 +52,9 @@ function EditStaff() {
       let updateData = {
         firstname: firstname,
         lastname: lastname,
-        staffid: staffid,
+        staffId: staffId,
         phone: phone,
-        email: email,
+        staffemail: staffemail,
         possition: possition,
         address: address,
         dateofbirth: dateofbirth,
@@ -62,7 +63,7 @@ function EditStaff() {
         salary: salary,
       }
   
-      axios.put(`http://localhost:8345/staff/edit/${params.id}`,updateData)
+      axios.put(`http://localhost:8345/staff/updatestaff/${params.id}`,updateData)
     //   .then((res)=> {AlertMsg("success", "success", res.data); window.location = `/addstaff`})
     //   .catch((err) => AlertMsg("error", "error", err.message))
         .then((response) => { console.log(response.data); window.location = `/viewstaff`})
@@ -73,6 +74,8 @@ function EditStaff() {
     return(
     <div>
         
+        <Navbar/>
+
         <div >
     <section class="Staff-form dark">
         
@@ -140,9 +143,9 @@ function EditStaff() {
                      placeholder="Staff ID" 
                      aria-label="Staff ID" 
                      aria-describedby="basic-addon1"
-                     name="staffid"
+                     name="staffId"
                         onChange={(e) => setstaffid(e.target.value)}
-                        value={staffid}
+                        value={staffId}
                      />
               </div>
 
@@ -173,9 +176,9 @@ function EditStaff() {
                     placeholder="E-mail" 
                     aria-label="E-mail" 
                     aria-describedby="basic-addon1" 
-                    name="email"
+                    name="staffemail"
                         onChange={(e) => setemail(e.target.value)}
-                        value={email}
+                        value={staffemail}
                     />
 
                </div>

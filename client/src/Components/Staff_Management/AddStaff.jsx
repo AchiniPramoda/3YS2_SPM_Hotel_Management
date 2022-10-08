@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import axios from "axios";
 import './staff.css';
-import Navbar from "../Navbar/Navbar";
+import Navbar from "../Navbar/AdminNavbar/AdminNavbar"
 
 function Addstaff(){
 
   const [values, setValues] = useState({
     firstname: "",
     lastname: "",
-    staffid:"",
+    staffId:"",
     phone: "",
-    email: "",
+    staffemail: "",
     possition: "",
     address: "",
     dateofbirth: "",
@@ -30,9 +30,9 @@ const AddStaff = (e) => {
   let staffData = {
     firstname: values.firstname,
     lastname: values.lastname,
-    staffid: values.staffid,
+    staffId: values.staffId,
     phone: values.phone,
-    email: values.email,
+    staffemail: values.staffemail,
     possition: values.possition,
     address: values.address,
     wortype: values.wortype,
@@ -47,6 +47,7 @@ const AddStaff = (e) => {
 axios.post("http://localhost:8345/staff/addstaff", staffData )
     .then((response) => {
       console.log(response.data);
+      window.location = "/viewstaff";
     
     })
     
@@ -63,10 +64,10 @@ axios.post("http://localhost:8345/staff/addstaff", staffData )
     return(
         <div>
 
-   <Navbar />
+<Navbar/>
 
 <div >
-    <section class="Staff-form dark">
+    <section class="Staff-form">
         
       <div class="container">
         <form>
@@ -93,7 +94,7 @@ axios.post("http://localhost:8345/staff/addstaff", staffData )
                   <input 
                      
                      type="text"
-                     class="form-control " 
+                     class="form-control" 
                      placeholder="First Name" 
                      aria-label="First Name" 
                      aria-describedby="basic-addon1" 
@@ -132,9 +133,9 @@ axios.post("http://localhost:8345/staff/addstaff", staffData )
                      placeholder="Staff ID" 
                      aria-label="Staff ID" 
                      aria-describedby="basic-addon1"
-                     name="staffid"
+                     name="staffId"
                      onChange={handleStaffData}
-                     value={values.staffid}
+                     value={values.staffId}
                      />
               </div>
 
@@ -165,9 +166,9 @@ axios.post("http://localhost:8345/staff/addstaff", staffData )
                     placeholder="E-mail" 
                     aria-label="E-mail" 
                     aria-describedby="basic-addon1" 
-                    name="email"
+                    name="staffemail"
                     onChange={handleStaffData}
-                    value={values.email}
+                    value={values.staffemail}
                     />
 
                </div>

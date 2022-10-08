@@ -1,5 +1,5 @@
 import React from "react";
-import coverres from "../images/coverres.png"
+import coverres from "../../assets/images/coverres.png";
 import "./navbar.css";
 
 function Navbar() {

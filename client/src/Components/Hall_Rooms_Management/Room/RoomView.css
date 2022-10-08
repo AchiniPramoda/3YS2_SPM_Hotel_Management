@@ -1,0 +1,21 @@
+.myyy{
+    
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+   
+}
+.table1{
+    width: auto;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #000;
+    justify-content: center;
+    border-radius: 6px;
+   
+
+
+}
