@@ -176,7 +176,7 @@ function CreateFood() {
                     loading ? <div id="file_img"><Loading /></div>
 
                     :<div id="file_img" style={styleUpload}>
-                        <img src={images ? images.url : ''}  alt=""/>
+                        <img src={images ? images.url : ''} className="resturantImageadd" alt=""/>
                         <span onClick={handleDestroy}>X</span>
                     </div>
                 }

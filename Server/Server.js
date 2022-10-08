@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const path = require("path");
 const fileupload = require('express-fileupload')
+const cookieParser = require('cookie-parser')
 //const fileupload = require("express-fileupload");
 
 dotenv.config();
@@ -14,11 +15,14 @@ app.use(express.json());
 app.use(express.urlencoded({
     extended : true  
 }));
+
 app.use(cors());
-app.use(fileupload());
+app.use(fileupload({
+    useTempFiles: true
+}));
 
 
-
+app.use(cookieParser())
 
 Port = process.env.PORT;
 Url = process.env.URL;
@@ -35,8 +39,21 @@ connected.once("open", () => {
 
 app.listen(Port, () => {
     console.log("Port No : " + Port);
-});
+})
 
+if(process.env.NODE_ENV === 'production'){
+    app.use(express.static('client/build'))
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
+    })
+}
+
+// if(process.env.NODE_ENV === 'production'){
+//     app.use(express.static('client/build'))
+//     app.get('*', (req, res) => {
+//         res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
+//     })
+// }
 
 const Hall = require('./routes/hall_management.route');
 app.use('/hall', Hall);
@@ -63,8 +80,9 @@ app.use("/api", CategoryManagement);
 const FoodManagement = require("./routes/foodRouter");
 app.use("/api", FoodManagement);
 
-const UploadManagement = require("./routes/upload");
-app.use("/api", UploadManagement);
+// const UploadManagement = require("./routes/upload");
+// app.use("/api", UploadManagement);
+app.use('/api', require('./routes/upload'))
 
 app.use('/static', express.static(path.join(__dirname, 'public')))
 
