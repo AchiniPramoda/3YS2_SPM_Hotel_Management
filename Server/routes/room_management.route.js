@@ -4,6 +4,7 @@ const upload = require('./../utils/ImageMulter');
 const router = express.Router();
 
 const Room= require('./../model/Room');
+const { response } = require('express');
 
 router.post('/addroom', upload.single('RoomImage'), async (req, res, next) => {
     
@@ -25,13 +26,13 @@ router.post('/addroom', upload.single('RoomImage'), async (req, res, next) => {
             facilities: req.body.facilities,
             RoomImage: result.secure_url,
             cloudinary_id: result.public_id,
-            fileName: req.file.filename
+            fileName : req.body.fileName
         })
 
         await room
         .save()
+        .then(() =>{ console.log('Room Added Successfully'); res.status(200).json({ message: 'Room Added Successfully' })})
         
-        .then(() =>{ res.json("Room Added Successfully...")})
         .catch(err => res.status(400).send("Error : " + err));
 
 });
@@ -39,57 +40,46 @@ router.post('/addroom', upload.single('RoomImage'), async (req, res, next) => {
 router.get('/getroom', async (req, res, next) => {
     await Room.find()
     .then(room => res.json(room))
-    .catch(err => err.json(err.message));
+    .catch(err => res.status(400).send("Error : " + err));
 } );
 
 //get room by id
-router.get('/getroom/:id', async (req, res, next) => {
-    await Room.findById(req.params.
-    id)
+router.get('/getroom/:id', async (req, res) => {
+    await Room.findById(req.params.id)
     .then(room => res.json(room))
-    .catch(err => err.json(err.message));
+    .catch(err => res.status(400).send("Error : " + err));
+    
 } );
 
 //update room by id
-router.put('/editroom/:id', upload.single('RoomImage'), async (req, res) => {
+router.put('/editroom/:id', upload.single('RoomImage'), (req, res) => {
+        Room
+        .findByIdAndUpdate(req.params.id) 
+        .then(response =>{
+            response.RooId = req.body.RooId;
+            response.beads = req.body.beads;
+            response.clients = req.body.clients;
+            response.price = req.body.price;
+            response.description = req.body.description;
+            response.facilities = req.body.facilities;
+            response.RoomImage = req.body.RoomImage;
+            response.cloudinary_id = req.body.cloudinary_id;
+            response.fileName = req.body.fileName;
+            response.roomType = req.body.roomType;
+        
+        response
+        .save()
+        .then(() => res.json("Room Updated Successfully..."))
+        .catch((err) => { console.log(err) });
+       
+        })
 
-    try{
-
-        const room = await Room.findById(req.params.id);
-        if(!room){
-            return res.status(404).send("Room not found");
-        }
-        room.RooId = req.body.RooId;
-        room.roomType = req.body.roomType;
-        room.beads = req.body.beads;
-        room.clients = req.body.clients;
-        room.price = req.body.price;
-        room.description = req.body.description;
-        room.facilities = req.body.facilities;
-        room.RoomImage = req.body.RoomImage;
-        room.cloudinary_id = req.body.cloudinary_id;
-        room.fileName = req.body.fileName;
-        await room.save();
-        res.json("Room Updated Successfully...");
-    }
-    catch(err){
-        res.status(400).send("Error : " + err);
-    }
-} );
+    });
 //delete room by id
 router.delete('/deleteroom/:id', async (req, res) => {
-    try{
-        const room = await Room.findById(req.params.id);
-        if(!room){
-            return res.status(404).send("Room not found");
-        }
-        await cloudinary.uploader.destroy(room.cloudinary_id, {resource_type: "raw"});
-        await room.remove();
-        res.json("Room Deleted Successfully...");
-    }
-    catch(err){
-        res.status(400).send("Error : " + err);
-    }
+    await Room.findByIdAndDelete(req.params.id)
+    .then(() => res.json("Room Deleted Successfully..."))
+    .catch(err => err.json(err.message));
 } );
 
 module.exports = router;

@@ -24,18 +24,18 @@ router.post("/add", async (req, res) => {
 
 		user = await new User({ ...req.body, password: hashPassword }).save();
 
-        const tokens = await new Token({
-			userId:user.id,
-			token:crypto.randomBytes(32).toString("hex")     
+        const tokens = new Token({
+			userId: user.id,
+			token: crypto.randomBytes(32).toString("hex")
 		})
 		await tokens.save().then((res) => console.log(res)).catch((err) => console.log(err.message));
 		
-        const url = `${process.env.BASE_URL}/users/${user.id}/verify/${tokens.token}`;
+        const url = `${process.env.BASE_URL}/register/${user.id}/verify/${tokens.token}`;
 		await sendEmail(user.email,"Verify Email",url);
 
 		res.status(201).send({ message: "send mail successfully" });
 	} catch (error) {
-		//res.status(500).send({ message: "Internal Server Error" });
+		res.status(500).send({ message: "Internal Server Error" });
         console.log(error);
 	}
 });
@@ -53,7 +53,7 @@ router.get("/:id/verify/:token/", async (req, res) => {
 		if (!token) return res.status(400).send({ message: "Invalid token link" });
 
 
-//indByIdAndUpdate(req.params.id, { deleted: true });
+
 		await User.findByIdAndUpdate(req.params.id ,{verfied: true });
 		await token.remove();
 
@@ -64,8 +64,8 @@ router.get("/:id/verify/:token/", async (req, res) => {
 	}
 });
 
-//get all users
-router.get("/", async (req, res) => {
+// //get all users
+router.get("/viewuser", async (req, res) => {
     try {
         const users = await User.find({});
         res.status(200).send(users);
@@ -83,25 +83,57 @@ router.get("/:id", async (req, res) => {
         res.status(500).send({ message: "Internal Server Error" });
     }
 } );
-//update user delete
-router.put("/:id/delete", async (req, res) => {
-    try {
-        const user = await User.findByIdAndUpdate(req.params.id, { deleted: true });
-        if (!user) return res.status(400).send({ message: "Invalid user id" });
-        res.status(200).send(user);
-    } catch (error) {
-        res.status(500).send({ message: "Internal Server Error" });
-    }
-} );
-//update user
-router.put("/:id", async (req, res) => {
-    try {
-        const user = await User.findByIdAndUpdate(req.params.id, req.body);
-        if (!user) return res.status(400).send({ message: "Invalid user id" });
-        res.status(200).send(user);
-    } catch (error) {
-        res.status(500).send({ message: "Internal Server Error" });
-    }
-} );
+// //update user delete
+// router.put("/:id/delete", async (req, res) => {
+//     try {
+//         const user = await User.findByIdAndUpdate(req.params.id, { deleted: true });
+//         if (!user) return res.status(400).send({ message: "Invalid user id" });
+//         res.status(200).send(user);
+//     } catch (error) {
+//         res.status(500).send({ message: "Internal Server Error" });
+//     }
+// } );
+
+router.delete("/deleteuser/:id", async (req, res) => {
+	try {
+		const user = await User.findByIdAndDelete(req.params.id);
+		if (!user) return res.status(400).send({ message: "Invalid user id" });
+		res.status(200).send(user);
+	} catch (error) {
+		res.status(500).send({ message: "Internal Server Error" });
+	}
+});
+router.put('/edituser/:id', (req, res) => {
+	User
+	.findByIdAndUpdate(req.params.id) 
+	.then(response =>{
+		response.firstName = req.body.firstName;
+		response.lastName = req.body.lastName;
+		response.email = req.body.email;
+		response.country = req.body.country;
+		response.city = req.body.city;
+		
+	
+		response
+	.save()
+	.then(() => res.json("Room Updated Successfully..."))
+	.catch((err) => { console.log(err) });
+   
+	})
+
+});
+
+
+
+// //update user
+// router.put("/:id", async (req, res) => {
+//     try {
+//         const user = await User.findByIdAndUpdate(req.params.id, req.body);
+//         if (!user) return res.status(400).send({ message: "Invalid user id" });
+//         res.status(200).send(user);
+//     } catch (error) {
+//         res.status(500).send({ message: "Internal Server Error" });
+//     }
+// } );
 
 module.exports = router
