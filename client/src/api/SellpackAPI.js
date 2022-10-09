@@ -6,22 +6,22 @@ function SellpackAPI(){
     const [cart, setCart] = useState([])
     const [history, setHistory] = useState([])
    
-   const addCart = async (food) => {
+   const addCart = async (pakage) => {
       
 
         const check = cart.every(item =>{
-            return item._id !== food._id
+            return item._id !== pakage._id
         })
 
         if(check){
-            setCart([...cart, {...food, quantity: 1}])
+            setCart([...cart, {...pakage, quantity: 1}])
 
-            await axios.patch('http://localhost:8345/user/addcart', {cart: [...cart, {...food, quantity: 1}]}, {
+            await axios.patch('/user/addcart', {cart: [...cart, {...pakage, quantity: 1}]}, {
       
             })
 
         }else{
-            alert("This food has been added to cart.")
+            alert("This pakage has been added to cart.")
         }
     }
 

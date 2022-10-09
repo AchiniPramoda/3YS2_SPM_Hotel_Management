@@ -1,0 +1,80 @@
+.pakages{
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    justify-items: center;
+    margin: 17px 0;
+}
+.sub-main1 {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width:100%;
+    box-shadow: 11px 12px 13px 12px #b7b4b4;
+    padding-top: 30px;
+    border-radius: 6px; 
+    background-color: hwb(0 98% 2%);
+  }
+/* ----------- Pakage Item ----------------- */
+@import url("../utils/pakageItem/pakageItem.css");
+
+.delete-all{
+    text-align: right;
+    margin: 20px;
+}
+.delete-all input{
+    height: 25px;
+    width: 25px;
+    transform: translateY(5px);
+    margin: 0 15px;
+}
+.delete-all span{
+    text-transform: uppercase;
+    color: rgb(10, 11, 11);
+    letter-spacing: 1.3px;
+}
+.delete-all button{
+    border: 1px solid crimson;
+    padding: 10px 25px;
+    color: crimson;
+    text-transform: uppercase;
+}
+
+/* ------------ Filters Menu ----------------- */
+.filter_menu{
+    width: 90%;
+    min-height: -190px;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 15px 80px;
+}
+.filter_menu select, input{
+    border: 1px solid hwb(0 4% 95%);
+    outline: none;
+    height: 40px;
+    background-color:rgb(248, 181, 110);
+    padding: 0 5px;
+}
+.filter_menu input{
+    flex: 1;
+    background-color:#E8861E;
+    margin: 0 10px;
+}
+
+/* -------------------- Load More --------------- */
+.load_more{
+    text-align: center;
+}
+.load_more button{
+    padding: 10px 25px;
+    margin-bottom: 20px;
+    border: 1px solid #555;
+    text-transform: capitalize;
+}
+
+
+
