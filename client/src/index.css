@@ -285,6 +285,15 @@ body {
 
   
   }
+
+  .table1 {
+    width: 60%;
+    background-color:#F6DCC5;
+   margin-top: 1%;
+   margin-left: 50%;
+
+  
+  }
   
   .gap{
     background-color: #E8861E;
@@ -417,6 +426,18 @@ body {
 
   margin-left: 68.5%;
   margin-top: 2%;
+  background-color:#E8861E;
+  color: rgb(19, 18, 18);
+  border: #E8861E solid 2px;
+  border-radius: 10px;
+  width: 200px;
+  height: 40px;
+}
+
+.generatePdf1{
+
+  margin-left: 68.5%;
+  margin-top: 0%;
   background-color:#E8861E;
   color: rgb(19, 18, 18);
   border: #E8861E solid 2px;
