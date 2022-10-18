@@ -4,8 +4,8 @@
 |--|--|
 |IT20125066| A.P.M. Chandrasena|
 |IT20147082| D.H.S.V. Dhanapala|
-|IT20147082| Kariyapperuma K.M.K.R|
-|IT20025526| Gunawardhana H.P.M.N|
+|IT20136710| Kariyapperuma K.M.K.R|
+|IT20258030| Gunawardhana H.P.M.N|
 
 
 ## The project, Hotel Management System is a web-based application that allows the hotel manager to handle all hotel activities
