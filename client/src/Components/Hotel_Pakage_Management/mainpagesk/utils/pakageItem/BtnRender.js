@@ -9,23 +9,69 @@ function BtnRender({pakage}) {
 
     
     return (
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+        <div className="card-footer mt-3">
         <div className="row_btn">
             {
              
                 <><>
-                 
-                 
+                   
                 </><>
-                        <Link id="btn_buy" to="#!" onClick={() => addCart(pakage)}>
+                <Link id="btn_buy2" to="#!" onClick={() => addCart(pakage)}>
                             BOOK
                         </Link>
-                        <Link id="btn_view" to={`/detail/${pakage._id}`}>
+                        <Link id="btn_view2" to={`/detail/${pakage._id}`}>
                             View
-                        </Link>
+                        </Link>   
                     </></>
             }
-                
+            </div>    
         </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
     )
 }
 

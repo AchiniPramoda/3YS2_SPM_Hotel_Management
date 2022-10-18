@@ -5,6 +5,8 @@ function BtnRender2({pakage, deletePakage}) {
    
     
     return (
+
+        <div className="card-footer mt-3">
         <div className="row_btn">
             {
              
@@ -20,7 +22,7 @@ function BtnRender2({pakage, deletePakage}) {
                         
                     </></>
             }
-                
+            </div>    
         </div>
     )
 }

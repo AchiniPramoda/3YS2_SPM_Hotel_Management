@@ -5,7 +5,7 @@ const cors = require('cors');
 const fileUpload = require('express-fileupload')
 const cookieParser = require('cookie-parser')
 const path = require('path')
-
+const payment = require('./routes/payment');
 dotenv.config();
 
 const app = express();
@@ -21,11 +21,12 @@ app.use(fileUpload({
 
 app.use(cookieParser())
 app.use(cors());
-//app.use('/user', require('./routes/userRouter'))
+
 app.use('/api', require('./routes/categoryRouter'))
 app.use('/api', require('./routes/upload'))
 app.use('/api', require('./routes/pakageRouter'))
-app.use('/api', require('./routes/paymentRouter'))
+app.use('/payment',payment);
+
 
 
 Port = process.env.PORT;

@@ -1,7 +1,7 @@
 
 import React, {useContext} from 'react'
 import {GlobalState} from '../../../../GlobalState'
-import {Link} from 'react-router-dom'
+//import {Link} from 'react-router-dom'
 function Filters() {
     const state = useContext(GlobalState)
     const [categories] = state.categoriesAPI.categories
