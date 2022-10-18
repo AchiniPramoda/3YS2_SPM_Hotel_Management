@@ -2,10 +2,17 @@ const express = require('express');
 const mongoose = require("mongoose");
 const dotenv = require('dotenv');
 const cors = require('cors');
-const path = require("path");
+
+
+const cookieParser = require('cookie-parser')
+const path = require('path')
+const payment = require('./routes/payment');
+
+
 const fileupload = require('express-fileupload')
 const cookieParser = require('cookie-parser')
 //const fileupload = require("express-fileupload");
+
 
 dotenv.config();
 
@@ -16,6 +23,11 @@ app.use(express.urlencoded({
     extended : true  
 }));
 
+app.use(fileUpload({
+    useTempFiles: true
+}))
+
+app.use(cookieParser())
 app.use(cors());
 app.use(fileupload({
     useTempFiles: true
@@ -23,6 +35,13 @@ app.use(fileupload({
 
 
 app.use(cookieParser())
+
+app.use('/api', require('./routes/categoryRouter'))
+app.use('/api', require('./routes/upload'))
+app.use('/api', require('./routes/pakageRouter'))
+app.use('/payment',payment);
+
+
 
 Port = process.env.PORT;
 Url = process.env.URL;

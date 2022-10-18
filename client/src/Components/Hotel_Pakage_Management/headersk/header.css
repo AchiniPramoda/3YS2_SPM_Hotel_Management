@@ -1,0 +1,152 @@
+header{
+    min-height: 120px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    background-color: #fff(0, 12%, 97%);
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+
+    border-bottom: 14px solid #fff(0, 29%, 95%);
+}
+
+
+
+header .logo{
+    flex: 1;
+}
+header a{
+    text-transform: uppercase;
+    color: #555;
+}
+header ul li{
+    display: inline-block;
+    opacity: 0.7;
+    padding: 0 20px;
+}
+
+.photo {
+    width: 100900px;
+    height: 100%;
+    margin-top: -100px;
+
+  }
+  .photo img {
+  
+    height: 100%;
+  }
+header ul li:hover{
+    opacity: 1;
+}
+.menu{
+    display: none;
+}
+.menu3{
+    color: #f8f2ec;
+    font-size: 30px;
+    margin-left: -810px;
+}
+.menu2{
+    border: 2px solid #f7f2f2;
+   
+    color: #c51e71;
+    background-color: #fdc385;
+    text-transform: uppercase;
+    margin-left: -450px;
+    padding: 10px 7px;
+    
+    
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+font-style: normal;
+}
+.cart-icon{
+    position: relative;
+    margin-right: -451px;
+}
+.cart-icon span{
+    background: crimson;
+    border-radius: 20px;
+    color: white;
+    position: absolute;
+    top:-10px;
+    right: -10px;
+    padding: 5px 7px;
+    font-size: 10px;
+}
+.de button{
+
+
+    flex: 1;
+    background-color:#E8861E;
+  
+}
+.h1{
+  color: aliceblue;
+}
+.h1{
+    color: aliceblue;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .photo1 {
+    width: 10px;
+    height: 100%;
+    margin-right: -2px;
+   
+  }
+  .photo1 img {
+    width: 200px;
+    height: 50px;
+    margin-left: -1000px;
+
+  }
+
+  .topnav {
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .topnav a:hover {
+    background-color: #f79738;
+    color: black;
+  }
+  
+  .topnav a.active {
+    background-color: hsl(180, 5%, 4%);
+    color: white;
+  }

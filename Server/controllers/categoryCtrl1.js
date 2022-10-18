@@ -28,9 +28,9 @@ const categoryCtrl1 = {
     },
     deleteCategory: async(req, res) =>{
         try {
-            const foods = await Foods.findOne({category: req.params.id})
-            if(foods) return res.status(400).json({
-                msg: "Please delete all foods with a relationship."
+            const pakages = await Pakages.findOne({category: req.params.id})
+            if(pakages) return res.status(400).json({
+                msg: "Please delete all pakages with a relationship."
             })
 
             await Category.findByIdAndDelete(req.params.id)
