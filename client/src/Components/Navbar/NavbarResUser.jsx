@@ -47,7 +47,7 @@ function Navbar() {
             </ul>
     
         <form class="form-inline my-2 my-lg-0">
-        <button type="button" className="search">Search Here</button>
+        <button type="button" className="search_user">Search Here</button>
         </form>
       </div>
     </nav>

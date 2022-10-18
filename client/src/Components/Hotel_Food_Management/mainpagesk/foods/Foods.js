@@ -1,31 +1,25 @@
 import React, {useContext, useState} from 'react'
 import {GlobalState} from '../../../../GlobalState'
 import FoodItem from '../utils/foodItem/FoodItem'
-import {useParams, Link} from 'react-router-dom'
+import {useParams} from 'react-router-dom'
 import Loading from '../utils/loading/Loading'
 import axios from 'axios'
-import Filters from './Filters'
 import LoadMore from './LoadMore'
 import Header from '../../headersk/Header'
 import Footer from '../../headersk/Footer'
-//import { param } from '../../../../../../Server/routes/categoryRouter'
+import Navbar from '../../../Navbar/NavbarFood'
+import './foods.css'
 
 function Foods() {
     const params = useParams()
     const state = useContext(GlobalState)
-    const [foods, setFoods] = state.foodsAPI.foods
+    const [foods] = state.foodsAPI.foods
  
     const [callback, setCallback] = state.foodsAPI.callback
     const [loading, setLoading] = useState(false)
    
 
-    // const handleCheck = (id) =>{
-    //     foods.forEach(food => {
-    //         if(param._id === id) pakage.checked = !pakage.checked
-    //     })
-    //     setPakages([...pakages])
-    // }
-
+    
     const deleteFood = async(id, public_id) => {
         try {
             setLoading(true)
@@ -52,12 +46,13 @@ function Foods() {
     if(loading) return <div><Loading /></div>
     return (
         <>
-
+<div>
+    <Navbar/>
+    <tr className='gap'></tr>
            <Header />
       
-      
-       
-
+           <tr className='gap'></tr>
+           
         <div className="foods">
             {
                 foods.map(food => {
@@ -66,9 +61,13 @@ function Foods() {
                 })
             } 
        
-</div>     <Footer />
-        <LoadMore />
+</div>  
+<LoadMore />
         {foods.length === 0 && <Loading />}
+  
+</div>
+ 
+<Footer />
         </>
     
     )
