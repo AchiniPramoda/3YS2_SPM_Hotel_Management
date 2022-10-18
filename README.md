@@ -1,19 +1,22 @@
-# 3YS2_SPM_Hotel_Management
+## 3YS2_SPM_Hotel_Management
 
- --------IT20125066 - A.P.M. Chandrasena------------
- --------IT20147082 - D.H.S.V. Dhanapala------------
- --------IT20136710 - Kariyapperuma K.M.K.R---------
- --------IT20258030 - Gunawardhana H.P.M.N----------
+| Studnet ID | Name |
+|--|--|
+|IT20125066| A.P.M. Chandrasena|
+|IT20147082| D.H.S.V. Dhanapala|
+|IT20147082| Kariyapperuma K.M.K.R|
+|IT20025526| Gunawardhana H.P.M.N|
 
-The project, Hotel Management System is a web-based application that allows the hotel manager to handle all hotel activities
 
-----How to start the backend services---
+##The project, Hotel Management System is a web-based application that allows the hotel manager to handle all hotel activities
+
+#How to start the backend services
 
 -For this application we have used mern stacks. 
--Express for backend, react for frontend.
 
+##Express for backend, react for frontend
 
---Start Node JS server--
+--Start Node JS server
   1. Navigate to the "Backend" folder
   2. open a terminal
   3. Run "npm install" to install the dependencies
@@ -21,7 +24,7 @@ The project, Hotel Management System is a web-based application that allows the 
   5. Then server is start running on PORT 8345
 
 
----How to start frontend application---
+#How to start frontend application
 
 -Start React application
   1. Navigate to the "Frontend" folder
