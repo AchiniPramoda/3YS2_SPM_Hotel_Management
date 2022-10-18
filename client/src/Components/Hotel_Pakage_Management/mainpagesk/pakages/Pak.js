@@ -61,25 +61,9 @@ function Pakages21() {
     }
 
    
- 
 
 
  
-
-    if(loading) return <div><Loading /></div>
-    return (
-        <>
-  
-        
-         <div className="delete-all">
-     
-                <button onClick={handlePrint} className="print__button1">  Print </button> 
-            </div>
-          
-          
-
-          
-     
 
 
 

@@ -9,12 +9,12 @@ function PakageItem2({pakage, deletePakage, handleCheck}) {
              <input type="checkbox" checked={pakage.checked}
                 onChange={() => handleCheck(pakage._id)} />
             }
-            <img src={pakage.images.url} alt="" />
+               <img src={pakage.images.url} alt="" />
 
             <div className="pakage_box">
-                <h2 title={pakage.title}>{pakage.title}</h2>
-                <span>LKR{pakage.price}</span>
+                <h2 title={pakage.title}>{pakage.title}</h2>   
                 <p>{pakage.description}</p>
+                <span>LKR{pakage.price}</span>
             </div>
 
             

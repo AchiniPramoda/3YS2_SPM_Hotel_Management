@@ -7,7 +7,6 @@ import "./categories.css"
 import GeneratePdf from '../../ReportGenerator'
 import "../../ReportGenerator"
 
-
 function Categories() {
     const state = useContext(GlobalState)
     const [categories] = state.categoriesAPI.categories

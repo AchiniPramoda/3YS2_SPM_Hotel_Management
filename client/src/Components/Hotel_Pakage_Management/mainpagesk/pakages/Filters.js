@@ -33,7 +33,7 @@ function Filters() {
                 </select>
             </div>
 
-            <input type="text" value={search} placeholder="Enter your search!"
+            <input type="text" value={search} placeholder="Enter your search" style={{color:"#000",  fontWeight:"bold"} }
             onChange={e => setSearch(e.target.value.toLowerCase())} />
             <div className="kavi">
                 <span></span>

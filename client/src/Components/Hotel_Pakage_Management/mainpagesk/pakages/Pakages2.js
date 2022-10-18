@@ -3,13 +3,14 @@ import {GlobalState} from '../../../../GlobalState'
 import PakageItem2 from '../utils/pakageItem/PakageItem2'
 import Loading from '../utils/loading/Loading'
 import axios from 'axios'
+import {Link} from 'react-router-dom'
 
 
 import LoadMore from './LoadMore'
 import Header4 from '../../headersk/Header4'
 import './pakages1.css';
 import Footer from '../../headersk/Footer'
-
+import { useReactToPrint } from "react-to-print";
 function Pakages2() {
     const state = useContext(GlobalState)
     const [pakages, setPakages] = state.pakagesAPI.pakages
