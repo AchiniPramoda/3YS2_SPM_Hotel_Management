@@ -8,12 +8,12 @@
 |IT20025526| Gunawardhana H.P.M.N|
 
 
-##The project, Hotel Management System is a web-based application that allows the hotel manager to handle all hotel activities
+## The project, Hotel Management System is a web-based application that allows the hotel manager to handle all hotel activities
 
 
--For this application we have used mern stacks. 
+-For this application we have used mern stacks- 
 
-Express for backend, react for frontend
+--Express for backend, react for frontend--
 
 
 # How start the backend services
@@ -26,7 +26,7 @@ Express for backend, react for frontend
   5. Then server is start running on PORT 8345
 
 
-# How to start frontend application-----
+# How to start frontend application
 
 --Start react application---
   1. Navigate to the "Frontend" folder
