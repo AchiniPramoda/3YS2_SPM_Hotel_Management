@@ -3,9 +3,7 @@ import axios from "axios";
 import "./room.css";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
-
 import  {Alert} from '../alert/message.jsx';
-
 import Navbar from "../../Navbar/AdminNavbar/AdminNavbar";
 
 
@@ -75,7 +73,7 @@ function UpdateRooms () {
          axios.put(`http://localhost:8345/room/editroom/${params.id}`, updateRoom)
              
          .then((res) => {
-          Alert( "success", "Room Added Successfully");
+          Alert( "success", "Room Update Successfully");
           console.log(res.data);
            window.location = '/viewRoom';})
 
@@ -84,7 +82,7 @@ function UpdateRooms () {
 
     return (
         <>
-
+  <Navbar />
 
 <div >
     <section class="Staff-form dark">
@@ -95,7 +93,7 @@ function UpdateRooms () {
     
             <div class="products">
 
-               <div class="title">ADD ROOM DETAILS</div>
+               <div class="title">UPDATE ROOM DETAILS</div>
           
            </div>
           
@@ -113,7 +111,7 @@ function UpdateRooms () {
                   <input 
                      
                      type="text"
-                     class="form-control " 
+                     class="form-control ml-1" 
                      placeholder="Room ID" 
                      aria-label="Room ID" 
                      aria-describedby="basic-addon1" 
@@ -129,7 +127,7 @@ function UpdateRooms () {
 
                     <input
                         type="text"
-                        class="form-control "
+                        class="form-control ml-1"
                         placeholder="Room Type"
                         aria-label="Room Type"
                         aria-describedby="basic-addon1"
@@ -144,7 +142,7 @@ function UpdateRooms () {
 
                     <input
                         type="number"
-                        class="form-control "
+                        class="form-control ml-1"
                         placeholder="Beads"
                         aria-label="Beads"
                         aria-describedby="basic-addon1"
@@ -157,7 +155,7 @@ function UpdateRooms () {
 
                     <input
                         type="number"
-                        class="form-control "
+                        class="form-control ml-1"
                         placeholder="Clients"
                         aria-label="Clients"
                         aria-describedby="basic-addon1"
@@ -170,7 +168,7 @@ function UpdateRooms () {
 
                     <input
                         type="number"
-                        class="form-control "
+                        class="form-control ml-1"
                         placeholder="Price"
                         aria-label="Price"
                         aria-describedby="basic-addon1"
@@ -180,7 +178,7 @@ function UpdateRooms () {
                 </div>
                 <div class="form-group col-sm-12">
                 <label for="card-holder">Description</label>
-                <textarea class="form-control "
+                <textarea class="form-control ml-1"
                         placeholder="Description"
                         aria-label="Description"
                        value={Description}
@@ -192,7 +190,7 @@ function UpdateRooms () {
 
                     <input
                         type="textarea"
-                        class="form-control "
+                        class="form-control ml-1"
                         placeholder="Facilities"
                         aria-label="Facilities"
                         aria-describedby="basic-addon1"
@@ -202,18 +200,18 @@ function UpdateRooms () {
                 </div>
                 <div class="form-group col-sm-12">
                 <label for="card-holder">Room Image</label>
-                 <input type="file" class="form-control" name="RoomImage" onChange={(e) => this.onFileChange(e)}  />
+                 <input type="file" class="form-control ml-1" name="RoomImage" onChange={(e) => this.onFileChange(e)}  />
                 </div>
             
 
 
               
-               <div class="btngroup col-sm-3">
+               <div class="btngroup  col-sm-3">
                 <button type="button" class="cancel">Clear</button>
               </div>
 
              
-              <div class="btngroup col-sm-3">
+              <div class="btngroup ml-4 col-sm-3">
                 <button type="button" class="submit" onClick={updateRoom} >Submit</button>
               </div>
 

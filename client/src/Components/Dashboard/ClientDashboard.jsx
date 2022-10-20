@@ -7,6 +7,7 @@ import axios from "axios"
 import RoomSmallView from '../Hall_Rooms_Management/Room/RoomSmallerView'
 
 import HallView from './HallView';
+import Footer from "../Footer/Footer";
 
 class AllRoomForUser extends Component {
     constructor(props) {
@@ -51,6 +52,8 @@ class AllRoomForUser extends Component {
                     </div>
             </div>
             <HallView/>
+
+            <Footer />
         </div>
         
             

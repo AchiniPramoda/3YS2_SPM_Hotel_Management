@@ -35,28 +35,28 @@ function LoginNavbar() {
       
           <ul class="navbar-nav mr-auto px-5 mt-lg-0">
                 <li class="nav-item col-sm-2 active">
-                      <a class="nav-link" href="/dashboard">Home <span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="/login">Home <span class="sr-only">(current)</span></a>
                 </li>
                 
                 <li class="nav-item col-sm-2 active">
-                      <a class="nav-link" href="/dashboard">Room<span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="/login">Room<span class="sr-only">(current)</span></a>
                 </li>
 
                 <li class="nav-item col-sm-2 active">
-                      <a class="nav-link" href="/dashboard">Hall<span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="/login">Hall<span class="sr-only">(current)</span></a>
                 </li>
 
                 <li class="nav-item col-sm-2 active">
-                      <a class="nav-link" href="/dashboard">Food <span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="/login">Food <span class="sr-only">(current)</span></a>
                 </li>
 
                 <li class="nav-item col-sm-2 active">
-                      <a class="nav-link" href="/dashboard">Package <span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="/login">Package <span class="sr-only">(current)</span></a>
                 </li>
 
             </ul>
     
-        <form class="form-inline my-2 my-lg-0">
+        <form class="form-inline mr-3 my-lg-2 col-2">
              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
              <button type="button" class="btn btn-outline-warning waves-effect">Search</button>
         </form>

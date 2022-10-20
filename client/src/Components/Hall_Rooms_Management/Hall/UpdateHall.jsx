@@ -3,6 +3,7 @@ import axios from "axios";
 import './Hall.css';
 import  {Alert} from '../alert/message.jsx';
 import HallValidations from '../validation/HallValidation.jsx';
+import AdminNavbar from "../../Navbar/AdminNavbar/AdminNavbar";
 
 
 export default class UpdateHall extends React.Component{
@@ -146,6 +147,8 @@ export default class UpdateHall extends React.Component{
 
         return (
             <div>
+
+                <AdminNavbar />
 
             <div >
                 <section class="Staff-form dark">

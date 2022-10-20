@@ -8,7 +8,7 @@ const path = require('path')
 const payment = require('./routes/payment');
  
 const fileupload = require('express-fileupload')
-const cookieParser = require('cookie-parser')
+// const cookieParser = require('cookie-parser')
 //const fileupload = require("express-fileupload");
  
 dotenv.config();

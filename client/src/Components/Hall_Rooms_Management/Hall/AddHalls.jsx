@@ -4,7 +4,7 @@ import './Hall.css';
 import  {Alert} from '../alert/message.jsx';
 import HallValidation from '../validation/HallValidation.jsx';
 import Navbar from "../../Navbar/AdminNavbar/AdminNavbar";
-
+import Footer from "../../Footer/Footer";
 
 export default class AddHall extends React.Component{
 
@@ -134,7 +134,7 @@ export default class AddHall extends React.Component{
                  
                                      <input 
                                          type="text"
-                                         class="form-control " 
+                                         class="form-control ml-1" 
                                          placeholder="Hall ID" 
                                          aria-label="Hall ID" 
                                          aria-describedby="basic-addon1" 
@@ -148,7 +148,7 @@ export default class AddHall extends React.Component{
                  
                                      <input 
                                          type="text"
-                                         class="form-control " 
+                                         class="form-control ml-1" 
                                          placeholder="Hall Name" 
                                          aria-label="Hall Name" 
                                          aria-describedby="basic-addon1" 
@@ -164,7 +164,7 @@ export default class AddHall extends React.Component{
 
                                      <input
                                          type="text"
-                                         class="form-control "
+                                         class="form-control ml-1"
                                          placeholder="Hall Type"
                                          aria-label="Hall Type"
                                          aria-describedby="basic-addon1"
@@ -179,7 +179,7 @@ export default class AddHall extends React.Component{
 
                                       <input
                                           type="number"
-                                          class="form-control "
+                                          class="form-control ml-1"
                                           placeholder="Available Space"
                                           aria-label="Available Space"
                                           aria-describedby="basic-addon1"
@@ -194,7 +194,7 @@ export default class AddHall extends React.Component{
 
                                         <input
                                            type="number"
-                                           class="form-control "
+                                           class="form-control ml-1"
                                            placeholder="No Of Guests<"
                                            aria-label="No Of Guests<"                                  
                                            aria-describedby="basic-addon1"
@@ -209,7 +209,7 @@ export default class AddHall extends React.Component{
 
                                       <input
                                           type="number"
-                                          class="form-control "
+                                          class="form-control ml-1"
                                           placeholder="Price"
                                           aria-label="Price"
                                           aria-describedby="basic-addon1"
@@ -223,7 +223,7 @@ export default class AddHall extends React.Component{
                                  <label for="card-holder">Description</label>
 
                                        <textarea 
-                                          class="form-control "
+                                          class="form-control ml-1"
                                           placeholder="Description"
                                           aria-label="Description"
                                           aria-describedby="basic-addon1"
@@ -238,7 +238,7 @@ export default class AddHall extends React.Component{
 
                                        <input
                                           type="text"
-                                          class="form-control "
+                                          class="form-control ml-1"
                                           placeholder="Feacture"
                                           aria-label="Feacture"
                                           aria-describedby="basic-addon1"
@@ -253,7 +253,7 @@ export default class AddHall extends React.Component{
 
                                        <input
                                           type="text"
-                                          class="form-control "
+                                          class="form-control ml-1"
                                           placeholder="Event"
                                           aria-label="Event"
                                           aria-describedby="basic-addon1"
@@ -267,7 +267,7 @@ export default class AddHall extends React.Component{
                                     <label for="card-holder">Hall Image</label>
                                        <input 
                                           type="file" 
-                                          class="form-control" 
+                                          class="form-control ml-1" 
                                           name="hallImage" 
                                           onChange={(e) => this.onFileChange(e)}    
                                         />
@@ -276,12 +276,12 @@ export default class AddHall extends React.Component{
 
 
                           
-                           <div class="btngroup col-sm-4">
+                           <div class="btngroup ml-6 col-sm-4">
                             <button type="button" class="cancel">Clear</button>
                           </div>
             
                          
-                          <div class="btngroup col-sm-4">
+                          <div class="btngroup ml-2 col-sm-4">
                             <button type="button" class="submit" onClick={(e) => this.onSubmit(e)} >Submit</button>
                           </div>
 
@@ -293,7 +293,7 @@ export default class AddHall extends React.Component{
                   </div>
                 </section>
               </div>
-            
+             <Footer />
             
                     </div>
                     )

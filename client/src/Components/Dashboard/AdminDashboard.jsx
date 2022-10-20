@@ -1,5 +1,4 @@
 import React from "react";
-import { useState, useEffect } from "react";
 import './AdminDashboard.css';
 import Navbar from "../Navbar/AdminNavbar/AdminNavbar";
 import image01 from "../../assets/images/roomDS.jpg";
@@ -7,32 +6,49 @@ import image02 from "../../assets/images/hallDS.jpg";
 import image03 from "../../assets/images/foodDS.jpg";
 import image04 from "../../assets/images/packageDS.jpg";
 import axios from "axios";
+import Footer from "../Footer/Footer";
 
-function AdminDashBoard() {
+  export default class AdminDashBoard extends React.Component {
+    constructor(props) {
+      super(props);
+    
+      this.state = {
+        roomCount: 0,
+        hallCount: 0,
+        foodCount: 0,
+        packageCount: 0,
+      }
+    }
 
-  const [count, setCount] = useState({
-    roomCount: 0,
-    hallCount: 0,
-    foodCount: 0,
-    packageCount: 0,
-  });
+  componentDidMount() { 
+    
+      axios.get("http://localhost:8345/hall/get")
+      .then((res) => { this.setState({ 
+        hallCount: res.data.length }) })
+      .catch((err) => { console.log(err) });
 
-  useEffect(() => {
-    // axios.get("http://localhost:8345/room/count").then((res) => {
-    //   setCount({ ...count, roomCount: res.data });
-    // });
-    axios.get("http://localhost:8345/hall/get").then((res) => {
-      setCount({ ...count, hallCount: res.data });
-    });
-    // axios.get("http://localhost:8345/food/count").then((res) => {
-    //   setCount({ ...count, foodCount: res.data });
-    // });
-    // axios.get("http://localhost:8345/package/count").then((res) => {
-    //   setCount({ ...count, packageCount: res.data });
-    // });
-  }, []);
-   
+      axios.get("http://localhost:8345/room/getroom")
+      .then((res) => { this.setState({
+        roomCount: res.data.length }) })
+      .catch((err) => { console.log(err) });
 
+      axios.get("http://localhost:8345/api/foods")
+      .then((res) => { this.setState({
+        foodCount: res.data.length }) })
+      .catch((err) => { console.log(err) });
+
+      axios.get("http://localhost:8345/api/category")
+      .then((res) => { this.setState({
+        packageCount: res.data.length }) })
+      .catch((err) => { console.log(err) });
+
+
+
+
+}
+
+
+  render() {
     return (
       <div>
             
@@ -68,38 +84,39 @@ function AdminDashBoard() {
 
            </div>
 
-           
-           <div className="row">
+      
+           <div className="row col-sm-2">
 
               <div className="cardsmall">
               <div class="countName">Room</div>
-               {/* <div>{count.hallCount}</div> */}
+              <div className="countfont">{this.state.roomCount}</div>
 
               </div>
 
               <div className="cardsmall">
               <div class="countName">Hall</div>
-               {/* <div>{count.hallCount}</div> */}
+               <div className="countfont">{this.state.hallCount}</div>
 
               </div>
 
               <div className="cardsmall">
               <div class="countName">Food</div>
-               {/* <div>{count.hallCount}</div> */}
+               <div>{this.state.foodCount}</div>
 
               </div>
 
               <div className="cardsmall">
               <div class="countName">Package</div>
-               {/* <div>{count.hallCount}</div> */}
+               <div className="countName">{this.state.packageCount}</div>
 
               </div>
            </div>
+           <br/>
 
+            <Footer />
+           </div>
 
-        </div>
-           
-    );
-} 
-
-export default AdminDashBoard;
+   
+        
+    );}}
+  

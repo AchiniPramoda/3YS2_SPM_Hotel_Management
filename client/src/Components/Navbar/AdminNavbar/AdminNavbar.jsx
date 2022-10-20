@@ -10,9 +10,13 @@ function AdminNavbar() {
         isOpen1: false,
         isOpen2: false,
         isOpen3: false,
+        isOpen4: false,
+        isOpen5: false,
         isClosed1: true,
         isClosed2: true,
         isClosed3: true,
+        isClosed4: true,
+        isClosed5: true,
 
         homeLinkClass: "nav-item nav-link",
         aboutLinkClass: "nav-item nav-link",
@@ -30,13 +34,19 @@ function AdminNavbar() {
       const toggleOpenstaff = () => setState({ ...state, isOpen1: !state.isOpen1 });
       const toggleOpenroom = () =>  setState({ ...state, isOpen2: !state.isOpen2 });
       const toggleOpenhall = () =>  setState({ ...state, isOpen3: !state.isOpen3 });
+      const toggleOpenfood = () => setState({ ...state, isOpen4: !state.isOpen4 });
+      const togglePackage = () => setState({ ...state, isOpen5: !state.isOpen5 });
     
       const show1 = state.menu ? "show" : "";
       const show2 = state.menu ? "show" : "";
       const show3 = state.menu ? "show" : "";
+      const show4 = state.menu ? "show" : "";
+      const show5 = state.menu ? "show" : "";
       const menuClass1 = `dropdown-menu${state.isOpen1 ? " show" : ""}`;
       const menuClass2 = `dropdown-menu${state.isOpen2 ? " show" : ""}`;
       const menuClass3 = `dropdown-menu${state.isOpen3 ? " show" : ""}`;
+      const menuClass4 = `dropdown-menu${state.isOpen4 ? " show" : ""}`;
+      const menuClass5 = `dropdown-menu${state.isOpen5 ? " show" : ""}`;
     
     return (
 
@@ -67,7 +77,7 @@ function AdminNavbar() {
       
           <ul class="navbar-nav mr-auto px-5 mt-lg-0">
             <div>
-            <li class="nav-item dropdown"> 
+            <li class="nav-item dropdown ml-5 text-whites"> 
 
             <div className={"collapse navbar-collapse " + show1}>
               <div className="dropdown" onClick={toggleOpenstaff}>
@@ -95,7 +105,7 @@ function AdminNavbar() {
               </div>
 
               <div>
-              <li class="nav-item dropdown">  
+              <li class="nav-item dropdown ml-5">  
               <div className={"collapse navbar-collapse " + show2}>     
                 <div className="dropdown" >
                    <div
@@ -126,7 +136,7 @@ function AdminNavbar() {
                 
 
               <div>
-              <li class="nav-item dropdown">  
+              <li class="nav-item dropdown ml-5">  
               <div className={"collapse navbar-collapse " + show3}>     
                 <div className="dropdown" >
                    <div
@@ -153,16 +163,66 @@ function AdminNavbar() {
               </li>
               </div>
 
-                <li class="nav-item col-sm-2 active">
-                      <a class="nav-link" href="/admindashboard">Food <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item col-sm-2 active">
-                      <a class="nav-link" href="/rooms">View<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item col-sm-2 active">
-                      <a class="nav-link" href="/admindashboard">Package <span class="sr-only">(current)</span></a>
-                </li>
 
+              <div>
+              <li class="nav-item dropdown ml-5">  
+              <div className={"collapse navbar-collapse " + show4}>     
+                <div className="dropdown" >
+                   <div
+                       className="nav-link"
+                       id="dropdownMenuButton"
+                       data-toggle="dropdown"
+                       aria-haspopup="true"
+                       onClick={toggleOpenfood}
+                     >
+                         Food
+                     </div>
+                    
+                     <div  className={menuClass4}aria-labelledby="dropdownMenuButton">
+                       <Link className="dropdown-item" to="/addhall">
+                          Add Food
+                       </Link>
+                       <Link className="dropdown-item" to="/viewhall">
+                         View Food
+                       </Link>
+                     </div>
+                   </div>
+
+              </div>
+              </li>
+              </div>
+
+
+              <div>
+              <li class="nav-item dropdown ml-4">  
+              <div className={"collapse navbar-collapse " + show5}>     
+                <div className="dropdown" >
+                   <div
+                       className="nav-link"
+                       id="dropdownMenuButton"
+                       data-toggle="dropdown"
+                       aria-haspopup="true"
+                       onClick={togglePackage}
+                     >
+                         Package
+                     </div>
+                    
+                     <div  className={menuClass5}aria-labelledby="dropdownMenuButton">
+                       <Link className="dropdown-item" to="/addhall">
+                          Add Package
+                       </Link>
+                       <Link className="dropdown-item" to="/viewhall">
+                         View Package
+                       </Link>
+                     </div>
+                   </div>
+
+              </div>
+              </li>
+              </div>
+
+
+  
                 
 
             </ul>

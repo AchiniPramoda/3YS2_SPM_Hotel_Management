@@ -94,7 +94,7 @@ axios.post("http://localhost:8345/staff/addstaff", staffData )
                   <input 
                      
                      type="text"
-                     class="form-control" 
+                     class="form-control ml-0" 
                      placeholder="First Name" 
                      aria-label="First Name" 
                      aria-describedby="basic-addon1" 
@@ -109,7 +109,7 @@ axios.post("http://localhost:8345/staff/addstaff", staffData )
                
                    <input 
                       type="text" 
-                      class="form-control" 
+                      class="form-control ml-0" 
                       placeholder="Last Name" 
                       aria-label="Last Name" 
                       aria-describedby="basic-addon1"
@@ -129,7 +129,7 @@ axios.post("http://localhost:8345/staff/addstaff", staffData )
      
                   <input 
                      type="text" 
-                     class="form-control" 
+                     class="form-control ml-0" 
                      placeholder="Staff ID" 
                      aria-label="Staff ID" 
                      aria-describedby="basic-addon1"
@@ -145,7 +145,7 @@ axios.post("http://localhost:8345/staff/addstaff", staffData )
                  
                    <input 
                       type="text" 
-                      class="form-control" 
+                      class="form-control ml-0" 
                       placeholder="Phone No" 
                       aria-label="Phone No" 
                       aria-describedby="basic-addon1" 
@@ -162,7 +162,7 @@ axios.post("http://localhost:8345/staff/addstaff", staffData )
                
                  <input 
                     type="text" 
-                    class="form-control" 
+                    class="form-control ml-0" 
                     placeholder="E-mail" 
                     aria-label="E-mail" 
                     aria-describedby="basic-addon1" 
@@ -179,7 +179,7 @@ axios.post("http://localhost:8345/staff/addstaff", staffData )
      
                   <input 
                      type="date" 
-                     class="form-control" 
+                     class="form-control ml-0" 
                      aria-label="Staff ID" 
                      aria-describedby="basic-addon1"
                      name="dateofbirth"
@@ -194,7 +194,7 @@ axios.post("http://localhost:8345/staff/addstaff", staffData )
                  
                    <input 
                       type="text" 
-                      class="form-control" 
+                      class="form-control ml-0" 
                       placeholder="Salary"
                       aria-label="Salary" 
                       aria-describedby="basic-addon1" 
@@ -212,7 +212,7 @@ axios.post("http://localhost:8345/staff/addstaff", staffData )
                
                  <input 
                     type="text" 
-                    class="form-control" 
+                    class="form-control ml-0" 
                     placeholder="Address" 
                     aria-label="Address" 
                     aria-describedby="basic-addon1"
@@ -230,7 +230,7 @@ axios.post("http://localhost:8345/staff/addstaff", staffData )
                
                  <input 
                     type="text" 
-                    class="form-control" 
+                    class="form-control ml-0" 
                     placeholder="Apply Position" 
                     aria-label="Apply Position" 
                     aria-describedby="basic-addon1"
@@ -248,7 +248,7 @@ axios.post("http://localhost:8345/staff/addstaff", staffData )
                
                  <input 
                     type="text" 
-                    class="form-control" 
+                    class="form-control ml-0" 
                     placeholder="Work Type" 
                     aria-label="Work Type" 
                     aria-describedby="basic-addon1"
@@ -265,7 +265,7 @@ axios.post("http://localhost:8345/staff/addstaff", staffData )
                
                  <input 
                     type="text" 
-                    class="form-control" 
+                    class="form-control ml-0" 
                     placeholder="Comment" 
                     aria-label="Comment" 
                     aria-describedby="basic-addon1"
@@ -276,12 +276,12 @@ axios.post("http://localhost:8345/staff/addstaff", staffData )
 
                </div>
               
-               <div class="btngroup col-sm-3">
+               <div class="btngroup ml-6 col-sm-3">
                 <button type="button" class="cancel">Clear</button>
               </div>
 
              
-              <div class="btngroup col-sm-3">
+              <div class="btngroup ml-2 col-sm-3">
                 <button type="button" class="submit" onClick={AddStaff}>Submit</button>
               </div>
 

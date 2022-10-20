@@ -6,7 +6,7 @@ import { useEffect } from "react";
 
 import  {Alert} from '../../alert/message.jsx';
 
-
+import AdminNavbar from "../../../Navbar/AdminNavbar/AdminNavbar";
 
 // import Navbar from "../../Navbar/AdminNavbar/AdminNavbar";
 
@@ -102,6 +102,7 @@ function UpdateHall () {
         return (
             <>
     
+    <AdminNavbar />
     
     <div >
         <section class="Staff-form dark">
@@ -126,7 +127,7 @@ function UpdateHall () {
                 
                   <div class="form-group col-sm-6">
                     <label for="name">Hall Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="Enter Hall Name" value={name} onChange={(e) => setHallName(e.target.value)} />
+                    <input type="text" class="form-control ml-1" id="name" placeholder="Enter Hall Name" value={name} onChange={(e) => setHallName(e.target.value)} />
                     </div>
 
 
@@ -134,44 +135,44 @@ function UpdateHall () {
     
                     <div class="form-group col-sm-6">
                         <label for="type">Hall Type</label>
-                        <input type="text" class="form-control" id="type" placeholder="Enter Hall Type" value={hallType} onChange={(e) => setHalType(e.target.value)} />
+                        <input type="text" class="form-control ml-1" id="type" placeholder="Enter Hall Type" value={hallType} onChange={(e) => setHalType(e.target.value)} />
                     </div>
 
                     <div class="form-group col-sm-6">
                         <label for="space">Space</label>
-                        <input type="text" class="form-control" id="space" placeholder="Enter Space" value={Space} onChange={(e) => setSpace(e.target.value)} />
+                        <input type="text" class="form-control ml-1" id="space" placeholder="Enter Space" value={Space} onChange={(e) => setSpace(e.target.value)} />
                     </div>
 
                     <div class="form-group col-sm-6">
                         <label for="guest">Guest</label>
-                        <input type="text" class="form-control" id="guest" placeholder="Enter Guest" value={Guest} onChange={(e) => setGuest(e.target.value)} />
+                        <input type="text" class="form-control ml-1" id="guest" placeholder="Enter Guest" value={Guest} onChange={(e) => setGuest(e.target.value)} />
                     </div>
 
                     <div class="form-group col-sm-6">
                         <label for="price">Price</label>
-                        <input type="text" class="form-control" id="price" placeholder="Enter Price" value={price} onChange={(e) => setPrice(e.target.value)} />
+                        <input type="text" class="form-control ml-1" id="price" placeholder="Enter Price" value={price} onChange={(e) => setPrice(e.target.value)} />
                     </div>
 
                     <div class="form-group col-sm-6">
 
                         <label for="description">Description</label>
-                        <textarea class="form-control "
+                        <textarea class="form-control ml-1"
                         id="description" placeholder="Enter Description" value={description} onChange={(e) => setDescription(e.target.value)} />
                     </div>
 
                     <div class="form-group col-sm-6">
                         <label for="facilities">Facilities</label>
-                        <input type="text" class="form-control" id="facilities" placeholder="Enter Facilities" value={feacture} onChange={(e) => setFacilities(e.target.value)} />
+                        <input type="text" class="form-control ml-1" id="facilities" placeholder="Enter Facilities" value={feacture} onChange={(e) => setFacilities(e.target.value)} />
                     </div>
 
                     <div class="form-group col-sm-6">
                         <label for="event">Event</label>
-                        <input type="text" class="form-control" id="event" placeholder="Enter Event" value={event} onChange={(e) => setEvent(e.target.value)} />
+                        <input type="text" class="form-control ml-1" id="event" placeholder="Enter Event" value={event} onChange={(e) => setEvent(e.target.value)} />
                     </div>
 
-                    <div class="form-group col-sm-6">
+                    <div class="form-group col-sm-12">
                         <label for="image">Image</label>
-                        <input type="file" class="form-control" id="image" placeholder="Enter Image" value={HallImage} onChange={(e) => setHallImage(e.target.value)} />
+                        <input type="file" class="form-control ml-1" id="image" placeholder="Enter Image" value={HallImage} onChange={(e) => setHallImage(e.target.value)} />
                     </div>
 
                    <div class="btngroup col-sm-3">
@@ -179,7 +180,7 @@ function UpdateHall () {
                   </div>
     
                  
-                  <div class="btngroup col-sm-3">
+                  <div class="btngroup ml-3 col-sm-3">
        
                     <button type="button" class="submit" onClick={updateHall} >Submit</button>
                   </div>

@@ -3,7 +3,6 @@ import axios from "axios";
 import './room.css';
 import  {Alert} from '../alert/message.jsx';
 import RoomValidation from '../validation/RoomValidation.jsx';
-import dummy_image from "../../../assets/images/dummy_image.jpg";
 import Navbar from "../../Navbar/AdminNavbar/AdminNavbar";
 export default class AddRoom extends React.Component{
 
@@ -137,7 +136,7 @@ export default class AddRoom extends React.Component{
                               <input 
                                  
                                  type="text"
-                                 class="form-control " 
+                                 class="form-control ml-1" 
                                  placeholder="Room ID" 
                                  aria-label="Room ID" 
                                  aria-describedby="basic-addon1" 
@@ -155,7 +154,7 @@ export default class AddRoom extends React.Component{
                                             onChange={(e) => this.onSelectValueChange(e)}
                                             type="text"
                                             id="roomType"
-                                    class="form-control "
+                                    class="form-control ml-1"
                                     placeholder="Room Type"
                                     aria-label="Room Type"
                                     aria-describedby="basic-addon1">
@@ -172,7 +171,7 @@ export default class AddRoom extends React.Component{
 
                                 <input
                                     type="number"
-                                    class="form-control "
+                                    class="form-control ml-1"
                                     placeholder="Beads"
                                     aria-label="Beads"
                                     aria-describedby="basic-addon1"
@@ -186,7 +185,7 @@ export default class AddRoom extends React.Component{
 
                                 <input
                                     type="number"
-                                    class="form-control "
+                                    class="form-control ml-1"
                                     placeholder="Clients"
                                     aria-label="Clients"
                                     aria-describedby="basic-addon1"
@@ -200,7 +199,7 @@ export default class AddRoom extends React.Component{
 
                                 <input
                                     type="number"
-                                    class="form-control "
+                                    class="form-control ml-1"
                                     placeholder="Price"
                                     aria-label="Price"
                                     aria-describedby="basic-addon1"
@@ -211,7 +210,7 @@ export default class AddRoom extends React.Component{
                             </div>
                             <div class="form-group col-sm-12">
                             <label for="card-holder">Description</label>
-                            <textarea class="form-control "
+                            <textarea class="form-control ml-1"
                                     placeholder="Description"
                                     aria-label="Description"
                           
@@ -224,7 +223,7 @@ export default class AddRoom extends React.Component{
 
                                 <input
                                     type="textarea"
-                                    class="form-control "
+                                    class="form-control ml-1"
                                     placeholder="Facilities"
                                     aria-label="Facilities"
                                     aria-describedby="basic-addon1"
@@ -235,7 +234,7 @@ export default class AddRoom extends React.Component{
                             </div>
                             <div class="form-group col-sm-12">
                             <label for="card-holder">Room Image</label>
-                             <input type="file" class="form-control" name="RoomImage" onChange={(e) => this.onFileChange(e)}      />
+                             <input type="file" class="form-control ml-1" name="RoomImage" onChange={(e) => this.onFileChange(e)}      />
                             </div>
                         
 
@@ -246,7 +245,7 @@ export default class AddRoom extends React.Component{
                           </div>
             
                          
-                          <div class="btngroup col-sm-3">
+                          <div class="btngroup ml-4 col-sm-3">
                             <button type="button" class="submit" onClick={(e) => this.onSubmit(e)} >Submit</button>
                           </div>
 
