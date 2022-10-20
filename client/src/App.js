@@ -60,22 +60,17 @@ function App() {
               <Route path="/categoryreport" element={<Users/>} />
               <Route path="/" exact element={<Pakages/>} />
               <Route path="/paymentdemo" exact element={<Pay/>} />
-              
-                 <Route path="/detail/:id"  element={<DetailPakage/>} />
-                 <Route path="/category"  element={ <Categories/> } />
-                <Route path="/create_pakage"  element={<CreatePakage/> } />
-                <Route path="/edit_pakage/:id"  element={ <CreatePakage/> } />
-                <Route path="/cart"  element={<Cart/>} />
-               <Route path="*"  element={<NotFound/>} /> 
-               <Route path="/adminpro" exact element={<Pakages2/>} />
-
-               <Route path="/packagereport" exact element={<Pakages21/>} />
-                
-                 <Route path="/addstaff" element={<Addstaff />} />
-                 <Route path="/addroom" element={<AddRoom />} />
-
-              
-                 <Route  path="/updateroom/:id" element={<UpdateRoom />} />
+              <Route path="/detail/:id"  element={<DetailPakage/>} />
+              <Route path="/category"  element={ <Categories/> } />
+              <Route path="/create_pakage"  element={<CreatePakage/> } />
+              <Route path="/edit_pakage/:id"  element={ <CreatePakage/> } />
+              <Route path="/cart"  element={<Cart/>} />
+              <Route path="*"  element={<NotFound/>} /> 
+              <Route path="/adminpro" exact element={<Pakages2/>} />
+              <Route path="/packagereport" exact element={<Pakages21/>} />
+              <Route path="/addstaff" element={<Addstaff />} />
+              <Route path="/addroom" element={<AddRoom />} />
+              <Route  path="/updateroom/:id" element={<UpdateRoom />} />
                  {/* <Route  path="/updatehall/:id" element={<UpdateHall />} /> */}
                
                
