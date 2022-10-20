@@ -17,7 +17,7 @@ function Halls () {
     const params = useParams();
 
      const getHallData = () => {
-        axios.get(`http://localhost:8345/hall/get/${params.id}`)
+        axios.get(`http://localhost:8345/hall/gethall/${params.id}`)
          .then((res) => {
             console.log(res.data);
             setHall(res.data);
