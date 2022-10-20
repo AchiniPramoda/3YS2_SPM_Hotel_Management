@@ -4,17 +4,18 @@ import { useEffect } from "react";
 import React, { useState } from "react";
 import axios from "axios";
 import card from './card.css';
+import StripeCheckout from "react-stripe-checkout";
 
 import Navbar from '../../../Navbar/RoomNavbar';
 
 function Halls () {
 
     const [hall, setHall]= useState('');
-   
+    const params = useParams();
+    const [ amount, setAmount ] = useState(0);
   
 
 
-    const params = useParams();
 
      const getHallData = () => {
         axios.get(`http://localhost:8345/hall/gethall/${params.id}`)
@@ -30,7 +31,25 @@ function Halls () {
          }, []);
      
 
-     
+         const handleToken = (token) => {
+            fetch("/payment/donate", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ token, amount }),
+            })
+            .then(res => res.json())
+            .then(_ => {
+              window.alert("Transaction Successful.");
+              console.log("Transaction Successful.");
+            }).catch(_ => window.alert("Transaction Failed."))
+          }
+        
+          const handleAmountChange = (e) => {
+            const value = e.target.value;
+            setAmount(value);
+          };
 
         return (
             <div>
@@ -64,9 +83,21 @@ function Halls () {
                                     <h3 class="text-danger text-end">RS: {hall.price} /-</h3>
 
                                     <div class="">
-                            <button type="button" class="submit" >Rent</button>
+                            {/* <button type="button" class="submit" >Rent</button> */}
                           </div>
-
+                          <StripeCheckout
+                                className = "submit"
+                           
+                            stripeKey={process.env.REACT_APP_STRIPE_KEY || "pk_test_51Kx0rgIU9jSTt3OCJMP7GDgMje3tFcR8lA1gwHyeakh17PGmMdUAc50PFkfNwqL1NXJ5i14CZj99nG78OWFTG1FP00cRCW7t0m"}
+                            token={handleToken}
+                            name=""
+                            panelLabel={`Donate`}
+                            currency="USD"
+                            amount={amount * 100}
+                        >
+                            
+                        </StripeCheckout>
+          
 
                                 </div>
                             </div>
