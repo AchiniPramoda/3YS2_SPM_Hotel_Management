@@ -4,6 +4,8 @@ import './room.css';
 import  {Alert} from '../alert/message.jsx';
 import RoomValidation from '../validation/RoomValidation.jsx';
 import Navbar from "../../Navbar/AdminNavbar/AdminNavbar";
+import Footer from "../../Footer/Footer";
+
 export default class AddRoom extends React.Component{
 
     constructor(props) {
@@ -257,7 +259,7 @@ export default class AddRoom extends React.Component{
                   </div>
                 </section>
               </div>
-            
+            <Footer />
             
                     </div>
                     )

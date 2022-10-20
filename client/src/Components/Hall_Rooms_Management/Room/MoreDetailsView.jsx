@@ -3,9 +3,9 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import React, { useState } from "react";
 import axios from "axios";
-import card from './card.css';
+import Footer from "../../Footer/Footer";
+import Navbar from "../../Navbar/Navbar";
 import StripeCheckout from "react-stripe-checkout";
-import Navbar from "../../Navbar/RoomNavbar"
 
 function Rooms () {
 
@@ -54,8 +54,8 @@ function Rooms () {
             <div>
             <Navbar/>
             <br/>
-            <div className="cont">
-            <div className="container mt-18">
+            <div className="col">
+            <div className="container mt-12">
                 
                    <div class="mmm">
                         
@@ -63,24 +63,24 @@ function Rooms () {
                                
                                 <img src={room.RoomImage} class="img-fluid rounded-start " alt={room.roomType}/>
                             </div>
-                            <div class="col-md-24">
+                            <div class="col">
                                 <div class="card-body">
-                                    <h3 class="card-title">{room.roomType}</h3>
+                                    <h1 class="text ml-0">{room.roomType}</h1>
                                     <hr />
 
-                                    <h6 class="card-text">Room Number</h6>
-                                    <h6 class="text-secondary">{room.RooId}</h6>
+                                    <h6 class="text-dark ml-1">Room Number</h6>
+                                    <h6 class="text-secondary ml-1">{room.RooId}</h6>
 
-                                    <h6 class="text-dark">Number of Beads :</h6>
-                                    <h6 class="text-secondary">{room.beads}</h6>
+                                    <h6 class="text-dark ml-1">Number of Beads :</h6>
+                                    <h6 class="text-secondary ml-1">{room.beads}</h6>
 
-                                    <h6 class="text-dark">Clients :</h6>
-                                    <h6 class="text-secondary">{room.clients}</h6>
+                                    <h6 class="text-dark ml-1">Clients :</h6>
+                                    <h6 class="text-secondary ml-1">{room.clients}</h6>
 
-                                    <h6 class="text-dark">Description :</h6>
-                                    <h6 class="text-secondary">{room.description}</h6>
+                                    <h6 class="text-dark ml-1">Description :</h6>
+                                    <h6 class="text-secondary ml-1">{room.description}</h6>
 
-                                    <h3 class="text-danger text-end">RS: {room.price} /-</h3>
+                                    <h3 class="text-danger text-end mt-5 mb-5">RS: {room.price} /-</h3>
 
                                     <div class="">
                             {/* <button type="button" class="submit" >Rent</button> */}
@@ -104,6 +104,7 @@ function Rooms () {
                     </div> 
               
             </div>
+            <Footer/>
             </div>
         );
     }

@@ -4,6 +4,7 @@ import ReactToPrint from 'react-to-print';
 import './RoomView.css';
 import Navbar from '../../Navbar/AdminNavbar/AdminNavbar';
 import RoomActions from './RoomAction';
+import Footer from '../../Footer/Footer';
 
 class AllRoomContainer extends Component {
     constructor(props) {
@@ -128,6 +129,7 @@ class AllRoomContainer extends Component {
                 </div>
            
             </div>
+            <Footer />
             </div>
         );
     }

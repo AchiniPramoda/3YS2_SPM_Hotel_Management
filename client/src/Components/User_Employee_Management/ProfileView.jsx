@@ -3,7 +3,7 @@ import "./Profileview.css";
 import Navbar from "../Navbar/Navbar";
 import axios from "axios";
 import { useParams } from 'react-router-dom';
-
+import Footer from '../Footer/Footer';
 
 
 
@@ -83,15 +83,15 @@ const userEdit = () => {
          
                  <div class="card-details">
                    
-                    <div class="pronames">First Name  : <input className="form-control" id ="firstName "type="text" onChange={(e) => setfirstName(e.target.value)} value={firstName}/>  </div>
+                    <div class="pronames">First Name  : <input className="form-control ml-1" id ="firstName "type="text" onChange={(e) => setfirstName(e.target.value)} value={firstName}/>  </div>
                    
-                    <div class="pronames">Last Name   : <input className="form-control" id ="lastName"type="text" onChange={(e) => setlastName(e.target.value)} value={lastName}/></div>
+                    <div class="pronames">Last Name   : <input className="form-control ml-1" id ="lastName"type="text" onChange={(e) => setlastName(e.target.value)} value={lastName}/></div>
 
-                    <div class="pronames">E-mail      : <input className="form-control" id= "email"type="text" onChange={(e) => setemail(e.target.value)} value={email}/></div>
+                    <div class="pronames">E-mail      : <input className="form-control ml-1" id= "email"type="text" onChange={(e) => setemail(e.target.value)} value={email}/></div>
 
-                    <div class="pronames">Country     : <input className="form-control" id ="country"type="text" onChange={(e) => setcountry(e.target.value)} value={country}/></div>
+                    <div class="pronames">Country     : <input className="form-control ml-1" id ="country"type="text" onChange={(e) => setcountry(e.target.value)} value={country}/></div>
 
-                    <div class="pronames">City        : <input className="form-control" id ="city"type="text" onChange={(e) => setcity(e.target.value)} value={city} /></div>
+                    <div class="pronames">City        : <input className="form-control ml-1" id ="city"type="text" onChange={(e) => setcity(e.target.value)} value={city} /></div>
                    
                     {/* <div class="pronames">Password    : <input className="form-control" type="text" onChange={(e) => setfirstName(e.target.value)} value={firstName} disabled/></div> */}
                     
@@ -111,6 +111,8 @@ const userEdit = () => {
            <br/>
        </div>
 </section>
+
+ <Footer />
   </div>
   );
 }

@@ -4,6 +4,7 @@ import ReactToPrint from 'react-to-print';
 import './HallView.css'
 import Navbar from '../../../Navbar/AdminNavbar/AdminNavbar';
 import HallAction from './HallAction';
+import Footer from '../../../Footer/Footer';
 
 class AllHallContainer extends Component {
     constructor(props) {
@@ -133,6 +134,7 @@ class AllHallContainer extends Component {
                 </div>
            
             </div>
+            <Footer />
             </div>
         );
     }

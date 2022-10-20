@@ -58,7 +58,9 @@ function App() {
               <Route path="/hek" element={<Header />} />
               <Route path="/k" element={<Footer />} />
               <Route path="/categoryreport" element={<Users/>} />
-              <Route path="/" exact element={<Pakages/>} />
+
+              {/* namak damma */}
+              <Route path="/package" exact element={<Pakages/>} />
               <Route path="/paymentdemo" exact element={<Pay/>} />
               <Route path="/detail/:id"  element={<DetailPakage/>} />
               <Route path="/category"  element={ <Categories/> } />
@@ -78,7 +80,7 @@ function App() {
                   <Route path="/viewRoom" element={<ViewRoom />} />
                  <Route path='/viewstaff' element={ <ViewStaff /> } />
                  <Route path='/editstaff/:id' element={ <EditStaff /> } />
-                 <Route path='/login' element={ <Login /> } />
+                 <Route path='/' element={ <Login /> } />
                  <Route path="/registration" element={<Registration />} />
                  <Route path="/admindashboard" element={<AdminDashBoard />} />
                   <Route path="/clientdashboard" element={<ClientDashboard />} />
@@ -102,15 +104,10 @@ function App() {
 
                    <Route path="/viewhall" element={<ViewHall />} />
                    <Route path="/viewmorehall/:id" element={ <HallViewMore />}/>
-
-
                  <Route path="/rooms" element={ <AllRoomForUser />}/>
                  <Route path="/halls" element={ <AllHallForUser />}/>
                   <Route path="/viewmore/:id" element={ <RoomViewMore />}/>
                  <Route exact path="/register/:id/verify/:token/" element={ <EmailVerify />}/>
-
-
-
                   <Route path="/addhall" element={<AddHall />} />
                   <Route path="/updaterooms/:id" element={<UpdateRooms />} />
                  <Route path="/dashboard" element={<ClientDashboard />} />

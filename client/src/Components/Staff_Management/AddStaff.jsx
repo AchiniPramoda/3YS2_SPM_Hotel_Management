@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import './staff.css';
-import Navbar from "../Navbar/AdminNavbar/AdminNavbar"
+import Navbar from "../Navbar/AdminNavbar/AdminNavbar";
+import Footer from "../Footer/Footer";
 
 function Addstaff(){
 
@@ -292,7 +293,7 @@ axios.post("http://localhost:8345/staff/addstaff", staffData )
     </section>
   </div>
 
-
+ <Footer/>
         </div>
     )
 }
