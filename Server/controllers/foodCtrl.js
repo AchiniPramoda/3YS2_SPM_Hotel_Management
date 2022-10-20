@@ -96,7 +96,7 @@ const foodCtrl = {
             const {title, price, description, images, category} = req.body;
             if(!images) return res.status(400).json({msg: "No image upload"})
 
-            await Foods.findOneAndUpdate({id:req.params.id}, {
+            await Foods.findOneAndUpdate({_id:req.params.id}, {
                 title: title.toLowerCase(), price, description, images, category
             })
 

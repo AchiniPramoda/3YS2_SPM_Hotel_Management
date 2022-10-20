@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import { MdEdit ,MdDelete} from "react-icons/md";
 
 function BtnRender2({food, deleteFood}) {
    
@@ -11,13 +12,14 @@ function BtnRender2({food, deleteFood}) {
             {
              
                 <><>
-                    <Link id="btn_buy1" to="#!"
+                <button  className="actions" type="button"  ><Link  to="#!"
                         onClick={() => deleteFood(food._id, food.images.public_id)}>
-                        Delete
-                    </Link>
-                    <Link id="btn_view1" to={`/edit_food/${food._id}`}>
-                        Edit
-                    </Link>
+                        <MdDelete style={{color: '#F07D7D', fontSize: '20px'}}/>
+                    </Link></button>
+                    <button  className="actions" type="button"  ><Link  to={`/edit_food/${food._id}`}>
+                    <MdEdit style={{color: '#126910', fontSize: '20px'}}/>
+                    </Link></button>
+                    
                 </><>
                         
                     </></>

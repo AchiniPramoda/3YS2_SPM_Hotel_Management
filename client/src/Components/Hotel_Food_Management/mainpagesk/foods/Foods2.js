@@ -1,34 +1,44 @@
-import React, {useContext, useState} from 'react'
+import React, {useEffect,useContext, useState} from 'react'
 import {GlobalState} from '../../../../GlobalState'
 import FoodItem2 from '../utils/foodItem/FoodItem2'
 import Loading from '../utils/loading/Loading'
 import {useParams, Link} from 'react-router-dom'
 import axios from 'axios'
-
+import Navbar from '../../../Navbar/NavbarResAdmin'
 import LoadMore from './LoadMore'
-import Header4 from '../../headersk/Header4'
-import './foods1.css';
+import "../../../../../src/index.css"
 import Footer from '../../headersk/Footer'
-//import { param } from '../../../../../../Server/routes/categoryRouter'
+import GeneratePdf from "./ReportGenerator";
+import {MdArrowBackIosNew} from 'react-icons/md';
+import { FaPlusCircle } from 'react-icons/fa';
 
 function Foods2() {
-    const params = useParams()
+
     const state = useContext(GlobalState)
-    const [foods, setFoods] = state.foodsAPI.foods
-  
-  
+    const [foods ,setFoods] = state.foodsAPI.foods
     const [callback, setCallback] = state.foodsAPI.callback
-    const [loading, setLoading] = useState(false)
+    const [loading,  setLoading] = useState(false)
     const [isCheck, setIsCheck] = useState(false)
+    const [pdf,setPDF] = useState([]);
+    
+    const handleCheck = (id) =>{
+        foods.forEach(food => {
+            if(food._id === id) food.checked = !food.checked
+        })
+        setFoods([...foods])
+    }
 
+   
+    useEffect(() => {
 
-    // const handleCheck = (id) =>{
-    //     pakages.forEach(pakage => {
-    //         if(pakage._id === id) pakage.checked = !pakage.checked
-    //     })
-    //     setPakages([...pakages])
-    // }
+        axios.get("http://localhost:8345/api/foods").then((res) => {
+            console.log(res.data.foods);
+            setPDF(res.data.foods);
+        }).catch((err) => {
+            console.log(err);
+        })
 
+    }, [])
     const deleteFood = async(id, public_id) => {
         try {
             setLoading(true)
@@ -47,56 +57,57 @@ function Foods2() {
             alert(err.response.data.msg)
         }
     }
+    const checkAll = () =>{
+        foods.forEach(food => {
+            food.checked = !isCheck
+        })
+        setFoods([...foods])
+        setIsCheck(!isCheck)
+    }
 
    
-    // const checkAll = () =>{
-    //     foods.forEach(food => {
-    //         food.checked = !isCheck
-    //     })
-    //     setPakages([...pakages])
-    //     setIsCheck(!isCheck)
-    // }
+    
 
-    const deleteAll = () =>{
-        foods.forEach(food => {
-            if(food.checked) deleteFood(params._id, food.images.public_id)
-        })
-    }
+
  
 
-    if(loading) return <div><Loading /></div>
+    
     return (
         <>
-         <Header4></Header4>
-         <div className="delete-all1">
-                
+         <div>
+            <Navbar/>
 
-            </div>
-         <div className="delete-all">
-                <span>Select all</span>
-                {/* <input type="checkbox" checked={isCheck} onChange={checkAll} /> */}
-                <button onClick={deleteAll}>Delete ALL</button>
-           
-            </div>
-          
-            <div className="delete-all2">
-                
-            </div>
-
-       <div className="foods">
+            <div className="container2">
+            
+            <tr className='gap'></tr>
+            <h3 className={"text-dark text-center"}>All Foods</h3>
+                    <div className='gapTitle'></div>
+                    <button type="button"  className="createRes"><Link className='link-o' to="/create_food">Create Foods <FaPlusCircle style={{color: '#E8861E', fontSize: '20px'}}/></Link></button>
+                   <button   className="generateRes" onClick={()=>GeneratePdf(pdf)}> Generate Report </button>
+                                 
       
-
-        
-            {
-                foods.map(food => {
-                    return <FoodItem2 key={params._id} food={food}
+                    <FoodItem2 
                    deleteFood={deleteFood}  />
-                })
-            } 
-    
-       </div>
+            
+        
         <LoadMore />
         {foods.length === 0 && <Loading />}
+
+ 
+                
+                                
+                   
+                            </div>
+                            <div className='row'>
+                <button type="button"  className="back-center"><Link className='link-o'to="/adminfirst"><MdArrowBackIosNew style={{color: '#E8861E', fontSize: '20px'}}/>  Back</Link></button>
+                
+                </div>
+                <tr className='gap'></tr>
+                        </div>
+                    
+       
+       
+        
         <Footer></Footer></>
         
     )
