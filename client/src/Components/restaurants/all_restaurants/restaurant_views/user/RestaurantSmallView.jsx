@@ -13,7 +13,7 @@ const RestaurantSmallView = (props) => {
     }
 
     return (
-<div>
+<div> 
         <div className="row">
             
             <div class="column-66">

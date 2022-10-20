@@ -2,7 +2,6 @@ import React, {useContext, useState} from 'react'
 import {GlobalState} from '../../../GlobalState'
 import Menu from './icon/menu.svg'
 import Close from './icon/close.svg'
-import Cart from './icon/cart.svg'
 import {Link} from 'react-router-dom'
 import profile from"./icon/ad.png";
 import profile1 from"./icon/kli.png";

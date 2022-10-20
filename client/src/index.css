@@ -139,7 +139,7 @@ body {
     border: 1px solid  #E8861E;
     border-radius: 2px;
     width: 500px;
-    height: 600px;
+    height: auto;
       display: inline-block;
       margin-left: 30%;
       margin-right: auto;
@@ -217,6 +217,7 @@ body {
     width: 150px;
     height: 35px;
     margin-left:35%;
+    margin-bottom: 10%;
     border-radius: 6px;
   
   }
@@ -245,15 +246,15 @@ body {
     color: white;
     
   }
-  .search{
-    margin-top: 5%;
+  .search_user{
+    margin-top: 3%;
     background-color: #E8861E;
     border: 1px solid  #E8861E;
     font-size: medium;
     font-weight: 700;
-    width: 200px;
+    width: 250px;
     height: 50px;
-    margin-left:2%;
+    margin-right:20%;
     border-radius: 6px;
     color: white;
     
@@ -290,7 +291,7 @@ body {
     width: 60%;
     background-color:#F6DCC5;
    margin-top: 1%;
-   margin-left: 50%;
+   margin-left: 40%;
 
   
   }
@@ -410,6 +411,15 @@ body {
   width: 150px;
   height: 40px;
 }
+
+.category{
+  margin-left:47%;
+  background-color: white;
+  border: #E8861E solid 2px;
+  border-radius: 5px;
+  width: 250px;
+  height: 40px;
+}
 .generateRes{
 
   margin-left: 40%;
@@ -420,6 +430,15 @@ body {
   width: 200px;
   height: 40px;
   font-weight: bold;
+}
+.fil{
+  margin-left: 10%;
+  background-color:#E8861E;
+  color: rgb(19, 18, 18);
+  border: #E8861E solid 2px;
+  border-radius: 10px;
+  width: 200px;
+  height: 40px;
 }
 
 .generatePdf{
@@ -446,6 +465,7 @@ body {
   height: 40px;
 }
 
+
 .actions{
   background-color: transparent;
   border: transparent;
@@ -455,4 +475,35 @@ body {
   margin-top: 5%;
 margin-left: 6%;
 
+}
+
+.div1{
+  float: left;
+}
+
+.row1{
+  width: 1000px;
+  height:10px;
+  background-color: white;
+
+}
+
+select{
+  background-color: transparent;
+  border: transparent;
+
+}
+option{
+  background-color: transparent;
+  border: transparent;
+}
+.search{
+  background-color: white;
+  margin-left: 800px;
+  color: rgb(19, 18, 18);
+  border: #E8861E solid 2px;
+  font-weight: lighter;
+  border-radius: 10px;
+  width: 200px;
+  height: 40px;
 }

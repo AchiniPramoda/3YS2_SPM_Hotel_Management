@@ -1,5 +1,7 @@
 import React from "react";
 import profile1 from"./icon/footer.png";
+import '../headersk/header.css'
+
 function Footer() {
  
     return(

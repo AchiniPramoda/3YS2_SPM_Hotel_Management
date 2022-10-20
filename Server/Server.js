@@ -93,7 +93,7 @@ app.use('/login', login);
 const RestaurantManagement = require("./routes/restaurant_management");
 app.use("/api/restaurants", RestaurantManagement);
 
-const CategoryManagement = require("./routes/categoryRouter");
+const CategoryManagement = require("./routes/categoryRouter1");
 app.use("/api", CategoryManagement);
 
 const FoodManagement = require("./routes/foodRouter");
@@ -102,6 +102,8 @@ app.use("/api", FoodManagement);
 // const UploadManagement = require("./routes/upload");
 // app.use("/api", UploadManagement);
 app.use('/api', require('./routes/upload'))
+app.use(express.json());
+app.use('/payment', require('./routes/payment'))
 
 app.use('/static', express.static(path.join(__dirname, 'public')))
 

@@ -8,6 +8,7 @@ import '../../../../src/index.css';
 import Navbar from "../../Navbar/NavbarResAdmin";
 import { MdArrowBackIosNew } from "react-icons/md"
 import {BsCardList} from "react-icons/bs"
+import Footer from '../../Hotel_Food_Management/headersk/Footer'
 
 
 function UpdateRestaurant () {
@@ -167,6 +168,7 @@ function UpdateRestaurant () {
                 <button type="button"  className="viewList"><Link className='link-o'to="/admin/ALL">View List  <BsCardList style={{color: '#E8861E', fontSize: '20px'}}/></Link></button>
                 </div>
                 <tr className='gap'></tr>
+                <Footer/>
       </div>
    
   

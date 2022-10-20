@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigate ,Link} from "react-router-dom";
-
 import Swal from "sweetalert2";
 import axios from 'axios';
 import '../../../../../../src/index.css';

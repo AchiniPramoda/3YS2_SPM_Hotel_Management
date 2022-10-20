@@ -28,7 +28,7 @@ router.post('/donate', async (req, res) => {
 
     const charge = await stripe.charges.create({
         amount: amount * 100,
-        currency: "LKR",
+        currency: "USD",
         customer: customerId,
         receipt_email: token.email,
         description: "Donation",
