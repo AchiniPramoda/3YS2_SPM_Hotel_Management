@@ -12,7 +12,7 @@ function DetailPakage() {
     const [detailPakage, setDetailPakage] = useState([])
 
 
-    const [users,setUsers] = useState([]);
+    const [setUsers] = useState([]);
     useEffect(() =>{
         if(params.id){
 

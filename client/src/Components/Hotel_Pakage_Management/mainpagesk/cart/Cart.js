@@ -1,8 +1,8 @@
 import React, {useContext, useState, useEffect} from 'react'
 import {GlobalState} from '../../../../GlobalState'
 import axios from 'axios'
-import {Link} from 'react-router-dom'
 
+import Pay from '../../../../pay'
 
 function Cart() {
     const state = useContext(GlobalState)
@@ -81,7 +81,7 @@ function Cart() {
                             <h3>LKR {pakage.price * pakage.quantity}</h3>
                             <p>{pakage.description}</p>
                             <p>{pakage.content}</p>
-<h3 style={{color:"blue",  fontWeight:"bold"}}>How many people are you buying this package for?</h3>
+<h3 style={{color:"blue",  fontWeight:"bold"}}>How many days  are you buying this package for?</h3>
                             <div className="amount">
                                 <button onClick={() => decrement(pakage._id)}> - </button>
                                 <span>{pakage.quantity}</span>
@@ -95,14 +95,8 @@ function Cart() {
 <br></br><br></br>
                             <div className="total">
                 <h3>Total: LKR {total}</h3>
-                <div className="menu2">
               
-              <><Link to={"/kj"} style={{color:"black",   fontWeight:"bold"}}>Pay ✥ Now </Link></>
-      
-            
-
-          </div>
-            </div>
+            </div>    <Pay></Pay>
                         </div>
                     </div>
                 ))

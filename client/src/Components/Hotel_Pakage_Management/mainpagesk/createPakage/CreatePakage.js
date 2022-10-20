@@ -6,10 +6,8 @@ import { useNavigate,useParams} from 'react-router-dom'
 import Header3 from '../../headersk/Header3'
 import Footer from '../../headersk/Footer'
 import '../createPakage/createPakage.css'
-import ReactToPrint from 'react-to-print';
 
-import { FaRegListAlt, FaPlusCircle } from 'react-icons/fa';
-import {MdArrowBackIosNew} from 'react-icons/md';
+
 
 const initialState = {
     pakage_id: '',

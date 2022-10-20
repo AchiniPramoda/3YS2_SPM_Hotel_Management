@@ -8,7 +8,7 @@ const path = require('path')
 const payment = require('./routes/payment');
  
 const fileupload = require('express-fileupload')
-//const cookieParser = require('cookie-parser')
+const cookieParser = require('cookie-parser')
 //const fileupload = require("express-fileupload");
  
 dotenv.config();
@@ -25,11 +25,12 @@ app.use(express.urlencoded({
 app.use(cookieParser())
 app.use(cors());
 app.use(fileupload({
-    useTempFiles: false
+    useTempFiles: true
 }));
- 
+
+
 app.use(cookieParser())
- 
+
 app.use('/api', require('./routes/categoryRouter'))
 app.use('/api', require('./routes/upload'))
 app.use('/api', require('./routes/pakageRouter'))
