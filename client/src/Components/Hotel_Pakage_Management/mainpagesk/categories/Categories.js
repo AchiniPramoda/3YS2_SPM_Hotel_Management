@@ -1,12 +1,11 @@
-import React, {useState,useEffect, useContext,useRef} from 'react'
+import React, {useState,useEffect, useContext} from 'react'
 import {GlobalState} from '../../../../GlobalState'
 import axios from 'axios'
-import Header3 from '../../headersk/Header3'
+
 import Footer from '../../headersk/Footer'
 import "./categories.css"
 import GeneratePdf from '../../ReportGenerator'
 import "../../ReportGenerator"
-import { useReactToPrint } from "react-to-print";
 
 function Categories() {
     const state = useContext(GlobalState)
@@ -16,10 +15,8 @@ function Categories() {
     const [callback, setCallback] = state.categoriesAPI.callback
     const [onEdit, setOnEdit] = useState(false)
     const [id, setID] = useState('')
-    const componentRef = useRef();
-    const handlePrint = useReactToPrint({
-    content: () => componentRef.current,
-    });
+   
+ 
     
     const [users,setUsers] = useState([]);
 
@@ -103,8 +100,10 @@ function Categories() {
                 <div className="row" key={category._id}>
                     <p>{category.name}</p>
                     <div>
-                        <button1 type="submit" style={{color:"#fff"}}onClick={() => editCategory(category._id, category.name)}>UPDATE </button1>
-                        <button2 style={{color:"#fff"}} onClick={() => deleteCategory(category._id)}>Delete</button2>
+                        <button1 type="submit" style={{color:"#fff",height: "50px",padding: "10px",background: "rgb(17, 146, 45)"
+                    
+         }}onClick={() => editCategory(category._id, category.name)}>UPDATE </button1>
+                        <button2 style={{color:"#fff",height: "50px",padding: "10px",background: " #F14668"}} onClick={() => deleteCategory(category._id)}>Delete</button2>
                         
                     </div>
                 </div>

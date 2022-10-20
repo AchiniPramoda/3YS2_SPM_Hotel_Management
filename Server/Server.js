@@ -10,7 +10,6 @@ const payment = require('./routes/payment');
 
 
 const fileupload = require('express-fileupload')
-const cookieParser = require('cookie-parser')
 //const fileupload = require("express-fileupload");
 
 
@@ -29,12 +28,10 @@ app.use(fileUpload({
 
 app.use(cookieParser())
 app.use(cors());
-app.use(fileupload({
-    useTempFiles: true
-}));
+app.use(fileupload());
 
 
-app.use(cookieParser())
+
 
 app.use('/api', require('./routes/categoryRouter'))
 app.use('/api', require('./routes/upload'))

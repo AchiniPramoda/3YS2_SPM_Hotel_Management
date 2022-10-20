@@ -1,9 +1,10 @@
-import React, {useState,useEffect, useContext,useRef} from 'react'
+import React, {useState, useContext,useRef} from 'react'
 import {GlobalState} from '../../../../GlobalState'
 import PakageItem2 from '../utils/pakageItem/PakageItem2'
 import Loading from '../utils/loading/Loading'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
+
 
 import LoadMore from './LoadMore'
 import Header4 from '../../headersk/Header4'
@@ -21,9 +22,7 @@ function Pakages2() {
 
 
     const componentRef = useRef();
-    const handlePrint = useReactToPrint({
-    content: () => componentRef.current,
-    });
+    
 
 
 

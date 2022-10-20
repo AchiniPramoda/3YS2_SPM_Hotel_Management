@@ -3,7 +3,7 @@ import {GlobalState} from '../../../../GlobalState'
 import PakageItem from '../utils/pakageItem/PakageItem'
 import Loading from '../utils/loading/Loading'
 import axios from 'axios'
-import Filters from './Filters'
+//import Filters from './Filters'
 import LoadMore from './LoadMore'
 import Header from '../../headersk/Header'
 import Footer from '../../headersk/Footer'
@@ -76,7 +76,7 @@ function Pakages() {
 
    
 
-    if(loading) return <div><Loading /></div>
+    if(loading) <div><Loading /></div>
     return (
         <>
 

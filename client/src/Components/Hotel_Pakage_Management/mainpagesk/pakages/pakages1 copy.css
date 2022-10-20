@@ -1,0 +1,119 @@
+.pakages{
+    width: 97.6%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    justify-items: center;
+    margin: 17px 0;
+}
+.sub-main1 {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width:100%;
+    box-shadow: 11px 12px 13px 12px rgb(207, 207, 207);
+    padding-top: 30px;
+    border-radius: 65px; 
+    background-color: #f2d6d6;
+  }
+/* ----------- Pakage Item ----------------- */
+@import url("../utils/pakageItem/pakageItem.css");
+
+.delete-all{
+    text-align: right;
+    margin: 20px;
+    font-size: 20px;
+    align-items: baseline;
+
+}
+
+.delete-all input{
+    height: 25px;
+    width: 25px;
+    transform: translateY(5px);
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+.delete-all span{
+    text-transform: uppercase;
+    color: rgb(10, 11, 11);
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.delete-all button{
+    background-color: #E8861E;
+	color: white;
+	border: none;
+	border-radius: 6px;
+	padding: 12px;
+	font-weight: 600;
+	font-size: 14px;
+	cursor: pointer;
+}
+/* .delete-all1 button{
+    padding: 10px 25px;
+    color: #100e0f;
+    background-color: #F2DCC5;
+    text-transform: uppercase;
+} */
+
+.delete-all2 button{
+    width: 300px;
+    height: 40px;
+    background: #c61b1b;
+     text-align: center;
+    color: white;
+    margin: -55px 600px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+/* ------------ Filters Menu ----------------- */
+.filter_menu{
+    width: 90%;
+    min-height: -190px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 15px 80px;
+}
+.filter_menu select, input{
+    border: 1px solid hwb(0 4% 95%);
+    outline: none;
+    height: 40px;
+    padding: 0 5px;
+}
+.filter_menu input{
+    flex: 1;
+    margin: 0 10px;
+}
+
+/* -------------------- Load More --------------- */
+.load_more{
+    text-align: center;
+}
+.load_more button{
+    padding: 10px 25px;
+    margin-bottom: 20px;
+    border: 1px solid #555;
+    text-transform: capitalize;
+}
+
+
+.photo1 {
+    border: 1px solid #050505;
+width: 10%;
+    margin-right: 65px;
+    color: #100e0f;
+
+    text-transform: uppercase;
+  }
+  .photo1 img {
+    border: 1px solid #050505;
+ width: 60%;
+    margin-right: 65px;
+    color: #100e0f;
+  }

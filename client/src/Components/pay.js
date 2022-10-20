@@ -1,10 +1,11 @@
+
 import { useState} from "react";
 import StripeCheckout from "react-stripe-checkout";
-//import { FormControl, InputAdornment, InputLabel, OutlinedInput  } from "@mui/material";
+import { FormControl, InputAdornment, InputLabel, OutlinedInput  } from "@mui/material";
 import "./App.css"
 
 function Pay() {
-  const [ amount] = useState(0);
+  const [ amount, setAmount ] = useState(0);
 
   const handleToken = (token) => {
     fetch("/payment/donate", {
@@ -20,15 +21,24 @@ function Pay() {
     }).catch(_ => window.alert("Transaction Failed."))
   }
 
- 
+  const handleAmountChange = (e) => {
+    const value = e.target.value;
+    setAmount(value);
+  };
   
   return (
     
-    <div className="App2" 
+    <div className="App" 
     style={{
-       
+       display: 'flex', 
+       justifyContent: 'center', 
+       alignItems: 'center',
+       width: '91%',
+       height: "100vh",
+       flexDirection: 'column',
+       gap: 15,
        }}>
-{/*           
+          
     <FormControl sx={{ m: 1 }}>
       <InputLabel htmlFor="outlined-adornment-amount">Amount</InputLabel>
       <OutlinedInput
@@ -38,13 +48,13 @@ function Pay() {
             startAdornment={<InputAdornment position="start">LKR</InputAdornment>}
             label="Amount"
         />    
-    </FormControl> */}
+    </FormControl>
     <StripeCheckout
           stripeKey={process.env.REACT_APP_STRIPE_KEY || ""}
           token={handleToken}
           name=""
-          panelLabel={`Pay Now`}
-          currency="LKR"
+          panelLabel={`Pay`}
+          currency="USD"
           amount={amount * 100}
       >
          
