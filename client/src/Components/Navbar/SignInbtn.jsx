@@ -6,7 +6,7 @@ import React from "react";
 const SignIn = () => {
 
      const useEffect = () => {
-			window.location = "/registration";	
+			window.location = "/login";	
      }
 	
 

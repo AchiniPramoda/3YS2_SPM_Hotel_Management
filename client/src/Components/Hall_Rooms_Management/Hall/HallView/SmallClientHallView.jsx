@@ -21,9 +21,9 @@ const HallSmallView = (props) => {
                 <img src={hall.hallImage} class="card-img-top" alt={hall.hallType} />
                   <div class="card-body">
                     
-                     <h5 class="card-title">Hall Name: {hall.name}</h5>
+                     <h5 class="card-text  mt-6 mb-6">Hall Name: {hall.name}</h5>
                     
-                     <h6 class="card-title">Total Guests: {hall.Guest}</h6>
+                     <h5 class="card-text  mt-6 mb-6">Total Guests: {hall.Guest}</h5>
                     
                      <p class="card-text">{hall.description}</p>
                    
