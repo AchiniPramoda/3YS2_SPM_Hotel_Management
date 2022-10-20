@@ -1,16 +1,21 @@
 import React, {useState, useContext} from 'react'
 import {GlobalState} from '../../../../GlobalState'
 import axios from 'axios'
-import Header3 from '../../headersk/Header3'
+import { Link } from "react-router-dom";
 import Footer from '../../headersk/Footer'
 import "./categories.css"
+import '../../../../../src/index.css'
+import Navbar from '../../../Navbar/NavbarResAdmin'
+import { MdArrowBackIosNew } from "react-icons/md"
+import { GiHotMeal } from "react-icons/gi"
+
 
 function Categories() {
     const state = useContext(GlobalState)
-    const [categories] = state.categoriesAPI.categories
+    const [categories] = state.categoriesAPI1.categories
     const [category, setCategory] = useState('')
 
-    const [callback, setCallback] = state.categoriesAPI.callback
+    const [callback, setCallback] = state.categoriesAPI1.callback
     const [onEdit, setOnEdit] = useState(false)
     const [id, setID] = useState('')
 
@@ -56,9 +61,16 @@ function Categories() {
     }
 
     return (
-        <div className='kavi'><Header3></Header3>
-       <h3>{onEdit? "Update Category" : "Create Category"}</h3>
-
+        <div>
+        <Navbar/>
+    <div className="container1">
+    
+    <div className="row g-0">
+        <div className="cl">
+        <div className="card-body">
+        <h4 className="card-title  mt-3">
+       {onEdit? "Update Category" : "Create Category"}</h4>
+       <hr classNameName="mb-3" />
         <div className="categories">
           <div className='kavi'>
             <form onSubmit={createCategory}>
@@ -66,7 +78,7 @@ function Categories() {
                 <input  class="form-control"  placeholder='Enter New Catagory' type="text" name="category" value={category} required
                 onChange={e => setCategory(e.target.value)} />
 
-                <button type="submit">{onEdit? "Update" : "Create "}</button>
+                <button type="submit" className='submit'>{onEdit? "Update" : "Create "}</button>
             </form>
 </div>
             <div className="col1">
@@ -75,14 +87,26 @@ function Categories() {
                         <div className="row" key={category._id}>
                             <p>{category.name}</p>
                             <div>
-                                <button1 type="submit"onClick={() => editCategory(category._id, category.name)}>UPDATE </button1>
-                                <button2 onClick={() => deleteCategory(category._id)}>Delete</button2>
+                                <button className='button1' type="submit"onClick={() => editCategory(category._id, category.name)}>UPDATE </button>
+                                <button  className='button2' onClick={() => deleteCategory(category._id)}>Delete</button>
                             </div>
+                            
                         </div>
                     ))
                 }
             </div>
         </div>
+        
+                </div>
+            </div>
+        </div>
+        <tr className='gap'></tr>
+        </div>
+        <div className='row'>
+                <button type="button"  className="back"><Link className='link-o'to="/adminfirst"><MdArrowBackIosNew style={{color: '#E8861E', fontSize: '20px'}}/>  Back</Link></button>
+                <button type="button"  className="viewList"><Link className='link-o'to="/create_food">Add Food  <GiHotMeal style={{color: '#E8861E', fontSize: '20px'}}/></Link></button>
+                </div>
+                <tr className='gap'></tr>
         <Footer></Footer>
         </div>
 

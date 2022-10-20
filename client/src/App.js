@@ -107,16 +107,16 @@ function App() {
                  <Route path="/user/ALL" element={<AllRestaurantsForUser />} />
                  <Route path="/restaurants/:id" element={<ViewMoreRestaurant />} />
                  <Route path="/admin/restaurants/EditRestaurant/:id" element={<UpdateRestaurant />} />
-                  <Route path="/admin" element={<Adminfirst />} /> 
+                  <Route path="/adminfirst" element={<Adminfirst />} /> 
                  
                   <Route path="/food"  element={<Foods/>} />
                  <Route path="/detail/:id"  element={<DetailFood/>} />
-                 <Route path="/category"  element={ <Categories/> } />
+                 <Route path="/categoryF"  element={ <Categories/> } />
                 <Route path="/create_food"  element={<CreateFood/> } />
                 <Route path="/edit_food/:id"  element={ <CreateFood/> } />
                 <Route path="/cart"  element={<Cart/>} />
                <Route path="*"  element={<NotFound/>} /> 
-               <Route path="/adminpro" exact element={<Foods2/>} />
+               <Route path="/allfood" exact element={<Foods2/>} />
                <Route path="/customer" exact element={<Foods/>} />
 
                    <Route path="/viewhall" element={<ViewHall />} />

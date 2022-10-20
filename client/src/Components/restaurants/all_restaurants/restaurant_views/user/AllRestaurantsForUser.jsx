@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from "axios"
-
+import  Footer from '../../../../Hotel_Food_Management/headersk/Footer'
 import RestaurantSmallView from './RestaurantSmallView';
 import Navbar from '../../../../Navbar/NavbarResUser';
 
@@ -44,6 +44,7 @@ class AllRestaurantsForUser extends Component {
                     </React.Fragment>
                 </div>
             </div>
+            <Footer/>
            </div> 
 
         );

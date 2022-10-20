@@ -1,12 +1,15 @@
 import React, {useState, useContext, useEffect} from 'react'
 import axios from 'axios'
+import { Link } from "react-router-dom";
+import { MdArrowBackIosNew } from "react-icons/md"
+import {BsCardList} from "react-icons/bs"
 import {GlobalState} from '../../../../GlobalState'
 import Loading from '../utils/loading/Loading'
 import { useNavigate,useParams} from 'react-router-dom'
-import Header3 from '../../headersk/Header3'
 import Footer from '../../headersk/Footer'
+import Navbar from '../../../Navbar/NavbarResAdmin'
+import '../../../../../src/index.css'
 
-//import { createFood } from '../../../../../../Server/controllers/foodCtrl'
 const initialState = {
     title: '',
     price: '',
@@ -17,14 +20,13 @@ const initialState = {
 
 function CreateFood() {
     const state = useContext(GlobalState)
-    //const param = useParams()
     const [food, setFood] = useState(initialState)
-    const [categories] = state.categoriesAPI.categories
+    const [categories] = state.categoriesAPI1.categories
     const [images, setImages] = useState(false)
     const [loading, setLoading] = useState(false)
 
 
-    //const [foods] = state.foodesAPI.foods
+    
     const history = useNavigate()
     const param = useParams()
 
@@ -36,7 +38,7 @@ function CreateFood() {
         if(param.id){
             setOnEdit(true)
             foods.forEach(food => {
-                if(param.id === param.id) {
+                if( food._id  === param.id) {
                     setFood(food)
                     setImages(food.images)
                 }
@@ -103,7 +105,7 @@ function CreateFood() {
             if(!images) return alert("No Image Upload")
 
             if(onEdit){
-                await axios.put(`http://localhost:8345/api/foods/${param._id}`, {...food, images}, {
+                await axios.put(`http://localhost:8345/api/foods/${food._id}`, {...food, images}, {
                
                 })
             }else{
@@ -112,7 +114,7 @@ function CreateFood() {
                 })
             }
             setCallback(!callback)
-            history("/adminpro")
+            history("/allfood")
         } catch (err) {
             alert(err.response.data.msg)
         
@@ -127,12 +129,13 @@ function CreateFood() {
     }
     return (
         <div>
+            <Navbar/>
         <div className="container1">
-                
+        
         <div className="row g-0">
             <div className="cl">
             <div className="card-body">
-            <h4 className="card-title  mt-3">{onEdit? "Update food" : "Create food"}</h4>
+            <h4 className="card-title  mt-3">{onEdit? "Edit Food" : "Create Food"}</h4>
                                 <hr classNameName="mb-3" />
             <form onSubmit={handleSubmit}>
                
@@ -181,34 +184,22 @@ function CreateFood() {
                     </div>
                 }
                                     </div>  
-                                    {/* <label for="other" className="form-label">Image</label>             
-                <div className="col-md-7">
-                <input type="file" name="file" id="file_up" onChange={handleUpload}/>
-                {
-                    loading ? <div id="file_img"><Loading /></div>
-
-                    :<div id="file_img" style={styleUpload}>
-                        <img src={images ? images.url : ''} alt=""/>
-                        <span onClick={handleDestroy}>X</span>
-                    </div>
-                }
-                
-            </div> */}
-
-                       {/* <div className="col-md-7">
-                                        <img src={images ? images.url : ''} className="resturantImageadd" alt="..." />
-                                    </div> */}
+                                    
                 <button type="submit" className='submitResturant'>{onEdit? "Update" : "Create"}</button>
                  
-            </form></div></div>
+                    </form>
+                </div>
+            </div>
    
             </div>
 
-
-            
-            
-            
+                        
         </div>
+        <div className='row'>
+                <button type="button"  className="back"><Link className='link-o'to="/admin"><MdArrowBackIosNew style={{color: '#E8861E', fontSize: '20px'}}/>  Back</Link></button>
+                <button type="button"  className="viewList"><Link className='link-o'to="/allfood">View List  <BsCardList style={{color: '#E8861E', fontSize: '20px'}}/></Link></button>
+                </div>
+                <tr className='gap'></tr>
         <Footer></Footer>
         </div>
     )

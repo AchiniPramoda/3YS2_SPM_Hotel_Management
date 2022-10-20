@@ -4,7 +4,7 @@ import axios from "axios"
 import ReactToPrint from 'react-to-print';
 
 import RestaurantActions from './RestaurantActions';
-
+import Footer from '../../../../Hotel_Food_Management/headersk/Footer'
 import "../../../../../../src/index.css";
 import Navbar from "../../../../Navbar/NavbarResAdmin";
 import { FaRegListAlt, FaPlusCircle } from 'react-icons/fa';
@@ -140,10 +140,11 @@ class AllRestaurantsContainer extends Component {
                 </div>
             </div>
             <div className='row'>
-                <button type="button"  className="back-center"><Link className='link-o'to="/admin"><MdArrowBackIosNew style={{color: '#E8861E', fontSize: '20px'}}/>  Back</Link></button>
+                <button type="button"  className="back-center"><Link className='link-o'to="/adminfirst"><MdArrowBackIosNew style={{color: '#E8861E', fontSize: '20px'}}/>  Back</Link></button>
                 
                 </div>
                 <tr className='gap'></tr>
+                <Footer/>
             </div>
 
         );

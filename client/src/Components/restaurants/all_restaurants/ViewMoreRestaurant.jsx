@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useParams } from "react-router-dom";
+import { useParams ,Link } from "react-router-dom";
 import { useEffect } from "react";
 import Navbar from '../../Navbar/NavbarResUser';
 import '../../../../src/index.css';
+import Footer from '../../Hotel_Food_Management/headersk/Footer'
 function ViewMoreRestaurant () {
 
     const [restaurantName, setRestaurantName]= useState('');
@@ -68,7 +69,7 @@ function ViewMoreRestaurant () {
                                     <p class="titleView"> {other} </p>
                                     
                                         
-                                            <button type="button" className="viewRes">View Menu</button>
+                                            <button type="button" className="viewRes"><Link className="link" to='/customer'>View Menu</Link></button>
                                         <br></br>
                                    
 
@@ -78,6 +79,7 @@ function ViewMoreRestaurant () {
                    
                 }
             </div>
+            <Footer/>
             </div>
    
   
