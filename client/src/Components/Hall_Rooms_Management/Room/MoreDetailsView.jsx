@@ -4,13 +4,14 @@ import { useEffect } from "react";
 import React, { useState } from "react";
 import axios from "axios";
 import Footer from "../../Footer/Footer";
-import Navbar from "../../Navbar/Navbar"
+import Navbar from "../../Navbar/Navbar";
+import StripeCheckout from "react-stripe-checkout";
 
 function Rooms () {
 
     const [room, setRoom]= useState('');
    
-  
+    const [ amount, setAmount ] = useState(0);
 
 
     const params = useParams();
@@ -28,8 +29,26 @@ function Rooms () {
               getRoomData();
          }, []);
      
-
      
+         const handleToken = (token) => {
+            fetch("/payment/donate", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ token, amount }),
+            })
+            .then(res => res.json())
+            .then(_ => {
+              window.alert("Transaction Successful.");
+              console.log("Transaction Successful.");
+            }).catch(_ => window.alert("Transaction Failed."))
+          }
+        
+          const handleAmountChange = (e) => {
+            const value = e.target.value;
+            setAmount(value);
+          };
 
         return (
             <div>
@@ -40,9 +59,9 @@ function Rooms () {
                 
                    <div class="mmm">
                         
-                            <div class="col-md">
+                            <div class="col-md-24">
                                
-                                <img src={room.RoomImage} class="img-fluid rounded-start" alt={room.roomType}/>
+                                <img src={room.RoomImage} class="img-fluid rounded-start " alt={room.roomType}/>
                             </div>
                             <div class="col">
                                 <div class="card-body">
@@ -64,9 +83,20 @@ function Rooms () {
                                     <h3 class="text-danger text-end mt-5 mb-5">RS: {room.price} /-</h3>
 
                                     <div class="">
-                            <button type="button" class="submit" >Rent</button>
+                            {/* <button type="button" class="submit" >Rent</button> */}
                           </div>
-
+                          <StripeCheckout
+                                className = "submit"
+                           
+                            stripeKey={process.env.REACT_APP_STRIPE_KEY || "pk_test_51Kx0rgIU9jSTt3OCJMP7GDgMje3tFcR8lA1gwHyeakh17PGmMdUAc50PFkfNwqL1NXJ5i14CZj99nG78OWFTG1FP00cRCW7t0m"}
+                            token={handleToken}
+                            name=""
+                            panelLabel={`Donate`}
+                            currency="USD"
+                            amount={amount * 100}
+                        >
+                            
+                        </StripeCheckout>
 
                                 </div>
                             </div>
