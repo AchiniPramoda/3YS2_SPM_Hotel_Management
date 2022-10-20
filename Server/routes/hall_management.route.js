@@ -86,10 +86,6 @@ router.put('/edit/:id', upload.single('hallImage'), (req, res) => {
 
 });
 
-
-
-
-
 router.delete('/deletehall/:id', async (req, res) => {
     await Hall.findByIdAndDelete(req.params.id)
     .then(() => res.json("Hall Deleted Successfully..."))
@@ -98,5 +94,3 @@ router.delete('/deletehall/:id', async (req, res) => {
 
 module.exports = router;
 
-
-module.exports = router;

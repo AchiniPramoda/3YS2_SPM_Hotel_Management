@@ -163,7 +163,7 @@ footer{
   content: '';
   height: 2px;
   width: 15%;
-  background:#3571f2;
+  background:#F2B935;
   top: -10px;
 }
 .left .content p{
@@ -228,7 +228,7 @@ footer{
 }
 .right form input:focus,
 .right form textarea:focus{
-  outline-color: #3498db;
+  outline-color: #DB9834;
 }
 .right form input{
   height: 35px;
@@ -241,14 +241,14 @@ footer{
   width: 200%;
   border: none;
   outline: none;
-  background:#3571f2;
+  background:#000000;
   font-size: 1.0625rem;
   font-weight: 500;
   cursor: pointer;
   transition: .3s;
 }
 .right form .btn button:hover{
-  background:#3571f2;
+  background:#F2B935;
 }
 .bottom center{
   padding: 12px;
@@ -259,7 +259,7 @@ footer{
   color: #656565;
 }
 .bottom center a{
-  color: #3571f2;
+  color:;
   text-decoration: none;
 }
 .bottom center a:hover{

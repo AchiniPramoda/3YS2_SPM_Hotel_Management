@@ -6,6 +6,7 @@ import axios from "axios";
 import card from './card.css';
 import Footer from "../../../Footer/Footer";
 import Navbar from '../../../Navbar/RoomNavbar';
+import StripeCheckout from "react-stripe-checkout";
 
 function Halls () {
 

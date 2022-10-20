@@ -95,7 +95,8 @@ export default class AddHall extends React.Component{
         .then((res) => {
           console.log("Hall added");
             Alert( "success", "Hall Added Successfully");
-            console.log(res.data);                                                                
+            console.log(res.data);    
+            window.location.href = "/viewhall";                                                            
         }).catch(err => {
             this.handleError(err);
             console.log(err);
