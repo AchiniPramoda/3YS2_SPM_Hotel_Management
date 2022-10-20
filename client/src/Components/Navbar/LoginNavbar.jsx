@@ -55,11 +55,13 @@ function LoginNavbar() {
                 </li>
 
             </ul>
-    
-        <form class="form-inline mr-3 my-lg-2 col-2">
-             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-             <button type="button" class="btn btn-outline-warning waves-effect">Search</button>
-        </form>
+          
+                     {/* <form class="form-inline ">
+                          <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
+                             <button type="button ml-2" class="btn btn-outline-warning waves-effect">Search</button>  
+                     </form> */}
+              
+     
       </div>
     </nav>
         

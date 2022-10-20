@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import  {Alert} from '../../alert/message.jsx';
 
 import AdminNavbar from "../../../Navbar/AdminNavbar/AdminNavbar";
-
+import Footer from "../../../Footer/Footer";
 // import Navbar from "../../Navbar/AdminNavbar/AdminNavbar";
 
 
@@ -193,6 +193,8 @@ function UpdateHall () {
           </div>
         </section>
       </div>
+
+      <Footer />
             
             </>
         )

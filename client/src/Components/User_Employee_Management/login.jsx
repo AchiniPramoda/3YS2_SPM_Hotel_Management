@@ -1,6 +1,6 @@
 import React from "react";
 import './login.css';
-
+import Footer from "../Footer/Footer";
 import Navbar from '../Navbar/LoginNavbar';
 import { useState } from "react";
 import axios from "axios";
@@ -79,7 +79,7 @@ const Login = () => {
                   <input 
                      
                      type="text"
-                     class="form-control " 
+                     class="form-control ml-1" 
                      placeholder="E-mail" 
                      aria-label="E-mail" 
                      aria-describedby="basic-addon1" 
@@ -97,7 +97,7 @@ const Login = () => {
      
                 <input 
                       type="text" 
-                      class="form-control" 
+                      class="form-control ml-1" 
                       placeholder="password" 
                       aria-label="password" 
                       aria-describedby="basic-addon1"
@@ -117,7 +117,7 @@ const Login = () => {
       </div>
     </section>
 
-
+    <Footer/>
 
     </div>
   );

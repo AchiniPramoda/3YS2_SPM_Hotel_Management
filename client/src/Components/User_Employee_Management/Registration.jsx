@@ -3,6 +3,7 @@ import './login.css';
 import axios from "axios";
 import { useState } from "react";
 import LoginNavbar from "../Navbar/LoginNavbar";
+import Footer from "../Footer/Footer";
 
 const Signup = () => {
 	const [data, setData] = useState({
@@ -75,7 +76,7 @@ const Signup = () => {
        
                     <input 
                        type="text"
-                       class="form-control " 
+                       class="form-control ml-1" 
                        placeholder="First Name" 
                        aria-label="First Name" 
                        aria-describedby="basic-addon1" 
@@ -91,7 +92,7 @@ const Signup = () => {
                  
                      <input 
                         type="text" 
-                        class="form-control" 
+                        class="form-control ml-1" 
                         placeholder="Last Name" 
                         aria-label="Last Name" 
                         aria-describedby="basic-addon1"
@@ -111,7 +112,7 @@ const Signup = () => {
        
                     <input 
                        type="text" 
-                       class="form-control" 
+                       class="form-control ml-1" 
                        placeholder="E-mail" 
                        aria-label="E-mail"
                        id="email" 
@@ -128,7 +129,7 @@ const Signup = () => {
                    
                      <input 
                         type="password" 
-                        class="form-control" 
+                        class="form-control ml-1" 
                         placeholder="Password" 
                         aria-label="Password" 
                         aria-describedby="basic-addon1" 
@@ -146,7 +147,7 @@ const Signup = () => {
                  
                    <input 
                       type="text" 
-                      class="form-control" 
+                      class="form-control ml-1" 
                       placeholder="Country" 
                       aria-label="Country" 
                       id="country"
@@ -164,7 +165,7 @@ const Signup = () => {
                  
                    <input 
                       type="text" 
-                      class="form-control" 
+                      class="form-control ml-1" 
                       placeholder="City" 
                       aria-label="City" 
                       id="city"
@@ -188,7 +189,7 @@ const Signup = () => {
         </div>
       </section>
 
-
+       <Footer/>
 
     </div>
     )

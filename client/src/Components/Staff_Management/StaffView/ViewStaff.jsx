@@ -5,6 +5,7 @@ import ReactToPrint from 'react-to-print';
 import './StaffView.css';
 import Navbar from '../../Navbar/AdminNavbar/AdminNavbar';
 import StaffAction from "./StaffAction";
+import Footer from '../../Footer/Footer';
 
 
 class AllContainer extends Component {
@@ -148,6 +149,7 @@ class AllContainer extends Component {
                 </div>
            
             </div>
+            <Footer/>
             </div>
         );
     }

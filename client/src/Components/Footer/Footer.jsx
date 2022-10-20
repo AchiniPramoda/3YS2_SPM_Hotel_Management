@@ -19,7 +19,7 @@ return (
         <div class="left box">
           <h2>About us</h2>
           <div class="content">
-            <p> CDAZZDEV is customer-oriented and made up of professionals from a diverse range of backgrounds, who align to help our clients build the project of their dreams. We take pride in our work and we ensure we deliver the finest.Our team works on web app development,mobile app development,AI development,and cyber security. </p>
+            <p> Our Elite Hotel is in a superb location with friendly and helpful staff. The hostel offers comfortable, clean rooms and fantastic access to Elit's most famous sights and attractions</p>
             <div class="social">
 			  <a href="https://facebook.com/coding.np"><span class="fab fa-youtube"><ImFacebook2 className='card-text text-end text-danger mt-3 mb-3'/></span></a>
 			  <a href="https://youtube.com/c/codingnepal"><span class="fab fa-youtube"><ImWhatsapp className='card-text text-end text-danger mt-3 mb-3'/></span></a>
@@ -34,20 +34,20 @@ return (
           <div class="content">
             <div class="place">
               <span class="fas fa-map-marker-alt"></span>
-              <span class="text">Mobile App Developement
+              <span class="text">Luxury Rooms
              </span>
             </div>
 			<div class="phone">
               <span class="fas fa-phone-alt"></span>
-              <span class="text">AI Developement</span>
+              <span class="text">Spa</span>
             </div>
             <div class="phone">
               <span class="fas fa-phone-alt"></span>
-              <span class="text">Cyber Security</span>
+              <span class="text">Halls Avalable</span>
             </div>
             <div class="email">
               <span class="fas fa-envelope"></span>
-              <span class="text">Web App Developement</span>
+              <span class="text">Resturent</span>
             </div>
           </div>
         </div>
@@ -58,16 +58,16 @@ return (
           <div class="content">
             <div class="place">
               <span class="fas fa-map-marker-alt"></span>
-              <span class="text"><HiLocationMarker className='card-text text-end text-danger mt-3 mb-3'/>  Mathugama Kaluthara,Colombo</span>
+              <span class="text"><HiLocationMarker className='card-text text-end text-danger mt-3 mb-3'/>  Elaptha, Rathnapura</span>
             </div>
             <div class="phone">
 			
               <span class="fas fa-phone-alt"></span>
-              <span class="text"><HiPhone className='card-text text-end text-danger mt-3 mb-3'/>  +947 88855086</span>
+              <span class="text"><HiPhone className='card-text text-end text-danger mt-3 mb-3'/> 0712415344</span>
             </div>
             <div class="email">
               <span class="fas fa-envelope"></span>
-              <span class="text"><HiMailOpen className='card-text text-end text-danger mt-3 mb-3'/>  info@cdazzdev.com</span>
+              <span class="text"><HiMailOpen className='card-text text-end text-danger mt-3 mb-3'/>  EliteHotelLuxury@gmail.com</span>
             </div>
           </div>
         </div>
@@ -95,7 +95,7 @@ return (
       <div class="bottom">
         <center>
           <span class="credit">Created By <a href="https://cdazzdev.com/">© Copyright 2022.</a> | </span>
-          <span class="far fa-copyright"></span><span>  All Rights Reserved by Ceylon Dazzling Dev Holding (PVT) LTD.</span>
+          <span class="far fa-copyright"></span><span>  All Rights Reserved by Elite Hotel</span>
         </center>
       </div>
 	  </footer>

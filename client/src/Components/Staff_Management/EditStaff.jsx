@@ -3,6 +3,7 @@ import axios from "axios";
 import "./staff.css";
 import {  useParams } from "react-router-dom";
 import Navbar from "../Navbar/AdminNavbar/AdminNavbar";
+import Footer from "../Footer/Footer";
 
 function EditStaff() {
 
@@ -104,7 +105,7 @@ function EditStaff() {
                   <input 
                      
                      type="text"
-                     class="form-control " 
+                     class="form-control ml-1" 
                      placeholder="First Name" 
                      aria-label="First Name" 
                      aria-describedby="basic-addon1" 
@@ -119,7 +120,7 @@ function EditStaff() {
                
                    <input 
                       type="text" 
-                      class="form-control" 
+                      class="form-control ml-1" 
                       placeholder="Last Name" 
                       aria-label="Last Name" 
                       aria-describedby="basic-addon1"
@@ -139,7 +140,7 @@ function EditStaff() {
      
                   <input 
                      type="text" 
-                     class="form-control" 
+                     class="form-control ml-1" 
                      placeholder="Staff ID" 
                      aria-label="Staff ID" 
                      aria-describedby="basic-addon1"
@@ -155,7 +156,7 @@ function EditStaff() {
                  
                    <input 
                       type="text" 
-                      class="form-control" 
+                      class="form-control ml-1" 
                       placeholder="Phone No" 
                       aria-label="Phone No" 
                       aria-describedby="basic-addon1" 
@@ -172,7 +173,7 @@ function EditStaff() {
                
                  <input 
                     type="text" 
-                    class="form-control" 
+                    class="form-control ml-1" 
                     placeholder="E-mail" 
                     aria-label="E-mail" 
                     aria-describedby="basic-addon1" 
@@ -189,7 +190,7 @@ function EditStaff() {
      
                   <input 
                      type="date" 
-                     class="form-control" 
+                     class="form-control ml-1" 
                      aria-label="Staff ID" 
                      aria-describedby="basic-addon1"
                      name="dateofbirth"
@@ -204,7 +205,7 @@ function EditStaff() {
                  
                    <input 
                       type="text" 
-                      class="form-control" 
+                      class="form-control ml-1" 
                       placeholder="Salary"
                       aria-label="Salary" 
                       aria-describedby="basic-addon1" 
@@ -222,7 +223,7 @@ function EditStaff() {
                
                  <input 
                     type="text" 
-                    class="form-control" 
+                    class="form-control ml-1" 
                     placeholder="Address" 
                     aria-label="Address" 
                     aria-describedby="basic-addon1"
@@ -240,7 +241,7 @@ function EditStaff() {
                
                  <input 
                     type="text" 
-                    class="form-control" 
+                    class="form-control ml-1" 
                     placeholder="Apply Position" 
                     aria-label="Apply Position" 
                     aria-describedby="basic-addon1"
@@ -258,7 +259,7 @@ function EditStaff() {
                
                  <input 
                     type="text" 
-                    class="form-control" 
+                    class="form-control ml-1" 
                     placeholder="Work Type" 
                     aria-label="Work Type" 
                     aria-describedby="basic-addon1"
@@ -275,7 +276,7 @@ function EditStaff() {
                
                  <input 
                     type="text" 
-                    class="form-control" 
+                    class="form-control ml-1" 
                     placeholder="Comment" 
                     aria-label="Comment" 
                     aria-describedby="basic-addon1"
@@ -291,7 +292,7 @@ function EditStaff() {
               </div>
 
              
-              <div class="btngroup col-sm-3">
+              <div class="btngroup ml-3 col-sm-3">
                 <button type="button" class="submit" onClick={updateGroupDetails}>Edit</button>
               </div>
 
@@ -301,7 +302,7 @@ function EditStaff() {
       </div>
     </section>
   </div>
-        
+        <Footer />
     </div>
 )
 }

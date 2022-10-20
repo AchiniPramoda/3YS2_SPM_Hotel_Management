@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import React, { useState } from "react";
 import axios from "axios";
 import card from './card.css';
-
+import Footer from "../../../Footer/Footer";
 import Navbar from '../../../Navbar/RoomNavbar';
 
 function Halls () {
@@ -74,6 +74,8 @@ function Halls () {
                     </div> 
               
             </div>
+
+            <Footer />
             </div>
         );
     }

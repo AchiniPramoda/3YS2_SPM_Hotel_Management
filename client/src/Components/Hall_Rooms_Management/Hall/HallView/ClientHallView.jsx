@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import axios from "axios"
 import Navbar from "../../Navbar/hallNavbar"
-import HallSmallView from './SmallClientHallView'
+import HallSmallView from './SmallClientHallView';
+import Footer from '../../../Footer/Footer';
 
 class AllhallForUser extends Component {
     constructor(props) {
@@ -41,6 +42,7 @@ class AllhallForUser extends Component {
                           </React.Fragment>
                     </div>
             </div>
+            <Footer />
         </div>
             
         );
