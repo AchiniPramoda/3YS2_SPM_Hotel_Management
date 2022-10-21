@@ -89,17 +89,13 @@ function Pakages21() {
 
 
 
-       <div class="print__section1">
-<div class="container1">
-  <div class="row1">
-    <div class="col-md-121">
 
-      <div ref={componentRef} className="card1">
-        <div class="float__start1">
-      
-        </div>
+
+
+      <div ref={componentRef} className="">
+    
         <hr />
-        <div class="float__infoss1">
+      
           <ul>
             
 
@@ -136,11 +132,8 @@ function Pakages21() {
 
           </ul>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
+ 
+
 
 
 

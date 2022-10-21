@@ -22,9 +22,9 @@ app.use(express.urlencoded({
     extended : true  
 }));
 
-app.use(fileUpload({
-    useTempFiles: true
-}))
+// app.use(fileUpload({
+//     useTempFiles: true
+// }))
 
 app.use(cookieParser())
 app.use(cors());

@@ -3,6 +3,7 @@ import PakagesAPI from './api/PakagesAPI'
 import FoodsAPI from './api/FoodsAPI'
 import SellpackAPI from './api/SellpackAPI'
 import CategoriesAPI1 from './api/CategoriesAPI1'
+import CategoriesAPI from './api/CategoriesAPI'
 
 
 
@@ -19,7 +20,8 @@ export const DataProvider = ({children}) =>{
         pakagesAPI: PakagesAPI(),
         foodsAPI: FoodsAPI(),
         sellpackAPI: SellpackAPI(token),
-        categoriesAPI1: CategoriesAPI1()
+        categoriesAPI1: CategoriesAPI1(),
+        categoriesAPI: CategoriesAPI()
     }
 
     return (
