@@ -9,7 +9,7 @@ const path = require('path')
 const payment = require('./routes/payment');
 
 
-const fileupload = require('express-fileupload')
+const fileUpload = require('express-fileupload')
 //const fileupload = require("express-fileupload");
 
 
@@ -22,14 +22,13 @@ app.use(express.urlencoded({
     extended : true  
 }));
 
-// app.use(fileUpload({
-//     useTempFiles: true
-// }))
+app.use(fileUpload({
+    useTempFiles: true
+}))
 
 app.use(cookieParser())
 app.use(cors());
-app.use(fileupload());
-
+// app.use(fileupload());
 
 
 

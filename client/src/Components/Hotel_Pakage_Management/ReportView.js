@@ -9,7 +9,7 @@ const Users = () =>{
 
     useEffect(() => {
 
-        axios.get("http://localhost:5000/api/category").then((res) => {
+        axios.get("http://localhost:8345/api/category").then((res) => {
             console.log(res.data);
             setUsers(res.data);
         }).catch((err) => {
