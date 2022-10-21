@@ -123,17 +123,4 @@ router.put('/edituser/:id', (req, res) => {
 
 });
 
-
-
-// //update user
-// router.put("/:id", async (req, res) => {
-//     try {
-//         const user = await User.findByIdAndUpdate(req.params.id, req.body);
-//         if (!user) return res.status(400).send({ message: "Invalid user id" });
-//         res.status(200).send(user);
-//     } catch (error) {
-//         res.status(500).send({ message: "Internal Server Error" });
-//     }
-// } );
-
 module.exports = router
