@@ -20,7 +20,7 @@ const Login = () => {
 		  
 			  console.log(data);
 		  
-			  if (data.email === "achinichandrasena38@gmail.com" && data.password === "#99Admin#") {
+			  if (data.email === "shaliviraj12@gmail.com" && data.password === "#99Admin#") {
 				localStorage.setItem("UsID", "ADMIN");
 				alert("Login As Admin..");
 				window.location = "/admindashboard";	

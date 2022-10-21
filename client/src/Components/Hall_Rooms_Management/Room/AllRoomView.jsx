@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import axios from "axios"
 import Navbar from "../../Navbar/Navbar"
-import RoomSmallView from './RoomSmallerView'
+import RoomSmallView from './RoomSmallerView';
+import Footer from "../../Footer/Footer"
 
 class AllRoomForUser extends Component {
     constructor(props) {
@@ -41,6 +42,7 @@ class AllRoomForUser extends Component {
                           </React.Fragment>
                     </div>
             </div>
+            <Footer/>
         </div>
             
         );
