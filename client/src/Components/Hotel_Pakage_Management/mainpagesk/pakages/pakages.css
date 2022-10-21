@@ -34,9 +34,9 @@
     letter-spacing: 1.3px;
 }
 .delete-all button{
-    border: 1px solid crimson;
+    border: 1px solid #f8f1f2;
     padding: 10px 25px;
-    color: crimson;
+    color: #f1eeef;
     text-transform: uppercase;
 }
 

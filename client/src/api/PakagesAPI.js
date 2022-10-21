@@ -12,7 +12,7 @@ function PakagesAPI() {
 
     useEffect(() =>{
         const getPakages = async () => {
-            const res = await axios.get(`/api/pakages`)
+            const res = await axios.get(`/api/pakages?limit=${page*9}&${category}&${sort}&title[regex]=${search}`)
             setPakages(res.data.pakages)
             setResult(res.data.result)
         }

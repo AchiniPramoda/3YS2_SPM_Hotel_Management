@@ -73,7 +73,7 @@ function Pakages21() {
         
          <div className="delete-all">
      
-                <button onClick={handlePrint} className="print__button1">  Print </button> 
+                <button onClick={handlePrint} className="print__button1" style={{color:"#fff"}}>  Print Report</button> 
             </div>
           
           
