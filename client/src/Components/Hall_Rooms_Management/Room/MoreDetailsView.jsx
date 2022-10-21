@@ -69,16 +69,16 @@ function Rooms () {
                                     <hr />
 
                                     <h6 class="text-dark ml-1">Room Number</h6>
-                                    <h6 class="text-secondary ml-1">{room.RooId}</h6>
+                                    <h6 class="text-secondary ml-2">{room.RooId}</h6>
 
                                     <h6 class="text-dark ml-1">Number of Beads :</h6>
-                                    <h6 class="text-secondary ml-1">{room.beads}</h6>
+                                    <h6 class="text-secondary ml-2">{room.beads}</h6>
 
                                     <h6 class="text-dark ml-1">Clients :</h6>
-                                    <h6 class="text-secondary ml-1">{room.clients}</h6>
+                                    <h6 class="text-secondary ml-2">{room.clients}</h6>
 
                                     <h6 class="text-dark ml-1">Description :</h6>
-                                    <h6 class="text-secondary ml-1">{room.description}</h6>
+                                    <h6 class="text-secondary ml-5">{room.description}</h6>
 
                                     <h3 class="text-danger text-end mt-5 mb-5">RS: {room.price} /-</h3>
 

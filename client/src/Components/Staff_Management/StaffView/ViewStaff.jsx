@@ -148,6 +148,7 @@ class AllContainer extends Component {
                 </div>
            
             </div>
+            <br/>
             <Footer/>
             </div>
         );

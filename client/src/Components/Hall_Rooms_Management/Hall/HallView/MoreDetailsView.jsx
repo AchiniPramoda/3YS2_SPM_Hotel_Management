@@ -78,7 +78,7 @@ function Halls () {
                                  
 
                                     <h6 class="text-dark ml-0 mt-2">Description :</h6>
-                                    <h6 class="text-secondary ml-3">{hall.description}</h6>
+                                    <h6 class="text-secondary ml-5">{hall.description}</h6>
 
                                     <h3 class="text-danger text-end mt-5 mb-5">RS: {hall.price} /-</h3>
 
