@@ -1,301 +1,384 @@
-import React, { useState } from "react";
+
+import React from "react";
 import axios from "axios";
 import './staff.css';
-import Navbar from "../Navbar/AdminNavbar/AdminNavbar";
+import  {Alert} from './Alert/staffAlert';
+import Validation from './Validation/StaffValidation';
+ import Navbar from "../Navbar/AdminNavbar/AdminNavbar";
 import Footer from "../Footer/Footer";
 
-function Addstaff(){
 
-  const [values, setValues] = useState({
-    firstname: "",
-    lastname: "",
-    staffId:"",
-    phone: "",
-    staffemail: "",
-    possition: "",
-    address: "",
-    dateofbirth: "",
-    wortype: "",
-    comment: "",
-    salary: ""
+export default class Add extends React.Component{
 
- });
-
- const handleStaffData = (e) => {
-  const { name, value } = e.target
-  setValues({ ...values, [name]: value});
-}  
-
-const AddStaff = (e) => {
-  e.preventDefault();
-  let staffData = {
-    firstname: values.firstname,
-    lastname: values.lastname,
-    staffId: values.staffId,
-    phone: values.phone,
-    staffemail: values.staffemail,
-    possition: values.possition,
-    address: values.address,
-    wortype: values.wortype,
-    dateofbirth: values.dateofbirth,
-    comment: values.comment,
-    salary: values.salary,
- 
-  }
-
-  console.log(staffData);
-         
-axios.post("http://localhost:8345/staff/addstaff", staffData )
-    .then((response) => {
-      console.log(response.data);
-      window.location = "/viewstaff";
-    
-    })
-    
-    .catch((error) => {
-      console.log(error);
-    })
-
-  }
-
-
-
-
-
-    return(
-        <div>
-
-<Navbar/>
-
-<div >
-    <section class="Staff-form">
+    constructor(props) {
+        super(props);
         
-      <div class="container">
-        <form>
+        this.state = {            
+          firstname : "",
+          lastname : "",
+          staffId : "",
+          phone : "",
+          staffemail : "",
+          dateofbirth : "",
+          salary : "",
+          address : "",
+          possition : "",
+          wortype : "",
+          comment : "",
+           
+        }
+    }
+       // Function for Check Status code
+       handleError = (err) => {
+        if (err) {
+            if (err.response) {
+                if (err.response.status === 404) {
+                    Alert("error", "Something went wrong!", err.response.data)
+
+                }
+            } else {
+                Alert("error", "Something went wrong.", err)
+
+            }
+        }
+    }
+    onChange = (e) => {        
+        this.setState({[e.target.id]: e.target.value});
+        console.log(e.target.value);
+    }
+
+
+  
+
+
+
+    onSubmit =  (e) => {
+        e.preventDefault();
+
+        const result = Validation({
+            firstname : this.state.firstname,
+            lastname : this.state.lastname,
+            staffId : this.state.staffId,
+            phone : this.state.phone,
+            staffemail : this.state.staffemail,
+            dateofbirth : this.state.dateofbirth,
+            salary : this.state.salary,
+            address : this.state.address,
+            possition : this.state.possition,
+            wortype : this.state.wortype,
+            comment : this.state.comment,
+            
+        });
+
+       
+     if(result.status){
+       
+        let staffData = {
+            firstname : this.state.firstname,
+            lastname : this.state.lastname,
+            staffId : this.state.staffId,
+            phone : this.state.phone,
+            staffemail : this.state.staffemail,
+            dateofbirth : this.state.dateofbirth,
+            salary : this.state.salary,
+            address : this.state.address,
+            possition : this.state.possition,
+            wortype : this.state.wortype,
+            comment : this.state.comment,
+
+           
+            }
+            console.log(staffData);
+      axios.post("http://localhost:8345/staff/addstaff", staffData)
+     
+        
          
-          {/* use for title */}
-            <div class="products">
+        .then((res) => {
+          console.log("staff added");
+            Alert( "success", "staff Added Successfully");
+            console.log(res.data);    
+            window.location.href = "/viewstaff";                                                         
+        }).catch(err => {
+            this.handleError(err);
+            console.log(err);
+        })
+        }else{
+            Alert("error", "Form Validation Error!", result.error)
 
-               <div class="title">Add Staff</div>
-          
-           </div>
-           
+        }
+    }
+    render(){
 
+        return (
+            <div>
+<Navbar/>
+            <div >
+                <section class="Hall-form dark">
+                    
+                  <div class="container">
 
-          <div class="card-details">
-
-           
-            <div class="row">    
-             
-                {/* For Input fields that wants column  */}
-            
-              <div class="form-group col-sm-6">
-                <label for="card-holder">First Name</label>
-     
-                  <input 
+                    <form >
                      
-                     type="text"
-                     class="form-control ml-0" 
-                     placeholder="First Name" 
-                     aria-label="First Name" 
-                     aria-describedby="basic-addon1" 
-                     name="firstname"
-                     onChange={handleStaffData}
-                     value={values.firstname}
-                     />
-              </div>
-
-              <div class="form-group col-sm-6">
-                <label for="">Last Name</label>
                
-                   <input 
-                      type="text" 
-                      class="form-control ml-0" 
-                      placeholder="Last Name" 
-                      aria-label="Last Name" 
-                      aria-describedby="basic-addon1"
-                      name="lastname"
-                      onChange={handleStaffData}
-                      value={values.lastname}
-                      />
-
-                      {/* IF someone need a / betwen input fields */}
-                          {/* <span class="date-separator">/</span> */}
+                           <div class="products">
+                               <div class="title">Staff Add</div>
+                            </div>
+                      
             
-              
-              </div>
-
-              <div class="form-group col-sm-6">
-                <label for="card-holder">Staff ID</label>
-     
-                  <input 
-                     type="text" 
-                     class="form-control ml-0" 
-                     placeholder="Staff ID" 
-                     aria-label="Staff ID" 
-                     aria-describedby="basic-addon1"
-                     name="staffId"
-                     onChange={handleStaffData}
-                     value={values.staffId}
-                     />
-              </div>
-
-              <div class="form-group col-sm-6">
-                <label for="">Phone</label>
-               
-                 
-                   <input 
-                      type="text" 
-                      class="form-control ml-0" 
-                      placeholder="Phone No" 
-                      aria-label="Phone No" 
-                      aria-describedby="basic-addon1" 
-                      name="phone"
-                      onChange={handleStaffData}
-                      value={values.phone}
-                      />
-
-                </div>
             
-              <div class="form-group col-sm-12">
-                 <label for="">E-Mail</label>
-               
-               
-                 <input 
-                    type="text" 
-                    class="form-control ml-0" 
-                    placeholder="E-mail" 
-                    aria-label="E-mail" 
-                    aria-describedby="basic-addon1" 
-                    name="staffemail"
-                    onChange={handleStaffData}
-                    value={values.staffemail}
-                    />
+                      <div class="card-details">
+                       
+                        <div class="row">    
 
-               </div>
+                        
+                        <div class="form-group col-sm-6">
+                            <label for="">First Name</label>
+
+  
+                            <input
+                                type="text"
+                                class="form-control ml-0"
+                                placeholder="First Name"
+                                aria-label="First Name"
+                                aria-describedby="basic-addon1"
+                                id="firstname"
+
+                                onChange={(e) => this.onChange(e)}
+                                />
+
+                        </div>
+
+                        <div class="form-group
+
+                          col-sm-6">  
+
+                            <label for="">Last Name</label>
+
+                            <input
+                                type="text" 
+                                class="form-control ml-0"
+                                placeholder="Last Name"
+                                aria-label="Last Name"
+                                aria-describedby="basic-addon1"
+                                id="lastname"
+                                onChange={(e) => this.onChange(e)}
+                                />
+
+                        </div>
+
+                        <div class="form-group
 
 
-               <div class="form-group col-sm-6">
-                <label for="card-holder">Date of Birth</label>
-     
-                  <input 
-                     type="date" 
-                     class="form-control ml-0" 
-                     aria-label="Staff ID" 
-                     aria-describedby="basic-addon1"
-                     name="dateofbirth"
-                     onChange={handleStaffData}
-                     value={values.dateofbirth}
-                     />
+                          col-sm-6">
+
+                            <label for="">Staff ID</label>
+
+                            <input
+                                type="text"
+                                class="form-control ml-0"
+                                placeholder="Staff ID"
+                                aria-label="Staff ID"
+                                aria-describedby="basic-addon1"
+                                id="staffId"
+                                onChange={(e) => this.onChange(e)}
+                                />
+
+                        </div>
+
+                        <div class="form-group
+
+
+                          col-sm-6">  
+
+                            <label for="">Phone</label>
+
+                            <input
+                                type="text"
+                                class="form-control ml-0"
+                                placeholder="Phone"
+                                aria-label="Phone"
+                                aria-describedby="basic-addon1"
+                              
+                                id="phone"
+                              
+                                onChange={(e) => this.onChange(e)}
+                            
+                                value={this.state.phone}
+                                />
+
+                        </div>
+
+                        <div class="form-group
+
+
+                          col-sm-6">  
+
+                            <label for="">Email</label>
+
+                            <input
+                                type="text"
+
+                                class="form-control ml-0"
+                                placeholder="Email"
+                                aria-label="Email"
+                                aria-describedby="basic-addon1"
+          
+                                id="staffemail"
+                                onChange={(e) => this.onChange(e)}
+
+                                />
+
+                        </div>
+
+                        <div class="form-group
+
+
+                          col-sm-6">  
+
+                            <label for="">Date of Birth</label>
+
+                            <input
+                                type="date" 
+                                class="form-control ml-0"
+                                placeholder="Date of Birth"
+                                aria-label="Date of Birth"
+                                aria-describedby="basic-addon1"
+                                name="dateofbirth"
+                                id="dateofbirth"
+                                onChange={(e) => this.onChange(e)}
+                                />
+
+                        </div>
+
+                        <div class="form-group
+
+
+                          col-sm-6">
+
+                            <label for="">Salary</label>
+
+                            <input
+                                type="text"
+                                class="form-control ml-0"
+                                placeholder="Salary"
+                                aria-label="Salary"
+                                aria-describedby="basic-addon1"
+                                name="salary"
+                                id="salary"
+                                onChange={(e) => this.onChange(e)}
+                                />
+
+                        </div>
+
+                        <div class="form-group
+
+
+                          col-sm-6">      
+
+                            <label for="">Address</label>
+
+                            <input
+                                type="text" 
+                                class="form-control ml-0"
+                                placeholder="Address"
+                                aria-label="Address"
+                                aria-describedby="basic-addon1"
+                                // name="address"
+                                id="address"
+                                onChange={(e) => this.onChange(e)}
+                                />
+
+                        </div>
+
+                        <div class="form-group
+
+
+                          col-sm-6">    
+
+                            <label for="">Possition</label>
+
+                            <input
+                                type="text"     
+                                class="form-control ml-0"
+                                placeholder="Possition"
+                                aria-label="Possition"
+                                aria-describedby="basic-addon1"
+                                
+                                id="possition"
+                                onChange={(e) => this.onChange(e)}
+                                />
+
+
+
+                        </div>
+                       
+
+                        <div class="form-group
+
+
+                          col-sm-6">  
+
+                            <label for="">Work Type</label>                   
+                            <select class="form-control ml-0" name="worktype" id="wortype"  onChange={(e) => this.onChange(e)}>
+                                <option value="Full Time">Full Time</option>          
+                                <option value="Part Time">Part Time</option>
+                            </select>
+
+                        </div>
+
+                        <div class="form-group
+
+
+                          col-sm-6">    
+
+                            <label for="">Comment</label>
+
+                            <input
+                                type="text"     
+                                class="form-control ml-0"
+                                placeholder="comment"
+                                aria-label="comment"
+                                aria-describedby="basic-addon1"
+                           
+                                id="comment"
+                                onChange={(e) => this.onChange(e)}
+                                />
+
+
+
+                          </div>
+
+
+                        <div class="btngroup ml-6 col-sm-4">
+                            <button type="button" class="cancel">Clear</button>
+                          </div>
+            
+                         
+                          <div class="btngroup ml-2 col-sm-4">
+                            <button type="button" class="submit" onClick={(e) => this.onSubmit(e)} >Submit</button>
+                          </div>
+
+            
+                        </div>
+                     
+                      </div>
+                    </form>
+                  </div>
+                </section>
               </div>
-
-              <div class="form-group col-sm-6">
-                <label for="">Salary</label>
-               
-                 
-                   <input 
-                      type="text" 
-                      class="form-control ml-0" 
-                      placeholder="Salary"
-                      aria-label="Salary" 
-                      aria-describedby="basic-addon1" 
-                      name="salary"
-                      onChange={handleStaffData}
-                      value={values.salary}
-                      />
-
-                </div>
-
-                
-              <div class="form-group col-sm-12">
-                 <label for="">Address</label>
-               
-               
-                 <input 
-                    type="text" 
-                    class="form-control ml-0" 
-                    placeholder="Address" 
-                    aria-label="Address" 
-                    aria-describedby="basic-addon1"
-                    name="address"
-                    onChange={handleStaffData}
-                    value={values.address}
-                    />
-
-               </div>
-
-               
-              <div class="form-group col-sm-12">
-                 <label for="">Apply Position</label>
-               
-               
-                 <input 
-                    type="text" 
-                    class="form-control ml-0" 
-                    placeholder="Apply Position" 
-                    aria-label="Apply Position" 
-                    aria-describedby="basic-addon1"
-                    name="possition"
-                    onChange={handleStaffData}
-                    value={values.possition}
-                    />
-
-               </div>
-
-               
-              <div class="form-group col-sm-12">
-                 <label for="">Work Type</label>
-               
-               
-                 <input 
-                    type="text" 
-                    class="form-control ml-0" 
-                    placeholder="Work Type" 
-                    aria-label="Work Type" 
-                    aria-describedby="basic-addon1"
-                    name="wortype"
-                    onChange={handleStaffData}
-                    value={values.wortype}
-                    />
-
-               </div>
-
-               <div class="form-group col-sm-12">
-                 <label for="">Comment</label>
-               
-               
-                 <input 
-                    type="text" 
-                    class="form-control ml-0" 
-                    placeholder="Comment" 
-                    aria-label="Comment" 
-                    aria-describedby="basic-addon1"
-                    name="comment"
-                    onChange={handleStaffData}
-                    value={values.comment}
-                    />
-
-               </div>
-              
-               <div class="btngroup ml-6 col-sm-3">
-                <button type="button" class="cancel">Clear</button>
-              </div>
-
-             
-              <div class="btngroup ml-2 col-sm-3">
-                <button type="button" class="submit" onClick={AddStaff}>Submit</button>
-              </div>
-
-            </div>
-          </div>
-        </form>
-      </div>
-    </section>
-  </div>
-
- <Footer/>
-        </div>
-    )
+             <Footer />
+            
+                    </div>
+                    )
+    }
 }
 
-export default Addstaff;
+
+
+
+
+
+
+
+
+
