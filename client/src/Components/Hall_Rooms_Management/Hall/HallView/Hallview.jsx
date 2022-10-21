@@ -134,6 +134,7 @@ class AllHallContainer extends Component {
                 </div>
            
             </div>
+            <br />
             <Footer />
             </div>
         );

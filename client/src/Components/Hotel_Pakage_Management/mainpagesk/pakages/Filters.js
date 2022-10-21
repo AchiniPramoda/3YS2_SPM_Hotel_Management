@@ -6,7 +6,7 @@ function Filters() {
     const state = useContext(GlobalState)
     const [categories] = state.categoriesAPI.categories
 
-    const [category, setCategory] = state.pakagesAPI.category
+    const [category, setCategory] = state.pakagesAPI1.category
     const [sort, setSort] = state.pakagesAPI.sort
     const [search, setSearch] = state.pakagesAPI.search
 

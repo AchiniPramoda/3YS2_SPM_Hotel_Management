@@ -100,7 +100,7 @@ class AllRoomContainer extends Component {
                         <h3 className={"text-secondary text-center mb-5"}>All Room details</h3>
                         <div class="table1">
                             <table class="table">
-                                <thead className={"table-dark"}>
+                                <thead className={"table-dark4"}>
                                     <tr>
                                         <th scope="col">Room Id</th>
                                         <th scope="col">Room Type</th>
@@ -129,6 +129,7 @@ class AllRoomContainer extends Component {
                 </div>
            
             </div>
+            <br />
             <Footer />
             </div>
         );

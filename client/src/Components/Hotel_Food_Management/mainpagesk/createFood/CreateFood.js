@@ -140,25 +140,25 @@ function CreateFood() {
             <form onSubmit={handleSubmit}>
                
 
-                <div className="mb-3">
-                    <label htmlFor="title" className="form-label">Title</label>
-                    <input placeholder="Title"  className='form-control' type="text" name="title" id="title" required
+                <div className="form-group col-sm-12">
+                    <label htmlFor="title" className="form-label ml-1">Title</label>
+                    <input placeholder="Title"  className='form-control ml-1' type="text" name="title" id="title" required
                     value={food.title} onChange={handleChangeInput} />
                 </div>
-                <div className="mb-3">
-                    <label htmlFor="price" className="form-label">Price</label>
-                    <input placeholder="Price"  className='form-control' type="number" name="price" id="price" required
+                <div className="form-group col-sm-12">
+                    <label htmlFor="price" className="form-label ml-1">Price</label>
+                    <input placeholder="Price"  className='form-control ml-1' type="number" name="price" id="price" required
                     value={food.price} onChange={handleChangeInput} />
                 </div>
-                <div className="mb-3">
-                    <label htmlFor="description" className="form-label">Description</label>
-                    <textarea placeholder="Description"  className='form-control' type="text" name="description" id="description" required
+                <div className="form-group col-sm-12">
+                    <label htmlFor="description" className="form-label ml-1">Description</label>
+                    <textarea placeholder="Description"  className='form-control ml-1' type="text" name="description" id="description" required
                     value={food.description} rows="5" onChange={handleChangeInput} />
                 </div>
 
-                <div className="mb-3">
-                <label for="other" className="form-label">Categories: </label>
-                    <select class="form-control " name="category" value={food.category} onChange={handleChangeInput} >
+                <div className="form-group col-sm-12">
+                <label for="other" className="form-label ml-1">Categories: </label>
+                    <select class="form-control ml-1" name="category" value={food.category} onChange={handleChangeInput} >
                         <option value="">Please select a category</option>
                         {
                             categories.map(category => (
@@ -195,7 +195,7 @@ function CreateFood() {
 
                         
         </div>
-        <div className='row'>
+        <div >
                 <button type="button"  className="back"><Link className='link-o'to="/admin"><MdArrowBackIosNew style={{color: '#E8861E', fontSize: '20px'}}/>  Back</Link></button>
                 <button type="button"  className="viewList"><Link className='link-o'to="/allfood">View List  <BsCardList style={{color: '#E8861E', fontSize: '20px'}}/></Link></button>
                 </div>

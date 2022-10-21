@@ -82,10 +82,9 @@ import Footer from "../Footer/Footer";
 
                </div>
 
-           </div>
 
       
-           <div className="row col-sm-2">
+           <div className="row">
 
               <div className="cardsmall">
               <div class="countName">Room</div>
@@ -113,6 +112,8 @@ import Footer from "../Footer/Footer";
            </div>
            <br/>
 
+           </div>
+           <br/>
             <Footer />
            </div>
 

@@ -75,8 +75,7 @@ function App() {
               <Route  path="/updateroom/:id" element={<UpdateRoom />} />
                  {/* <Route  path="/updatehall/:id" element={<UpdateHall />} /> */}
                
-               
-
+            
                   <Route path="/viewRoom" element={<ViewRoom />} />
                  <Route path='/viewstaff' element={ <ViewStaff /> } />
                  <Route path='/editstaff/:id' element={ <EditStaff /> } />

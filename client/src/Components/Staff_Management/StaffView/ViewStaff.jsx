@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {  withRouter  } from "react-router-dom";
 import axios from "axios"
 import ReactToPrint from 'react-to-print';
 import './StaffView.css';
@@ -115,7 +114,7 @@ class AllContainer extends Component {
                         <h3 className={"text-secondary text-center mb-5"}>All Staff details</h3>
                         <div class="tablestaff">
                             <table class="table ">
-                                <thead className={"table-dark mt-3"}>
+                                <thead className={"table-dark3 mt-3"}>
                                     <tr>
                                         <th scope="col">First Name</th>
                                         <th scope="col">Last Name</th>

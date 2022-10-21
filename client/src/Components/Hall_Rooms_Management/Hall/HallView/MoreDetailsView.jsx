@@ -3,9 +3,9 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import React, { useState } from "react";
 import axios from "axios";
-import card from './card.css';
+import  './card.css';
 import Footer from "../../../Footer/Footer";
-import Navbar from '../../../Navbar/RoomNavbar';
+import Navbar from '../../../Navbar/Navbar';
 import StripeCheckout from "react-stripe-checkout";
 
 function Halls () {
@@ -66,21 +66,21 @@ function Halls () {
                             </div>
                             <div class="col-md-24">
                                 <div class="card-body px-5">
-                                    <h3 class="card-title">{hall.hallType}</h3>
+                                    <h3 class="text">{hall.hallType}</h3>
                                     <hr />
 
-                                    <h6 class="text-dark">Hall Name</h6>
-                                    <h6 class="text-secondary">{hall.name}</h6>
+                                    <h6 class="text-dark ml-0 mt-2">Hall Name</h6>
+                                    <h6 class="text-secondary ml-3">{hall.name}</h6>
 
-                                    <h6 class="text-dark">Number of Guest :</h6>
-                                    <h6 class="text-secondary">{hall.Guest}</h6>
+                                    <h6 class="text-dark ml-0 mt-2">Number of Guest :</h6>
+                                    <h6 class="text-secondary ml-3">{hall.Guest}</h6>
 
                                  
 
-                                    <h6 class="text-dark">Description :</h6>
-                                    <h6 class="text-secondary">{hall.description}</h6>
+                                    <h6 class="text-dark ml-0 mt-2">Description :</h6>
+                                    <h6 class="text-secondary ml-3">{hall.description}</h6>
 
-                                    <h3 class="text-danger text-end">RS: {hall.price} /-</h3>
+                                    <h3 class="text-danger text-end mt-5 mb-5">RS: {hall.price} /-</h3>
 
                                     <div class="">
                             {/* <button type="button" class="submit" >Rent</button> */}

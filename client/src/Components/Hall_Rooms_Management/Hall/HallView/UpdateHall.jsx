@@ -89,7 +89,7 @@ function UpdateHall () {
 
             axios.put(`http://localhost:8345/hall/edit/${params.id}`, updateHall)
             .then((res) => {
-                Alert( "success", "Hall Added Successfully");
+                Alert( "success", "Hall Updated Successfully");
           console.log(res.data);
            window.location = '/viewhall';})
 
