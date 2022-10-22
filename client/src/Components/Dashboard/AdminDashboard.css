@@ -20,7 +20,7 @@
 }
 
 .cardsmall{
-  min-width: 18rem;
+  max-width: 288px;
   margin-top: 30px;
   margin-left: 80px;
   background-color: #F57936;

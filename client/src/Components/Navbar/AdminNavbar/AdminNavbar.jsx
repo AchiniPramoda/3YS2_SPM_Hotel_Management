@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import hotel from "../../../assets/images/hotel.png"
+import hotel from "../../../assets/images/hotel.jpeg"
 import "../navbar.css";
 
 function AdminNavbar() {

@@ -15,7 +15,7 @@ import Footer from "../Footer/Footer";
       this.state = {
         roomCount: 0,
         hallCount: 0,
-        foodCount: 0,
+        foodCount: 5,
         packageCount: 0,
       }
     }
@@ -32,10 +32,7 @@ import Footer from "../Footer/Footer";
         roomCount: res.data.length }) })
       .catch((err) => { console.log(err) });
 
-      axios.get("http://localhost:8345/api/foods")
-      .then((res) => { this.setState({
-        foodCount: res.data.length }) })
-      .catch((err) => { console.log(err) });
+
 
       axios.get("http://localhost:8345/api/category")
       .then((res) => { this.setState({
@@ -100,7 +97,7 @@ import Footer from "../Footer/Footer";
 
               <div className="cardsmall">
               <div class="countName">Food</div>
-               <div>{this.state.foodCount}</div>
+               <div className="countfont">{this.state.foodCount}</div>
 
               </div>
 

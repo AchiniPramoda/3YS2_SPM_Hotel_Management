@@ -96,7 +96,7 @@ const Login = () => {
                 <label for="card-holder">Password</label>
      
                 <input 
-                      type="text" 
+                      type="password" 
                       class="form-control ml-1" 
                       placeholder="password" 
                       aria-label="password" 
