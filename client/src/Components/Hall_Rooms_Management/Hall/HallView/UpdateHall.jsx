@@ -132,11 +132,26 @@ function UpdateHall () {
 
 
 
-    
                     <div class="form-group col-sm-6">
-                        <label for="type">Hall Type</label>
-                        <input type="text" class="form-control ml-1" id="type" placeholder="Enter Hall Type" value={hallType} onChange={(e) => setHalType(e.target.value)} />
-                    </div>
+                            <label for="card-holder">Hall Type</label>
+                                         <select
+                                          id="hallType"
+                                          onChange={(e) => this.onChange(e)}    
+                                        
+                                            type="text"
+                                          
+                                    class="form-control ml-1"
+                                    placeholder="Room Type"
+                                    aria-label="Room Type"
+                                    aria-describedby="basic-addon1">
+                                            <option  value={"--Select Type--"}>--Select Category--</option>
+                                            <option value="Wedding">Wedding</option>
+                                           <option value="Party">Party </option>
+                                            <option value="Another">Another</option>
+                                        </select>
+                               
+                            </div>
+
 
                     <div class="form-group col-sm-6">
                         <label for="space">Space</label>

@@ -158,7 +158,7 @@ export default class AddHall extends React.Component{
                                      />
                           </div>
             
-                          
+{/*                           
                             <div class="form-group col-sm-6">
 
                                 <label for="card-holder">Hall Type</label>
@@ -169,9 +169,28 @@ export default class AddHall extends React.Component{
                                          placeholder="Hall Type"
                                          aria-label="Hall Type"
                                          aria-describedby="basic-addon1"
-                                         id="hallType"
-                                         onChange={(e) => this.onChange(e)}
+                                        
                                     />
+                            </div> */}
+
+                        <div class="form-group col-sm-6">
+                            <label for="card-holder">Hall Type</label>
+                                         <select
+                                          id="hallType"
+                                          onChange={(e) => this.onChange(e)}    
+                                        
+                                            type="text"
+                                          
+                                    class="form-control ml-1"
+                                    placeholder="Room Type"
+                                    aria-label="Room Type"
+                                    aria-describedby="basic-addon1">
+                                            <option  value={"--Select Type--"}>--Select Category--</option>
+                                            <option value="Wedding">Wedding</option>
+                                           <option value="Party">Party </option>
+                                            <option value="Another">Another</option>
+                                        </select>
+                               
                             </div>
 
                             <div class="form-group col-sm-6">

@@ -91,7 +91,7 @@ function Halls () {
                             stripeKey={process.env.REACT_APP_STRIPE_KEY || "pk_test_51Kx0rgIU9jSTt3OCJMP7GDgMje3tFcR8lA1gwHyeakh17PGmMdUAc50PFkfNwqL1NXJ5i14CZj99nG78OWFTG1FP00cRCW7t0m"}
                             token={handleToken}
                             name=""
-                            panelLabel={`Donate`}
+                            panelLabel={`Pay`}
                             currency="USD"
                             amount={amount * 100}
                         >

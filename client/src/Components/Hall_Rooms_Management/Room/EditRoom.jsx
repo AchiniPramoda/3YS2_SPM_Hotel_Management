@@ -122,7 +122,7 @@ function UpdateRooms () {
               </div>
 
               
-                <div class="form-group col-sm-6">
+                {/* <div class="form-group col-sm-6">
                 <label for="card-holder">Room Type</label>
 
                     <input
@@ -135,7 +135,27 @@ function UpdateRooms () {
                         onChange={(e) => setRoomType(e.target.value)}       
                       
                         />
-                </div>
+                </div> */}
+
+                <div class="form-group col-sm-6">
+                            <label for="card-holder">Room Type</label>
+                                         <select
+                                          value={RoomType}
+                                          onChange={(e) => setRoomType(e.target.value)}       
+                                        
+                                            type="text"
+                                            id="roomType"
+                                    class="form-control ml-1"
+                                    placeholder="Room Type"
+                                    aria-label="Room Type"
+                                    aria-describedby="basic-addon1">
+                                            <option  value={"--Select Type--"}>--Select Category--</option>
+                                            <option value="Queen">Queen</option>
+                                           <option value="Dubble">Dubble </option>
+                                            <option value="Another">Another</option>
+                                        </select>
+                               
+                            </div>
 
                 <div class="form-group col-sm-6">
                 <label for="card-holder">Beads</label>
